@@ -12,9 +12,12 @@ import './ui/theme/charts.css';
 import './ui/theme/cinematics.css';
 import './ui/theme/legacy.css';
 import { App } from './ui/App';
+import { loadCrestPack } from './ui/components/crestUrl';
 
-createRoot(document.getElementById('root')!).render(
+void loadCrestPack().then(() =>
+  createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
   </StrictMode>,
+  ),
 );

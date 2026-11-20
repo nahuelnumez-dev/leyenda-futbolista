@@ -47,7 +47,8 @@ export function seasonGrowth(rng: Rng, { player, age, playRatio, traits, style }
   const isKeeper = player.positions.main === 'POR';
   const gk = new Set<AttributeId>(GOALKEEPING_ATTRIBUTES);
   const rate = growthRate(age);
-  const play = 0.8 + 0.4 * Math.max(0, Math.min(1, playRatio));
+  // Los minutos influyen muy poco: el talento (potencial oculto) manda, juegue donde juegue.
+  const play = 0.95 + 0.1 * Math.max(0, Math.min(1, playRatio));
   const out = { ...player.attributes };
   const delta: Partial<Record<AttributeId, number>> = {};
 

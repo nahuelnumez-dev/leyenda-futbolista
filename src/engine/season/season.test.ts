@@ -160,6 +160,19 @@ describe('temporada', () => {
   });
 });
 
+describe('potencial independiente del club y del país', () => {
+  it('con la misma semilla, la media a los 22 años es parecida en clubes de distinto nivel y país', () => {
+    const at22 = (clubId: string) => {
+      const g = playSeasons(newCareer('mismo-talento', clubId), 8);
+      return { pot: g.player.potential.hidden, ovr: g.career.seasons.find((s) => s.age === 22)!.overallEnd };
+    };
+    const big = at22('esp.barcelona');
+    const small = at22('arg.villa-dalmine');
+    expect(big.pot).toBe(small.pot);
+    expect(Math.abs(big.ovr - small.ovr)).toBeLessThanOrEqual(3);
+  });
+});
+
 describe('evolución y valor', () => {
   it('el ritmo de crecimiento baja con la edad', () => {
     expect(growthRate(16)).toBeGreaterThan(growthRate(23));

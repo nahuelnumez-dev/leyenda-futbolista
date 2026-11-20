@@ -36,8 +36,8 @@ function allConditions(e: GameEvent): Condition[] {
 }
 
 describe('eventos', () => {
-  it('hay al menos 150 eventos', () => {
-    expect(EVENTS.length).toBeGreaterThanOrEqual(150);
+  it('hay al menos 250 eventos', () => {
+    expect(EVENTS.length).toBeGreaterThanOrEqual(250);
   });
 
   it('los ids son únicos', () => {

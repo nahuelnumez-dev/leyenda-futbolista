@@ -1,5 +1,6 @@
 import { useId, useState } from 'react';
 import type { ClubColors, Crest as CrestData } from '@/engine/types/club';
+import { crestUrl } from './crestUrl';
 
 interface CrestProps {
   name: string;
@@ -17,10 +18,11 @@ interface CrestProps {
  */
 export function Crest({ name, shortName, abbr, colors, crest, size = 48 }: CrestProps) {
   const [failed, setFailed] = useState(false);
-  if (crest?.file && !failed) {
+  const src = crest?.file ? crestUrl(crest.file) : '';
+  if (src && !failed) {
     return (
       <img
-        src={`${import.meta.env.BASE_URL}${crest.file}`}
+        src={src}
         alt={name}
         width={size}
         height={size}

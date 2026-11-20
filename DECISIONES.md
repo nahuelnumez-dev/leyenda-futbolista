@@ -424,6 +424,16 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      cachea. El límite de aviso del build sube a 1000 KB.
 140. **Escudos**: 981 de los 1011 clubes tienen escudo de Wikipedia (10 filiales usan el de su primer equipo). Los 30 restantes, casi todos de divisiones inferiores, usan el escudo genérico porque Wikipedia limitó las búsquedas; `npm run crests` los vuelve a intentar. Se corrigió el del Francs Borains, que traía el del RFC Seraing. Los escudos ocupan unos 34 MB en `public/crests`.
 
+141. **Potencial independiente del club y del país**: el potencial oculto ya dependía solo de la semilla, pero los
+     minutos jugados multiplicaban el crecimiento entre ×0,8 y ×1,2, y eso castigaba a los jugadores de clubes
+     pequeños o con poca rotación. Ahora el efecto es mínimo (×0,95 a ×1,05). Un test compara la misma semilla en el
+     Barcelona y en el Villa Dálmine: la media a los 22 años difiere como mucho 3 puntos.
+142. **279 eventos**: 127 nuevos en `pitch.ts` (campo, entrenamiento, vestuario, lesiones) y `world.ts` (prensa,
+     redes, vida personal, mercado, selección, ética y retirada). La pareja pasa a ser una marca (`partner`) que activan
+     la boda y el nuevo evento «Alguien especial», y de la que dependen otros eventos (hijo, mudanza).
+143. **Versión web publicada**: una página publicada no admite cientos de archivos sueltos, así que `npm run build:web`
+     empaqueta los 971 escudos en un único `crests-pack.json` (WebP de 128 px). La versión normal sigue usando los PNG.
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

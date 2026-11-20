@@ -146,8 +146,8 @@ export const OFF_FIELD_EVENTS: GameEvent[] = [
     title: 'La boda',
     text: 'Llevas años con tu pareja y queréis casaros este verano. La revista del corazón ofrece una fortuna por la exclusiva.',
     options: [
-      opt('intima', 'Boda íntima, sin cámaras', [celebration('chupete'), family(15), morale(10)], { result: 'Cuarenta invitados y una fiesta que nadie olvidará.' }),
-      opt('exclusiva', 'Vender la exclusiva', [celebration('chupete'), tendency('carisma', 8), money(400000), followers(20), rel('press', 6), family(-4)], { result: 'Portada de verano. Tu suegra no estaba muy convencida.' }),
+      opt('intima', 'Boda íntima, sin cámaras', [celebration('chupete'), flag('partner'), family(15), morale(10)], { result: 'Cuarenta invitados y una fiesta que nadie olvidará.' }),
+      opt('exclusiva', 'Vender la exclusiva', [celebration('chupete'), flag('partner'), tendency('carisma', 8), money(400000), followers(20), rel('press', 6), family(-4)], { result: 'Portada de verano. Tu suegra no estaba muy convencida.' }),
     ],
   }),
   ev({

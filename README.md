@@ -3,10 +3,10 @@
 Juego web de decisiones en el que vives la carrera de un futbolista desde la cantera hasta la retirada.
 Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas ficticios.
 
-> **Versión 1.2.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
+> **Versión 1.3.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
 > Europa (España, Inglaterra, Italia, Alemania, Francia, Portugal, Países Bajos, Turquía, Bélgica y Escocia),
 > Sudamérica (Argentina, Brasil, Uruguay, Colombia, Chile, Ecuador, Paraguay y Perú), Norteamérica (México y
-> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 152 eventos, 44 logros, copas, competiciones continentales, selecciones, premios,
+> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 279 eventos, 44 logros, copas, competiciones continentales, selecciones, premios,
 > cinemáticas, estadísticas, resumen final exportable y Salón de la Fama.
 > Las decisiones de diseño están en [DECISIONES.md](DECISIONES.md).
 
@@ -36,6 +36,7 @@ npm run dev        # servidor de desarrollo en http://localhost:5173
 npm test           # tests unitarios (Vitest)
 npm run typecheck  # comprobación de tipos
 npm run build      # versión de producción en dist/
+npm run build:web  # versión para publicar como página única (escudos empaquetados, requiere Python con Pillow)
 npm run validate:data  # comprueba los datos de ligas, clubes y países
 npm run balance    # simula 16 carreras completas e imprime la tabla de balance
 npm run crests     # descarga los escudos que falten desde Wikipedia (ver más abajo)

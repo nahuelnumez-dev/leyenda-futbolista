@@ -3,11 +3,11 @@
  * Los elementos estáticos están memorizados; lo que se mueve recibe el reloj `t` en segundos.
  */
 import { memo, useId, useMemo, type ReactElement } from 'react';
+import { crestUrl } from '@/ui/components/crestUrl';
 import type { Club, ClubColors } from '@/engine/types/club';
 import { darken } from './Figure';
 import { kf, seeded } from './anim';
 
-const BASE = import.meta.env.BASE_URL;
 
 /* ── Estadio ───────────────────────────────────────────── */
 
@@ -393,7 +393,8 @@ export function Sparkles({ t, count = 26, seed = 9, area = [0, 0, 800, 450] as [
 /** Escudo dentro de un SVG (archivo real o escudo genérico dibujado). */
 export function CrestMark({ club, x, y, size }: { club?: Club; x: number; y: number; size: number }) {
   if (!club) return null;
-  if (club.crest?.file) return <image href={`${BASE}${club.crest.file}`} x={x - size / 2} y={y - size / 2} width={size} height={size} preserveAspectRatio="xMidYMid meet" />;
+  const href = club.crest?.file ? crestUrl(club.crest.file) : '';
+  if (href) return <image href={href} x={x - size / 2} y={y - size / 2} width={size} height={size} preserveAspectRatio="xMidYMid meet" />;
   const s = size / 100;
   return (
     <g transform={`translate(${x - size / 2} ${y - size / 2}) scale(${s})`}>
