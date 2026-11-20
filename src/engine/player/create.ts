@@ -37,20 +37,33 @@ export interface CreationContent {
 }
 
 export const MAX_SECONDARY_POSITIONS = 2;
-export const POTENTIAL_RANGE: [number, number] = [58, 95];
+export const POTENTIAL_RANGE: [number, number] = [60, 97];
 
 /** Bonus iniciales por rasgo (pequeños: el efecto real es el crecimiento). */
 const TRAIT_START_BONUS: Record<string, Partial<Record<AttributeId, number>>> = {
+  // Todos suman unos +6 puntos repartidos en su temática.
+  trabajador: { stamina: 3, teamwork: 3 },
   'talento-natural': { dribbling: 3, ballControl: 3 },
-  'fisico-de-hierro': { strength: 2, stamina: 3 },
-  lider: { leadership: 6, teamwork: 2 },
-  'sangre-fria': { composure: 5, penalties: 3 },
-  creativo: { vision: 4, freeKicks: 3 },
-  temperamental: { aggression: 6, composure: -2 },
-  competitivo: { concentration: 3, aggression: 2 },
-  trabajador: { stamina: 2, teamwork: 2 },
-  profesional: { concentration: 2 },
-  timido: { leadership: -3, composure: -1 },
+  lider: { leadership: 4, teamwork: 2 },
+  timido: { concentration: 3, positioning: 3 },
+  mediatico: { composure: 3, dribbling: 3 },
+  temperamental: { aggression: 4, strength: 2 },
+  'sangre-fria': { composure: 3, penalties: 3 },
+  profesional: { stamina: 3, concentration: 3 },
+  fiestero: { agility: 3, dribbling: 3 },
+  ambicioso: { finishing: 3, vision: 3 },
+  leal: { teamwork: 3, concentration: 3 },
+  'fisico-de-hierro': { strength: 3, stamina: 3 },
+  competitivo: { concentration: 3, aggression: 3 },
+  creativo: { vision: 3, freeKicks: 3 },
+  familiar: { composure: 3, teamwork: 3 },
+  vago: { composure: 3, ballControl: 3 },
+  fragil: { acceleration: 3, agility: 3 },
+  divo: { dribbling: 3, shooting: 3 },
+  humilde: { teamwork: 3, positioning: 3 },
+  rebelde: { dribbling: 3, vision: 3 },
+  solidario: { teamwork: 3, stamina: 3 },
+  idolo: { composure: 3, finishing: 3 },
 };
 
 const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
@@ -58,7 +71,7 @@ const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(mi
 /** Talento (potencial oculto) de una semilla. Se calcula aparte porque las pruebas de cantera lo usan antes de crear la partida. */
 export function rollPotential(seed: string): number {
   const rng = Rng.fromSeed(seed).fork('potential');
-  return Math.round(clamp(rng.normal(76, 8), POTENTIAL_RANGE[0], POTENTIAL_RANGE[1]));
+  return Math.round(clamp(rng.normal(79, 8), POTENTIAL_RANGE[0], POTENTIAL_RANGE[1]));
 }
 
 /** Rango de potencial que ven los ojeadores (amplio a los 15 años). */
@@ -83,8 +96,8 @@ export function generateStartingAttributes(input: CharacterInput, potential: num
   const rng = Rng.fromSeed(seed).fork('attributes');
   const attrs = createAttributes(0);
   const isKeeper = input.mainPosition === 'POR';
-  // Base 18-31 según el talento.
-  const base = 18 + (potential - POTENTIAL_RANGE[0]) * 0.35;
+  // Base 20-34 según el talento.
+  const base = 20 + (potential - POTENTIAL_RANGE[0]) * 0.38;
   const gk = new Set<AttributeId>(GOALKEEPING_ATTRIBUTES);
 
   for (const id of ALL_ATTRIBUTES) {

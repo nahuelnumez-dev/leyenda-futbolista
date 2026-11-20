@@ -18,8 +18,8 @@ import { OVERALL_WEIGHTS } from './overall';
 
 /** Ritmo de crecimiento por edad (fracción del hueco hasta el objetivo que se cubre en un año). */
 export function growthRate(age: number): number {
-  const table: Record<number, number> = { 20: 0.16, 21: 0.15, 22: 0.13, 23: 0.11, 24: 0.09, 25: 0.07, 26: 0.05, 27: 0.04, 28: 0.03 };
-  if (age <= 19) return 0.17;
+  const table: Record<number, number> = { 20: 0.21, 21: 0.19, 22: 0.17, 23: 0.14, 24: 0.12, 25: 0.09, 26: 0.07, 27: 0.05, 28: 0.04 };
+  if (age <= 19) return 0.22;
   return table[age] ?? 0;
 }
 
@@ -62,7 +62,7 @@ export function seasonGrowth(rng: Rng, { player, age, playRatio, traits, style }
       change = 0;
     } else {
       const rel = relevance(id, player.positions.main, player.positions.secondary);
-      const target = Math.min(ATTRIBUTE_MAX, rel >= 0.8 ? pot + 3 : rel >= 0.4 ? pot - 6 : pot * 0.72);
+      const target = Math.min(ATTRIBUTE_MAX, rel >= 0.8 ? pot + 5 : rel >= 0.4 ? pot - 3 : pot * 0.75);
       const styleBoost = style?.bonuses[id] ? 1.15 : 1;
       if (rate > 0 && target > v) change += (target - v) * rate * play * traitMult(id) * styleBoost + rng.normal(0, 0.7);
       else if (rate > 0) change += rng.normal(0, 0.4);

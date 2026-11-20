@@ -135,7 +135,7 @@ function ensureClub(game: GameState, world: WorldData): void {
 
 /* ── Lesiones ──────────────────────────────────────────── */
 
-const NO_MATCH = { started: false, minutes: 0, rating: null, goals: 0, assists: 0 };
+const NO_MATCH = { started: false, minutes: 0, rating: null, goals: 0, assists: 0, dribbles: 0, keyPasses: 0, tackles: 0, saves: 0 };
 
 /** Si está lesionado, se pierde el partido y descuenta una semana. */
 function sidelined(game: GameState): boolean {
@@ -398,10 +398,10 @@ function aggregate(matches: MatchLog[], competitionId: string): CompetitionStats
     yellow: 0,
     red: 0,
     cleanSheets: ms.filter((m) => m.started && m.ga === 0).length,
-    keyPasses: 0,
-    dribbles: 0,
-    tackles: 0,
-    saves: 0,
+    keyPasses: ms.reduce((s, m) => s + (m.keyPasses ?? 0), 0),
+    dribbles: ms.reduce((s, m) => s + (m.dribbles ?? 0), 0),
+    tackles: ms.reduce((s, m) => s + (m.tackles ?? 0), 0),
+    saves: ms.reduce((s, m) => s + (m.saves ?? 0), 0),
     hatTricks: ms.filter((m) => m.goals >= 3).length,
     maxGoalsInMatch: maxGoals,
   };
@@ -647,6 +647,7 @@ function updateReputation(game: GameState, content: EngineContent, league: Match
       const k = who as keyof typeof p.relations;
       p.relations[k] = Math.max(-100, Math.min(100, p.relations[k] + (delta ?? 0) * 3));
     }
+    if (d.passive?.morale) p.status.morale = Math.max(10, Math.min(100, p.status.morale + d.passive.morale * 2));
   }
   const followMult = defs.reduce((m, d) => m * (d.passive?.followersGrowth ?? 1), 1);
   const target = 50 * Math.pow(10, p.reputation.world / 25 + p.reputation.national / 60) * followMult;

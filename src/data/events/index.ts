@@ -13,6 +13,7 @@ import { MARKET_EVENTS } from './market';
 import { LIFE_EVENTS } from './life';
 import { PITCH_EVENTS } from './pitch';
 import { WORLD_EVENTS } from './world';
+import { CHOICE_EVENTS } from './choices';
 
 export const EVENTS: GameEvent[] = [...ACADEMY_EVENTS, ...CAREER_EVENTS, ...OFF_FIELD_EVENTS, ...PERSONALITY_EVENTS,
   ...INTERNATIONAL_EVENTS,
@@ -21,4 +22,5 @@ export const EVENTS: GameEvent[] = [...ACADEMY_EVENTS, ...CAREER_EVENTS, ...OFF_
   ...LIFE_EVENTS,
   ...PITCH_EVENTS,
   ...WORLD_EVENTS,
+  ...CHOICE_EVENTS,
 ];

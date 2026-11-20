@@ -16,9 +16,13 @@ export interface Totals {
   rating: number;
   hatTricks: number;
   cleanSheets: number;
+  dribbles: number;
+  keyPasses: number;
+  tackles: number;
+  saves: number;
 }
 
-const EMPTY: Totals = { apps: 0, starts: 0, minutes: 0, goals: 0, assists: 0, rating: 0, hatTricks: 0, cleanSheets: 0 };
+const EMPTY: Totals = { apps: 0, starts: 0, minutes: 0, goals: 0, assists: 0, rating: 0, hatTricks: 0, cleanSheets: 0, dribbles: 0, keyPasses: 0, tackles: 0, saves: 0 };
 
 function sum(stats: CompetitionStats[]): Totals {
   const t = { ...EMPTY };
@@ -31,6 +35,10 @@ function sum(stats: CompetitionStats[]): Totals {
     t.assists += s.assists;
     t.hatTricks += s.hatTricks;
     t.cleanSheets += s.cleanSheets;
+    t.dribbles += s.dribbles ?? 0;
+    t.keyPasses += s.keyPasses ?? 0;
+    t.tackles += s.tackles ?? 0;
+    t.saves += s.saves ?? 0;
     ratingSum += s.ratingSum;
   }
   t.rating = t.apps ? Math.round((ratingSum / t.apps) * 100) / 100 : 0;
@@ -62,6 +70,10 @@ export function currentTotals(matches: MatchLog[], youth = false): Totals {
     rating: rated.length ? Math.round((rated.reduce((s, m) => s + (m.rating ?? 0), 0) / rated.length) * 100) / 100 : 0,
     hatTricks: ms.filter((m) => m.goals >= 3).length,
     cleanSheets: ms.filter((m) => m.started && m.ga === 0).length,
+    dribbles: ms.reduce((s, m) => s + (m.dribbles ?? 0), 0),
+    keyPasses: ms.reduce((s, m) => s + (m.keyPasses ?? 0), 0),
+    tackles: ms.reduce((s, m) => s + (m.tackles ?? 0), 0),
+    saves: ms.reduce((s, m) => s + (m.saves ?? 0), 0),
   };
 }
 

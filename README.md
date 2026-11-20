@@ -6,7 +6,7 @@ Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas
 > **Versión 1.3.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
 > Europa (España, Inglaterra, Italia, Alemania, Francia, Portugal, Países Bajos, Turquía, Bélgica y Escocia),
 > Sudamérica (Argentina, Brasil, Uruguay, Colombia, Chile, Ecuador, Paraguay y Perú), Norteamérica (México y
-> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 279 eventos, 44 logros, copas, competiciones continentales, selecciones, premios,
+> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 344 eventos, 44 logros, copas, competiciones continentales, selecciones, premios,
 > cinemáticas, estadísticas, resumen final exportable y Salón de la Fama.
 > Las decisiones de diseño están en [DECISIONES.md](DECISIONES.md).
 

@@ -118,6 +118,11 @@ export interface MatchLog {
   rating: number | null;
   goals: number;
   assists: number;
+  /** Estadísticas de detalle (las partidas anteriores a la v1.3 no las tienen). */
+  dribbles?: number;
+  keyPasses?: number;
+  tackles?: number;
+  saves?: number;
 }
 
 /** Estado de la temporada en curso (se reinicia cada temporada). */

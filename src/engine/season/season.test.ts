@@ -173,6 +173,35 @@ describe('potencial independiente del club y del país', () => {
   });
 });
 
+describe('estadísticas de detalle', () => {
+  it('los jugadores de campo suman regates y pases clave; los porteros, paradas y porterías a cero', () => {
+    const totals = (g: GameState) => g.career.seasons.flatMap((s) => s.stats).filter((s) => s.competitionId !== 'youth');
+    const field = totals(playSeasons(newCareer('detalle'), 9));
+    const apps = field.reduce((s, c) => s + c.apps, 0);
+    expect(apps).toBeGreaterThan(20);
+    const dribbles = field.reduce((s, c) => s + c.dribbles, 0) / apps;
+    const keyPasses = field.reduce((s, c) => s + c.keyPasses, 0) / apps;
+    expect(dribbles).toBeGreaterThan(0.3);
+    expect(dribbles).toBeLessThan(4);
+    expect(keyPasses).toBeGreaterThan(0.5);
+    expect(keyPasses).toBeLessThan(4);
+    expect(field.every((c) => c.saves === 0)).toBe(true);
+
+    const keeper = createNewGame({
+      seed: 'portero', createdAt: '2026-11-19T10:00:00.000Z', name: 'Iker Portero',
+      character: { ...character, mainPosition: 'POR', secondaryPositions: [], style: 'portero-clasico', traits: ['sangre-fria', 'profesional'] },
+      content: { styles: PLAY_STYLES, traits: TRAITS }, academy: { clubId: 'esp.betis', budgetM: 150 },
+    });
+    const gk = totals(playSeasons(keeper, 9));
+    const gkApps = gk.reduce((s, c) => s + c.apps, 0);
+    expect(gkApps).toBeGreaterThan(10);
+    const saves = gk.reduce((s, c) => s + c.saves, 0) / gkApps;
+    expect(saves).toBeGreaterThan(1.5);
+    expect(saves).toBeLessThan(5);
+    expect(gk.reduce((s, c) => s + c.cleanSheets, 0)).toBeGreaterThan(0);
+  });
+});
+
 describe('evolución y valor', () => {
   it('el ritmo de crecimiento baja con la edad', () => {
     expect(growthRate(16)).toBeGreaterThan(growthRate(23));

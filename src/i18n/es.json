@@ -605,7 +605,15 @@
       "rushingOut": "Salidas",
       "kicking": "Juego con el pie",
       "mentality": "Mentalidad"
-    }
+    },
+    "detailTitle": "Detalle de juego",
+    "dribbles": "Regates",
+    "keyPasses": "Pases clave",
+    "tackles": "Entradas ganadas",
+    "saves": "Paradas",
+    "cleanSheets": "Porterías a cero",
+    "perMatch": "{v} por partido",
+    "savesPerMatch": "Paradas por partido"
   },
   "palmares": {
     "trophies": "Títulos ({n})",

@@ -30,8 +30,8 @@ describe('creación del personaje', () => {
     expect(rollPotential('s1')).toBe(rollPotential('s1'));
     for (let i = 0; i < 200; i++) {
       const p = rollPotential(`seed-${i}`);
-      expect(p).toBeGreaterThanOrEqual(58);
-      expect(p).toBeLessThanOrEqual(95);
+      expect(p).toBeGreaterThanOrEqual(60);
+      expect(p).toBeLessThanOrEqual(97);
     }
   });
 
@@ -69,7 +69,7 @@ describe('creación del personaje', () => {
     expect(validateCharacter(base, content, STARTING_TRAIT_COUNT)).toEqual([]);
     expect(validateCharacter({ ...base, traits: ['profesional', 'fiestero'] }, content, STARTING_TRAIT_COUNT)).toContain('creation.errors.opposites');
     expect(validateCharacter({ ...base, style: 'portero-clasico' }, content, STARTING_TRAIT_COUNT)).toContain('creation.errors.style');
-    expect(validateCharacter({ ...base, traits: ['idolo', 'lider'] }, content, STARTING_TRAIT_COUNT)).toContain('creation.errors.traits');
+    expect(validateCharacter({ ...base, traits: ['inventado', 'lider'] }, content, STARTING_TRAIT_COUNT)).toContain('creation.errors.traits');
     expect(validateCharacter({ ...base, birthMonth: 2, birthDay: 30 }, content, STARTING_TRAIT_COUNT)).toContain('creation.errors.birthDate');
     expect(validateCharacter({ ...base, mainPosition: 'POR', style: 'portero-clasico', secondaryPositions: ['DFC'] }, content, STARTING_TRAIT_COUNT)).toContain(
       'creation.errors.keeperMix',
@@ -143,5 +143,18 @@ describe('partida nueva con personaje', () => {
     expect(game.player.contract?.role).toBe('cantera');
     expect(game.career.spells[0]?.type).toBe('academy');
     expect(game.flags['academyTrialPassed']).toBe(true);
+  });
+});
+
+describe('equilibrio de rasgos', () => {
+  it('todos se pueden elegir al empezar y su bonus de crecimiento es parecido', () => {
+    for (const tr of TRAITS) {
+      expect(tr.selectableAtStart, tr.id).toBe(true);
+      // Un +1 % general equivale aproximadamente a +10 % en un atributo (unos 10 atributos cuentan para la media).
+      const budget = Object.entries(tr.growth ?? {}).reduce((s, [id, m]) => s + ((m ?? 1) - 1) * (id === 'all' ? 10 : 1), 0);
+      expect(budget, tr.id).toBeGreaterThanOrEqual(0.3);
+      expect(budget, tr.id).toBeLessThanOrEqual(0.42);
+      expect(Object.keys(tr.passive ?? {}).length, tr.id).toBeGreaterThan(0);
+    }
   });
 });

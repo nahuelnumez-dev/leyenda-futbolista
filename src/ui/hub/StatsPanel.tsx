@@ -25,6 +25,9 @@ export function StatsPanel({ game }: { game: GameState }) {
   const cal = (clubId?: string | null) => WORLD.leagues.find((l) => l.country === WORLD.clubById.get(clubId ?? '')?.country)?.calendar ?? 'europeo';
   const timeline = ratingTimeline(game);
   const clubs = byClub(seasons);
+  const keeper = p.positions.main === 'POR';
+  const defender = ['DFC', 'LD', 'LI'].includes(p.positions.main);
+  const perMatch = (n: number) => (totals.apps ? (n / totals.apps).toFixed(1) : '–');
 
   // Evolución de la media: el inicio de carrera más una media por temporada cerrada.
   const startOvr = start ? overallFor(start, p.positions.main) : seasons[0]?.overallStart;
@@ -54,6 +57,26 @@ export function StatsPanel({ game }: { game: GameState }) {
             {bestRating && t('stats.bestRating', { r: bestRating.rating.toFixed(2), season: formatSeason(bestRating.season, cal(seasons.find((x) => x.season === bestRating.season)?.clubId)) })}
           </p>
         )}
+      </div>
+
+      <div className="card stack">
+        <h3>{t('stats.detailTitle')}</h3>
+        <div className="stat-tiles">
+          {keeper ? (
+            <>
+              <StatTile label={t('stats.saves')} value={totals.saves} hint={now.saves ? t('stats.thisSeason', { n: now.saves }) : undefined} />
+              <StatTile label={t('stats.cleanSheets')} value={totals.cleanSheets} hint={now.cleanSheets ? t('stats.thisSeason', { n: now.cleanSheets }) : undefined} />
+              <StatTile label={t('stats.savesPerMatch')} value={perMatch(totals.saves)} />
+            </>
+          ) : (
+            <>
+              <StatTile label={t('stats.dribbles')} value={totals.dribbles} hint={totals.apps ? t('stats.perMatch', { v: perMatch(totals.dribbles) }) : undefined} />
+              <StatTile label={t('stats.keyPasses')} value={totals.keyPasses} hint={totals.apps ? t('stats.perMatch', { v: perMatch(totals.keyPasses) }) : undefined} />
+              <StatTile label={t('stats.tackles')} value={totals.tackles} hint={totals.apps ? t('stats.perMatch', { v: perMatch(totals.tackles) }) : undefined} />
+              {defender && <StatTile label={t('stats.cleanSheets')} value={totals.cleanSheets} />}
+            </>
+          )}
+        </div>
       </div>
 
       {timeline.length > 0 && (
@@ -148,6 +171,17 @@ export function StatsPanel({ game }: { game: GameState }) {
                 <th scope="col">{t('hub.career.apps')}</th>
                 <th scope="col">{t('hub.career.goals')}</th>
                 <th scope="col">{t('hub.career.assists')}</th>
+                {keeper ? (
+                  <>
+                    <th scope="col">{t('stats.saves')}</th>
+                    <th scope="col">{t('stats.cleanSheets')}</th>
+                  </>
+                ) : (
+                  <>
+                    <th scope="col">{t('stats.dribbles')}</th>
+                    <th scope="col">{t('stats.keyPasses')}</th>
+                  </>
+                )}
                 <th scope="col">{t('hub.career.rating')}</th>
               </tr>
             </thead>
@@ -171,6 +205,8 @@ export function StatsPanel({ game }: { game: GameState }) {
                     <td>{c.totals.apps}</td>
                     <td>{c.totals.goals}</td>
                     <td>{c.totals.assists}</td>
+                    <td>{keeper ? c.totals.saves : c.totals.dribbles}</td>
+                    <td>{keeper ? c.totals.cleanSheets : c.totals.keyPasses}</td>
                     <td>{c.totals.rating ? c.totals.rating.toFixed(2) : '–'}</td>
                   </tr>
                 );

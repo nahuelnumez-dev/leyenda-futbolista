@@ -428,11 +428,28 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      minutos jugados multiplicaban el crecimiento entre ×0,8 y ×1,2, y eso castigaba a los jugadores de clubes
      pequeños o con poca rotación. Ahora el efecto es mínimo (×0,95 a ×1,05). Un test compara la misma semilla en el
      Barcelona y en el Villa Dálmine: la media a los 22 años difiere como mucho 3 puntos.
-142. **279 eventos**: 127 nuevos en `pitch.ts` (campo, entrenamiento, vestuario, lesiones) y `world.ts` (prensa,
+142. **279 eventos** (ampliados después a 344, ver 147): 127 nuevos en `pitch.ts` (campo, entrenamiento, vestuario, lesiones) y `world.ts` (prensa,
      redes, vida personal, mercado, selección, ética y retirada). La pareja pasa a ser una marca (`partner`) que activan
      la boda y el nuevo evento «Alguien especial», y de la que dependen otros eventos (hijo, mudanza).
 143. **Versión web publicada**: una página publicada no admite cientos de archivos sueltos, así que `npm run build:web`
      empaqueta los 971 escudos en un único `crests-pack.json` (WebP de 128 px). La versión normal sigue usando los PNG.
+
+144. **Medias más altas, más fácil** (petición del usuario): potencial medio 79 (antes 76, rango 60-97), media
+     inicial algo más alta, crecimiento anual un 25-30 % más rápido y objetivos de los atributos más altos (clave:
+     potencial + 5; secundarios: potencial − 3). Ahora la media máxima suele igualar el potencial en lugar de quedarse
+     3-5 puntos por debajo. El declive desde los 30 no cambia.
+
+145. **Rasgos equilibrados y todos elegibles**: los 22 rasgos se pueden elegir al crear el personaje. Cada uno tiene el
+     mismo «presupuesto»: unos +35-40 % de crecimiento en 2-3 atributos de su temática (un +1 % general cuenta como
+     +10 % en un atributo), un efecto pasivo favorable y un pequeño inconveniente, y +6 puntos iniciales repartidos.
+     «Acomodado» pasa a «Despreocupado» y «Frágil» a «Ligero y explosivo», con ventajas propias. La moral pasiva de
+     los rasgos, que no se aplicaba, ahora suma al cerrar la temporada. Un test vigila el equilibrio.
+146. **Estadísticas de detalle**: cada partido genera regates completados, pases clave (incluyen las asistencias),
+     entradas ganadas y, para porteros, paradas. Salen de una tasa por posición multiplicada por la calidad del jugador
+     frente al nivel del partido. Solo la parte que se sale de lo normal mueve la nota, para no inflarla. Las porterías a
+     cero ya existían. Las partidas anteriores a la v1.3 tienen estas cifras a 0 en las temporadas ya jugadas.
+147. **344 eventos**: 65 más en `choices.ts` (cantera, porteros, defensas, centrocampistas, delanteros, táctica,
+     cesiones, derbis, contrato, selección) con cadenas de dos pasos (la promesa al abuelo, el mentor, la apuesta).
 
 ## Pendiente de revisión
 
