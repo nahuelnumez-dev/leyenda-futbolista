@@ -1,0 +1,4995 @@
+{
+  "ok": [
+    {
+      "id": "arg.talleres-re",
+      "source": "es:Club Atlético Talleres (Remedios de Escalada)",
+      "image": "TalleresRE.svg",
+      "file": "crests/arg/talleres-re.png",
+      "bytes": 10436
+    },
+    {
+      "id": "arg.uai-urquiza",
+      "source": "en:UAI Urquiza",
+      "image": "Club_dep_uaiurquiza_crest.png",
+      "file": "crests/arg/uai-urquiza.png",
+      "bytes": 116114
+    },
+    {
+      "id": "arg.villa-san-carlos",
+      "source": "en:Club Atlético Villa San Carlos",
+      "image": "Villa_sancarlos_logo.png",
+      "file": "crests/arg/villa-san-carlos.png",
+      "bytes": 43554
+    },
+    {
+      "id": "esp.burgos",
+      "source": "en:Burgos CF",
+      "image": "Burgos_CF_logo.svg",
+      "file": "crests/esp/burgos.png",
+      "bytes": 53612
+    },
+    {
+      "id": "esp.ceuta",
+      "source": "en:AD Ceuta FC",
+      "image": "AD_Ceuta_FC_logo.svg",
+      "file": "crests/esp/ceuta.png",
+      "bytes": 48766
+    },
+    {
+      "id": "esp.andorra",
+      "source": "en:FC Andorra",
+      "image": "FC_Andorra_logo.svg",
+      "file": "crests/esp/andorra.png",
+      "bytes": 22994
+    },
+    {
+      "id": "esp.ourense",
+      "source": "en:Ourense CF",
+      "image": "Ourense_CF_logo.svg",
+      "file": "crests/esp/ourense.png",
+      "bytes": 27696
+    },
+    {
+      "id": "arg.defensores-belgrano",
+      "source": "en:Defensores de Belgrano",
+      "image": "Defensores_de_Belgrano_Logo.svg",
+      "file": "crests/arg/defensores-belgrano.png",
+      "bytes": 22603
+    },
+    {
+      "id": "arg.argentino-merlo",
+      "source": "en:Argentino de Merlo",
+      "image": "Escudo_Argentino_de_Merlo.png",
+      "file": "crests/arg/argentino-merlo.png",
+      "bytes": 15974
+    },
+    {
+      "id": "eng.stevenage",
+      "source": "en:Stevenage F.C.",
+      "image": "Stevenage_FC_crest.svg",
+      "file": "crests/eng/stevenage.png",
+      "bytes": 53420
+    },
+    {
+      "id": "esp.ponferradina",
+      "source": "en:SD Ponferradina",
+      "image": "SD_Ponferradina_emblem.svg",
+      "file": "crests/esp/ponferradina.png",
+      "bytes": 29962
+    },
+    {
+      "id": "esp.unionistas",
+      "source": "en:Unionistas de Salamanca CF",
+      "image": "Unionistas_de_Salamanca_CF_logo.svg",
+      "file": "crests/esp/unionistas.png",
+      "bytes": 37928
+    },
+    {
+      "id": "esp.talavera",
+      "source": "en:CF Talavera de la Reina",
+      "image": "CF_Talavera_de_la_Reina.svg",
+      "file": "crests/esp/talavera.png",
+      "bytes": 43681
+    },
+    {
+      "id": "esp.segoviana",
+      "source": "en:Gimnástica Segoviana CF",
+      "image": "Gimnástica_Segoviana_CF_logo.svg",
+      "file": "crests/esp/segoviana.png",
+      "bytes": 37020
+    },
+    {
+      "id": "esp.alcorcon",
+      "source": "en:AD Alcorcón",
+      "image": "AD_Alcorcón_logo.svg",
+      "file": "crests/esp/alcorcon.png",
+      "bytes": 18086
+    },
+    {
+      "id": "esp.antequera",
+      "source": "en:Antequera CF",
+      "image": "Antequera_CF_logo.svg",
+      "file": "crests/esp/antequera.png",
+      "bytes": 42506
+    },
+    {
+      "id": "esp.eldense",
+      "source": "en:CD Eldense",
+      "image": "CD_Eldense_logo.svg",
+      "file": "crests/esp/eldense.png",
+      "bytes": 29529
+    },
+    {
+      "id": "esp.hercules",
+      "source": "en:Hércules CF",
+      "image": "Hercules_CF_crest.svg",
+      "file": "crests/esp/hercules.png",
+      "bytes": 25140
+    },
+    {
+      "id": "esp.ibiza",
+      "source": "en:UD Ibiza",
+      "image": "UD_Ibiza_logo.svg",
+      "file": "crests/esp/ibiza.png",
+      "bytes": 35482
+    },
+    {
+      "id": "esp.marbella",
+      "source": "en:Marbella FC",
+      "image": "Marbella_FC_logo.svg",
+      "file": "crests/esp/marbella.png",
+      "bytes": 46707
+    },
+    {
+      "id": "esp.sabadell",
+      "source": "en:CE Sabadell FC",
+      "image": "CE_Sabadell_FC_logo.svg",
+      "file": "crests/esp/sabadell.png",
+      "bytes": 84397
+    },
+    {
+      "id": "esp.teruel",
+      "source": "en:CD Teruel",
+      "image": "CD_Teruel_logo.svg",
+      "file": "crests/esp/teruel.png",
+      "bytes": 48559
+    },
+    {
+      "id": "chi.audax",
+      "source": "en:Audax Italiano",
+      "image": "Audax_Italiano_logo.svg",
+      "file": "crests/chi/audax.png",
+      "bytes": 32156
+    },
+    {
+      "id": "chi.cobresal",
+      "source": "en:Cobresal",
+      "image": "Cobresal_logo.svg",
+      "file": "crests/chi/cobresal.png",
+      "bytes": 18427
+    },
+    {
+      "id": "chi.colo-colo",
+      "source": "en:Colo-Colo",
+      "image": "Colo-Colo.svg",
+      "file": "crests/chi/colo-colo.png",
+      "bytes": 24587
+    },
+    {
+      "id": "chi.coquimbo",
+      "source": "en:Coquimbo Unido",
+      "image": "Coquimbo_Unido.svg",
+      "file": "crests/chi/coquimbo.png",
+      "bytes": 32608
+    },
+    {
+      "id": "chi.everton",
+      "source": "en:Everton de Viña del Mar",
+      "image": "Everton_de_Viña_del_Mar.svg",
+      "file": "crests/chi/everton.png",
+      "bytes": 27985
+    },
+    {
+      "id": "chi.huachipato",
+      "source": "en:Huachipato FC",
+      "image": "Huachipato_FC.svg",
+      "file": "crests/chi/huachipato.png",
+      "bytes": 19813
+    },
+    {
+      "id": "chi.iquique",
+      "source": "en:Deportes Iquique",
+      "image": "Deportes_Iquique.png",
+      "file": "crests/chi/iquique.png",
+      "bytes": 34771
+    },
+    {
+      "id": "chi.la-calera",
+      "source": "en:Unión La Calera",
+      "image": "Escudo_Union_La_Calera.png",
+      "file": "crests/chi/la-calera.png",
+      "bytes": 28331
+    },
+    {
+      "id": "chi.la-serena",
+      "source": "en:Deportes La Serena",
+      "image": "Deportes_La_Serena.svg",
+      "file": "crests/chi/la-serena.png",
+      "bytes": 56955
+    },
+    {
+      "id": "chi.limache",
+      "source": "en:Deportes Limache",
+      "image": "Deportes_Limache.svg",
+      "file": "crests/chi/limache.png",
+      "bytes": 45249
+    },
+    {
+      "id": "chi.nublense",
+      "source": "en:Ñublense",
+      "image": "Ñublense_logo.svg",
+      "file": "crests/chi/nublense.png",
+      "bytes": 21682
+    },
+    {
+      "id": "chi.ohiggins",
+      "source": "en:O'Higgins F.C.",
+      "image": "O'Higgins_F.C.svg",
+      "file": "crests/chi/ohiggins.png",
+      "bytes": 13021
+    },
+    {
+      "id": "chi.palestino",
+      "source": "en:Club Deportivo Palestino",
+      "image": "Escudo_Oficial_Palestino.png",
+      "file": "crests/chi/palestino.png",
+      "bytes": 22668
+    },
+    {
+      "id": "chi.u-catolica",
+      "source": "en:Club Deportivo Universidad Católica",
+      "image": "Escudo_Club_Deportivo_Universidad_Católica.svg",
+      "file": "crests/chi/u-catolica.png",
+      "bytes": 6702
+    },
+    {
+      "id": "chi.u-de-chile",
+      "source": "en:Club Universidad de Chile",
+      "image": "Emblema_del_Club_Universidad_de_Chile.png",
+      "file": "crests/chi/u-de-chile.png",
+      "bytes": 35706
+    },
+    {
+      "id": "col.aguilas",
+      "source": "en:Águilas Doradas",
+      "image": "Águilas_Doradas.svg",
+      "file": "crests/col/aguilas.png",
+      "bytes": 42323
+    },
+    {
+      "id": "col.alianza",
+      "source": "en:Alianza Valledupar F.C.",
+      "image": "Alianza_Valledupar_F.C.svg",
+      "file": "crests/col/alianza.png",
+      "bytes": 39789
+    },
+    {
+      "id": "col.america",
+      "source": "en:América de Cali",
+      "image": "América_de_Cali_logo.svg",
+      "file": "crests/col/america.png",
+      "bytes": 21098
+    },
+    {
+      "id": "col.bucaramanga",
+      "source": "en:Atlético Bucaramanga",
+      "image": "Club_Atlético_Bucaramanga_logo.svg",
+      "file": "crests/col/bucaramanga.png",
+      "bytes": 22361
+    },
+    {
+      "id": "col.chico",
+      "source": "en:Boyacá Chicó F.C.",
+      "image": "Boyacá_Chicó_F.C.svg",
+      "file": "crests/col/chico.png",
+      "bytes": 54294
+    },
+    {
+      "id": "col.cucuta",
+      "source": "en:Cúcuta Deportivo",
+      "image": "Cúcuta_Deportivo.svg",
+      "file": "crests/col/cucuta.png",
+      "bytes": 17104
+    },
+    {
+      "id": "col.deportivo-cali",
+      "source": "en:Deportivo Cali",
+      "image": "Deportivo_Cali.svg",
+      "file": "crests/col/deportivo-cali.png",
+      "bytes": 23017
+    },
+    {
+      "id": "col.fortaleza",
+      "source": "en:Fortaleza F.C.",
+      "image": "Fortaleza_Fútbol_Club_(Centro_de_Entrenamiento_Integrado_para_el_Fútbol)_logo.svg",
+      "file": "crests/col/fortaleza.png",
+      "bytes": 37997
+    },
+    {
+      "id": "col.internacional-bogota",
+      "source": "en:Internacional de Bogotá",
+      "image": "Club_Internacional_de_Bogotá_logo.svg",
+      "file": "crests/col/internacional-bogota.png",
+      "bytes": 17880
+    },
+    {
+      "id": "col.junior",
+      "source": "en:Atlético Junior",
+      "image": "Junior_Barranquilla_logo.svg",
+      "file": "crests/col/junior.png",
+      "bytes": 16487
+    },
+    {
+      "id": "col.llaneros",
+      "source": "en:Llaneros F.C.",
+      "image": "Llaneros_F.C.svg",
+      "file": "crests/col/llaneros.png",
+      "bytes": 32755
+    },
+    {
+      "id": "col.medellin",
+      "source": "en:Independiente Medellín",
+      "image": "Deportivo_Independiente_Medellín_logo_(2026,_official).svg",
+      "file": "crests/col/medellin.png",
+      "bytes": 34440
+    },
+    {
+      "id": "col.millonarios",
+      "source": "en:Millonarios F.C.",
+      "image": "Millonarios_Fútbol_Club_logo.svg",
+      "file": "crests/col/millonarios.png",
+      "bytes": 27309
+    },
+    {
+      "id": "col.nacional",
+      "source": "en:Atlético Nacional",
+      "image": "Atletico_Nacional_Logo.svg",
+      "file": "crests/col/nacional.png",
+      "bytes": 20132
+    },
+    {
+      "id": "col.once-caldas",
+      "source": "en:Once Caldas",
+      "image": "Once_Caldas_logo.svg",
+      "file": "crests/col/once-caldas.png",
+      "bytes": 13520
+    },
+    {
+      "id": "col.pasto",
+      "source": "en:Deportivo Pasto",
+      "image": "Escudo_Deportivo_Pasto_2026.png",
+      "file": "crests/col/pasto.png",
+      "bytes": 60151
+    },
+    {
+      "id": "col.pereira",
+      "source": "en:Deportivo Pereira",
+      "image": "Deportivo_Pereira_logo.svg",
+      "file": "crests/col/pereira.png",
+      "bytes": 13710
+    },
+    {
+      "id": "col.santa-fe",
+      "source": "en:Independiente Santa Fe",
+      "image": "Independiente_Santa_Fe_logo.svg",
+      "file": "crests/col/santa-fe.png",
+      "bytes": 15455
+    },
+    {
+      "id": "col.tolima",
+      "source": "en:Deportes Tolima",
+      "image": "Tolima_Campeón_2018.png",
+      "file": "crests/col/tolima.png",
+      "bytes": 29069
+    },
+    {
+      "id": "col.union-magdalena",
+      "source": "en:Unión Magdalena",
+      "image": "Unión_Magdalena.png",
+      "file": "crests/col/union-magdalena.png",
+      "bytes": 50921
+    },
+    {
+      "id": "fra.angers",
+      "source": "en:Angers SCO",
+      "image": "Angers_Sporting_Club_de_l'Ouest_logo.svg",
+      "file": "crests/fra/angers.png",
+      "bytes": 23854
+    },
+    {
+      "id": "fra.auxerre",
+      "source": "en:AJ Auxerre",
+      "image": "AJAuxerreLogo.svg",
+      "file": "crests/fra/auxerre.png",
+      "bytes": 25233
+    },
+    {
+      "id": "fra.brest",
+      "source": "fr:Stade brestois 29",
+      "image": "Logo_SB29_2010.svg",
+      "file": "crests/fra/brest.png",
+      "bytes": 44154
+    },
+    {
+      "id": "fra.le-havre",
+      "source": "en:Le Havre AC",
+      "image": "Le_Havre_AC_logo.svg",
+      "file": "crests/fra/le-havre.png",
+      "bytes": 27218
+    },
+    {
+      "id": "fra.lens",
+      "source": "en:RC Lens",
+      "image": "RC_Lens_logo.svg",
+      "file": "crests/fra/lens.png",
+      "bytes": 28143
+    },
+    {
+      "id": "fra.lille",
+      "source": "en:Lille OSC",
+      "image": "Lille_OSC_2018_logo.svg",
+      "file": "crests/fra/lille.png",
+      "bytes": 21202
+    },
+    {
+      "id": "fra.lorient",
+      "source": "en:FC Lorient",
+      "image": "FC_Lorient_logo.svg",
+      "file": "crests/fra/lorient.png",
+      "bytes": 37134
+    },
+    {
+      "id": "fra.lyon",
+      "source": "en:Olympique Lyonnais",
+      "image": "Olympique_Lyonnais_logo.svg",
+      "file": "crests/fra/lyon.png",
+      "bytes": 21856
+    },
+    {
+      "id": "fra.marseille",
+      "source": "en:Olympique de Marseille",
+      "image": "Olympique_de_Marseille_2026_logo.svg",
+      "file": "crests/fra/marseille.png",
+      "bytes": 25150
+    },
+    {
+      "id": "fra.metz",
+      "source": "en:FC Metz",
+      "image": "FC_Metz_2021_Logo.svg",
+      "file": "crests/fra/metz.png",
+      "bytes": 3622
+    },
+    {
+      "id": "fra.monaco",
+      "source": "en:AS Monaco FC",
+      "image": "LogoASMonacoFC2021.svg",
+      "file": "crests/fra/monaco.png",
+      "bytes": 31159
+    },
+    {
+      "id": "fra.nantes",
+      "source": "en:FC Nantes",
+      "image": "Logo_FC_Nantes_(avec_fond)_-_2019.svg",
+      "file": "crests/fra/nantes.png",
+      "bytes": 13246
+    },
+    {
+      "id": "fra.nice",
+      "source": "en:OGC Nice",
+      "image": "OGC_Nice_logo.svg",
+      "file": "crests/fra/nice.png",
+      "bytes": 65251
+    },
+    {
+      "id": "fra.paris-fc",
+      "source": "en:Paris FC",
+      "image": "Paris_Football_Club_logo_(2024).svg",
+      "file": "crests/fra/paris-fc.png",
+      "bytes": 30900
+    },
+    {
+      "id": "fra.psg",
+      "source": "en:Paris Saint-Germain FC",
+      "image": "Paris_Saint-Germain_F.C..svg",
+      "file": "crests/fra/psg.png",
+      "bytes": 32299
+    },
+    {
+      "id": "fra.strasbourg",
+      "source": "en:RC Strasbourg Alsace",
+      "image": "Racing_Club_de_Strasbourg_logo.svg",
+      "file": "crests/fra/strasbourg.png",
+      "bytes": 39853
+    },
+    {
+      "id": "fra.toulouse",
+      "source": "en:Toulouse FC",
+      "image": "Toulouse_FC_2018_logo.svg",
+      "file": "crests/fra/toulouse.png",
+      "bytes": 46193
+    },
+    {
+      "id": "fra.amiens",
+      "source": "en:Amiens SC",
+      "image": "Amiens_SC_logo.svg",
+      "file": "crests/fra/amiens.png",
+      "bytes": 14807
+    },
+    {
+      "id": "fra.annecy",
+      "source": "en:FC Annecy",
+      "image": "FC_Annecy_logo.svg",
+      "file": "crests/fra/annecy.png",
+      "bytes": 16315
+    },
+    {
+      "id": "fra.bastia",
+      "source": "en:SC Bastia",
+      "image": "SC_Bastia_logo_2024.svg",
+      "file": "crests/fra/bastia.png",
+      "bytes": 48283
+    },
+    {
+      "id": "fra.boulogne",
+      "source": "en:US Boulogne",
+      "image": "US_Boulogne_crest.svg",
+      "file": "crests/fra/boulogne.png",
+      "bytes": 39850
+    },
+    {
+      "id": "fra.clermont",
+      "source": "en:Clermont Foot 63",
+      "image": "Clermont_Foot_logo.svg",
+      "file": "crests/fra/clermont.png",
+      "bytes": 30558
+    },
+    {
+      "id": "fra.dunkerque",
+      "source": "en:USL Dunkerque",
+      "image": "USL_Dunkerque_crest.svg",
+      "file": "crests/fra/dunkerque.png",
+      "bytes": 43470
+    },
+    {
+      "id": "fra.grenoble",
+      "source": "en:Grenoble Foot 38",
+      "image": "Grenoble_Foot_38_logo.svg",
+      "file": "crests/fra/grenoble.png",
+      "bytes": 28782
+    },
+    {
+      "id": "fra.guingamp",
+      "source": "en:En Avant Guingamp",
+      "image": "En_Avant_Guingamp_logo.svg",
+      "file": "crests/fra/guingamp.png",
+      "bytes": 19236
+    },
+    {
+      "id": "fra.le-mans",
+      "source": "en:Le Mans FC",
+      "image": "Le_Mans_FC_logo.svg",
+      "file": "crests/fra/le-mans.png",
+      "bytes": 30467
+    },
+    {
+      "id": "fra.montpellier",
+      "source": "en:Montpellier HSC",
+      "image": "Montpellier_HSC_logo.svg",
+      "file": "crests/fra/montpellier.png",
+      "bytes": 44099
+    },
+    {
+      "id": "fra.nancy",
+      "source": "en:AS Nancy Lorraine",
+      "image": "AS_Nancy_logo.svg",
+      "file": "crests/fra/nancy.png",
+      "bytes": 28747
+    },
+    {
+      "id": "fra.pau",
+      "source": "en:Pau FC",
+      "image": "Pau_FC_logo.svg",
+      "file": "crests/fra/pau.png",
+      "bytes": 53382
+    },
+    {
+      "id": "fra.red-star",
+      "source": "en:Red Star FC",
+      "image": "Red_Star_FC_logo.svg",
+      "file": "crests/fra/red-star.png",
+      "bytes": 19402
+    },
+    {
+      "id": "fra.rodez",
+      "source": "en:Rodez AF",
+      "image": "Rodez_AF_logo.svg",
+      "file": "crests/fra/rodez.png",
+      "bytes": 30018
+    },
+    {
+      "id": "fra.saint-etienne",
+      "source": "en:AS Saint-Étienne",
+      "image": "AS_Saint-Étienne_logo.svg",
+      "file": "crests/fra/saint-etienne.png",
+      "bytes": 35048
+    },
+    {
+      "id": "fra.troyes",
+      "source": "en:ES Troyes AC",
+      "image": "ESTAC_Troyes_Logo.svg",
+      "file": "crests/fra/troyes.png",
+      "bytes": 71315
+    },
+    {
+      "id": "ger.augsburg",
+      "source": "en:FC Augsburg",
+      "image": "FC_Augsburg_logo.svg",
+      "file": "crests/ger/augsburg.png",
+      "bytes": 26734
+    },
+    {
+      "id": "ger.bayern",
+      "source": "en:FC Bayern Munich",
+      "image": "FC_Bayern_München_logo_(2024).svg",
+      "file": "crests/ger/bayern.png",
+      "bytes": 34299
+    },
+    {
+      "id": "ger.bremen",
+      "source": "en:SV Werder Bremen",
+      "image": "SV-Werder-Bremen-Logo.svg",
+      "file": "crests/ger/bremen.png",
+      "bytes": 13481
+    },
+    {
+      "id": "ger.dortmund",
+      "source": "en:Borussia Dortmund",
+      "image": "Borussia_Dortmund_logo.svg",
+      "file": "crests/ger/dortmund.png",
+      "bytes": 16548
+    },
+    {
+      "id": "ger.frankfurt",
+      "source": "en:Eintracht Frankfurt",
+      "image": "Eintracht_Frankfurt_crest.svg",
+      "file": "crests/ger/frankfurt.png",
+      "bytes": 29920
+    },
+    {
+      "id": "ger.freiburg",
+      "source": "en:SC Freiburg",
+      "image": "SC_Freiburg_logo.svg",
+      "file": "crests/ger/freiburg.png",
+      "bytes": 38643
+    },
+    {
+      "id": "ger.gladbach",
+      "source": "en:Borussia Mönchengladbach",
+      "image": "Borussia_Mönchengladbach_logo.svg",
+      "file": "crests/ger/gladbach.png",
+      "bytes": 12224
+    },
+    {
+      "id": "ger.hamburg",
+      "source": "en:Hamburger SV",
+      "image": "Hamburger_SV_logo.svg",
+      "file": "crests/ger/hamburg.png",
+      "bytes": 1535
+    },
+    {
+      "id": "ger.heidenheim",
+      "source": "en:1. FC Heidenheim",
+      "image": "1._FC_Heidenheim_1846.svg",
+      "file": "crests/ger/heidenheim.png",
+      "bytes": 25443
+    },
+    {
+      "id": "ger.hoffenheim",
+      "source": "en:TSG 1899 Hoffenheim",
+      "image": "Logo_TSG_Hoffenheim.svg",
+      "file": "crests/ger/hoffenheim.png",
+      "bytes": 29647
+    },
+    {
+      "id": "ger.koln",
+      "source": "en:1. FC Köln",
+      "image": "1._FC_Koeln_Logo_2014–.svg",
+      "file": "crests/ger/koln.png",
+      "bytes": 39251
+    },
+    {
+      "id": "ger.leipzig",
+      "source": "en:RB Leipzig",
+      "image": "RB_Leipzig_2014_logo.svg",
+      "file": "crests/ger/leipzig.png",
+      "bytes": 21882
+    },
+    {
+      "id": "ger.leverkusen",
+      "source": "en:Bayer 04 Leverkusen",
+      "image": "Bayer_04_Leverkusen_logo.svg",
+      "file": "crests/ger/leverkusen.png",
+      "bytes": 40382
+    },
+    {
+      "id": "ger.mainz",
+      "source": "en:1. FSV Mainz 05",
+      "image": "1._FSV_Mainz_05_logo.svg",
+      "file": "crests/ger/mainz.png",
+      "bytes": 24909
+    },
+    {
+      "id": "ger.st-pauli",
+      "source": "en:FC St. Pauli",
+      "image": "FC_St._Pauli_logo_(2018).svg",
+      "file": "crests/ger/st-pauli.png",
+      "bytes": 31595
+    },
+    {
+      "id": "ger.stuttgart",
+      "source": "en:VfB Stuttgart",
+      "image": "VfB_Stuttgart_1893_Logo.svg",
+      "file": "crests/ger/stuttgart.png",
+      "bytes": 30968
+    },
+    {
+      "id": "ger.union",
+      "source": "en:1. FC Union Berlin",
+      "image": "1._FC_Union_Berlin_Logo.svg",
+      "file": "crests/ger/union.png",
+      "bytes": 14137
+    },
+    {
+      "id": "ger.wolfsburg",
+      "source": "en:VfL Wolfsburg",
+      "image": "VfL_Wolfsburg_logo_2026.svg",
+      "file": "crests/ger/wolfsburg.png",
+      "bytes": 15401
+    },
+    {
+      "id": "ger.bielefeld",
+      "source": "en:Arminia Bielefeld",
+      "image": "Arminia_Bielefeld_crest.svg",
+      "file": "crests/ger/bielefeld.png",
+      "bytes": 40958
+    },
+    {
+      "id": "ger.bochum",
+      "source": "en:VfL Bochum",
+      "image": "VfL_Bochum_logo.svg",
+      "file": "crests/ger/bochum.png",
+      "bytes": 23481
+    },
+    {
+      "id": "ger.braunschweig",
+      "source": "en:Eintracht Braunschweig",
+      "image": "Eintracht_Braunschweig_logo.svg",
+      "file": "crests/ger/braunschweig.png",
+      "bytes": 56565
+    },
+    {
+      "id": "ger.darmstadt",
+      "source": "en:SV Darmstadt 98",
+      "image": "SV_Darmstadt_98_logo.svg",
+      "file": "crests/ger/darmstadt.png",
+      "bytes": 40736
+    },
+    {
+      "id": "ger.dresden",
+      "source": "en:Dynamo Dresden",
+      "image": "Dynamo_Dresden_crest.svg",
+      "file": "crests/ger/dresden.png",
+      "bytes": 25737
+    },
+    {
+      "id": "ger.dusseldorf",
+      "source": "en:Fortuna Düsseldorf",
+      "image": "Fortuna_Düsseldorf.svg",
+      "file": "crests/ger/dusseldorf.png",
+      "bytes": 24806
+    },
+    {
+      "id": "ger.elversberg",
+      "source": "en:SV Elversberg",
+      "image": "SV_Elversberg_Logo_2021.svg",
+      "file": "crests/ger/elversberg.png",
+      "bytes": 26047
+    },
+    {
+      "id": "ger.furth",
+      "source": "en:SpVgg Greuther Fürth",
+      "image": "SpVgg_Greuther_Fürth_logo_(2017).svg",
+      "file": "crests/ger/furth.png",
+      "bytes": 18376
+    },
+    {
+      "id": "ger.hannover",
+      "source": "en:Hannover 96",
+      "image": "Hannover_96_Logo.svg",
+      "file": "crests/ger/hannover.png",
+      "bytes": 19225
+    },
+    {
+      "id": "ger.hertha",
+      "source": "en:Hertha BSC",
+      "image": "Hertha_BSC_Logo_2012.svg",
+      "file": "crests/ger/hertha.png",
+      "bytes": 21527
+    },
+    {
+      "id": "ger.kaiserslautern",
+      "source": "en:1. FC Kaiserslautern",
+      "image": "Logo_1_FC_Kaiserslautern.svg",
+      "file": "crests/ger/kaiserslautern.png",
+      "bytes": 12713
+    },
+    {
+      "id": "ger.karlsruhe",
+      "source": "en:Karlsruher SC",
+      "image": "Karlsruher_SC_Logo_2.svg",
+      "file": "crests/ger/karlsruhe.png",
+      "bytes": 18237
+    },
+    {
+      "id": "ger.kiel",
+      "source": "en:Holstein Kiel",
+      "image": "Holstein_Kiel_Logo.svg",
+      "file": "crests/ger/kiel.png",
+      "bytes": 45572
+    },
+    {
+      "id": "ger.magdeburg",
+      "source": "en:1. FC Magdeburg",
+      "image": "1._FC_Magdeburg.svg",
+      "file": "crests/ger/magdeburg.png",
+      "bytes": 21368
+    },
+    {
+      "id": "ger.munster",
+      "source": "en:SC Preußen Münster",
+      "image": "SC_Preußen_Münster_logo_(2018).svg",
+      "file": "crests/ger/munster.png",
+      "bytes": 32268
+    },
+    {
+      "id": "ger.nurnberg",
+      "source": "en:1. FC Nürnberg",
+      "image": "1._FC_Nürnberg_logo.svg",
+      "file": "crests/ger/nurnberg.png",
+      "bytes": 18201
+    },
+    {
+      "id": "ger.paderborn",
+      "source": "en:SC Paderborn 07",
+      "image": "SC_Paderborn_07_Logo_new.svg",
+      "file": "crests/ger/paderborn.png",
+      "bytes": 14564
+    },
+    {
+      "id": "ger.schalke",
+      "source": "en:FC Schalke 04",
+      "image": "FC_Schalke_04_Logo.svg",
+      "file": "crests/ger/schalke.png",
+      "bytes": 18039
+    },
+    {
+      "id": "ita.atalanta",
+      "source": "en:Atalanta BC",
+      "image": "Atalanta_BC_new_logo.svg",
+      "file": "crests/ita/atalanta.png",
+      "bytes": 26800
+    },
+    {
+      "id": "ita.bologna",
+      "source": "en:Bologna FC 1909",
+      "image": "Bologna_F.C._1909_logo.svg",
+      "file": "crests/ita/bologna.png",
+      "bytes": 21485
+    },
+    {
+      "id": "ita.cagliari",
+      "source": "en:Cagliari Calcio",
+      "image": "Cagliari_Calcio_1920.svg",
+      "file": "crests/ita/cagliari.png",
+      "bytes": 26485
+    },
+    {
+      "id": "ita.como",
+      "source": "en:Como 1907",
+      "image": "Calcio_Como_-_logo_(Italy,_2019-).svg",
+      "file": "crests/ita/como.png",
+      "bytes": 13706
+    },
+    {
+      "id": "ita.cremonese",
+      "source": "en:US Cremonese",
+      "image": "US_Cremonese_logo.svg",
+      "file": "crests/ita/cremonese.png",
+      "bytes": 20521
+    },
+    {
+      "id": "ita.fiorentina",
+      "source": "en:ACF Fiorentina",
+      "image": "ACF_Fiorentina_-_logo_(Italy,_2022).svg",
+      "file": "crests/ita/fiorentina.png",
+      "bytes": 7346
+    },
+    {
+      "id": "ita.genoa",
+      "source": "en:Genoa CFC",
+      "image": "Genoa_CFC_crest.svg",
+      "file": "crests/ita/genoa.png",
+      "bytes": 14496
+    },
+    {
+      "id": "ita.inter",
+      "source": "en:Inter Milan",
+      "image": "FC_Internazionale_Milano_2021.svg",
+      "file": "crests/ita/inter.png",
+      "bytes": 15058
+    },
+    {
+      "id": "ita.juventus",
+      "source": "en:Juventus FC",
+      "image": "Juventus_FC_-_logo_black_(Italy,_2020).svg",
+      "file": "crests/ita/juventus.png",
+      "bytes": 3705
+    },
+    {
+      "id": "ita.lazio",
+      "source": "en:SS Lazio",
+      "image": "S.S._Lazio_badge.svg",
+      "file": "crests/ita/lazio.png",
+      "bytes": 16865
+    },
+    {
+      "id": "ita.lecce",
+      "source": "en:US Lecce",
+      "image": "US_Lecce_crest.svg",
+      "file": "crests/ita/lecce.png",
+      "bytes": 32301
+    },
+    {
+      "id": "ita.milan",
+      "source": "en:AC Milan",
+      "image": "Logo_of_AC_Milan.svg",
+      "file": "crests/ita/milan.png",
+      "bytes": 36637
+    },
+    {
+      "id": "ita.napoli",
+      "source": "en:SSC Napoli",
+      "image": "SSC_Napoli_2025_(white_and_azure).svg",
+      "file": "crests/ita/napoli.png",
+      "bytes": 21228
+    },
+    {
+      "id": "ita.parma",
+      "source": "en:Parma Calcio 1913",
+      "image": "Logo_Parma_Calcio_1913_(adozione_2016).svg",
+      "file": "crests/ita/parma.png",
+      "bytes": 12259
+    },
+    {
+      "id": "ita.pisa",
+      "source": "en:Pisa SC",
+      "image": "Pisa_SC_crest.svg",
+      "file": "crests/ita/pisa.png",
+      "bytes": 38949
+    },
+    {
+      "id": "ita.roma",
+      "source": "en:AS Roma",
+      "image": "AS_Roma_logo_(2017).svg",
+      "file": "crests/ita/roma.png",
+      "bytes": 39635
+    },
+    {
+      "id": "ita.sassuolo",
+      "source": "en:US Sassuolo Calcio",
+      "image": "US_Sassuolo_Calcio_logo.svg",
+      "file": "crests/ita/sassuolo.png",
+      "bytes": 27999
+    },
+    {
+      "id": "ita.torino",
+      "source": "en:Torino FC",
+      "image": "Torino_FC_Logo.svg",
+      "file": "crests/ita/torino.png",
+      "bytes": 30019
+    },
+    {
+      "id": "ita.udinese",
+      "source": "en:Udinese Calcio",
+      "image": "Udinese_Calcio_logo.svg",
+      "file": "crests/ita/udinese.png",
+      "bytes": 41561
+    },
+    {
+      "id": "ita.verona",
+      "source": "en:Hellas Verona FC",
+      "image": "Hellas_Verona_FC_logo_(2020).svg",
+      "file": "crests/ita/verona.png",
+      "bytes": 12195
+    },
+    {
+      "id": "ita.avellino",
+      "source": "en:US Avellino 1912",
+      "image": "US_Avellino.svg",
+      "file": "crests/ita/avellino.png",
+      "bytes": 47365
+    },
+    {
+      "id": "ita.bari",
+      "source": "en:SSC Bari",
+      "image": "SSC_Bari_crest.svg",
+      "file": "crests/ita/bari.png",
+      "bytes": 28253
+    },
+    {
+      "id": "ita.carrarese",
+      "source": "en:Carrarese Calcio 1908",
+      "image": "Carrarese_Calcio_1908_crest.svg",
+      "file": "crests/ita/carrarese.png",
+      "bytes": 30351
+    },
+    {
+      "id": "ita.catanzaro",
+      "source": "en:US Catanzaro 1929",
+      "image": "US_Catanzaro_1929_crest.svg",
+      "file": "crests/ita/catanzaro.png",
+      "bytes": 63879
+    },
+    {
+      "id": "ita.cesena",
+      "source": "en:Cesena FC",
+      "image": "Cesena_FC_crest.svg",
+      "file": "crests/ita/cesena.png",
+      "bytes": 18580
+    },
+    {
+      "id": "ita.empoli",
+      "source": "en:Empoli FC",
+      "image": "Empoli_FC_crest.svg",
+      "file": "crests/ita/empoli.png",
+      "bytes": 69926
+    },
+    {
+      "id": "ita.entella",
+      "source": "en:Virtus Entella",
+      "image": "Virtus_Entella_logo.svg",
+      "file": "crests/ita/entella.png",
+      "bytes": 19614
+    },
+    {
+      "id": "ita.frosinone",
+      "source": "en:Frosinone Calcio",
+      "image": "Frosinone_Calcio_logo.svg",
+      "file": "crests/ita/frosinone.png",
+      "bytes": 33211
+    },
+    {
+      "id": "ita.juve-stabia",
+      "source": "en:SS Juve Stabia",
+      "image": "SS_Juve_Stabia_crest.svg",
+      "file": "crests/ita/juve-stabia.png",
+      "bytes": 40408
+    },
+    {
+      "id": "ita.mantova",
+      "source": "en:Mantova 1911",
+      "image": "Mantova_1911_crest.svg",
+      "file": "crests/ita/mantova.png",
+      "bytes": 28673
+    },
+    {
+      "id": "ita.modena",
+      "source": "en:Modena FC 2018",
+      "image": "Modena_FC_2018_crest.svg",
+      "file": "crests/ita/modena.png",
+      "bytes": 25147
+    },
+    {
+      "id": "ita.monza",
+      "source": "en:AC Monza",
+      "image": "AC_Monza_logo_(2021).svg",
+      "file": "crests/ita/monza.png",
+      "bytes": 33246
+    },
+    {
+      "id": "ita.padova",
+      "source": "en:Calcio Padova",
+      "image": "Calcio_Padova_logo.svg",
+      "file": "crests/ita/padova.png",
+      "bytes": 11701
+    },
+    {
+      "id": "ita.palermo",
+      "source": "en:Palermo FC",
+      "image": "Palermo_Calcio_logo_(2019).svg",
+      "file": "crests/ita/palermo.png",
+      "bytes": 23450
+    },
+    {
+      "id": "ita.pescara",
+      "source": "en:Delfino Pescara 1936",
+      "image": "Delfino_Pescara_logo.svg",
+      "file": "crests/ita/pescara.png",
+      "bytes": 25497
+    },
+    {
+      "id": "ita.reggiana",
+      "source": "en:AC Reggiana 1919",
+      "image": "AC_Reggiana_1919_crest.svg",
+      "file": "crests/ita/reggiana.png",
+      "bytes": 32512
+    },
+    {
+      "id": "ita.sampdoria",
+      "source": "en:UC Sampdoria",
+      "image": "U.C._Sampdoria_logo.svg",
+      "file": "crests/ita/sampdoria.png",
+      "bytes": 24481
+    },
+    {
+      "id": "ita.spezia",
+      "source": "en:Spezia Calcio",
+      "image": "Spezia_Calcio_crest.svg",
+      "file": "crests/ita/spezia.png",
+      "bytes": 13108
+    },
+    {
+      "id": "ita.sudtirol",
+      "source": "en:FC Südtirol",
+      "image": "FC_Sudtirol_crest.svg",
+      "file": "crests/ita/sudtirol.png",
+      "bytes": 50531
+    },
+    {
+      "id": "ita.venezia",
+      "source": "en:Venezia FC",
+      "image": "Venezia_FC_crest.svg",
+      "file": "crests/ita/venezia.png",
+      "bytes": 8648
+    },
+    {
+      "id": "jpn.cerezo",
+      "source": "en:Cerezo Osaka",
+      "image": "Cerezo_Osaka_logo.svg",
+      "file": "crests/jpn/cerezo.png",
+      "bytes": 48338
+    },
+    {
+      "id": "jpn.chiba",
+      "source": "en:JEF United Chiba",
+      "image": "JEF_United_Chiba_logo.svg",
+      "file": "crests/jpn/chiba.png",
+      "bytes": 43305
+    },
+    {
+      "id": "jpn.fc-tokyo",
+      "source": "en:FC Tokyo",
+      "image": "FC_Tokyo_(logo).svg",
+      "file": "crests/jpn/fc-tokyo.png",
+      "bytes": 15304
+    },
+    {
+      "id": "jpn.fukuoka",
+      "source": "en:Avispa Fukuoka",
+      "image": "Avispa_Fukuoka_logo.svg",
+      "file": "crests/jpn/fukuoka.png",
+      "bytes": 50312
+    },
+    {
+      "id": "jpn.gamba",
+      "source": "en:Gamba Osaka",
+      "image": "Gamba_Osaka_logo.svg",
+      "file": "crests/jpn/gamba.png",
+      "bytes": 8970
+    },
+    {
+      "id": "jpn.hiroshima",
+      "source": "en:Sanfrecce Hiroshima",
+      "image": "Sanfrecce_Hiroshima_logo.svg",
+      "file": "crests/jpn/hiroshima.png",
+      "bytes": 45875
+    },
+    {
+      "id": "jpn.kashima",
+      "source": "en:Kashima Antlers",
+      "image": "Kashima_Antlers.svg",
+      "file": "crests/jpn/kashima.png",
+      "bytes": 28268
+    },
+    {
+      "id": "jpn.kashiwa",
+      "source": "en:Kashiwa Reysol",
+      "image": "Kashiwa_Reysol_logo.svg",
+      "file": "crests/jpn/kashiwa.png",
+      "bytes": 28378
+    },
+    {
+      "id": "jpn.kawasaki",
+      "source": "en:Kawasaki Frontale",
+      "image": "Kawasaki_Frontale_logo.svg",
+      "file": "crests/jpn/kawasaki.png",
+      "bytes": 59361
+    },
+    {
+      "id": "jpn.kobe",
+      "source": "en:Vissel Kobe",
+      "image": "Vissel_Kobe_logo.svg",
+      "file": "crests/jpn/kobe.png",
+      "bytes": 19569
+    },
+    {
+      "id": "jpn.kyoto",
+      "source": "en:Kyoto Sanga FC",
+      "image": "Kyoto_Sanga_FC_logo.svg",
+      "file": "crests/jpn/kyoto.png",
+      "bytes": 61643
+    },
+    {
+      "id": "jpn.machida",
+      "source": "en:FC Machida Zelvia",
+      "image": "FC_Machida_Zelvia_(logo).svg",
+      "file": "crests/jpn/machida.png",
+      "bytes": 29407
+    },
+    {
+      "id": "jpn.marinos",
+      "source": "en:Yokohama F. Marinos",
+      "image": "Yokohama_F_Marinos_logo.svg",
+      "file": "crests/jpn/marinos.png",
+      "bytes": 39748
+    },
+    {
+      "id": "jpn.mito",
+      "source": "en:Mito HollyHock",
+      "image": "Mito_HollyHock_logo.svg",
+      "file": "crests/jpn/mito.png",
+      "bytes": 59345
+    },
+    {
+      "id": "jpn.nagasaki",
+      "source": "en:V-Varen Nagasaki",
+      "image": "V-Varen_Nagasaki_logo.svg",
+      "file": "crests/jpn/nagasaki.png",
+      "bytes": 15166
+    },
+    {
+      "id": "jpn.nagoya",
+      "source": "en:Nagoya Grampus",
+      "image": "Nagoya_Grampus_Logo.svg",
+      "file": "crests/jpn/nagoya.png",
+      "bytes": 23180
+    },
+    {
+      "id": "jpn.okayama",
+      "source": "en:Fagiano Okayama",
+      "image": "Fagiano_Okayama_logo.svg",
+      "file": "crests/jpn/okayama.png",
+      "bytes": 46892
+    },
+    {
+      "id": "jpn.shimizu",
+      "source": "en:Shimizu S-Pulse",
+      "image": "Shimizu_S-Pulse_logo.svg",
+      "file": "crests/jpn/shimizu.png",
+      "bytes": 33853
+    },
+    {
+      "id": "jpn.urawa",
+      "source": "en:Urawa Red Diamonds",
+      "image": "Urawa_Red_Diamonds_logo.svg",
+      "file": "crests/jpn/urawa.png",
+      "bytes": 59733
+    },
+    {
+      "id": "jpn.verdy",
+      "source": "en:Tokyo Verdy",
+      "image": "Tokyo_Verdy_logo.svg",
+      "file": "crests/jpn/verdy.png",
+      "bytes": 26036
+    },
+    {
+      "id": "kor.anyang",
+      "source": "en:FC Anyang",
+      "image": "FC_Anyang_logo.svg",
+      "file": "crests/kor/anyang.png",
+      "bytes": 59729
+    },
+    {
+      "id": "kor.bucheon",
+      "source": "en:Bucheon FC 1995",
+      "image": "Bucheon_FC_1995_logo.svg",
+      "file": "crests/kor/bucheon.png",
+      "bytes": 48431
+    },
+    {
+      "id": "kor.daejeon",
+      "source": "en:Daejeon Hana Citizen",
+      "image": "Daejeon_Hana_Citizen.svg",
+      "file": "crests/kor/daejeon.png",
+      "bytes": 25468
+    },
+    {
+      "id": "kor.gangwon",
+      "source": "en:Gangwon FC",
+      "image": "Gangwon_FC.svg",
+      "file": "crests/kor/gangwon.png",
+      "bytes": 24102
+    },
+    {
+      "id": "kor.gwangju",
+      "source": "en:Gwangju FC",
+      "image": "Gwangju_FC.svg",
+      "file": "crests/kor/gwangju.png",
+      "bytes": 38217
+    },
+    {
+      "id": "kor.incheon",
+      "source": "en:Incheon United FC",
+      "image": "Emblem_of_Incheon_United.svg",
+      "file": "crests/kor/incheon.png",
+      "bytes": 47746
+    },
+    {
+      "id": "kor.jeju",
+      "source": "en:Jeju SK FC",
+      "image": "Jeju_SK_FC.svg",
+      "file": "crests/kor/jeju.png",
+      "bytes": 27879
+    },
+    {
+      "id": "kor.jeonbuk",
+      "source": "en:Jeonbuk Hyundai Motors",
+      "image": "Jeonbuk_Hyundai_Motors.svg",
+      "file": "crests/kor/jeonbuk.png",
+      "bytes": 26451
+    },
+    {
+      "id": "kor.pohang",
+      "source": "en:Pohang Steelers",
+      "image": "Pohang_Steelers_emblem_(5_stars).svg",
+      "file": "crests/kor/pohang.png",
+      "bytes": 27718
+    },
+    {
+      "id": "kor.seoul",
+      "source": "en:FC Seoul",
+      "image": "FC_Seoul_logo.svg",
+      "file": "crests/kor/seoul.png",
+      "bytes": 31314
+    },
+    {
+      "id": "kor.suwon-fc",
+      "source": "en:Suwon FC",
+      "image": "Suwon_FC_2016.svg",
+      "file": "crests/kor/suwon-fc.png",
+      "bytes": 33317
+    },
+    {
+      "id": "kor.ulsan",
+      "source": "en:Ulsan HD FC",
+      "image": "Ulsan_Hyundai_FC.svg",
+      "file": "crests/kor/ulsan.png",
+      "bytes": 35073
+    },
+    {
+      "id": "ksa.al-ahli",
+      "source": "en:Al-Ahli Saudi FC",
+      "image": "Al_Ahli_Saudi_FC_logo.svg",
+      "file": "crests/ksa/al-ahli.png",
+      "bytes": 32312
+    },
+    {
+      "id": "ksa.al-ettifaq",
+      "source": "en:Al-Ettifaq Club",
+      "image": "Al-Ettifaq_FC_logo.svg",
+      "file": "crests/ksa/al-ettifaq.png",
+      "bytes": 40987
+    },
+    {
+      "id": "ksa.al-fateh",
+      "source": "en:Al Fateh SC",
+      "image": "Al_Fateh_SC_Logo.svg",
+      "file": "crests/ksa/al-fateh.png",
+      "bytes": 8392
+    },
+    {
+      "id": "ksa.al-fayha",
+      "source": "en:Al-Fayha Club",
+      "image": "Al-Fayha_FC.svg",
+      "file": "crests/ksa/al-fayha.png",
+      "bytes": 41658
+    },
+    {
+      "id": "ksa.al-hazem",
+      "source": "en:Al-Hazem FC",
+      "image": "Al-Hazem_FC_Logo.svg",
+      "file": "crests/ksa/al-hazem.png",
+      "bytes": 19507
+    },
+    {
+      "id": "ksa.al-hilal",
+      "source": "en:Al Hilal SFC",
+      "image": "Al_Hilal_SFC_Logo.svg",
+      "file": "crests/ksa/al-hilal.png",
+      "bytes": 4087
+    },
+    {
+      "id": "ksa.al-ittihad",
+      "source": "en:Al-Ittihad Club (Jeddah)",
+      "image": "Al-Ittihad_Club_(Jeddah)_logo.svg",
+      "file": "crests/ksa/al-ittihad.png",
+      "bytes": 18702
+    },
+    {
+      "id": "ksa.al-khaleej",
+      "source": "en:Al-Khaleej FC",
+      "image": "Al-Khaleej_FC_Logo.svg",
+      "file": "crests/ksa/al-khaleej.png",
+      "bytes": 32746
+    },
+    {
+      "id": "ksa.al-kholood",
+      "source": "en:Al-Kholood Club",
+      "image": "Al_Kholood_Club_Logo.svg",
+      "file": "crests/ksa/al-kholood.png",
+      "bytes": 35068
+    },
+    {
+      "id": "ksa.al-nassr",
+      "source": "en:Al-Nassr FC",
+      "image": "Nassr_FC_Logo.svg",
+      "file": "crests/ksa/al-nassr.png",
+      "bytes": 35704
+    },
+    {
+      "id": "ksa.al-okhdood",
+      "source": "en:Al-Okhdood Club",
+      "image": "Al-Okhdood_Club.svg",
+      "file": "crests/ksa/al-okhdood.png",
+      "bytes": 5323
+    },
+    {
+      "id": "ksa.al-qadsiah",
+      "source": "en:Al Qadsiah FC",
+      "image": "QAD_LOGO.png",
+      "file": "crests/ksa/al-qadsiah.png",
+      "bytes": 4253
+    },
+    {
+      "id": "ksa.al-riyadh",
+      "source": "en:Al-Riyadh SC",
+      "image": "Al-Riyadh_SC.svg",
+      "file": "crests/ksa/al-riyadh.png",
+      "bytes": 25746
+    },
+    {
+      "id": "ksa.al-shabab",
+      "source": "en:Al Shabab Club",
+      "image": "Al_Shabab_FC_(Riyadh).svg",
+      "file": "crests/ksa/al-shabab.png",
+      "bytes": 39721
+    },
+    {
+      "id": "ksa.al-taawoun",
+      "source": "en:Al Taawoun FC",
+      "image": "Al_Taawoun_FC_Logo.svg",
+      "file": "crests/ksa/al-taawoun.png",
+      "bytes": 28691
+    },
+    {
+      "id": "ksa.damac",
+      "source": "en:Damac Club",
+      "image": "Damac_FC_Logo.svg",
+      "file": "crests/ksa/damac.png",
+      "bytes": 38034
+    },
+    {
+      "id": "ned.ajax",
+      "source": "en:AFC Ajax",
+      "image": "Logo_AFC_Ajax_(1928-1991,_2025-).png",
+      "file": "crests/ned/ajax.png",
+      "bytes": 99904
+    },
+    {
+      "id": "ned.az",
+      "source": "en:AZ Alkmaar",
+      "image": "AZ_Alkmaar.svg",
+      "file": "crests/ned/az.png",
+      "bytes": 13567
+    },
+    {
+      "id": "ned.excelsior",
+      "source": "en:Excelsior Rotterdam",
+      "image": "Excelsior_Rotterdam_logo_2021.svg",
+      "file": "crests/ned/excelsior.png",
+      "bytes": 20327
+    },
+    {
+      "id": "ned.feyenoord",
+      "source": "en:Feyenoord",
+      "image": "Feyenoord_logo_since_2024.svg",
+      "file": "crests/ned/feyenoord.png",
+      "bytes": 33812
+    },
+    {
+      "id": "ned.fortuna",
+      "source": "en:Fortuna Sittard",
+      "image": "Fortuna_Sittard_Logo.svg",
+      "file": "crests/ned/fortuna.png",
+      "bytes": 43025
+    },
+    {
+      "id": "ned.go-ahead",
+      "source": "en:Go Ahead Eagles",
+      "image": "Go_Ahead_Eagles_logo.svg",
+      "file": "crests/ned/go-ahead.png",
+      "bytes": 50370
+    },
+    {
+      "id": "ned.groningen",
+      "source": "en:FC Groningen",
+      "image": "FC_Groningen_logo.svg",
+      "file": "crests/ned/groningen.png",
+      "bytes": 20555
+    },
+    {
+      "id": "ned.heerenveen",
+      "source": "en:SC Heerenveen",
+      "image": "SC_Heerenveen_logo.svg",
+      "file": "crests/ned/heerenveen.png",
+      "bytes": 27905
+    },
+    {
+      "id": "ned.heracles",
+      "source": "en:Heracles Almelo",
+      "image": "Heracles_Almelo_logo.svg",
+      "file": "crests/ned/heracles.png",
+      "bytes": 27992
+    },
+    {
+      "id": "ned.nac",
+      "source": "en:NAC Breda",
+      "image": "Logo_NAC_Breda.svg",
+      "file": "crests/ned/nac.png",
+      "bytes": 16403
+    },
+    {
+      "id": "ned.nec",
+      "source": "en:NEC Nijmegen",
+      "image": "NEC_Nijmegen_logo.svg",
+      "file": "crests/ned/nec.png",
+      "bytes": 36500
+    },
+    {
+      "id": "ned.psv",
+      "source": "en:PSV Eindhoven",
+      "image": "PSV_Eindhoven.svg",
+      "file": "crests/ned/psv.png",
+      "bytes": 30483
+    },
+    {
+      "id": "ned.sparta",
+      "source": "en:Sparta Rotterdam",
+      "image": "Sparta_Rotterdam_logo.svg",
+      "file": "crests/ned/sparta.png",
+      "bytes": 39438
+    },
+    {
+      "id": "ned.telstar",
+      "source": "en:SC Telstar",
+      "image": "SC_Telstar_logo.svg",
+      "file": "crests/ned/telstar.png",
+      "bytes": 30662
+    },
+    {
+      "id": "ned.twente",
+      "source": "en:FC Twente",
+      "image": "FC_Twente.svg",
+      "file": "crests/ned/twente.png",
+      "bytes": 39493
+    },
+    {
+      "id": "ned.utrecht",
+      "source": "en:FC Utrecht",
+      "image": "Logo_FC_Utrecht.svg",
+      "file": "crests/ned/utrecht.png",
+      "bytes": 21643
+    },
+    {
+      "id": "ned.volendam",
+      "source": "en:FC Volendam",
+      "image": "FC_Volendam_logoo.svg",
+      "file": "crests/ned/volendam.png",
+      "bytes": 40107
+    },
+    {
+      "id": "ned.zwolle",
+      "source": "en:PEC Zwolle",
+      "image": "PEC_Zwolle_logo.svg",
+      "file": "crests/ned/zwolle.png",
+      "bytes": 13008
+    },
+    {
+      "id": "por.alverca",
+      "source": "en:F.C. Alverca",
+      "image": "F.C._Alverca_logo.svg",
+      "file": "crests/por/alverca.png",
+      "bytes": 33307
+    },
+    {
+      "id": "por.arouca",
+      "source": "en:F.C. Arouca",
+      "image": "F.C._Arouca_logo.svg",
+      "file": "crests/por/arouca.png",
+      "bytes": 71480
+    },
+    {
+      "id": "por.avs",
+      "source": "en:AVS Futebol SAD",
+      "image": "AVS_Futebol_SAD_logo.svg",
+      "file": "crests/por/avs.png",
+      "bytes": 17314
+    },
+    {
+      "id": "por.benfica",
+      "source": "en:S.L. Benfica",
+      "image": "SL_Benfica_logo.svg",
+      "file": "crests/por/benfica.png",
+      "bytes": 54765
+    },
+    {
+      "id": "por.braga",
+      "source": "en:S.C. Braga",
+      "image": "S.C._Braga_logo.svg",
+      "file": "crests/por/braga.png",
+      "bytes": 42641
+    },
+    {
+      "id": "por.casa-pia",
+      "source": "en:Casa Pia A.C.",
+      "image": "Casa_Pia_A.C._logo.svg",
+      "file": "crests/por/casa-pia.png",
+      "bytes": 17808
+    },
+    {
+      "id": "por.estoril",
+      "source": "en:G.D. Estoril Praia",
+      "image": "GD_Estoril_Praia_logo.svg",
+      "file": "crests/por/estoril.png",
+      "bytes": 26022
+    },
+    {
+      "id": "por.estrela",
+      "source": "en:C.F. Estrela da Amadora",
+      "image": "Símbolo_Estrela_da_Amadora.svg",
+      "file": "crests/por/estrela.png",
+      "bytes": 25254
+    },
+    {
+      "id": "por.famalicao",
+      "source": "en:F.C. Famalicão",
+      "image": "F.C._Famalicão_logo.svg",
+      "file": "crests/por/famalicao.png",
+      "bytes": 46635
+    },
+    {
+      "id": "por.gil-vicente",
+      "source": "en:Gil Vicente F.C.",
+      "image": "Gil_Vicente_F.C._logo.svg",
+      "file": "crests/por/gil-vicente.png",
+      "bytes": 49448
+    },
+    {
+      "id": "por.moreirense",
+      "source": "en:Moreirense F.C.",
+      "image": "Moreirense_Futebol_Clube_logo.svg",
+      "file": "crests/por/moreirense.png",
+      "bytes": 10044
+    },
+    {
+      "id": "por.nacional",
+      "source": "en:C.D. Nacional",
+      "image": "C.D._Nacional_logo.svg",
+      "file": "crests/por/nacional.png",
+      "bytes": 43587
+    },
+    {
+      "id": "por.porto",
+      "source": "en:FC Porto",
+      "image": "FC_Porto.svg",
+      "file": "crests/por/porto.png",
+      "bytes": 68603
+    },
+    {
+      "id": "por.rio-ave",
+      "source": "en:Rio Ave F.C.",
+      "image": "Rio_Ave_FC_logo.svg",
+      "file": "crests/por/rio-ave.png",
+      "bytes": 50825
+    },
+    {
+      "id": "por.santa-clara",
+      "source": "en:C.D. Santa Clara",
+      "image": "C.D._Santa_Clara_logo.svg",
+      "file": "crests/por/santa-clara.png",
+      "bytes": 37910
+    },
+    {
+      "id": "por.sporting",
+      "source": "en:Sporting CP",
+      "image": "Sporting_Clube_de_Portugal_logo_(2026).svg",
+      "file": "crests/por/sporting.png",
+      "bytes": 38376
+    },
+    {
+      "id": "por.tondela",
+      "source": "en:C.D. Tondela",
+      "image": "C.D._Tondela_logo.svg",
+      "file": "crests/por/tondela.png",
+      "bytes": 20958
+    },
+    {
+      "id": "por.vitoria",
+      "source": "en:Vitória S.C.",
+      "image": "Vitória_Guimarães.svg",
+      "file": "crests/por/vitoria.png",
+      "bytes": 25120
+    },
+    {
+      "id": "uru.boston-river",
+      "source": "en:Boston River",
+      "image": "Escudo_Boston_River_2019.png",
+      "file": "crests/uru/boston-river.png",
+      "bytes": 15517
+    },
+    {
+      "id": "uru.central-espanol",
+      "source": "en:Central Español",
+      "image": "Escudo_Central_Español_2020.png",
+      "file": "crests/uru/central-espanol.png",
+      "bytes": 25766
+    },
+    {
+      "id": "uru.cerro",
+      "source": "en:C.A. Cerro",
+      "image": "C.A._Cerro.svg",
+      "file": "crests/uru/cerro.png",
+      "bytes": 19416
+    },
+    {
+      "id": "uru.cerro-largo",
+      "source": "en:Cerro Largo F.C.",
+      "image": "Cerro_Largo_2020.png",
+      "file": "crests/uru/cerro-largo.png",
+      "bytes": 67504
+    },
+    {
+      "id": "uru.danubio",
+      "source": "en:Danubio F.C.",
+      "image": "Escudo_oficial_de_Danubio_FC.png",
+      "file": "crests/uru/danubio.png",
+      "bytes": 16299
+    },
+    {
+      "id": "uru.defensor",
+      "source": "en:Defensor Sporting",
+      "image": "Defensor_Sporting.svg",
+      "file": "crests/uru/defensor.png",
+      "bytes": 21870
+    },
+    {
+      "id": "uru.juventud",
+      "source": "en:Juventud de Las Piedras",
+      "image": "Juventud_de_Las_Piedras.svg",
+      "file": "crests/uru/juventud.png",
+      "bytes": 13505
+    },
+    {
+      "id": "uru.liverpool",
+      "source": "en:Liverpool F.C. (Montevideo)",
+      "image": "Liverpool_F.C._(Montevideo)_logo.svg",
+      "file": "crests/uru/liverpool.png",
+      "bytes": 27620
+    },
+    {
+      "id": "uru.maldonado",
+      "source": "en:Deportivo Maldonado",
+      "image": "Deportivo_Maldonado.svg",
+      "file": "crests/uru/maldonado.png",
+      "bytes": 20719
+    },
+    {
+      "id": "uru.nacional",
+      "source": "en:Club Nacional de Football",
+      "image": "Club_Nacional_de_Football_logo.svg",
+      "file": "crests/uru/nacional.png",
+      "bytes": 17851
+    },
+    {
+      "id": "uru.penarol",
+      "source": "en:Peñarol",
+      "image": "Escudo_del_Club_Atlético_Peñarol.svg",
+      "file": "crests/uru/penarol.png",
+      "bytes": 10872
+    },
+    {
+      "id": "uru.progreso",
+      "source": "en:C.A. Progreso",
+      "image": "C.A._Progreso.svg",
+      "file": "crests/uru/progreso.png",
+      "bytes": 37399
+    },
+    {
+      "id": "uru.racing",
+      "source": "en:Racing Club de Montevideo",
+      "image": "Racing_Club_Escudo.png",
+      "file": "crests/uru/racing.png",
+      "bytes": 13713
+    },
+    {
+      "id": "uru.river-plate",
+      "source": "en:Club Atlético River Plate (Montevideo)",
+      "image": "Club_Atletico_River_Plate.svg",
+      "file": "crests/uru/river-plate.png",
+      "bytes": 15078
+    },
+    {
+      "id": "uru.torque",
+      "source": "en:Montevideo City Torque",
+      "image": "Montevideo_City_Torque_logo.svg",
+      "file": "crests/uru/torque.png",
+      "bytes": 51296
+    },
+    {
+      "id": "uru.wanderers",
+      "source": "en:Montevideo Wanderers F.C.",
+      "image": "Escudo_del_Montevideo_Wanderers_Futbol_Club.png",
+      "file": "crests/uru/wanderers.png",
+      "bytes": 42249
+    },
+    {
+      "id": "ksa.al-najma",
+      "source": "en:Al-Najma SC (Saudi Arabia)",
+      "image": "Al-Najmah_SC_Logo.svg",
+      "file": "crests/ksa/al-najma.png",
+      "bytes": 9026
+    },
+    {
+      "id": "ksa.neom",
+      "source": "en:Neom SC",
+      "image": "Neom_SC_logo.svg",
+      "file": "crests/ksa/neom.png",
+      "bytes": 76635
+    },
+    {
+      "id": "fra.rennes",
+      "source": "en:Stade Rennais FC",
+      "image": "Stade_Rennais_FC.svg",
+      "file": "crests/fra/rennes.png",
+      "bytes": 28706
+    },
+    {
+      "id": "fra.laval",
+      "source": "en:Stade Lavallois",
+      "image": "Stade_Lavallois_logo.svg",
+      "file": "crests/fra/laval.png",
+      "bytes": 25513
+    },
+    {
+      "id": "fra.reims",
+      "source": "en:Stade de Reims",
+      "image": "Stade_de_Reims_logo.svg",
+      "file": "crests/fra/reims.png",
+      "bytes": 11308
+    },
+    {
+      "id": "chi.u-concepcion",
+      "source": "en:C.D. Universidad de Concepción",
+      "image": "C.D._Universidad_de_Concepción.svg",
+      "file": "crests/chi/u-concepcion.png",
+      "bytes": 28639
+    },
+    {
+      "id": "bel.anderlecht",
+      "source": "en:RSC Anderlecht",
+      "image": "R.S.C._Anderlecht.svg",
+      "file": "crests/bel/anderlecht.png",
+      "bytes": 41965
+    },
+    {
+      "id": "bel.antwerp",
+      "source": "en:Royal Antwerp FC",
+      "image": "Royal_Antwerp_Football_Club_logo.svg",
+      "file": "crests/bel/antwerp.png",
+      "bytes": 47394
+    },
+    {
+      "id": "bel.cercle",
+      "source": "en:Cercle Brugge KSV",
+      "image": "Cercle_Brugge_KSV_logo.svg",
+      "file": "crests/bel/cercle.png",
+      "bytes": 6882
+    },
+    {
+      "id": "bel.charleroi",
+      "source": "en:Royal Charleroi SC",
+      "image": "Royal_Charleroi_Sporting_Club_logo.svg",
+      "file": "crests/bel/charleroi.png",
+      "bytes": 15182
+    },
+    {
+      "id": "bel.club-brugge",
+      "source": "en:Club Brugge KV",
+      "image": "Club_Brugge_KV_logo.svg",
+      "file": "crests/bel/club-brugge.png",
+      "bytes": 45869
+    },
+    {
+      "id": "bel.dender",
+      "source": "en:FCV Dender EH",
+      "image": "FCV_Dender_EH_logo.svg",
+      "file": "crests/bel/dender.png",
+      "bytes": 34456
+    },
+    {
+      "id": "bel.genk",
+      "source": "en:KRC Genk",
+      "image": "KRC_Genk_logo.svg",
+      "file": "crests/bel/genk.png",
+      "bytes": 15834
+    },
+    {
+      "id": "bel.gent",
+      "source": "en:KAA Gent",
+      "image": "KAA_Gent_logo.svg",
+      "file": "crests/bel/gent.png",
+      "bytes": 43963
+    },
+    {
+      "id": "bel.la-louviere",
+      "source": "en:RAAL La Louvière",
+      "image": "RAAL_La_Louvière_logo.svg",
+      "file": "crests/bel/la-louviere.png",
+      "bytes": 23083
+    },
+    {
+      "id": "bel.mechelen",
+      "source": "en:KV Mechelen",
+      "image": "KV_Mechelen_logo.svg",
+      "file": "crests/bel/mechelen.png",
+      "bytes": 40124
+    },
+    {
+      "id": "bel.ohl",
+      "source": "en:Oud-Heverlee Leuven",
+      "image": "OH_LEUVEN.png",
+      "file": "crests/bel/ohl.png",
+      "bytes": 8900
+    },
+    {
+      "id": "bel.sint-truiden",
+      "source": "en:Sint-Truidense VV",
+      "image": "Sint-Truidense_VV_logo.svg",
+      "file": "crests/bel/sint-truiden.png",
+      "bytes": 34155
+    },
+    {
+      "id": "bel.standard",
+      "source": "en:Standard Liège",
+      "image": "Standard_Liège_logo.svg",
+      "file": "crests/bel/standard.png",
+      "bytes": 36108
+    },
+    {
+      "id": "bel.union-sg",
+      "source": "en:Royale Union Saint-Gilloise",
+      "image": "Royale_Union_Saint-Gilloise_logo.svg",
+      "file": "crests/bel/union-sg.png",
+      "bytes": 31863
+    },
+    {
+      "id": "bel.westerlo",
+      "source": "en:KVC Westerlo",
+      "image": "KVC_Westerlo_logo.svg",
+      "file": "crests/bel/westerlo.png",
+      "bytes": 36864
+    },
+    {
+      "id": "bel.zulte-waregem",
+      "source": "en:SV Zulte Waregem",
+      "image": "Zulte-Waregem_logo.svg",
+      "file": "crests/bel/zulte-waregem.png",
+      "bytes": 34263
+    },
+    {
+      "id": "bel.beerschot",
+      "source": "en:K Beerschot VA",
+      "image": "Koninklijke_Beerschot_Voetbalclub_Antwerpen_logo.svg",
+      "file": "crests/bel/beerschot.png",
+      "bytes": 22209
+    },
+    {
+      "id": "bel.beveren",
+      "source": "en:SK Beveren",
+      "image": "SK_Beveren_logo.svg",
+      "file": "crests/bel/beveren.png",
+      "bytes": 42552
+    },
+    {
+      "id": "bel.club-nxt",
+      "source": "en:Club NXT",
+      "image": "Club_NXT_Logo.png",
+      "file": "crests/bel/club-nxt.png",
+      "bytes": 10227
+    },
+    {
+      "id": "bel.eupen",
+      "source": "en:KAS Eupen",
+      "image": "Kas_Eupen_Logo.svg",
+      "file": "crests/bel/eupen.png",
+      "bytes": 24102
+    },
+    {
+      "id": "bel.jong-genk",
+      "source": "en:KRC Genk",
+      "image": "KRC_Genk_logo.svg",
+      "file": "crests/bel/jong-genk.png",
+      "bytes": 15834
+    },
+    {
+      "id": "bel.kortrijk",
+      "source": "en:KV Kortrijk",
+      "image": "KV_Kortrijk_logo_2016.svg",
+      "file": "crests/bel/kortrijk.png",
+      "bytes": 32497
+    },
+    {
+      "id": "bel.lierse",
+      "source": "en:Lierse SK (2018)",
+      "image": "Lierse_SK_(2018)_logo.svg",
+      "file": "crests/bel/lierse.png",
+      "bytes": 19994
+    },
+    {
+      "id": "bel.lokeren",
+      "source": "en:KSC Lokeren (2025)",
+      "image": "KSC_Lokeren_(2025)_logo.svg",
+      "file": "crests/bel/lokeren.png",
+      "bytes": 44426
+    },
+    {
+      "id": "bel.lommel",
+      "source": "en:Lommel SK",
+      "image": "Lommel_SK_logo.svg",
+      "file": "crests/bel/lommel.png",
+      "bytes": 39976
+    },
+    {
+      "id": "bel.olympic-charleroi",
+      "source": "en:Olympic Charleroi",
+      "image": "Olympic_Charleroi_logo.png",
+      "file": "crests/bel/olympic-charleroi.png",
+      "bytes": 87814
+    },
+    {
+      "id": "bel.patro",
+      "source": "en:Patro Eisden Maasmechelen",
+      "image": "PX_Logo.png",
+      "file": "crests/bel/patro.png",
+      "bytes": 17054
+    },
+    {
+      "id": "bel.rfc-liege",
+      "source": "en:RFC Liège",
+      "image": "RFC_Liège_logo.svg",
+      "file": "crests/bel/rfc-liege.png",
+      "bytes": 30479
+    },
+    {
+      "id": "bel.rsca-futures",
+      "source": "en:RSCA Futures",
+      "image": "R.S.C._Anderlecht.svg",
+      "file": "crests/bel/rsca-futures.png",
+      "bytes": 41965
+    },
+    {
+      "id": "bel.seraing",
+      "source": "en:RFC Seraing (1922)",
+      "image": "RFC_Seraing_(1922)_logo.svg",
+      "file": "crests/bel/seraing.png",
+      "bytes": 26612
+    },
+    {
+      "id": "chi.antofagasta",
+      "source": "en:Deportes Antofagasta",
+      "image": "DeportesAntofagasta.png",
+      "file": "crests/chi/antofagasta.png",
+      "bytes": 36076
+    },
+    {
+      "id": "chi.cobreloa",
+      "source": "en:Cobreloa",
+      "image": "Escudo_cobreloa.svg",
+      "file": "crests/chi/cobreloa.png",
+      "bytes": 33660
+    },
+    {
+      "id": "chi.concepcion",
+      "source": "en:Deportes Concepción (Chile)",
+      "image": "Deportes_Concepción_(Chile).svg",
+      "file": "crests/chi/concepcion.png",
+      "bytes": 39199
+    },
+    {
+      "id": "chi.copiapo",
+      "source": "en:Deportes Copiapó",
+      "image": "Deportes_Copiapó.png",
+      "file": "crests/chi/copiapo.png",
+      "bytes": 24308
+    },
+    {
+      "id": "chi.curico",
+      "source": "en:Curicó Unido",
+      "image": "Curicó_Unido_logo.png",
+      "file": "crests/chi/curico.png",
+      "bytes": 39551
+    },
+    {
+      "id": "chi.magallanes",
+      "source": "en:Deportes Magallanes",
+      "image": "CDMagallanes.png",
+      "file": "crests/chi/magallanes.png",
+      "bytes": 31951
+    },
+    {
+      "id": "chi.rangers",
+      "source": "en:Rangers de Talca",
+      "image": "Rangers_de_Talca_-_Escudo.svg",
+      "file": "crests/chi/rangers.png",
+      "bytes": 20412
+    },
+    {
+      "id": "chi.recoleta",
+      "source": "en:Deportes Recoleta",
+      "image": "Deportes_Recoleta_logo.png",
+      "file": "crests/chi/recoleta.png",
+      "bytes": 107346
+    },
+    {
+      "id": "chi.san-felipe",
+      "source": "en:Unión San Felipe",
+      "image": "Unión_San_Felipe_logo.png",
+      "file": "crests/chi/san-felipe.png",
+      "bytes": 17453
+    },
+    {
+      "id": "chi.san-luis",
+      "source": "en:San Luis de Quillota",
+      "image": "LOGO_SAN_LUIS_DE_QUILLOTA_OFICIAL.png",
+      "file": "crests/chi/san-luis.png",
+      "bytes": 32213
+    },
+    {
+      "id": "chi.san-marcos",
+      "source": "en:San Marcos de Arica",
+      "image": "LogoSanMarcosArica.png",
+      "file": "crests/chi/san-marcos.png",
+      "bytes": 33151
+    },
+    {
+      "id": "chi.santa-cruz",
+      "source": "en:Deportes Santa Cruz",
+      "image": "CDSanta_cruz.png",
+      "file": "crests/chi/santa-cruz.png",
+      "bytes": 14546
+    },
+    {
+      "id": "chi.santiago-morning",
+      "source": "en:Santiago Morning",
+      "image": "Santiago_morning.png",
+      "file": "crests/chi/santiago-morning.png",
+      "bytes": 11177
+    },
+    {
+      "id": "chi.temuco",
+      "source": "es:Club de Deportes Temuco",
+      "image": "Logo_Deportes_Temuco.png",
+      "file": "crests/chi/temuco.png",
+      "bytes": 15226
+    },
+    {
+      "id": "chi.union-espanola",
+      "source": "en:Unión Española",
+      "image": "Unión_Española_logo.png",
+      "file": "crests/chi/union-espanola.png",
+      "bytes": 46916
+    },
+    {
+      "id": "chi.wanderers",
+      "source": "en:Santiago Wanderers",
+      "image": "Santiago_Wanderers_logo.png",
+      "file": "crests/chi/wanderers.png",
+      "bytes": 19261
+    },
+    {
+      "id": "col.barranquilla",
+      "source": "en:Barranquilla F.C.",
+      "image": "Barranquilla_FC_logo.png",
+      "file": "crests/col/barranquilla.png",
+      "bytes": 37821
+    },
+    {
+      "id": "col.bogota-fc",
+      "source": "en:Bogotá F.C.",
+      "image": "Bogotá_Fútbol_Club.png",
+      "file": "crests/col/bogota-fc.png",
+      "bytes": 38325
+    },
+    {
+      "id": "col.envigado",
+      "source": "en:Envigado F.C.",
+      "image": "Envigado_FC_logo_2018.png",
+      "file": "crests/col/envigado.png",
+      "bytes": 59940
+    },
+    {
+      "id": "col.huila",
+      "source": "en:Atlético Huila",
+      "image": "Escudo_de_Atlético_Huila.svg",
+      "file": "crests/col/huila.png",
+      "bytes": 21340
+    },
+    {
+      "id": "col.inter-palmira",
+      "source": "en:Internacional F.C. de Palmira",
+      "image": "Internacional_F.C._de_Palmira.png",
+      "file": "crests/col/inter-palmira.png",
+      "bytes": 66967
+    },
+    {
+      "id": "col.jaguares",
+      "source": "en:Jaguares de Córdoba",
+      "image": "Jaguares_de_Córdoba.svg",
+      "file": "crests/col/jaguares.png",
+      "bytes": 34546
+    },
+    {
+      "id": "col.leones",
+      "source": "es:Leones Fútbol Club",
+      "image": "LEONES_FC.png",
+      "file": "crests/col/leones.png",
+      "bytes": 44851
+    },
+    {
+      "id": "col.orsomarso",
+      "source": "en:Orsomarso S.C.",
+      "image": "Orsomarso_SC_logo.png",
+      "file": "crests/col/orsomarso.png",
+      "bytes": 100594
+    },
+    {
+      "id": "col.patriotas",
+      "source": "en:Patriotas Boyacá",
+      "image": "Patriotas_logo.png",
+      "file": "crests/col/patriotas.png",
+      "bytes": 89710
+    },
+    {
+      "id": "col.quindio",
+      "source": "en:Deportes Quindío",
+      "image": "ESCUDO_DEP_QUINDIO_2023.png",
+      "file": "crests/col/quindio.png",
+      "bytes": 35377
+    },
+    {
+      "id": "col.real-santander",
+      "source": "en:Real Santander",
+      "image": "Real_Santander_logo.png",
+      "file": "crests/col/real-santander.png",
+      "bytes": 64553
+    },
+    {
+      "id": "col.tigres",
+      "source": "en:Tigres F.C.",
+      "image": "Tigres_FC_logo.png",
+      "file": "crests/col/tigres.png",
+      "bytes": 87571
+    },
+    {
+      "id": "col.valledupar",
+      "source": "en:Valledupar F.C.",
+      "image": "Valledupar_FC.png",
+      "file": "crests/col/valledupar.png",
+      "bytes": 43071
+    },
+    {
+      "id": "ecu.aucas",
+      "source": "en:S.D. Aucas",
+      "image": "S.D._Aucas.svg",
+      "file": "crests/ecu/aucas.png",
+      "bytes": 28091
+    },
+    {
+      "id": "ecu.barcelona-sc",
+      "source": "en:Barcelona S.C.",
+      "image": "Barcelona_Sporting_Club_(Guayaquil,_Ecuador)_logo.svg",
+      "file": "crests/ecu/barcelona-sc.png",
+      "bytes": 31151
+    },
+    {
+      "id": "ecu.cuenca",
+      "source": "en:Deportivo Cuenca",
+      "image": "Deportivo_Cuenca.svg",
+      "file": "crests/ecu/cuenca.png",
+      "bytes": 39086
+    },
+    {
+      "id": "ecu.delfin",
+      "source": "en:Delfín S.C.",
+      "image": "Delfín_S.C.svg",
+      "file": "crests/ecu/delfin.png",
+      "bytes": 17536
+    },
+    {
+      "id": "ecu.el-nacional",
+      "source": "en:Club Deportivo El Nacional",
+      "image": "El_Nacional-Logo-2025.png",
+      "file": "crests/ecu/el-nacional.png",
+      "bytes": 74600
+    },
+    {
+      "id": "ecu.emelec",
+      "source": "en:Club Sport Emelec",
+      "image": "Club-Sport-Emelec2.png",
+      "file": "crests/ecu/emelec.png",
+      "bytes": 34566
+    },
+    {
+      "id": "ecu.idv",
+      "source": "en:Independiente del Valle",
+      "image": "Escudoindependientedelvalle2023.png",
+      "file": "crests/ecu/idv.png",
+      "bytes": 42026
+    },
+    {
+      "id": "ecu.ldu",
+      "source": "en:LDU Quito",
+      "image": "Liga_Deportiva_Universitaria_(Ecuador)_logo_(5_stars).svg",
+      "file": "crests/ecu/ldu.png",
+      "bytes": 29681
+    },
+    {
+      "id": "ecu.libertad",
+      "source": "en:Libertad F.C. (Ecuador)",
+      "image": "Libertad_FC_Ecuador.svg",
+      "file": "crests/ecu/libertad.png",
+      "bytes": 27486
+    },
+    {
+      "id": "ecu.macara",
+      "source": "en:Club Deportivo Macará",
+      "image": "Club_Deportivo_Macará.svg",
+      "file": "crests/ecu/macara.png",
+      "bytes": 21833
+    },
+    {
+      "id": "ecu.manta",
+      "source": "en:Manta F.C.",
+      "image": "Manta_F.C.svg",
+      "file": "crests/ecu/manta.png",
+      "bytes": 48562
+    },
+    {
+      "id": "ecu.mushuc-runa",
+      "source": "en:Mushuc Runa",
+      "image": "Mushuc_Runa.svg",
+      "file": "crests/ecu/mushuc-runa.png",
+      "bytes": 24105
+    },
+    {
+      "id": "ecu.orense",
+      "source": "en:Orense S.C.",
+      "image": "Orense_S.C.svg",
+      "file": "crests/ecu/orense.png",
+      "bytes": 44437
+    },
+    {
+      "id": "ecu.tecnico",
+      "source": "en:C.D. Técnico Universitario",
+      "image": "Rodillo_Rojo_TU.svg",
+      "file": "crests/ecu/tecnico.png",
+      "bytes": 40072
+    },
+    {
+      "id": "ecu.u-catolica",
+      "source": "en:C.D. Universidad Católica (Ecuador)",
+      "image": "UCatólica.png",
+      "file": "crests/ecu/u-catolica.png",
+      "bytes": 20799
+    },
+    {
+      "id": "fra.aubagne",
+      "source": "en:SC Aubagne Air Bel",
+      "image": "SC_Aubagne_Air_Bel_logo.svg",
+      "file": "crests/fra/aubagne.png",
+      "bytes": 12969
+    },
+    {
+      "id": "fra.bourg",
+      "source": "en:Football Bourg-en-Bresse Péronnas 01",
+      "image": "Football_Bourg-en-Bresse_Peronnas_01_logo.svg",
+      "file": "crests/fra/bourg.png",
+      "bytes": 42741
+    },
+    {
+      "id": "fra.briochin",
+      "source": "en:Stade Briochin",
+      "image": "Stade_Briochin_logo.svg",
+      "file": "crests/fra/briochin.png",
+      "bytes": 43101
+    },
+    {
+      "id": "fra.caen",
+      "source": "en:Stade Malherbe Caen",
+      "image": "SM_Caen_2016_logo.svg",
+      "file": "crests/fra/caen.png",
+      "bytes": 35798
+    },
+    {
+      "id": "fra.chateauroux",
+      "source": "en:LB Châteauroux",
+      "image": "LB_Chateauroux_logo.svg",
+      "file": "crests/fra/chateauroux.png",
+      "bytes": 39180
+    },
+    {
+      "id": "fra.concarneau",
+      "source": "en:US Concarneau",
+      "image": "US_Concarneau_logo.svg",
+      "file": "crests/fra/concarneau.png",
+      "bytes": 32891
+    },
+    {
+      "id": "fra.dijon",
+      "source": "en:Dijon FCO",
+      "image": "Dijon_FCO_logo.svg",
+      "file": "crests/fra/dijon.png",
+      "bytes": 42720
+    },
+    {
+      "id": "fra.fleury",
+      "source": "fr:Football Club Fleury 91",
+      "image": "Logo_FC_Fleury_91_-_2023-11.svg",
+      "file": "crests/fra/fleury.png",
+      "bytes": 45030
+    },
+    {
+      "id": "fra.le-puy",
+      "source": "en:Le Puy-en-Velay FC",
+      "image": "Le_Puy-en-Velay_FC_crest.svg",
+      "file": "crests/fra/le-puy.png",
+      "bytes": 42461
+    },
+    {
+      "id": "fra.martigues",
+      "source": "en:FC Martigues",
+      "image": "FC_Martigues_logo_2026.png",
+      "file": "crests/fra/martigues.png",
+      "bytes": 55616
+    },
+    {
+      "id": "fra.orleans",
+      "source": "en:US Orléans",
+      "image": "US_Orléans_logo.svg",
+      "file": "crests/fra/orleans.png",
+      "bytes": 39908
+    },
+    {
+      "id": "fra.paris-13",
+      "source": "en:Paris 13 Atletico",
+      "image": "Paris_13_Atletico_logo.svg",
+      "file": "crests/fra/paris-13.png",
+      "bytes": 44837
+    },
+    {
+      "id": "fra.quevilly",
+      "source": "en:US Quevilly-Rouen Métropole",
+      "image": "US_Quevilly-Rouen_Métropole_logo.svg",
+      "file": "crests/fra/quevilly.png",
+      "bytes": 36185
+    },
+    {
+      "id": "fra.rouen",
+      "source": "en:FC Rouen",
+      "image": "F.C._Rouen.svg",
+      "file": "crests/fra/rouen.png",
+      "bytes": 37485
+    },
+    {
+      "id": "fra.sochaux",
+      "source": "en:FC Sochaux-Montbéliard",
+      "image": "FC_Sochaux-Montbeliard_logo.svg",
+      "file": "crests/fra/sochaux.png",
+      "bytes": 44203
+    },
+    {
+      "id": "fra.valenciennes",
+      "source": "en:Valenciennes FC",
+      "image": "Valenciennes_FC.svg",
+      "file": "crests/fra/valenciennes.png",
+      "bytes": 28019
+    },
+    {
+      "id": "fra.versailles",
+      "source": "en:FC Versailles 78",
+      "image": "FC_Versailles_78_logo.svg",
+      "file": "crests/fra/versailles.png",
+      "bytes": 34897
+    },
+    {
+      "id": "fra.villefranche",
+      "source": "en:FC Villefranche Beaujolais",
+      "image": "FC_Villefranche_Beaujolais_logo.svg",
+      "file": "crests/fra/villefranche.png",
+      "bytes": 46249
+    },
+    {
+      "id": "ger.aachen",
+      "source": "en:Alemannia Aachen",
+      "image": "Alemannia_Aachen_2010.svg",
+      "file": "crests/ger/aachen.png",
+      "bytes": 26054
+    },
+    {
+      "id": "ger.aue",
+      "source": "en:FC Erzgebirge Aue",
+      "image": "FC_Erzgebirge_Aue_logo.svg",
+      "file": "crests/ger/aue.png",
+      "bytes": 41663
+    },
+    {
+      "id": "ger.cottbus",
+      "source": "en:FC Energie Cottbus",
+      "image": "Logo_Energie_Cottbus.svg",
+      "file": "crests/ger/cottbus.png",
+      "bytes": 29081
+    },
+    {
+      "id": "ger.duisburg",
+      "source": "en:MSV Duisburg",
+      "image": "Msv_duisburg(new).svg",
+      "file": "crests/ger/duisburg.png",
+      "bytes": 52162
+    },
+    {
+      "id": "ger.essen",
+      "source": "en:Rot-Weiss Essen",
+      "image": "Logo_of_Rot-Weiss_Essen.svg",
+      "file": "crests/ger/essen.png",
+      "bytes": 20734
+    },
+    {
+      "id": "ger.havelse",
+      "source": "en:TSV Havelse",
+      "image": "TSV_Havelse_logo.svg",
+      "file": "crests/ger/havelse.png",
+      "bytes": 31201
+    },
+    {
+      "id": "ger.hoffenheim-ii",
+      "source": "en:TSG 1899 Hoffenheim II",
+      "image": "Logo_TSG_Hoffenheim.svg",
+      "file": "crests/ger/hoffenheim-ii.png",
+      "bytes": 29647
+    },
+    {
+      "id": "ger.ingolstadt",
+      "source": "en:FC Ingolstadt 04",
+      "image": "FC_Ingolstadt_04_logo.svg",
+      "file": "crests/ger/ingolstadt.png",
+      "bytes": 36967
+    },
+    {
+      "id": "ger.mannheim",
+      "source": "en:SV Waldhof Mannheim",
+      "image": "Svwaldhof.svg",
+      "file": "crests/ger/mannheim.png",
+      "bytes": 43731
+    },
+    {
+      "id": "ger.munich-1860",
+      "source": "en:TSV 1860 Munich",
+      "image": "TSV_1860_München.svg",
+      "file": "crests/ger/munich-1860.png",
+      "bytes": 13956
+    },
+    {
+      "id": "ger.osnabruck",
+      "source": "en:VfL Osnabrück",
+      "image": "VfL_Osnabrueck_Logo_2021–.svg",
+      "file": "crests/ger/osnabruck.png",
+      "bytes": 14818
+    },
+    {
+      "id": "ger.regensburg",
+      "source": "en:SSV Jahn Regensburg",
+      "image": "Jahn_Regensburg_logo2014.svg",
+      "file": "crests/ger/regensburg.png",
+      "bytes": 13289
+    },
+    {
+      "id": "ger.rostock",
+      "source": "en:FC Hansa Rostock",
+      "image": "F.C._Hansa_Rostock_Logo.svg",
+      "file": "crests/ger/rostock.png",
+      "bytes": 29850
+    },
+    {
+      "id": "ger.saarbrucken",
+      "source": "en:1. FC Saarbrücken",
+      "image": "1_FC_Saarbrucken_crest.svg",
+      "file": "crests/ger/saarbrucken.png",
+      "bytes": 21782
+    },
+    {
+      "id": "ger.schweinfurt",
+      "source": "en:1. FC Schweinfurt 05",
+      "image": "1._FC_Schweinfurt_05_logo.svg",
+      "file": "crests/ger/schweinfurt.png",
+      "bytes": 13209
+    },
+    {
+      "id": "ger.stuttgart-ii",
+      "source": "en:VfB Stuttgart II",
+      "image": "VfB_Stuttgart_1893_Logo.svg",
+      "file": "crests/ger/stuttgart-ii.png",
+      "bytes": 30968
+    },
+    {
+      "id": "ger.ulm",
+      "source": "en:SSV Ulm 1846",
+      "image": "SSV_Ulm_1846_Fussball.svg",
+      "file": "crests/ger/ulm.png",
+      "bytes": 13102
+    },
+    {
+      "id": "ger.verl",
+      "source": "en:SC Verl",
+      "image": "SC_Verl_Logo.svg",
+      "file": "crests/ger/verl.png",
+      "bytes": 9995
+    },
+    {
+      "id": "ger.viktoria-koln",
+      "source": "en:FC Viktoria Köln",
+      "image": "FC_Viktoria_Köln_1904_Logo.svg",
+      "file": "crests/ger/viktoria-koln.png",
+      "bytes": 27728
+    },
+    {
+      "id": "ger.wiesbaden",
+      "source": "en:SV Wehen Wiesbaden",
+      "image": "SV_Wehen_Wiesbaden_logo.svg",
+      "file": "crests/ger/wiesbaden.png",
+      "bytes": 39196
+    },
+    {
+      "id": "ita.albinoleffe",
+      "source": "en:UC AlbinoLeffe",
+      "image": "UC_AlbinoLeffe_crest.svg",
+      "file": "crests/ita/albinoleffe.png",
+      "bytes": 58076
+    },
+    {
+      "id": "ita.alcione",
+      "source": "en:Alcione Milano",
+      "image": "Alcione_Milano_crest.svg",
+      "file": "crests/ita/alcione.png",
+      "bytes": 18047
+    },
+    {
+      "id": "ita.altamura",
+      "source": "en:Team Altamura",
+      "image": "Team_Altamura_logo.svg",
+      "file": "crests/ita/altamura.png",
+      "bytes": 35520
+    },
+    {
+      "id": "ita.arezzo",
+      "source": "en:SS Arezzo",
+      "image": "SS_Arezzo_crest.svg",
+      "file": "crests/ita/arezzo.png",
+      "bytes": 43908
+    },
+    {
+      "id": "ita.arzignano",
+      "source": "en:FC Arzignano Valchiampo",
+      "image": "FC_Arzignano_Valchiampo_crest.svg",
+      "file": "crests/ita/arzignano.png",
+      "bytes": 33719
+    },
+    {
+      "id": "ita.ascoli",
+      "source": "en:Ascoli Calcio 1898 FC",
+      "image": "Ascoli_Calcio_1898_logo.svg",
+      "file": "crests/ita/ascoli.png",
+      "bytes": 29392
+    },
+    {
+      "id": "ita.benevento",
+      "source": "en:Benevento Calcio",
+      "image": "Benevento_Calcio_logo.svg",
+      "file": "crests/ita/benevento.png",
+      "bytes": 27228
+    },
+    {
+      "id": "ita.bra",
+      "source": "en:AC Bra",
+      "image": "AC_Bra_logo.svg",
+      "file": "crests/ita/bra.png",
+      "bytes": 28180
+    },
+    {
+      "id": "ita.campobasso",
+      "source": "en:Campobasso FC",
+      "image": "Campobasso_FC_logo.svg",
+      "file": "crests/ita/campobasso.png",
+      "bytes": 24182
+    },
+    {
+      "id": "ita.carpi",
+      "source": "en:AC Carpi",
+      "image": "AC_Carpi_crest.svg",
+      "file": "crests/ita/carpi.png",
+      "bytes": 42576
+    },
+    {
+      "id": "ita.casarano",
+      "source": "en:Casarano Calcio",
+      "image": "Casarano_Calcio_logo.svg",
+      "file": "crests/ita/casarano.png",
+      "bytes": 34168
+    },
+    {
+      "id": "ita.casertana",
+      "source": "en:Casertana FC",
+      "image": "Casertana_FC_logo.svg",
+      "file": "crests/ita/casertana.png",
+      "bytes": 50890
+    },
+    {
+      "id": "ita.catania",
+      "source": "en:Catania FC",
+      "image": "Logo_CATANIA_FC.svg",
+      "file": "crests/ita/catania.png",
+      "bytes": 22900
+    },
+    {
+      "id": "ita.cavese",
+      "source": "en:Cavese 1919",
+      "image": "Cavese_1919_crest.svg",
+      "file": "crests/ita/cavese.png",
+      "bytes": 29919
+    },
+    {
+      "id": "ita.cerignola",
+      "source": "en:SS Audace Cerignola",
+      "image": "SS_Audace_Cerignola_crest.svg",
+      "file": "crests/ita/cerignola.png",
+      "bytes": 52885
+    },
+    {
+      "id": "ita.cittadella",
+      "source": "en:AS Cittadella",
+      "image": "AS_Cittadella_logo.svg",
+      "file": "crests/ita/cittadella.png",
+      "bytes": 32276
+    },
+    {
+      "id": "ita.cosenza",
+      "source": "en:Cosenza Calcio",
+      "image": "Cosenza_Calcio_crest.svg",
+      "file": "crests/ita/cosenza.png",
+      "bytes": 33098
+    },
+    {
+      "id": "ita.crotone",
+      "source": "en:FC Crotone",
+      "image": "FC_Crotone_logo.svg",
+      "file": "crests/ita/crotone.png",
+      "bytes": 38612
+    },
+    {
+      "id": "ita.foggia",
+      "source": "en:Calcio Foggia 1920",
+      "image": "Calcio_Foggia_1920_crest.svg",
+      "file": "crests/ita/foggia.png",
+      "bytes": 26906
+    },
+    {
+      "id": "ita.forli",
+      "source": "en:Forlì FC",
+      "image": "Forlì_FC_logo.svg",
+      "file": "crests/ita/forli.png",
+      "bytes": 43071
+    },
+    {
+      "id": "ita.giana",
+      "source": "en:AS Giana Erminio",
+      "image": "AS_Giana_Erminio_crest.svg",
+      "file": "crests/ita/giana.png",
+      "bytes": 25196
+    },
+    {
+      "id": "ita.gubbio",
+      "source": "en:AS Gubbio 1910",
+      "image": "AS_Gubbio_1910_crest.svg",
+      "file": "crests/ita/gubbio.png",
+      "bytes": 37733
+    },
+    {
+      "id": "ita.juventus-ng",
+      "source": "en:Juventus Next Gen",
+      "image": "Juventus_Next_Gen.png",
+      "file": "crests/ita/juventus-ng.png",
+      "bytes": 20063
+    },
+    {
+      "id": "ita.latina",
+      "source": "en:Latina Calcio 1932",
+      "image": "Latina_Calcio_1932_crest.svg",
+      "file": "crests/ita/latina.png",
+      "bytes": 45536
+    },
+    {
+      "id": "ita.lecco",
+      "source": "en:Calcio Lecco 1912",
+      "image": "Calcio_Lecco_1912_crest.svg",
+      "file": "crests/ita/lecco.png",
+      "bytes": 69098
+    },
+    {
+      "id": "ita.livorno",
+      "source": "en:US Livorno 1915",
+      "image": "Livorno-Stemma_semplificato.svg",
+      "file": "crests/ita/livorno.png",
+      "bytes": 30436
+    },
+    {
+      "id": "ita.lumezzane",
+      "source": "it:Football Club Lumezzane",
+      "image": "Logo_fc_lumezzane_2021.png",
+      "file": "crests/ita/lumezzane.png",
+      "bytes": 52019
+    },
+    {
+      "id": "ita.monopoli",
+      "source": "en:SS Monopoli 1966",
+      "image": "SS_Monopoli_1966_crest.svg",
+      "file": "crests/ita/monopoli.png",
+      "bytes": 38041
+    },
+    {
+      "id": "ita.novara",
+      "source": "en:Novara FC",
+      "image": "Novara_FC_crest.svg",
+      "file": "crests/ita/novara.png",
+      "bytes": 32591
+    },
+    {
+      "id": "ita.pergolettese",
+      "source": "en:US Pergolettese 1932",
+      "image": "US_Pergolettese_1932_(logo).svg",
+      "file": "crests/ita/pergolettese.png",
+      "bytes": 25733
+    },
+    {
+      "id": "ita.perugia",
+      "source": "en:AC Perugia Calcio",
+      "image": "Ac_Perugia_logo.svg",
+      "file": "crests/ita/perugia.png",
+      "bytes": 37157
+    },
+    {
+      "id": "ita.pianese",
+      "source": "en:US Pianese",
+      "image": "US_Pianese_crest.svg",
+      "file": "crests/ita/pianese.png",
+      "bytes": 13128
+    },
+    {
+      "id": "ita.picerno",
+      "source": "en:AZ Picerno",
+      "image": "AZ_Picerno_crest.svg",
+      "file": "crests/ita/picerno.png",
+      "bytes": 34664
+    },
+    {
+      "id": "ita.pineto",
+      "source": "en:AS Pineto Calcio",
+      "image": "AS_Pineto_Calcio_crest.svg",
+      "file": "crests/ita/pineto.png",
+      "bytes": 37471
+    },
+    {
+      "id": "ita.pontedera",
+      "source": "en:US Città di Pontedera",
+      "image": "US_Citta_di_Pontedera_crest.svg",
+      "file": "crests/ita/pontedera.png",
+      "bytes": 19902
+    },
+    {
+      "id": "ita.potenza",
+      "source": "en:Potenza Calcio",
+      "image": "Potenza_Calcio_crest.svg",
+      "file": "crests/ita/potenza.png",
+      "bytes": 25727
+    },
+    {
+      "id": "ita.pro-patria",
+      "source": "en:Aurora Pro Patria 1919",
+      "image": "Aurora_Pro_Patria_1919_crest.svg",
+      "file": "crests/ita/pro-patria.png",
+      "bytes": 32066
+    },
+    {
+      "id": "ita.pro-vercelli",
+      "source": "en:FC Pro Vercelli 1892",
+      "image": "FC_Pro_Vercelli_1892_crest.svg",
+      "file": "crests/ita/pro-vercelli.png",
+      "bytes": 20003
+    },
+    {
+      "id": "ita.renate",
+      "source": "en:AC Renate",
+      "image": "AC_Renate_crest.svg",
+      "file": "crests/ita/renate.png",
+      "bytes": 47288
+    },
+    {
+      "id": "ita.rimini",
+      "source": "en:Rimini Calcio S.S.D.",
+      "image": "Rimini_FC_1912_crest.svg",
+      "file": "crests/ita/rimini.png",
+      "bytes": 42081
+    },
+    {
+      "id": "ita.salernitana",
+      "source": "en:US Salernitana 1919",
+      "image": "US_Salernitana_1919_logo.svg",
+      "file": "crests/ita/salernitana.png",
+      "bytes": 18540
+    },
+    {
+      "id": "ita.sambenedettese",
+      "source": "en:US Sambenedettese",
+      "image": "AS_Sambenedettese_logo.svg",
+      "file": "crests/ita/sambenedettese.png",
+      "bytes": 46126
+    },
+    {
+      "id": "ita.siracusa",
+      "source": "en:Siracusa Calcio 1924",
+      "image": "Siracusa_Calcio_1924_crest.svg",
+      "file": "crests/ita/siracusa.png",
+      "bytes": 37385
+    },
+    {
+      "id": "ita.ternana",
+      "source": "en:Nuova Ternana 1925",
+      "image": "Ternana_Calcio_crest.svg",
+      "file": "crests/ita/ternana.png",
+      "bytes": 51424
+    },
+    {
+      "id": "ita.torres",
+      "source": "en:SEF Torres 1903",
+      "image": "SEF_Torres_1903_crest.svg",
+      "file": "crests/ita/torres.png",
+      "bytes": 19636
+    },
+    {
+      "id": "ita.trapani",
+      "source": "en:FC Trapani 1905",
+      "image": "FC_Trapani_1905_logo.svg",
+      "file": "crests/ita/trapani.png",
+      "bytes": 37845
+    },
+    {
+      "id": "ita.trento",
+      "source": "en:AC Trento 1921",
+      "image": "AC_Trento_1921_crest.svg",
+      "file": "crests/ita/trento.png",
+      "bytes": 47524
+    },
+    {
+      "id": "ita.triestina",
+      "source": "en:US Triestina Calcio 1918",
+      "image": "US_Triestina_Calcio_1918_crest.svg",
+      "file": "crests/ita/triestina.png",
+      "bytes": 26676
+    },
+    {
+      "id": "ita.union-brescia",
+      "source": "en:Union Brescia",
+      "image": "Union_Brescia_crest.svg",
+      "file": "crests/ita/union-brescia.png",
+      "bytes": 15636
+    },
+    {
+      "id": "ita.vicenza",
+      "source": "en:LR Vicenza",
+      "image": "LR_Vicenza_Virtus_(logo).svg",
+      "file": "crests/ita/vicenza.png",
+      "bytes": 16897
+    },
+    {
+      "id": "ita.virtus-verona",
+      "source": "en:Virtus Verona",
+      "image": "Logo_Virtus_Verona.svg",
+      "file": "crests/ita/virtus-verona.png",
+      "bytes": 40886
+    },
+    {
+      "id": "ita.vis-pesaro",
+      "source": "en:Vis Pesaro dal 1898",
+      "image": "Vis_Pesaro_dal_1898_crest.svg",
+      "file": "crests/ita/vis-pesaro.png",
+      "bytes": 26313
+    },
+    {
+      "id": "jpn.akita",
+      "source": "en:Blaublitz Akita",
+      "image": "Blaublitz_Akita_logo.svg",
+      "file": "crests/jpn/akita.png",
+      "bytes": 42254
+    },
+    {
+      "id": "jpn.ehime",
+      "source": "en:Ehime FC",
+      "image": "Ehime_FC_logo.svg",
+      "file": "crests/jpn/ehime.png",
+      "bytes": 37770
+    },
+    {
+      "id": "jpn.fujieda",
+      "source": "en:Fujieda MYFC",
+      "image": "Fujieda_MYFC_logo.svg",
+      "file": "crests/jpn/fujieda.png",
+      "bytes": 49903
+    },
+    {
+      "id": "jpn.imabari",
+      "source": "en:FC Imabari",
+      "image": "FC_Imabari_logo.svg",
+      "file": "crests/jpn/imabari.png",
+      "bytes": 42690
+    },
+    {
+      "id": "jpn.iwaki",
+      "source": "en:Iwaki FC",
+      "image": "Iwaki_FC_logo.svg",
+      "file": "crests/jpn/iwaki.png",
+      "bytes": 35883
+    },
+    {
+      "id": "jpn.iwata",
+      "source": "en:Júbilo Iwata",
+      "image": "Jubilo_Iwata_logo.svg",
+      "file": "crests/jpn/iwata.png",
+      "bytes": 43212
+    },
+    {
+      "id": "jpn.kofu",
+      "source": "en:Ventforet Kofu",
+      "image": "Ventforet_Kofu_logo.svg",
+      "file": "crests/jpn/kofu.png",
+      "bytes": 49153
+    },
+    {
+      "id": "jpn.kumamoto",
+      "source": "en:Roasso Kumamoto",
+      "image": "Roasso_Kumamoto_logo.svg",
+      "file": "crests/jpn/kumamoto.png",
+      "bytes": 26052
+    },
+    {
+      "id": "jpn.niigata",
+      "source": "en:Albirex Niigata",
+      "image": "Albirex_Niigata_logo.svg",
+      "file": "crests/jpn/niigata.png",
+      "bytes": 39721
+    },
+    {
+      "id": "jpn.oita",
+      "source": "en:Oita Trinita",
+      "image": "Oita_Trinita_logo.svg",
+      "file": "crests/jpn/oita.png",
+      "bytes": 47361
+    },
+    {
+      "id": "jpn.omiya",
+      "source": "en:RB Omiya Ardija",
+      "image": "RB_Omiya_Ardija_crest.svg",
+      "file": "crests/jpn/omiya.png",
+      "bytes": 31601
+    },
+    {
+      "id": "jpn.sapporo",
+      "source": "en:Hokkaido Consadole Sapporo",
+      "image": "Hokkaido_Consadole_Sapporo_logo.svg",
+      "file": "crests/jpn/sapporo.png",
+      "bytes": 43632
+    },
+    {
+      "id": "jpn.sendai",
+      "source": "en:Vegalta Sendai",
+      "image": "Vegalta_Sendai_logo.svg",
+      "file": "crests/jpn/sendai.png",
+      "bytes": 38717
+    },
+    {
+      "id": "jpn.shonan",
+      "source": "en:Shonan Bellmare",
+      "image": "Shonan_Bellmare_logo.svg",
+      "file": "crests/jpn/shonan.png",
+      "bytes": 53310
+    },
+    {
+      "id": "jpn.tokushima",
+      "source": "en:Tokushima Vortis",
+      "image": "Tokushima_Vortis_logo.svg",
+      "file": "crests/jpn/tokushima.png",
+      "bytes": 17242
+    },
+    {
+      "id": "jpn.tosu",
+      "source": "en:Sagan Tosu",
+      "image": "Sagan_Tosu_logo.svg",
+      "file": "crests/jpn/tosu.png",
+      "bytes": 34146
+    },
+    {
+      "id": "jpn.toyama",
+      "source": "en:Kataller Toyama",
+      "image": "Kataller_Toyama_logo.svg",
+      "file": "crests/jpn/toyama.png",
+      "bytes": 63385
+    },
+    {
+      "id": "jpn.yamagata",
+      "source": "en:Montedio Yamagata",
+      "image": "Montedio_Yamagata_logo.svg",
+      "file": "crests/jpn/yamagata.png",
+      "bytes": 23452
+    },
+    {
+      "id": "jpn.yamaguchi",
+      "source": "en:Renofa Yamaguchi FC",
+      "image": "Renofa_Yamaguchi_FC_logo.svg",
+      "file": "crests/jpn/yamaguchi.png",
+      "bytes": 38480
+    },
+    {
+      "id": "jpn.yokohama-fc",
+      "source": "en:Yokohama FC",
+      "image": "Yokohama_FC_logo.svg",
+      "file": "crests/jpn/yokohama-fc.png",
+      "bytes": 50647
+    },
+    {
+      "id": "jpn.fc-osaka",
+      "source": "en:FC Osaka",
+      "image": "FC_Osaka_logo.svg",
+      "file": "crests/jpn/fc-osaka.png",
+      "bytes": 52111
+    },
+    {
+      "id": "jpn.fukushima",
+      "source": "en:Fukushima United FC",
+      "image": "Fukushima_United_logo_2026.svg",
+      "file": "crests/jpn/fukushima.png",
+      "bytes": 16786
+    },
+    {
+      "id": "jpn.gifu",
+      "source": "en:FC Gifu",
+      "image": "FC_Gifu_logo.svg",
+      "file": "crests/jpn/gifu.png",
+      "bytes": 43209
+    },
+    {
+      "id": "jpn.gunma",
+      "source": "en:Thespa Gunma",
+      "image": "Thespa_Gunma_logo.svg",
+      "file": "crests/jpn/gunma.png",
+      "bytes": 17678
+    },
+    {
+      "id": "jpn.hachinohe",
+      "source": "en:Vanraure Hachinohe",
+      "image": "Vanraure_Hachinohe_logo.svg",
+      "file": "crests/jpn/hachinohe.png",
+      "bytes": 57658
+    },
+    {
+      "id": "jpn.kagoshima",
+      "source": "en:Kagoshima United FC",
+      "image": "Kagoshima_United_FC_logo.svg",
+      "file": "crests/jpn/kagoshima.png",
+      "bytes": 41541
+    },
+    {
+      "id": "jpn.kanazawa",
+      "source": "en:Zweigen Kanazawa",
+      "image": "Zweigen_Kanazawa_logo.svg",
+      "file": "crests/jpn/kanazawa.png",
+      "bytes": 31965
+    },
+    {
+      "id": "jpn.kitakyushu",
+      "source": "en:Giravanz Kitakyushu",
+      "image": "Giravanz_Kitakyushu_logo.svg",
+      "file": "crests/jpn/kitakyushu.png",
+      "bytes": 38219
+    },
+    {
+      "id": "jpn.kochi",
+      "source": "en:Kochi United SC",
+      "image": "Kochi_United_SC_logo.svg",
+      "file": "crests/jpn/kochi.png",
+      "bytes": 60224
+    },
+    {
+      "id": "jpn.matsumoto",
+      "source": "en:Matsumoto Yamaga FC",
+      "image": "Matsumoto_Yamaga_FC_logo.svg",
+      "file": "crests/jpn/matsumoto.png",
+      "bytes": 41442
+    },
+    {
+      "id": "jpn.miyazaki",
+      "source": "en:Tegevajaro Miyazaki",
+      "image": "Tegevajaro_Miyazaki_logo.svg",
+      "file": "crests/jpn/miyazaki.png",
+      "bytes": 32013
+    },
+    {
+      "id": "jpn.nagano",
+      "source": "en:AC Nagano Parceiro",
+      "image": "AC_Nagano_Parceiro_logo.svg",
+      "file": "crests/jpn/nagano.png",
+      "bytes": 38632
+    },
+    {
+      "id": "jpn.nara",
+      "source": "en:Nara Club",
+      "image": "Nara_Club_logo.svg",
+      "file": "crests/jpn/nara.png",
+      "bytes": 69868
+    },
+    {
+      "id": "jpn.numazu",
+      "source": "en:Azul Claro Numazu",
+      "image": "Azul_Claro_Numazu_logo.svg",
+      "file": "crests/jpn/numazu.png",
+      "bytes": 25735
+    },
+    {
+      "id": "jpn.sagamihara",
+      "source": "en:SC Sagamihara",
+      "image": "SC_Sagamihara_logo.svg",
+      "file": "crests/jpn/sagamihara.png",
+      "bytes": 30700
+    },
+    {
+      "id": "jpn.sanuki",
+      "source": "en:Kamatamare Sanuki",
+      "image": "Kamatamare_Sanuki_logo.svg",
+      "file": "crests/jpn/sanuki.png",
+      "bytes": 39713
+    },
+    {
+      "id": "jpn.tochigi",
+      "source": "en:Tochigi SC",
+      "image": "Tochigi_SC_logo.svg",
+      "file": "crests/jpn/tochigi.png",
+      "bytes": 51432
+    },
+    {
+      "id": "jpn.tochigi-city",
+      "source": "en:Tochigi City FC",
+      "image": "Tochigi_City_FC_Logo.svg",
+      "file": "crests/jpn/tochigi-city.png",
+      "bytes": 12272
+    },
+    {
+      "id": "jpn.tottori",
+      "source": "en:Gainare Tottori",
+      "image": "Gainare_Tottori_logo.svg",
+      "file": "crests/jpn/tottori.png",
+      "bytes": 32244
+    },
+    {
+      "id": "kor.ansan",
+      "source": "en:Ansan Greeners FC",
+      "image": "Ansan_Greeners_FC.svg",
+      "file": "crests/kor/ansan.png",
+      "bytes": 48539
+    },
+    {
+      "id": "kor.asan",
+      "source": "en:Chungnam Asan FC",
+      "image": "Chungnam_Asan_FC.svg",
+      "file": "crests/kor/asan.png",
+      "bytes": 22172
+    },
+    {
+      "id": "kor.busan",
+      "source": "en:Busan IPark",
+      "image": "Busan_IPark.svg",
+      "file": "crests/kor/busan.png",
+      "bytes": 25486
+    },
+    {
+      "id": "kor.cheonan",
+      "source": "en:Cheonan City FC",
+      "image": "Cheonan_City_FC.svg",
+      "file": "crests/kor/cheonan.png",
+      "bytes": 25576
+    },
+    {
+      "id": "kor.cheongju",
+      "source": "en:Chungbuk Cheongju FC",
+      "image": "Chungbuk_Cheongju_FC.png",
+      "file": "crests/kor/cheongju.png",
+      "bytes": 30678
+    },
+    {
+      "id": "kor.daegu",
+      "source": "en:Daegu FC",
+      "image": "Daegu_FC.svg",
+      "file": "crests/kor/daegu.png",
+      "bytes": 59076
+    },
+    {
+      "id": "kor.gimpo",
+      "source": "en:Gimpo FC",
+      "image": "Gimpo_FC.svg",
+      "file": "crests/kor/gimpo.png",
+      "bytes": 41519
+    },
+    {
+      "id": "kor.gyeongnam",
+      "source": "en:Gyeongnam FC",
+      "image": "Gyeongnam_FC.svg",
+      "file": "crests/kor/gyeongnam.png",
+      "bytes": 78244
+    },
+    {
+      "id": "kor.hwaseong",
+      "source": "en:Hwaseong FC",
+      "image": "Hwaseong_FC.svg",
+      "file": "crests/kor/hwaseong.png",
+      "bytes": 15669
+    },
+    {
+      "id": "kor.jeonnam",
+      "source": "en:Jeonnam Dragons",
+      "image": "Jeonnam_Dragons.svg",
+      "file": "crests/kor/jeonnam.png",
+      "bytes": 12347
+    },
+    {
+      "id": "kor.seongnam",
+      "source": "en:Seongnam FC",
+      "image": "Seongnam_FC_logo.svg",
+      "file": "crests/kor/seongnam.png",
+      "bytes": 33251
+    },
+    {
+      "id": "kor.seoul-eland",
+      "source": "en:Seoul E-Land FC",
+      "image": "Seoul_E-Land_FC.svg",
+      "file": "crests/kor/seoul-eland.png",
+      "bytes": 51711
+    },
+    {
+      "id": "kor.suwon-samsung",
+      "source": "en:Suwon Samsung Bluewings",
+      "image": "Suwon_Samsung_Bluewings.svg",
+      "file": "crests/kor/suwon-samsung.png",
+      "bytes": 25025
+    },
+    {
+      "id": "ksa.abha",
+      "source": "en:Abha Club",
+      "image": "Abha_Club_Logo.svg",
+      "file": "crests/ksa/abha.png",
+      "bytes": 10467
+    },
+    {
+      "id": "ksa.al-adalah",
+      "source": "en:Al Adalah Club",
+      "image": "Al_Adalah_logo.png",
+      "file": "crests/ksa/al-adalah.png",
+      "bytes": 98341
+    },
+    {
+      "id": "ksa.al-batin",
+      "source": "en:Al Batin FC",
+      "image": "Al-Batin_F.C_logo.png",
+      "file": "crests/ksa/al-batin.png",
+      "bytes": 73431
+    },
+    {
+      "id": "ksa.al-bukiryah",
+      "source": "en:Al-Bukiryah FC",
+      "image": "Al_Bukiryah_Logo.png",
+      "file": "crests/ksa/al-bukiryah.png",
+      "bytes": 48364
+    },
+    {
+      "id": "ksa.al-diriyah",
+      "source": "en:Diriyah Club",
+      "image": "Diriyah_Club_Logo.svg",
+      "file": "crests/ksa/al-diriyah.png",
+      "bytes": 20526
+    },
+    {
+      "id": "ksa.al-faisaly",
+      "source": "en:Al Faisaly FC",
+      "image": "Al_Faisaly_FC_logo.svg",
+      "file": "crests/ksa/al-faisaly.png",
+      "bytes": 49195
+    },
+    {
+      "id": "ksa.al-jabalain",
+      "source": "en:Al-Jabalain Club",
+      "image": "Al_Jabalain_Logo.png",
+      "file": "crests/ksa/al-jabalain.png",
+      "bytes": 86469
+    },
+    {
+      "id": "ksa.al-tai",
+      "source": "en:Al-Tai FC",
+      "image": "Al-Tai_FC_Logo.svg",
+      "file": "crests/ksa/al-tai.png",
+      "bytes": 23471
+    },
+    {
+      "id": "ksa.al-ula",
+      "source": "en:Al-Ula FC",
+      "image": "Al-Ula_FC_Logo.svg",
+      "file": "crests/ksa/al-ula.png",
+      "bytes": 20517
+    },
+    {
+      "id": "ksa.al-wehda",
+      "source": "en:Al Wehda FC",
+      "image": "Al_Wehda_FC_Logo.svg",
+      "file": "crests/ksa/al-wehda.png",
+      "bytes": 44242
+    },
+    {
+      "id": "ksa.jeddah",
+      "source": "en:Jeddah Club",
+      "image": "Jeddah_Club_Logo.png",
+      "file": "crests/ksa/jeddah.png",
+      "bytes": 109489
+    },
+    {
+      "id": "mex.america",
+      "source": "en:Club América",
+      "image": "Club_América_crest.svg",
+      "file": "crests/mex/america.png",
+      "bytes": 27211
+    },
+    {
+      "id": "mex.atlas",
+      "source": "en:Atlas F.C.",
+      "image": "Fútbol_Club_Atlas.svg",
+      "file": "crests/mex/atlas.png",
+      "bytes": 10550
+    },
+    {
+      "id": "mex.cruz-azul",
+      "source": "en:Cruz Azul",
+      "image": "Club_de_Fútbol_Cruz_Azul_logo.svg",
+      "file": "crests/mex/cruz-azul.png",
+      "bytes": 24191
+    },
+    {
+      "id": "mex.guadalajara",
+      "source": "en:C.D. Guadalajara",
+      "image": "Guadalajara_CD.svg",
+      "file": "crests/mex/guadalajara.png",
+      "bytes": 56583
+    },
+    {
+      "id": "mex.juarez",
+      "source": "en:FC Juárez",
+      "image": "FC_Juárez_logo.svg",
+      "file": "crests/mex/juarez.png",
+      "bytes": 32425
+    },
+    {
+      "id": "mex.leon",
+      "source": "en:Club León",
+      "image": "Club_Leon_Logo.svg",
+      "file": "crests/mex/leon.png",
+      "bytes": 40209
+    },
+    {
+      "id": "mex.mazatlan",
+      "source": "en:Mazatlán F.C.",
+      "image": "Mazatlán_F.C._logo.svg",
+      "file": "crests/mex/mazatlan.png",
+      "bytes": 50912
+    },
+    {
+      "id": "mex.monterrey",
+      "source": "en:C.F. Monterrey",
+      "image": "Club_de_Fútbol_Monterrey_logo.svg",
+      "file": "crests/mex/monterrey.png",
+      "bytes": 19482
+    },
+    {
+      "id": "mex.necaxa",
+      "source": "en:Club Necaxa",
+      "image": "Club_Necaxa_Logo.svg",
+      "file": "crests/mex/necaxa.png",
+      "bytes": 22876
+    },
+    {
+      "id": "mex.pachuca",
+      "source": "en:C.F. Pachuca",
+      "image": "Pachuca_Tuzos_logo.svg",
+      "file": "crests/mex/pachuca.png",
+      "bytes": 48918
+    },
+    {
+      "id": "mex.puebla",
+      "source": "en:Club Puebla",
+      "image": "Club_Puebla_logo.svg",
+      "file": "crests/mex/puebla.png",
+      "bytes": 42685
+    },
+    {
+      "id": "mex.pumas",
+      "source": "en:Pumas UNAM",
+      "image": "Club_Universidad_Nacional_logo.svg",
+      "file": "crests/mex/pumas.png",
+      "bytes": 11021
+    },
+    {
+      "id": "mex.queretaro",
+      "source": "en:Querétaro F.C.",
+      "image": "Querétaro_F.C._logo.svg",
+      "file": "crests/mex/queretaro.png",
+      "bytes": 33104
+    },
+    {
+      "id": "mex.san-luis",
+      "source": "en:Atlético San Luis",
+      "image": "Atlético_San_Luis_Logo_Proper.svg",
+      "file": "crests/mex/san-luis.png",
+      "bytes": 38920
+    },
+    {
+      "id": "mex.santos-laguna",
+      "source": "en:Santos Laguna",
+      "image": "Santos_Laguna_logo.svg",
+      "file": "crests/mex/santos-laguna.png",
+      "bytes": 29464
+    },
+    {
+      "id": "mex.tigres",
+      "source": "en:Tigres UANL",
+      "image": "Tigres_UANL_logo_(crest).svg",
+      "file": "crests/mex/tigres.png",
+      "bytes": 30957
+    },
+    {
+      "id": "mex.tijuana",
+      "source": "en:Club Tijuana",
+      "image": "Club_Tijuana_logo.svg",
+      "file": "crests/mex/tijuana.png",
+      "bytes": 49418
+    },
+    {
+      "id": "mex.toluca",
+      "source": "en:Toluca FC",
+      "image": "Club_Toluca_Logo.svg",
+      "file": "crests/mex/toluca.png",
+      "bytes": 27546
+    },
+    {
+      "id": "ned.ado",
+      "source": "en:ADO Den Haag",
+      "image": "ADO_Den_Haag_logo.svg",
+      "file": "crests/ned/ado.png",
+      "bytes": 44626
+    },
+    {
+      "id": "ned.almere",
+      "source": "en:Almere City FC",
+      "image": "Almere_City_FC_logo.svg",
+      "file": "crests/ned/almere.png",
+      "bytes": 38203
+    },
+    {
+      "id": "ned.cambuur",
+      "source": "en:SC Cambuur",
+      "image": "SC_Cambuur_logo.svg",
+      "file": "crests/ned/cambuur.png",
+      "bytes": 24510
+    },
+    {
+      "id": "ned.den-bosch",
+      "source": "en:FC Den Bosch",
+      "image": "FC_Den_Bosch_logo.svg",
+      "file": "crests/ned/den-bosch.png",
+      "bytes": 34154
+    },
+    {
+      "id": "ned.dordrecht",
+      "source": "en:FC Dordrecht",
+      "image": "FC_Dordrecht_logo.svg",
+      "file": "crests/ned/dordrecht.png",
+      "bytes": 24897
+    },
+    {
+      "id": "ned.eindhoven",
+      "source": "en:FC Eindhoven",
+      "image": "FC_Eindhoven_logo.svg",
+      "file": "crests/ned/eindhoven.png",
+      "bytes": 30849
+    },
+    {
+      "id": "ned.emmen",
+      "source": "en:FC Emmen",
+      "image": "FC_Emmen_logo.svg",
+      "file": "crests/ned/emmen.png",
+      "bytes": 18162
+    },
+    {
+      "id": "ned.graafschap",
+      "source": "en:De Graafschap",
+      "image": "Logo_Betaald_Voetbal_De_Graafschap.svg",
+      "file": "crests/ned/graafschap.png",
+      "bytes": 34066
+    },
+    {
+      "id": "ned.helmond",
+      "source": "en:Helmond Sport",
+      "image": "Helmond_Sport_logo.svg",
+      "file": "crests/ned/helmond.png",
+      "bytes": 13210
+    },
+    {
+      "id": "ned.jong-az",
+      "source": "en:Jong AZ",
+      "image": "AZ_Alkmaar.svg",
+      "file": "crests/ned/jong-az.png",
+      "bytes": 13567
+    },
+    {
+      "id": "ned.jong-utrecht",
+      "source": "en:Jong FC Utrecht",
+      "image": "Logo_FC_Utrecht.svg",
+      "file": "crests/ned/jong-utrecht.png",
+      "bytes": 21643
+    },
+    {
+      "id": "ned.mvv",
+      "source": "en:MVV Maastricht",
+      "image": "MVV_Maastricht_logo.svg",
+      "file": "crests/ned/mvv.png",
+      "bytes": 18056
+    },
+    {
+      "id": "ned.rkc",
+      "source": "en:RKC Waalwijk",
+      "image": "RKC_Waalwijk_logo.svg",
+      "file": "crests/ned/rkc.png",
+      "bytes": 22010
+    },
+    {
+      "id": "ned.roda",
+      "source": "en:Roda JC Kerkrade",
+      "image": "Roda_JC_Kerkrade_logo.svg",
+      "file": "crests/ned/roda.png",
+      "bytes": 24279
+    },
+    {
+      "id": "ned.top-oss",
+      "source": "en:TOP Oss",
+      "image": "TOP_Oss_logo.svg",
+      "file": "crests/ned/top-oss.png",
+      "bytes": 30407
+    },
+    {
+      "id": "ned.vvv",
+      "source": "en:VVV-Venlo",
+      "image": "VVV_Venlo.svg",
+      "file": "crests/ned/vvv.png",
+      "bytes": 18970
+    },
+    {
+      "id": "ned.willem-ii",
+      "source": "en:Willem II Tilburg",
+      "image": "Willem_II_logo.svg",
+      "file": "crests/ned/willem-ii.png",
+      "bytes": 35419
+    },
+    {
+      "id": "par.2-de-mayo",
+      "source": "en:Club 2 de Mayo",
+      "image": "Escudo_Oficial_del_Club_2_de_Mayo_de_Paraguay.svg",
+      "file": "crests/par/2-de-mayo.png",
+      "bytes": 11738
+    },
+    {
+      "id": "par.ameliano",
+      "source": "en:Sportivo Ameliano",
+      "image": "Sportivo_Ameliano.svg",
+      "file": "crests/par/ameliano.png",
+      "bytes": 57108
+    },
+    {
+      "id": "par.cerro-porteno",
+      "source": "en:Cerro Porteño",
+      "image": "Escudo_Club_Cerro_Porteño_2023-Actual.svg",
+      "file": "crests/par/cerro-porteno.png",
+      "bytes": 26832
+    },
+    {
+      "id": "par.guarani",
+      "source": "en:Club Guaraní",
+      "image": "Club_Guaraní.svg",
+      "file": "crests/par/guarani.png",
+      "bytes": 22884
+    },
+    {
+      "id": "par.libertad",
+      "source": "en:Club Libertad",
+      "image": "Club_Libertad.png",
+      "file": "crests/par/libertad.png",
+      "bytes": 13202
+    },
+    {
+      "id": "par.luqueno",
+      "source": "en:Sportivo Luqueño",
+      "image": "Sportivo_Luqueño.svg",
+      "file": "crests/par/luqueno.png",
+      "bytes": 36788
+    },
+    {
+      "id": "par.nacional",
+      "source": "en:Club Nacional",
+      "image": "Club_Nacional_de_Paraguay.png",
+      "file": "crests/par/nacional.png",
+      "bytes": 21869
+    },
+    {
+      "id": "par.olimpia",
+      "source": "en:Club Olimpia",
+      "image": "Club_Olimpia_logo.svg",
+      "file": "crests/par/olimpia.png",
+      "bytes": 10004
+    },
+    {
+      "id": "par.rubio-nu",
+      "source": "en:Club Rubio Ñu",
+      "image": "Club_Rubio_Ñu.svg",
+      "file": "crests/par/rubio-nu.png",
+      "bytes": 50926
+    },
+    {
+      "id": "par.trinidense",
+      "source": "en:Sportivo Trinidense",
+      "image": "Club_Sportivo_Trinidense.svg",
+      "file": "crests/par/trinidense.png",
+      "bytes": 17770
+    },
+    {
+      "id": "per.adt",
+      "source": "en:Asociación Deportiva Tarma",
+      "image": "Asociación_Deportiva_Tarma.svg",
+      "file": "crests/per/adt.png",
+      "bytes": 15855
+    },
+    {
+      "id": "per.alianza-atletico",
+      "source": "en:Alianza Atlético",
+      "image": "Alianza_Atlético.svg",
+      "file": "crests/per/alianza-atletico.png",
+      "bytes": 42167
+    },
+    {
+      "id": "per.alianza-lima",
+      "source": "en:Alianza Lima",
+      "image": "Escudo_Alianza_Lima.svg",
+      "file": "crests/per/alianza-lima.png",
+      "bytes": 19136
+    },
+    {
+      "id": "per.ayacucho",
+      "source": "en:Ayacucho FC",
+      "image": "Ayacucho_FC.png",
+      "file": "crests/per/ayacucho.png",
+      "bytes": 58175
+    },
+    {
+      "id": "per.binacional",
+      "source": "en:Deportivo Binacional FC",
+      "image": "Deportivo_Binacional.png",
+      "file": "crests/per/binacional.png",
+      "bytes": 80252
+    },
+    {
+      "id": "per.cienciano",
+      "source": "en:Cienciano",
+      "image": "Escudo_Cienciano.png",
+      "file": "crests/per/cienciano.png",
+      "bytes": 40909
+    },
+    {
+      "id": "per.comerciantes",
+      "source": "en:Comerciantes Unidos",
+      "image": "Comerciantes_Unidos.svg",
+      "file": "crests/per/comerciantes.png",
+      "bytes": 69484
+    },
+    {
+      "id": "per.cusco",
+      "source": "en:Cusco FC",
+      "image": "Cusco_FC_logo.svg",
+      "file": "crests/per/cusco.png",
+      "bytes": 40748
+    },
+    {
+      "id": "per.garcilaso",
+      "source": "en:Deportivo Garcilaso",
+      "image": "Deportivo_Garcilaso.svg",
+      "file": "crests/per/garcilaso.png",
+      "bytes": 14415
+    },
+    {
+      "id": "per.grau",
+      "source": "en:Atlético Grau",
+      "image": "Escudo_club_atletico_grau.png",
+      "file": "crests/per/grau.png",
+      "bytes": 17301
+    },
+    {
+      "id": "per.melgar",
+      "source": "en:FBC Melgar",
+      "image": "FBC_Melgar_de_Arequipa.svg",
+      "file": "crests/per/melgar.png",
+      "bytes": 28810
+    },
+    {
+      "id": "per.sport-boys",
+      "source": "en:Sport Boys",
+      "image": "Sport_Boys_del_Callao.svg",
+      "file": "crests/per/sport-boys.png",
+      "bytes": 15806
+    },
+    {
+      "id": "per.sport-huancayo",
+      "source": "en:Sport Huancayo",
+      "image": "Sport_Huancayo.svg",
+      "file": "crests/per/sport-huancayo.png",
+      "bytes": 28451
+    },
+    {
+      "id": "per.sporting-cristal",
+      "source": "en:Sporting Cristal",
+      "image": "Escudo_de_Sporting_Cristal_2025.svg",
+      "file": "crests/per/sporting-cristal.png",
+      "bytes": 15461
+    },
+    {
+      "id": "per.universitario",
+      "source": "en:Club Universitario de Deportes",
+      "image": "Logo_oficial_de_Universitario.svg",
+      "file": "crests/per/universitario.png",
+      "bytes": 12196
+    },
+    {
+      "id": "per.utc",
+      "source": "en:Universidad Técnica de Cajamarca",
+      "image": "UTC_Cajamarca.svg",
+      "file": "crests/per/utc.png",
+      "bytes": 17121
+    },
+    {
+      "id": "por.academico-viseu",
+      "source": "en:Académico de Viseu F.C.",
+      "image": "A.C._Viseu.svg",
+      "file": "crests/por/academico-viseu.png",
+      "bytes": 9888
+    },
+    {
+      "id": "por.chaves",
+      "source": "en:G.D. Chaves",
+      "image": "G.D._Chaves_logo.svg",
+      "file": "crests/por/chaves.png",
+      "bytes": 46531
+    },
+    {
+      "id": "por.farense",
+      "source": "en:S.C. Farense",
+      "image": "S.C._Farense_logo.svg",
+      "file": "crests/por/farense.png",
+      "bytes": 58575
+    },
+    {
+      "id": "por.feirense",
+      "source": "en:C.D. Feirense",
+      "image": "C.D._Feirense_logo.svg",
+      "file": "crests/por/feirense.png",
+      "bytes": 78650
+    },
+    {
+      "id": "por.felgueiras",
+      "source": "en:F.C. Felgueiras (2006)",
+      "image": "F.C._Felgueiras_(2006)_logo.svg",
+      "file": "crests/por/felgueiras.png",
+      "bytes": 42910
+    },
+    {
+      "id": "por.leiria",
+      "source": "en:U.D. Leiria",
+      "image": "U.D._Leiria_logo.svg",
+      "file": "crests/por/leiria.png",
+      "bytes": 50739
+    },
+    {
+      "id": "por.leixoes",
+      "source": "en:Leixões S.C.",
+      "image": "Leixões_S.C._logo.svg",
+      "file": "crests/por/leixoes.png",
+      "bytes": 60107
+    },
+    {
+      "id": "por.lusitania",
+      "source": "en:Lusitânia F.C.",
+      "image": "Lusitânia_F.C._logo.svg",
+      "file": "crests/por/lusitania.png",
+      "bytes": 48768
+    },
+    {
+      "id": "por.maritimo",
+      "source": "en:C.S. Marítimo",
+      "image": "C.S._Marítimo_logo.svg",
+      "file": "crests/por/maritimo.png",
+      "bytes": 81968
+    },
+    {
+      "id": "por.oliveirense",
+      "source": "en:U.D. Oliveirense",
+      "image": "U.D._Oliveirense_logo.svg",
+      "file": "crests/por/oliveirense.png",
+      "bytes": 40471
+    },
+    {
+      "id": "por.pacos",
+      "source": "en:F.C. Paços de Ferreira",
+      "image": "F.C._Paços_de_Ferreira.svg",
+      "file": "crests/por/pacos.png",
+      "bytes": 32919
+    },
+    {
+      "id": "por.penafiel",
+      "source": "en:F.C. Penafiel",
+      "image": "F.C._Penafiel_logo.svg",
+      "file": "crests/por/penafiel.png",
+      "bytes": 54349
+    },
+    {
+      "id": "por.portimonense",
+      "source": "en:Portimonense S.C.",
+      "image": "Portimonense_Sporting_Clube_logo.svg",
+      "file": "crests/por/portimonense.png",
+      "bytes": 30672
+    },
+    {
+      "id": "por.torreense",
+      "source": "en:S.C.U. Torreense",
+      "image": "S.C.U._Torreense_logo.svg",
+      "file": "crests/por/torreense.png",
+      "bytes": 57920
+    },
+    {
+      "id": "por.vizela",
+      "source": "en:F.C. Vizela",
+      "image": "F.C._Vizela_logo.svg",
+      "file": "crests/por/vizela.png",
+      "bytes": 42340
+    },
+    {
+      "id": "qat.al-ahli",
+      "source": "en:Al Ahli SC (Doha)",
+      "image": "Al_Ahli_SC_(Doha)_logo.png",
+      "file": "crests/qat/al-ahli.png",
+      "bytes": 50675
+    },
+    {
+      "id": "qat.al-arabi",
+      "source": "en:Al-Arabi SC (Qatar)",
+      "image": "Al-Arabi_SC_Qatar_logo.svg",
+      "file": "crests/qat/al-arabi.png",
+      "bytes": 38509
+    },
+    {
+      "id": "qat.al-duhail",
+      "source": "en:Al Duhail SC",
+      "image": "Al-Duhail_SC_(logo).svg",
+      "file": "crests/qat/al-duhail.png",
+      "bytes": 65160
+    },
+    {
+      "id": "qat.al-gharafa",
+      "source": "en:Al-Gharafa SC",
+      "image": "Al-Gharafa_SC_logo.svg",
+      "file": "crests/qat/al-gharafa.png",
+      "bytes": 44534
+    },
+    {
+      "id": "qat.al-khor",
+      "source": "en:Al-Khor SC",
+      "image": "Al-Khor_SC_logo.svg",
+      "file": "crests/qat/al-khor.png",
+      "bytes": 48207
+    },
+    {
+      "id": "qat.al-rayyan",
+      "source": "en:Al-Rayyan SC",
+      "image": "Al-Rayyan_SC_logo.svg",
+      "file": "crests/qat/al-rayyan.png",
+      "bytes": 37003
+    },
+    {
+      "id": "qat.al-sadd",
+      "source": "en:Al Sadd SC",
+      "image": "Al_Sadd_SC_logo.svg",
+      "file": "crests/qat/al-sadd.png",
+      "bytes": 36257
+    },
+    {
+      "id": "qat.al-shahania",
+      "source": "en:Al Shahaniya SC",
+      "image": "Al_Shahaniya_SC_logo.svg",
+      "file": "crests/qat/al-shahania.png",
+      "bytes": 42257
+    },
+    {
+      "id": "qat.al-shamal",
+      "source": "en:Al-Shamal SC",
+      "image": "Al-Shamal_SC_logo.svg",
+      "file": "crests/qat/al-shamal.png",
+      "bytes": 39797
+    },
+    {
+      "id": "qat.al-wakrah",
+      "source": "en:Al-Wakrah SC",
+      "image": "Al-Wakrah_SC_logoo.svg",
+      "file": "crests/qat/al-wakrah.png",
+      "bytes": 28288
+    },
+    {
+      "id": "qat.qatar-sc",
+      "source": "en:Qatar SC",
+      "image": "QSC-Emblem-RGB.svg",
+      "file": "crests/qat/qatar-sc.png",
+      "bytes": 9153
+    },
+    {
+      "id": "qat.umm-salal",
+      "source": "en:Umm Salal SC",
+      "image": "Umm_Salal_SC_logo.svg",
+      "file": "crests/qat/umm-salal.png",
+      "bytes": 39165
+    },
+    {
+      "id": "sco.aberdeen",
+      "source": "en:Aberdeen F.C.",
+      "image": "Aberdeen_FC_stars_crest.svg",
+      "file": "crests/sco/aberdeen.png",
+      "bytes": 43780
+    },
+    {
+      "id": "sco.celtic",
+      "source": "en:Celtic F.C.",
+      "image": "Celtic_FC_crest.svg",
+      "file": "crests/sco/celtic.png",
+      "bytes": 50327
+    },
+    {
+      "id": "sco.dundee",
+      "source": "en:Dundee F.C.",
+      "image": "Dundee_FC_2025_Crest.svg",
+      "file": "crests/sco/dundee.png",
+      "bytes": 25157
+    },
+    {
+      "id": "sco.dundee-united",
+      "source": "en:Dundee United F.C.",
+      "image": "Dundee_United_FC_crest.svg",
+      "file": "crests/sco/dundee-united.png",
+      "bytes": 39767
+    },
+    {
+      "id": "sco.falkirk",
+      "source": "en:Falkirk F.C.",
+      "image": "Falkirk_FC_logo.svg",
+      "file": "crests/sco/falkirk.png",
+      "bytes": 11546
+    },
+    {
+      "id": "sco.hearts",
+      "source": "en:Heart of Midlothian F.C.",
+      "image": "Heart_of_Midlothian_FC_logo.svg",
+      "file": "crests/sco/hearts.png",
+      "bytes": 46781
+    },
+    {
+      "id": "sco.hibernian",
+      "source": "en:Hibernian F.C.",
+      "image": "Hibernian_FC_2026_crest.svg",
+      "file": "crests/sco/hibernian.png",
+      "bytes": 50664
+    },
+    {
+      "id": "sco.kilmarnock",
+      "source": "en:Kilmarnock F.C.",
+      "image": "Kilmarnock_FC_crest.svg",
+      "file": "crests/sco/kilmarnock.png",
+      "bytes": 62610
+    },
+    {
+      "id": "sco.livingston",
+      "source": "en:Livingston F.C.",
+      "image": "Livingston_FC_crest.svg",
+      "file": "crests/sco/livingston.png",
+      "bytes": 31045
+    },
+    {
+      "id": "sco.motherwell",
+      "source": "en:Motherwell F.C.",
+      "image": "Motherwell_FC_crest.svg",
+      "file": "crests/sco/motherwell.png",
+      "bytes": 48121
+    },
+    {
+      "id": "sco.rangers",
+      "source": "en:Rangers F.C.",
+      "image": "Rangers_FC.svg",
+      "file": "crests/sco/rangers.png",
+      "bytes": 43561
+    },
+    {
+      "id": "sco.st-mirren",
+      "source": "en:St Mirren F.C.",
+      "image": "St_Mirren_FC_crest.svg",
+      "file": "crests/sco/st-mirren.png",
+      "bytes": 42729
+    },
+    {
+      "id": "sco.airdrieonians",
+      "source": "en:Airdrieonians F.C.",
+      "image": "Airdrieonians_FC_crest.svg",
+      "file": "crests/sco/airdrieonians.png",
+      "bytes": 27462
+    },
+    {
+      "id": "sco.arbroath",
+      "source": "en:Arbroath F.C.",
+      "image": "Arbroath_FC_crest.svg",
+      "file": "crests/sco/arbroath.png",
+      "bytes": 36534
+    },
+    {
+      "id": "sco.ayr",
+      "source": "en:Ayr United F.C.",
+      "image": "Ayr_United_FC_crest.svg",
+      "file": "crests/sco/ayr.png",
+      "bytes": 36431
+    },
+    {
+      "id": "sco.dunfermline",
+      "source": "en:Dunfermline Athletic F.C.",
+      "image": "Dunfermline_Athletic_FC_crest.svg",
+      "file": "crests/sco/dunfermline.png",
+      "bytes": 24313
+    },
+    {
+      "id": "sco.morton",
+      "source": "en:Greenock Morton F.C.",
+      "image": "Greenock_Morton_FC_logo.svg",
+      "file": "crests/sco/morton.png",
+      "bytes": 30652
+    },
+    {
+      "id": "sco.partick",
+      "source": "en:Partick Thistle F.C.",
+      "image": "Partick_Thistle_FC_logo.svg",
+      "file": "crests/sco/partick.png",
+      "bytes": 50973
+    },
+    {
+      "id": "sco.queens-park",
+      "source": "en:Queen's Park F.C.",
+      "image": "Queens_Park_Crest.svg",
+      "file": "crests/sco/queens-park.png",
+      "bytes": 109113
+    },
+    {
+      "id": "sco.raith",
+      "source": "en:Raith Rovers F.C.",
+      "image": "Raith_Rovers_FC_crest.svg",
+      "file": "crests/sco/raith.png",
+      "bytes": 33676
+    },
+    {
+      "id": "sco.ross-county",
+      "source": "en:Ross County F.C.",
+      "image": "Ross_County_FC_crest.svg",
+      "file": "crests/sco/ross-county.png",
+      "bytes": 29603
+    },
+    {
+      "id": "sco.st-johnstone",
+      "source": "en:St Johnstone F.C.",
+      "image": "St_Johnstone_FC_crest.svg",
+      "file": "crests/sco/st-johnstone.png",
+      "bytes": 45254
+    },
+    {
+      "id": "tur.alanyaspor",
+      "source": "en:Alanyaspor",
+      "image": "Alanyaspor_logo.svg",
+      "file": "crests/tur/alanyaspor.png",
+      "bytes": 45341
+    },
+    {
+      "id": "tur.antalyaspor",
+      "source": "en:Antalyaspor",
+      "image": "Antalyaspor_logo.svg",
+      "file": "crests/tur/antalyaspor.png",
+      "bytes": 30801
+    },
+    {
+      "id": "tur.basaksehir",
+      "source": "en:İstanbul Başakşehir F.K.",
+      "image": "İstanbul_Başakşehir_logo.svg",
+      "file": "crests/tur/basaksehir.png",
+      "bytes": 42325
+    },
+    {
+      "id": "tur.besiktas",
+      "source": "en:Beşiktaş J.K.",
+      "image": "BesiktasJK-Logo.svg",
+      "file": "crests/tur/besiktas.png",
+      "bytes": 28463
+    },
+    {
+      "id": "tur.eyupspor",
+      "source": "en:Eyüpspor",
+      "image": "Eyüpspor_Logosu.png",
+      "file": "crests/tur/eyupspor.png",
+      "bytes": 32674
+    },
+    {
+      "id": "tur.fenerbahce",
+      "source": "en:Fenerbahçe S.K. (football)",
+      "image": "Fenerbahçe.svg",
+      "file": "crests/tur/fenerbahce.png",
+      "bytes": 46972
+    },
+    {
+      "id": "tur.galatasaray",
+      "source": "en:Galatasaray S.K. (football)",
+      "image": "Galatasaray_S.K._Logo_2026_5-stars.svg",
+      "file": "crests/tur/galatasaray.png",
+      "bytes": 15901
+    },
+    {
+      "id": "tur.gaziantep",
+      "source": "en:Gaziantep F.K.",
+      "image": "Gazişehir_Gaziantep_logo.svg",
+      "file": "crests/tur/gaziantep.png",
+      "bytes": 34170
+    },
+    {
+      "id": "tur.genclerbirligi",
+      "source": "en:Gençlerbirliği S.K.",
+      "image": "Gençlerbirliği_S.K._crest.svg",
+      "file": "crests/tur/genclerbirligi.png",
+      "bytes": 53496
+    },
+    {
+      "id": "tur.goztepe",
+      "source": "en:Göztepe S.K.",
+      "image": "Göztepe_S.K._logo.svg",
+      "file": "crests/tur/goztepe.png",
+      "bytes": 20741
+    },
+    {
+      "id": "tur.karagumruk",
+      "source": "en:Fatih Karagümrük S.K.",
+      "image": "Fatih_Karagümrük_S.K..png",
+      "file": "crests/tur/karagumruk.png",
+      "bytes": 56167
+    },
+    {
+      "id": "tur.kasimpasa",
+      "source": "en:Kasımpaşa S.K.",
+      "image": "Kasimpasa_logo.svg",
+      "file": "crests/tur/kasimpasa.png",
+      "bytes": 25594
+    },
+    {
+      "id": "tur.kayserispor",
+      "source": "en:Kayserispor",
+      "image": "Kayserispor_logo.svg",
+      "file": "crests/tur/kayserispor.png",
+      "bytes": 24156
+    },
+    {
+      "id": "tur.kocaelispor",
+      "source": "en:Kocaelispor",
+      "image": "Kocaelispor_logo.svg",
+      "file": "crests/tur/kocaelispor.png",
+      "bytes": 24268
+    },
+    {
+      "id": "tur.konyaspor",
+      "source": "en:Konyaspor",
+      "image": "Konyaspor_logo.svg",
+      "file": "crests/tur/konyaspor.png",
+      "bytes": 41640
+    },
+    {
+      "id": "tur.rizespor",
+      "source": "en:Çaykur Rizespor",
+      "image": "Çaykur_Rizespor_logo.svg",
+      "file": "crests/tur/rizespor.png",
+      "bytes": 37430
+    },
+    {
+      "id": "tur.samsunspor",
+      "source": "en:Samsunspor",
+      "image": "Samsunspor_crest.svg",
+      "file": "crests/tur/samsunspor.png",
+      "bytes": 29020
+    },
+    {
+      "id": "tur.trabzonspor",
+      "source": "en:Trabzonspor",
+      "image": "Trabzonspor_Amblem.svg",
+      "file": "crests/tur/trabzonspor.png",
+      "bytes": 21647
+    },
+    {
+      "id": "tur.adana-demirspor",
+      "source": "en:Adana Demirspor",
+      "image": "Adana_Demirspor_logo.png",
+      "file": "crests/tur/adana-demirspor.png",
+      "bytes": 28096
+    },
+    {
+      "id": "tur.amedspor",
+      "source": "en:Amed S.F.K.",
+      "image": "Amed_S.F.K._logo.svg",
+      "file": "crests/tur/amedspor.png",
+      "bytes": 34484
+    },
+    {
+      "id": "tur.bandirmaspor",
+      "source": "en:Bandırmaspor",
+      "image": "Bandırmaspor_logo.svg",
+      "file": "crests/tur/bandirmaspor.png",
+      "bytes": 22132
+    },
+    {
+      "id": "tur.bodrum",
+      "source": "en:Bodrum F.K.",
+      "image": "Bodrum_FK_crest.svg",
+      "file": "crests/tur/bodrum.png",
+      "bytes": 27144
+    },
+    {
+      "id": "tur.boluspor",
+      "source": "en:Boluspor",
+      "image": "Boluspor_logo.svg",
+      "file": "crests/tur/boluspor.png",
+      "bytes": 26375
+    },
+    {
+      "id": "tur.corum",
+      "source": "en:Çorum F.K.",
+      "image": "Çorum_F.K._crest.svg",
+      "file": "crests/tur/corum.png",
+      "bytes": 43899
+    },
+    {
+      "id": "tur.erokspor",
+      "source": "en:Esenler Erokspor",
+      "image": "Esenler_Erokspor_logo.png",
+      "file": "crests/tur/erokspor.png",
+      "bytes": 27820
+    },
+    {
+      "id": "tur.erzurumspor",
+      "source": "en:Erzurumspor F.K.",
+      "image": "Erzurumspor_F.K._logo.svg",
+      "file": "crests/tur/erzurumspor.png",
+      "bytes": 49911
+    },
+    {
+      "id": "tur.hatayspor",
+      "source": "en:Hatayspor",
+      "image": "Hatayspor_crest.png",
+      "file": "crests/tur/hatayspor.png",
+      "bytes": 24327
+    },
+    {
+      "id": "tur.igdir",
+      "source": "en:Iğdır F.K.",
+      "image": "Iğdır_F.K._crest.png",
+      "file": "crests/tur/igdir.png",
+      "bytes": 30289
+    },
+    {
+      "id": "tur.istanbulspor",
+      "source": "en:İstanbulspor",
+      "image": "Istanbulspor.svg",
+      "file": "crests/tur/istanbulspor.png",
+      "bytes": 27681
+    },
+    {
+      "id": "tur.keciorengucu",
+      "source": "en:Ankara Keçiörengücü S.K.",
+      "image": "Ankara_Keçiörengücü_S.K._logo.png",
+      "file": "crests/tur/keciorengucu.png",
+      "bytes": 42838
+    },
+    {
+      "id": "tur.manisa",
+      "source": "en:Manisa F.K.",
+      "image": "Manisa_FK_logo.png",
+      "file": "crests/tur/manisa.png",
+      "bytes": 39987
+    },
+    {
+      "id": "tur.pendikspor",
+      "source": "tr:Pendikspor",
+      "image": "Pendikspor.png",
+      "file": "crests/tur/pendikspor.png",
+      "bytes": 39907
+    },
+    {
+      "id": "tur.sakaryaspor",
+      "source": "en:Sakaryaspor",
+      "image": "Sakaryaspor_crest.png",
+      "file": "crests/tur/sakaryaspor.png",
+      "bytes": 21963
+    },
+    {
+      "id": "tur.sariyer",
+      "source": "en:Sarıyer S.K.",
+      "image": "Sarıyer_SK_logo.svg",
+      "file": "crests/tur/sariyer.png",
+      "bytes": 45068
+    },
+    {
+      "id": "tur.serikspor",
+      "source": "en:Serikspor",
+      "image": "Serikspor_logo.png",
+      "file": "crests/tur/serikspor.png",
+      "bytes": 82567
+    },
+    {
+      "id": "tur.sivasspor",
+      "source": "en:Sivasspor",
+      "image": "Sivasspor_logo.svg",
+      "file": "crests/tur/sivasspor.png",
+      "bytes": 25504
+    },
+    {
+      "id": "tur.umraniyespor",
+      "source": "en:Ümraniyespor",
+      "image": "Ümraniyespor_logo.png",
+      "file": "crests/tur/umraniyespor.png",
+      "bytes": 54055
+    },
+    {
+      "id": "tur.vanspor",
+      "source": "en:Vanspor F.K.",
+      "image": "Belediye_Vanspor.png",
+      "file": "crests/tur/vanspor.png",
+      "bytes": 12003
+    },
+    {
+      "id": "uae.ajman",
+      "source": "en:Ajman Club",
+      "image": "Ajman_Club_logo.svg",
+      "file": "crests/uae/ajman.png",
+      "bytes": 13801
+    },
+    {
+      "id": "uae.al-ain",
+      "source": "en:Al Ain FC",
+      "image": "Al_Ain_FC_logo.svg",
+      "file": "crests/uae/al-ain.png",
+      "bytes": 45202
+    },
+    {
+      "id": "uae.al-bataeh",
+      "source": "en:Al Bataeh Club",
+      "image": "Al_Bataeh_FC.png",
+      "file": "crests/uae/al-bataeh.png",
+      "bytes": 101891
+    },
+    {
+      "id": "uae.al-dhafra",
+      "source": "en:Al Dhafra FC",
+      "image": "Al_Dhafra_FC_logo.svg",
+      "file": "crests/uae/al-dhafra.png",
+      "bytes": 38391
+    },
+    {
+      "id": "uae.al-jazira",
+      "source": "en:Al Jazira Club",
+      "image": "Al_Jazira_Club_logo_en_(2021).svg",
+      "file": "crests/uae/al-jazira.png",
+      "bytes": 43832
+    },
+    {
+      "id": "uae.al-nasr",
+      "source": "en:Al-Nasr SC (Dubai)",
+      "image": "Al-Nasr_SC_(Dubai)_logo.svg",
+      "file": "crests/uae/al-nasr.png",
+      "bytes": 53501
+    },
+    {
+      "id": "uae.al-wahda",
+      "source": "en:Al Wahda FC",
+      "image": "Al_Wahda_FC_logo.svg",
+      "file": "crests/uae/al-wahda.png",
+      "bytes": 22190
+    },
+    {
+      "id": "uae.al-wasl",
+      "source": "en:Al Wasl F.C.",
+      "image": "Al_Wasl_FC_Logo.svg",
+      "file": "crests/uae/al-wasl.png",
+      "bytes": 42213
+    },
+    {
+      "id": "uae.baniyas",
+      "source": "en:Baniyas Club",
+      "image": "Baniyas_Club_logo.svg",
+      "file": "crests/uae/baniyas.png",
+      "bytes": 34496
+    },
+    {
+      "id": "uae.dibba",
+      "source": "en:Dibba FC",
+      "image": "Dibba_club_logo.png",
+      "file": "crests/uae/dibba.png",
+      "bytes": 88072
+    },
+    {
+      "id": "uae.khor-fakkan",
+      "source": "en:Khor Fakkan Club",
+      "image": "Khor_Fakkan_Club_logo.svg",
+      "file": "crests/uae/khor-fakkan.png",
+      "bytes": 48153
+    },
+    {
+      "id": "uae.shabab-al-ahli",
+      "source": "en:Shabab Al Ahli Club",
+      "image": "Shabab_Al_Ahli_logo.svg",
+      "file": "crests/uae/shabab-al-ahli.png",
+      "bytes": 50225
+    },
+    {
+      "id": "uae.sharjah",
+      "source": "en:Sharjah FC",
+      "image": "Sharjah_FC_New_Logo.svg",
+      "file": "crests/uae/sharjah.png",
+      "bytes": 44441
+    },
+    {
+      "id": "uru.albion",
+      "source": "en:Albion F.C.",
+      "image": "Albion_fc_crest.svg",
+      "file": "crests/uru/albion.png",
+      "bytes": 31131
+    },
+    {
+      "id": "uru.atenas",
+      "source": "en:Atenas de San Carlos",
+      "image": "Atenas_de_San_Carlos_logo.svg",
+      "file": "crests/uru/atenas.png",
+      "bytes": 22281
+    },
+    {
+      "id": "uru.basanez",
+      "source": "en:Basáñez",
+      "image": "Escudo_Club_Atlético_Basáñez.png",
+      "file": "crests/uru/basanez.png",
+      "bytes": 25291
+    },
+    {
+      "id": "uru.colon",
+      "source": "en:Colón F.C.",
+      "image": "Fic_Logo_Colón.png",
+      "file": "crests/uru/colon.png",
+      "bytes": 38915
+    },
+    {
+      "id": "uru.fenix",
+      "source": "en:Centro Atlético Fénix",
+      "image": "Centro_Atlético_Fénix_logo.svg",
+      "file": "crests/uru/fenix.png",
+      "bytes": 48219
+    },
+    {
+      "id": "uru.la-luz",
+      "source": "en:La Luz F.C.",
+      "image": "Escudo_La_Luz_FC.png",
+      "file": "crests/uru/la-luz.png",
+      "bytes": 21915
+    },
+    {
+      "id": "uru.miramar",
+      "source": "en:Miramar Misiones",
+      "image": "CS_Miramar_Misiones.png",
+      "file": "crests/uru/miramar.png",
+      "bytes": 41585
+    },
+    {
+      "id": "uru.oriental",
+      "source": "en:Club Oriental de Football",
+      "image": "Club_Oriental_de_Football.svg",
+      "file": "crests/uru/oriental.png",
+      "bytes": 8711
+    },
+    {
+      "id": "uru.plaza-colonia",
+      "source": "en:Club Plaza Colonia de Deportes",
+      "image": "Nuevo_escudo_Club_Plaza_Colonia_de_Deportes.png",
+      "file": "crests/uru/plaza-colonia.png",
+      "bytes": 36155
+    },
+    {
+      "id": "uru.rampla",
+      "source": "en:Rampla Juniors",
+      "image": "Rampla_juniors_fc_logo.png",
+      "file": "crests/uru/rampla.png",
+      "bytes": 109324
+    },
+    {
+      "id": "uru.rentistas",
+      "source": "en:C.A. Rentistas",
+      "image": "C.A._Rentistas.svg",
+      "file": "crests/uru/rentistas.png",
+      "bytes": 23802
+    },
+    {
+      "id": "uru.sud-america",
+      "source": "en:Sud América",
+      "image": "Escudo_actual_IASA.png",
+      "file": "crests/uru/sud-america.png",
+      "bytes": 11842
+    },
+    {
+      "id": "uru.tacuarembo",
+      "source": "en:Tacuarembó F.C.",
+      "image": "Tacuarembo_FC.svg",
+      "file": "crests/uru/tacuarembo.png",
+      "bytes": 11470
+    },
+    {
+      "id": "uru.uruguay-montevideo",
+      "source": "en:Uruguay Montevideo",
+      "image": "Escudo_Uruguay_Montevideo.png",
+      "file": "crests/uru/uruguay-montevideo.png",
+      "bytes": 23895
+    },
+    {
+      "id": "usa.atlanta",
+      "source": "en:Atlanta United FC",
+      "image": "Atlanta_MLS.svg",
+      "file": "crests/usa/atlanta.png",
+      "bytes": 37424
+    },
+    {
+      "id": "usa.austin",
+      "source": "en:Austin FC",
+      "image": "Austin_FC_logo.svg",
+      "file": "crests/usa/austin.png",
+      "bytes": 23188
+    },
+    {
+      "id": "usa.charlotte",
+      "source": "en:Charlotte FC",
+      "image": "Charlotte_FC_logo.svg",
+      "file": "crests/usa/charlotte.png",
+      "bytes": 38394
+    },
+    {
+      "id": "usa.chicago",
+      "source": "en:Chicago Fire FC",
+      "image": "Chicago_Fire_logo,_2021.svg",
+      "file": "crests/usa/chicago.png",
+      "bytes": 19671
+    },
+    {
+      "id": "usa.cincinnati",
+      "source": "en:FC Cincinnati",
+      "image": "FC_Cincinnati_primary_logo_2018.svg",
+      "file": "crests/usa/cincinnati.png",
+      "bytes": 29002
+    },
+    {
+      "id": "usa.colorado",
+      "source": "en:Colorado Rapids",
+      "image": "Colorado_Rapids_logo.svg",
+      "file": "crests/usa/colorado.png",
+      "bytes": 51284
+    },
+    {
+      "id": "usa.columbus",
+      "source": "en:Columbus Crew",
+      "image": "Columbus_Crew_logo_2021.svg",
+      "file": "crests/usa/columbus.png",
+      "bytes": 16914
+    },
+    {
+      "id": "usa.dallas",
+      "source": "en:FC Dallas",
+      "image": "FC_Dallas_logo.svg",
+      "file": "crests/usa/dallas.png",
+      "bytes": 30976
+    },
+    {
+      "id": "usa.dc-united",
+      "source": "en:D.C. United",
+      "image": "D.C._United_logo_(2016).svg",
+      "file": "crests/usa/dc-united.png",
+      "bytes": 31017
+    },
+    {
+      "id": "usa.houston",
+      "source": "en:Houston Dynamo FC",
+      "image": "Houston_Dynamo_FC_logo.svg",
+      "file": "crests/usa/houston.png",
+      "bytes": 20597
+    },
+    {
+      "id": "usa.inter-miami",
+      "source": "en:Inter Miami CF",
+      "image": "Inter_Miami_CF_logo.svg",
+      "file": "crests/usa/inter-miami.png",
+      "bytes": 37827
+    },
+    {
+      "id": "usa.la-galaxy",
+      "source": "en:LA Galaxy",
+      "image": "Los_Angeles_Galaxy_logo.svg",
+      "file": "crests/usa/la-galaxy.png",
+      "bytes": 29603
+    },
+    {
+      "id": "usa.lafc",
+      "source": "en:Los Angeles FC",
+      "image": "Los_Angeles_Football_Club.svg",
+      "file": "crests/usa/lafc.png",
+      "bytes": 21759
+    },
+    {
+      "id": "usa.minnesota",
+      "source": "en:Minnesota United FC",
+      "image": "Minnesota_United_FC_(MLS)_Primary_logo.svg",
+      "file": "crests/usa/minnesota.png",
+      "bytes": 30174
+    },
+    {
+      "id": "usa.montreal",
+      "source": "en:CF Montréal",
+      "image": "Logo_of_CF_Montreal_2023.svg",
+      "file": "crests/usa/montreal.png",
+      "bytes": 34181
+    },
+    {
+      "id": "usa.nashville",
+      "source": "en:Nashville SC",
+      "image": "Nashville_SC_logo,_2020.svg",
+      "file": "crests/usa/nashville.png",
+      "bytes": 15014
+    },
+    {
+      "id": "usa.new-england",
+      "source": "en:New England Revolution",
+      "image": "Logo_of_New_England_Revolution_(2021).svg",
+      "file": "crests/usa/new-england.png",
+      "bytes": 39376
+    },
+    {
+      "id": "usa.nycfc",
+      "source": "en:New York City FC",
+      "image": "Logo_New_York_City_FC_2025.svg",
+      "file": "crests/usa/nycfc.png",
+      "bytes": 43993
+    },
+    {
+      "id": "usa.orlando",
+      "source": "en:Orlando City SC",
+      "image": "Orlando_City_2014.svg",
+      "file": "crests/usa/orlando.png",
+      "bytes": 30709
+    },
+    {
+      "id": "usa.philadelphia",
+      "source": "en:Philadelphia Union",
+      "image": "Philadelphia_Union_2018_logo.svg",
+      "file": "crests/usa/philadelphia.png",
+      "bytes": 40147
+    },
+    {
+      "id": "usa.portland",
+      "source": "en:Portland Timbers",
+      "image": "Portland_Timbers_logo.svg",
+      "file": "crests/usa/portland.png",
+      "bytes": 22332
+    },
+    {
+      "id": "usa.red-bulls",
+      "source": "en:New York Red Bulls",
+      "image": "New_York_Red_Bulls_logo.svg",
+      "file": "crests/usa/red-bulls.png",
+      "bytes": 31305
+    },
+    {
+      "id": "usa.rsl",
+      "source": "en:Real Salt Lake",
+      "image": "Real_Salt_Lake_2010.svg",
+      "file": "crests/usa/rsl.png",
+      "bytes": 39567
+    },
+    {
+      "id": "usa.san-diego",
+      "source": "en:San Diego FC",
+      "image": "San_Diego_FC_logo.svg",
+      "file": "crests/usa/san-diego.png",
+      "bytes": 40689
+    },
+    {
+      "id": "usa.san-jose",
+      "source": "en:San Jose Earthquakes",
+      "image": "San_Jose_Earthquakes_2014.svg",
+      "file": "crests/usa/san-jose.png",
+      "bytes": 31160
+    },
+    {
+      "id": "usa.seattle",
+      "source": "en:Seattle Sounders FC",
+      "image": "Seattle_Sounders_logo.svg",
+      "file": "crests/usa/seattle.png",
+      "bytes": 21854
+    },
+    {
+      "id": "usa.skc",
+      "source": "en:Sporting Kansas City",
+      "image": "Sporting_Kansas_City_logo.svg",
+      "file": "crests/usa/skc.png",
+      "bytes": 33354
+    },
+    {
+      "id": "usa.st-louis",
+      "source": "en:St. Louis City SC",
+      "image": "Logo_of_St._Louis_City_SC.svg",
+      "file": "crests/usa/st-louis.png",
+      "bytes": 24652
+    },
+    {
+      "id": "usa.toronto",
+      "source": "en:Toronto FC",
+      "image": "Toronto_FC_Logo.svg",
+      "file": "crests/usa/toronto.png",
+      "bytes": 25480
+    },
+    {
+      "id": "usa.vancouver",
+      "source": "en:Vancouver Whitecaps FC",
+      "image": "Vancouver_Whitecaps_logo.svg",
+      "file": "crests/usa/vancouver.png",
+      "bytes": 32893
+    },
+    {
+      "id": "por.benfica-b",
+      "source": "pt:Sport Lisboa e Benfica B",
+      "image": "SL_Benfica_2026_Emblem.svg",
+      "file": "crests/por/benfica-b.png",
+      "bytes": 54785
+    },
+    {
+      "id": "por.sporting-b",
+      "source": "pt:Sporting Clube de Portugal B",
+      "image": "Sporting_Clube_de_Portugal_logo_(2026).svg",
+      "file": "crests/por/sporting-b.png",
+      "bytes": 38483
+    },
+    {
+      "id": "bel.francs-borains",
+      "source": "fr:Royal Francs-Borains",
+      "image": "Logo_Francs-Borains_2023.svg",
+      "file": "crests/bel/francs-borains.png",
+      "bytes": 11329
+    }
+  ],
+  "missing": [
+    "arg.colegiales",
+    "arg.central-norte",
+    "arg.defensores-unidos",
+    "arg.jj-urquiza",
+    "col.atletico-cali",
+    "col.cortulua",
+    "col.real-cartagena",
+    "ecu.vinotinto",
+    "esp.real-sociedad-b",
+    "esp.real-madrid-castilla",
+    "esp.osasuna-promesas",
+    "esp.atletico-madrileno",
+    "esp.betis-deportivo",
+    "esp.torremolinos",
+    "ita.atalanta-u23",
+    "ita.dolomiti",
+    "ita.giugliano",
+    "ita.guidonia",
+    "ita.inter-u23",
+    "ita.ospitaletto",
+    "ita.ravenna",
+    "ita.sorrento",
+    "jpn.ryukyu",
+    "kor.gimhae",
+    "ksa.al-anwar",
+    "ksa.al-arabi",
+    "ksa.al-jandal",
+    "ksa.al-orobah",
+    "ksa.al-raed",
+    "ksa.al-zulfi",
+    "ksa.ohod",
+    "ned.jong-ajax",
+    "ned.jong-psv",
+    "par.general-caballero",
+    "par.recoleta",
+    "per.chankas",
+    "per.juan-pablo",
+    "por.porto-b",
+    "uae.kalba",
+    "bel.rwdm"
+  ]
+}

@@ -1,0 +1,789 @@
+{
+  "app": {
+    "title": "Leyenda",
+    "subtitle": "Carrera de Futbolista",
+    "version": "v{version}"
+  },
+  "common": {
+    "back": "Volver",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "load": "Cargar",
+    "delete": "Borrar",
+    "export": "Exportar",
+    "import": "Importar",
+    "yes": "Sí",
+    "no": "No",
+    "empty": "Vacía",
+    "comingSoon": "Disponible en la fase {phase}"
+  },
+  "menu": {
+    "newCareer": "Nueva carrera",
+    "continue": "Continuar",
+    "continueHint": "{name} · {season}",
+    "load": "Cargar partida",
+    "hallOfFame": "Salón de la Fama",
+    "options": "Opciones",
+    "debug": "Herramientas de depuración",
+    "footer": "Clubes, ligas y estadios reales. Jugadores y entrenadores ficticios.",
+    "clubs": "Clubes y ligas",
+    "clubsHint": "{clubs} clubes reales de {countries} países",
+    "howTo": "Cómo se juega"
+  },
+  "newCareer": {
+    "title": "Nueva carrera",
+    "intro": "La creación completa del personaje (avatar, origen, estilo y personalidad) llega en la Fase 3. Por ahora puedes crear una carrera de prueba para comprobar el guardado.",
+    "name": "Nombre del jugador",
+    "namePlaceholder": "Ej.: Lucas Ferreyra",
+    "nickname": "Apodo (opcional)",
+    "seed": "Semilla (opcional)",
+    "seedHint": "Con la misma semilla y las mismas decisiones, la carrera se repite.",
+    "ironMan": "Modo Ironman",
+    "ironManHint": "Se guarda tras cada decisión y no se puede volver atrás.",
+    "start": "Empezar carrera",
+    "nameRequired": "Escribe un nombre.",
+    "position": "Posición principal"
+  },
+  "hub": {
+    "title": "Temporada {season}",
+    "age": "{age} años",
+    "seed": "Semilla: {seed}",
+    "ironMan": "Ironman",
+    "placeholder": "El motor de temporada llega en la Fase 4. Desde aquí ya puedes guardar, exportar y volver al menú.",
+    "saveTo": "Guardar en ranura",
+    "exportJson": "Exportar JSON",
+    "mainMenu": "Menú principal",
+    "autosaved": "Autoguardado",
+    "potential": "Potencial estimado",
+    "overall": "Media",
+    "attributes": "Atributos",
+    "club": "Club",
+    "academyRole": "{role} · dorsal {n}",
+    "noClub": "Sin club",
+    "style": "Estilo",
+    "traits": "Rasgos",
+    "potentialRange": "Potencial estimado: {min}-{max}",
+    "phases": {
+      "preseason": "Pretemporada",
+      "firstHalf": "Primera vuelta",
+      "winterWindow": "Mercado de invierno",
+      "secondHalf": "Segunda vuelta",
+      "seasonEnd": "Fin de temporada"
+    },
+    "actions": {
+      "preseason": "Jugar la primera vuelta",
+      "firstHalf": "Ir al mercado de invierno",
+      "winterWindow": "Jugar la segunda vuelta",
+      "secondHalf": "Cerrar la temporada",
+      "seasonEnd": "Empezar la temporada {season}"
+    },
+    "phaseHints": {
+      "preseason": "Pretemporada en {club}. Cuando quieras, empieza la competición.",
+      "firstHalf": "Termina la primera vuelta. Revisa la clasificación antes del mercado de invierno.",
+      "winterWindow": "Mercado de invierno: si te llegan ofertas, decide antes de seguir.",
+      "secondHalf": "Última jornada disputada. Cierra la temporada para ver ascensos, descensos y tu evolución.",
+      "seasonEnd": "Temporada cerrada. Revisa el resumen y las ofertas antes de empezar la siguiente."
+    },
+    "tabs": {
+      "season": "Temporada",
+      "table": "Clasificación",
+      "career": "Carrera",
+      "attributes": "Atributos",
+      "game": "Partida",
+      "personality": "Personalidad",
+      "stats": "Estadísticas",
+      "palmares": "Palmarés",
+      "achievements": "Logros"
+    },
+    "stats": {
+      "apps": "PJ",
+      "starts": "Tit.",
+      "minutes": "Min.",
+      "goals": "Goles",
+      "assists": "Asist.",
+      "rating": "Nota",
+      "cleanSheets": "Port. a cero"
+    },
+    "firstTeam": "Primer equipo",
+    "youth": "Filial / juveniles",
+    "noMatches": "Todavía no se ha jugado ningún partido esta temporada.",
+    "lastMatches": "Últimos partidos",
+    "didNotPlay": "No jugó",
+    "minutesShort": "{n}'",
+    "form": "Forma",
+    "morale": "Moral",
+    "value": "Valor de mercado",
+    "role": "Rol",
+    "salary": "Sueldo",
+    "contractUntil": "Contrato hasta {season}",
+    "roles": {
+      "cantera": "Canterano",
+      "promesa": "Promesa",
+      "rotacion": "Rotación",
+      "titular": "Titular",
+      "estrella": "Estrella"
+    },
+    "table": {
+      "pos": "#",
+      "club": "Club",
+      "p": "PJ",
+      "w": "G",
+      "d": "E",
+      "l": "P",
+      "gd": "DG",
+      "pts": "Pts",
+      "promotion": "Ascenso",
+      "playoff": "Playoff",
+      "relegation": "Descenso",
+      "notStarted": "La liga empieza al jugar la primera vuelta."
+    },
+    "career": {
+      "season": "Temp.",
+      "age": "Edad",
+      "club": "Club",
+      "apps": "PJ",
+      "goals": "G",
+      "assists": "A",
+      "rating": "Nota",
+      "ovr": "Media",
+      "empty": "Tu carrera empieza esta temporada."
+    },
+    "growth": "Evolución de la última temporada",
+    "summary": {
+      "title": "Resumen de la temporada {season}",
+      "position": "{club} terminó {pos}.º de {size}",
+      "champion": "¡Campeones de liga!",
+      "promoted": "¡Ascenso de categoría!",
+      "relegated": "Descenso de categoría.",
+      "overall": "Media: {from} → {to}",
+      "firstTeam": "¡Subes al primer equipo de {club}!",
+      "role": "Tu rol la próxima temporada: {role}",
+      "topGrowth": "Lo que más ha mejorado",
+      "decline": "Lo que ha empeorado",
+      "close": "Seguir",
+      "trophy": "¡Campeón de {name}!",
+      "cup": "Copa: eliminados en {round}.",
+      "continental": "{name}: {round}.",
+      "national": "Selección: {caps} partidos y {goals} goles esta temporada.",
+      "tournament": "{name}: {result}",
+      "notCalled": " (no estabas en la convocatoria)"
+    },
+    "pendingDecision": "Tienes una decisión pendiente.",
+    "onLoan": "Cedido por {club}",
+    "retire": "Retirarme",
+    "confirmRetire": "Pondrás fin a tu carrera al terminar esta temporada. No se puede deshacer. ¿Seguro?",
+    "retired": "Carrera terminada",
+    "retiredHint": "Tu nombre ya está en el Salón de la Fama.",
+    "viewSummary": "Ver resumen final"
+  },
+  "load": {
+    "title": "Cargar partida",
+    "slotAuto": "Autoguardado",
+    "slot": "Ranura {n}",
+    "savedAt": "Guardada {date}",
+    "importTitle": "Importar partida (JSON)",
+    "importHint": "Elige un archivo exportado. Se cargará y se guardará en la ranura que elijas.",
+    "importTo": "Importar en",
+    "chooseFile": "Elegir archivo",
+    "confirmDelete": "¿Borrar la partida de {name}? No se puede deshacer.",
+    "confirmOverwrite": "La ranura ya tiene una partida ({name}). ¿Sobrescribirla?",
+    "loaded": "Partida cargada",
+    "imported": "Partida importada",
+    "deleted": "Ranura borrada",
+    "saved": "Guardada en {slot}",
+    "retired": "Retirado",
+    "size": "{kb} KB"
+  },
+  "hall": {
+    "title": "Salón de la Fama",
+    "empty": "Todavía no hay leyendas. Retírate al final de una carrera para entrar aquí.",
+    "clear": "Vaciar Salón de la Fama",
+    "confirmClear": "¿Borrar todas las carreras del Salón de la Fama?",
+    "line": "{seasons} temporadas · {apps} partidos · {goals} goles · títulos: {trophies} · media máx. {peak}",
+    "ballonDors": "{n} Balón(es) de Oro"
+  },
+  "options": {
+    "title": "Opciones",
+    "textScale": "Tamaño de texto",
+    "textNormal": "Normal",
+    "textLarge": "Grande",
+    "textXLarge": "Muy grande",
+    "reduceMotion": "Reducir animaciones",
+    "sound": "Sonido",
+    "cinematics": "Cinemáticas",
+    "cinAll": "Todas",
+    "cinImportant": "Solo importantes",
+    "cinOff": "Desactivadas",
+    "ironManDefault": "Ironman por defecto en nuevas carreras",
+    "language": "Idioma",
+    "debug": "Mostrar herramientas de depuración",
+    "resetAll": "Borrar todos los datos",
+    "confirmReset": "Se borrarán todas las partidas, el Salón de la Fama y los ajustes. ¿Continuar?",
+    "resetDone": "Datos borrados"
+  },
+  "debug": {
+    "title": "Depuración",
+    "crests": "Escudos genéricos (respaldo cuando falta el archivo real)",
+    "rng": "Generador con semilla",
+    "rngRun": "Generar 10 números"
+  },
+  "errors": {
+    "generic": "Algo ha fallado: {message}",
+    "invalid-json": "El archivo no es un JSON válido.",
+    "not-a-save": "El archivo no es una partida de Leyenda.",
+    "too-new": "La partida es de una versión más nueva del juego.",
+    "corrupt": "La partida está dañada.",
+    "quota": "No queda espacio en el navegador. Borra alguna ranura o exporta la partida.",
+    "empty": "Esta ranura está vacía."
+  },
+  "pos": {
+    "POR": "Portero",
+    "DFC": "Defensa central",
+    "LD": "Lateral derecho",
+    "LI": "Lateral izquierdo",
+    "MCD": "Mediocentro defensivo",
+    "MC": "Mediocentro",
+    "MCO": "Mediapunta",
+    "MD": "Interior derecho",
+    "MI": "Interior izquierdo",
+    "ED": "Extremo derecho",
+    "EI": "Extremo izquierdo",
+    "DC": "Delantero centro"
+  },
+  "attr": {
+    "dribbling": "Regate",
+    "shortPassing": "Pase corto",
+    "longPassing": "Pase largo",
+    "shooting": "Tiro",
+    "finishing": "Definición",
+    "heading": "Cabezazo",
+    "ballControl": "Control",
+    "crossing": "Centros",
+    "freeKicks": "Tiros libres",
+    "penalties": "Penaltis",
+    "pace": "Velocidad",
+    "acceleration": "Aceleración",
+    "stamina": "Resistencia",
+    "strength": "Fuerza",
+    "jumping": "Salto",
+    "agility": "Agilidad",
+    "vision": "Visión",
+    "positioning": "Posicionamiento",
+    "composure": "Compostura",
+    "leadership": "Liderazgo",
+    "teamwork": "Trabajo en equipo",
+    "aggression": "Agresividad",
+    "concentration": "Concentración",
+    "diving": "Estirada",
+    "reflexes": "Reflejos",
+    "gkPositioning": "Colocación",
+    "kicking": "Juego con el pie",
+    "rushingOut": "Salidas"
+  },
+  "clubs": {
+    "title": "Clubes y ligas",
+    "search": "Buscar club, ciudad o estadio",
+    "searchResults": "{n} resultados",
+    "noResults": "Ningún club coincide con la búsqueda.",
+    "country": "País",
+    "division": "División",
+    "tier": "Nivel {tier}",
+    "clubsCount": "{n} clubes",
+    "review": "Por revisar",
+    "reviewHint": "Composición o datos sin confirmar (ver DECISIONES.md).",
+    "prestige": "Prestigio",
+    "budget": "Presupuesto",
+    "budgetValue": "{m} M€",
+    "academy": "Cantera",
+    "style": "Estilo",
+    "stadium": "Estadio",
+    "capacity": "{n} espectadores",
+    "city": "Ciudad",
+    "region": "Región",
+    "colors": "Colores",
+    "rivals": "Rivales",
+    "noRivals": "Sin rivalidades destacadas",
+    "parent": "Filial de {club}",
+    "promotion": "Ascensos: {n}",
+    "relegation": "Descensos: {n}",
+    "rounds1": "A una vuelta",
+    "rounds2": "Ida y vuelta",
+    "crestReal": "Escudo real",
+    "crestGeneric": "Escudo genérico (falta el archivo)",
+    "dataSeason": "Datos de la temporada {season}",
+    "derbi": "Derbi",
+    "clasico": "Clásico"
+  },
+  "style": {
+    "posesion": "Posesión",
+    "presion": "Presión alta",
+    "contraataque": "Contraataque",
+    "directo": "Juego directo",
+    "defensivo": "Defensivo"
+  },
+  "creation": {
+    "title": "Nueva carrera",
+    "step": "Paso {n} de {total}",
+    "steps": {
+      "origin": "Origen",
+      "look": "Aspecto",
+      "position": "Posición",
+      "style": "Estilo de juego",
+      "traits": "Personalidad",
+      "academy": "Cantera"
+    },
+    "next": "Siguiente",
+    "back": "Atrás",
+    "name": "Nombre y apellidos",
+    "namePlaceholder": "Ej.: Lucas Ferreyra",
+    "nickname": "Apodo (opcional)",
+    "birthCountry": "País de nacimiento",
+    "region": "Región",
+    "city": "Ciudad",
+    "secondNationality": "Segunda nacionalidad (opcional)",
+    "none": "Ninguna",
+    "birthDate": "Fecha de nacimiento",
+    "day": "Día",
+    "month": "Mes",
+    "bornIn": "Nacido el {date} · {age} años en la temporada {season}",
+    "foot": "Pie dominante",
+    "feet": {
+      "derecho": "Diestro",
+      "izquierdo": "Zurdo",
+      "ambidiestro": "Ambidiestro"
+    },
+    "seed": "Semilla (opcional)",
+    "seedHint": "Con la misma semilla y las mismas decisiones, la carrera se repite.",
+    "seedLocked": "La semilla y el origen se bloquean tras la prueba de cantera.",
+    "skin": "Tono de piel",
+    "hair": "Peinado",
+    "hairColor": "Color de pelo",
+    "facial": "Vello facial",
+    "eyes": "Ojos",
+    "accessory": "Complemento",
+    "boots": "Botas",
+    "height": "Altura",
+    "heightValue": "{cm} cm",
+    "build": "Complexión",
+    "randomLook": "Aspecto aleatorio",
+    "mainPosition": "Posición principal",
+    "secondary": "Posiciones secundarias (hasta 2)",
+    "secondaryHint": "Toca una posición del campo para elegirla como principal; usa los botones de abajo para las secundarias.",
+    "number": "Dorsal preferido",
+    "styleIntro": "Elige cómo juegas. El estilo da puntos extra a tus atributos clave y marcará cómo creces.",
+    "traitsIntro": "Elige {n} rasgos. Afectan a tu crecimiento, a tus relaciones y a los eventos que vivirás.",
+    "traitsCount": "{n} de {total} elegidos",
+    "incompatible": "Incompatible con {trait}",
+    "academyIntro": "Los ojeadores de la zona te han visto jugar. Puedes presentarte a una sola prueba: si no la superas, empezarás en {club}.",
+    "chance": "Probabilidad de entrar",
+    "tryOut": "Hacer la prueba",
+    "kinds": {
+      "local": "Club de tu ciudad",
+      "regional": "El grande de tu región",
+      "elite": "Cantera de élite",
+      "ojeador": "Un ojeador te ha visto"
+    },
+    "proximity": {
+      "ciudad": "En tu ciudad",
+      "region": "En tu región",
+      "pais": "Lejos de casa",
+      "extranjero": "En el extranjero"
+    },
+    "trialPassed": "¡Prueba superada! Entras en la cantera de {club}.",
+    "trialFailed": "No has superado la prueba en {club}. Empiezas en la cantera de {fallback}.",
+    "trialRolling": "Los técnicos deliberan…",
+    "scouts": "Los ojeadores estiman tu potencial entre {min} y {max}.",
+    "startingOverall": "Media inicial",
+    "summary": "Resumen",
+    "start": "Empezar carrera",
+    "ironMan": "Modo Ironman",
+    "ironManHint": "Se guarda tras cada decisión y no se puede volver atrás.",
+    "errors": {
+      "name": "Escribe un nombre.",
+      "nationality": "Elige una o dos nacionalidades.",
+      "positions": "Las secundarias deben ser distintas de la principal (máximo 2).",
+      "keeperMix": "Un portero no puede tener posiciones de campo como secundarias.",
+      "style": "Elige un estilo compatible con tu posición.",
+      "traits": "Elige exactamente {n} rasgos disponibles.",
+      "opposites": "Has elegido dos rasgos incompatibles.",
+      "number": "El dorsal debe estar entre 1 y 99.",
+      "birthDate": "Fecha de nacimiento no válida.",
+      "trial": "Haz la prueba de cantera antes de empezar."
+    }
+  },
+  "months": {
+    "1": "enero",
+    "2": "febrero",
+    "3": "marzo",
+    "4": "abril",
+    "5": "mayo",
+    "6": "junio",
+    "7": "julio",
+    "8": "agosto",
+    "9": "septiembre",
+    "10": "octubre",
+    "11": "noviembre",
+    "12": "diciembre"
+  },
+  "avatar": {
+    "hair": {
+      "corto": "Corto",
+      "rapado": "Rapado",
+      "peinado": "Peinado",
+      "tupe": "Tupé",
+      "rizado": "Rizado",
+      "afro": "Afro",
+      "largo": "Largo",
+      "moño": "Moño",
+      "cresta": "Cresta",
+      "calvo": "Sin pelo"
+    },
+    "facial": {
+      "ninguno": "Ninguno",
+      "bigote": "Bigote",
+      "perilla": "Perilla",
+      "sombra": "Sombra de barba",
+      "barba": "Barba"
+    },
+    "accessory": {
+      "ninguno": "Ninguno",
+      "cinta": "Cinta",
+      "diadema": "Diadema"
+    },
+    "build": {
+      "delgado": "Delgado",
+      "atletico": "Atlético",
+      "robusto": "Robusto"
+    }
+  },
+  "attrGroup": {
+    "technical": "Técnica",
+    "physical": "Físico",
+    "mental": "Mental",
+    "goalkeeping": "Portería"
+  },
+  "events": {
+    "success": "¡Salió bien!",
+    "failure": "No salió como esperabas.",
+    "next": "Siguiente decisión",
+    "continue": "Continuar",
+    "pending": "Quedan {n} decisiones más en esta fase.",
+    "riskHint": "El resultado depende del azar y de tus atributos",
+    "category": {
+      "training": "Entrenamiento",
+      "transfer": "Mercado",
+      "loan": "Cesión",
+      "contract": "Contrato",
+      "nationalTeam": "Selección",
+      "injury": "Lesión",
+      "dressingRoom": "Vestuario",
+      "coach": "Entrenador",
+      "media": "Prensa",
+      "social": "Redes sociales",
+      "personal": "Vida personal",
+      "ethics": "Ética",
+      "keyMatch": "Partido clave",
+      "agent": "Agente",
+      "retirement": "Retirada"
+    },
+    "pendingOne": "Queda 1 decisión más en esta fase."
+  },
+  "effects": {
+    "potential": "Potencial",
+    "money": "Dinero",
+    "followers": "Seguidores",
+    "morale": "Moral",
+    "form": "Forma",
+    "fitness": "Forma física",
+    "playingTime": "Confianza del entrenador",
+    "injury": "Lesión: {value}",
+    "recovery": "Semanas de baja",
+    "transferRequest": "Has pedido salir del club",
+    "offer": "Ofertas recibidas",
+    "celebration": "Nueva celebración: {value}",
+    "agentHired": "Nuevo agente: {value}",
+    "agentFired": "Te quedas sin agente",
+    "traitAdd": "Nuevo rasgo: {trait}",
+    "traitRemove": "Pierdes el rasgo: {trait}",
+    "traitUp": "Se refuerza: {trait}",
+    "traitDown": "Se debilita: {trait}",
+    "relation": {
+      "coach": "Relación con el entrenador",
+      "fans": "Afición",
+      "dressingRoom": "Vestuario",
+      "board": "Directiva",
+      "agent": "Agente",
+      "family": "Familia",
+      "press": "Prensa"
+    },
+    "reputation": {
+      "local": "Reputación local",
+      "national": "Reputación nacional",
+      "world": "Reputación mundial"
+    }
+  },
+  "offers": {
+    "title": "Ofertas",
+    "hint": "Las ofertas caducan al avanzar de fase.",
+    "kind": {
+      "transfer": "Traspaso",
+      "loan": "Cesión",
+      "renewal": "Renovación"
+    },
+    "fee": "Traspaso: {fee}",
+    "salary": "Sueldo: {salary}/año",
+    "until": "hasta {season}",
+    "loanSeason": "una temporada",
+    "role": "rol: {role}",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
+  },
+  "news": {
+    "title": "Noticias"
+  },
+  "personality": {
+    "traits": "Rasgos",
+    "noTraits": "Sin rasgos todavía.",
+    "intensity": "Intensidad {n} de 3",
+    "fromTendency": "Ganado por tus decisiones",
+    "tendencies": "Tendencias",
+    "tendenciesHint": "Tus decisiones las mueven. Al cruzar el umbral ganas el rasgo asociado; si vuelves atrás, lo pierdes.",
+    "relations": "Relaciones",
+    "social": "Imagen pública",
+    "followers": "Seguidores",
+    "sentiment": "Opinión en redes",
+    "celebration": "Celebración de gol",
+    "celebrationHint": "Elige cómo celebras tus goles. Las bloqueadas se consiguen con tus decisiones."
+  },
+  "stats": {
+    "careerTitle": "Tu carrera en cifras",
+    "apps": "Partidos",
+    "goals": "Goles",
+    "assists": "Asistencias",
+    "rating": "Nota media",
+    "peakOverall": "Media máxima",
+    "peakValue": "Valor máximo",
+    "biggestFee": "Traspaso récord",
+    "hatTricks": "Hat-tricks",
+    "thisSeason": "{n} esta temporada",
+    "bestGoals": "Mejor temporada goleadora: {n} goles en {season}",
+    "bestRating": "mejor nota media: {r} en {season}",
+    "ratingsTitle": "Notas de esta temporada",
+    "ratingsSub": "Media: {avg}",
+    "matchday": "Jornada",
+    "firstSeason": "Las gráficas de evolución aparecen al cerrar tu primera temporada.",
+    "overallTitle": "Evolución de la media",
+    "overallSub": "Potencial estimado: {min}-{max}",
+    "goalsTitle": "Goles y asistencias por temporada",
+    "valueTitle": "Valor de mercado",
+    "profileTitle": "Perfil de atributos",
+    "now": "Ahora",
+    "careerStart": "Al empezar",
+    "axis": "Faceta",
+    "season": "Temporada",
+    "overall": "Media",
+    "value": "Valor",
+    "start": "Inicio",
+    "age": "{age} años",
+    "byClub": "Por clubes",
+    "seasons": "Temp.",
+    "chart": "Gráfica",
+    "table": "Tabla",
+    "noData": "Sin datos todavía.",
+    "radar": {
+      "pace": "Ritmo",
+      "shooting": "Tiro",
+      "passing": "Pase",
+      "dribbling": "Regate",
+      "defending": "Defensa",
+      "physical": "Físico",
+      "diving": "Estirada",
+      "reflexes": "Reflejos",
+      "gkPositioning": "Colocación",
+      "rushingOut": "Salidas",
+      "kicking": "Juego con el pie",
+      "mentality": "Mentalidad"
+    }
+  },
+  "palmares": {
+    "trophies": "Títulos ({n})",
+    "noTrophies": "Todavía sin títulos. Todo llegará.",
+    "awards": "Premios individuales",
+    "noAwards": "Todavía sin premios individuales.",
+    "winner": "ganador",
+    "national": "Selección: {country}",
+    "noCountry": "sin convocar",
+    "caps": "Internacionalidades",
+    "goals": "Goles",
+    "assists": "Asistencias",
+    "debut": "Debut",
+    "youth": "Categorías inferiores",
+    "retiredNt": "Retirado de la selección absoluta.",
+    "recentWinners": "Últimos ganadores del Balón de Oro",
+    "choiceTitle": "¿Con qué selección quieres jugar?",
+    "choiceText": "Puedes jugar con más de una selección y la absoluta te quiere convocar. La decisión es definitiva."
+  },
+  "cinematics": {
+    "skip": "Continuar",
+    "debut": {
+      "kicker": "Debut",
+      "title": "{nombre} debuta con {club}",
+      "subtitle": "Primer partido con el primer equipo. Nadie olvida este día."
+    },
+    "firstGoal": {
+      "kicker": "Primer gol",
+      "title": "¡Gooool de {nombre}!",
+      "subtitle": "Su primer gol como profesional con {club}."
+    },
+    "hatTrick": {
+      "kicker": "Hat-trick",
+      "title": "¡{goles} goles!",
+      "subtitle": "{nombre} se lleva el balón del partido a casa."
+    },
+    "transfer": {
+      "kicker": "Presentación",
+      "title": "Bienvenido a {club}",
+      "subtitle": "Fichaje por {valor}. Flashes, bufanda y un estadio que te espera.",
+      "subtitleFree": "Llega con la carta de libertad. Flashes, bufanda y un estadio que te espera."
+    },
+    "loan": {
+      "kicker": "Cesión",
+      "title": "Una temporada en {club}",
+      "subtitle": "Minutos, experiencia y una nueva ciudad."
+    },
+    "trophy": {
+      "kicker": "¡Campeones!",
+      "title": "{competicion}",
+      "subtitle": "{nombre} levanta el trofeo con {club}."
+    },
+    "tournament": {
+      "kicker": "¡Campeones!",
+      "title": "{competicion}",
+      "subtitle": "{pais} campeona. {nombre} entra en la historia de su país."
+    },
+    "award": {
+      "kicker": "Premio",
+      "title": "{premio}",
+      "subtitle": "{nombre}, el mejor. Un trofeo que se queda para siempre."
+    },
+    "nationalDebut": {
+      "kicker": "Debut internacional",
+      "title": "{nombre} viste la camiseta de {pais}",
+      "subtitle": "Suena el himno. Piel de gallina."
+    },
+    "promotion": {
+      "kicker": "¡Ascenso!",
+      "title": "{club} sube de categoría",
+      "subtitle": "Fiesta en las calles de la ciudad."
+    },
+    "relegation": {
+      "kicker": "Descenso",
+      "title": "{club} baja de categoría",
+      "subtitle": "Lágrimas en la grada. Toca levantarse."
+    },
+    "injury": {
+      "kicker": "Lesión grave",
+      "title": "{valor} semanas de baja",
+      "subtitle": "El camino de vuelta será largo."
+    },
+    "custom": {
+      "kicker": "Momento",
+      "title": "Un momento para recordar",
+      "subtitle": "{nombre} y {club}."
+    },
+    "achievement": {
+      "kicker": "Logro desbloqueado",
+      "title": "{logro}",
+      "subtitle": "{nombre} sigue escribiendo su leyenda."
+    },
+    "retirement": {
+      "kicker": "Retirada",
+      "title": "Gracias, {nombre}",
+      "subtitle": "{temporadas} temporadas. El fútbol nunca te olvidará."
+    }
+  },
+  "achievements": {
+    "summary": "{n} de {total} logros conseguidos.",
+    "tier": {
+      "bronze": "Bronce",
+      "silver": "Plata",
+      "gold": "Oro",
+      "legend": "Leyenda"
+    },
+    "hidden": "???",
+    "hiddenHint": "Logro oculto.",
+    "unlocked": "Conseguido en {season}",
+    "progress": "Progreso: {pct} %"
+  },
+  "careerEnd": {
+    "exportImage": "Descargar imagen",
+    "exportPdf": "Guardar como PDF",
+    "legacy": "Legado",
+    "seasons": "Temporadas",
+    "trophies": "Títulos",
+    "ballonDors": "Balones de Oro",
+    "clubs": "Trayectoria",
+    "clubLine": "{apps} partidos · {goals} goles · {assists} asistencias",
+    "decisions": "Decisiones que marcaron su carrera",
+    "achievements": "Logros ({n} de {total})",
+    "legacyBreakdown": "De dónde sale su legado",
+    "footer": "Leyenda: Carrera de Futbolista",
+    "rank": {
+      "world-legend": "Leyenda mundial",
+      "icon": "Mito del fútbol",
+      "star": "Estrella",
+      "great": "Gran profesional",
+      "club": "Jugador de club",
+      "journeyman": "Una carrera honrada"
+    },
+    "parts": {
+      "goals": "Goles y asistencias",
+      "apps": "Partidos",
+      "trophies": "Títulos",
+      "awards": "Premios",
+      "national": "Selección",
+      "peak": "Nivel máximo",
+      "achievements": "Logros"
+    },
+    "story": {
+      "origin": "{nombre} nació en {ciudad} y se formó en la cantera de {club}.",
+      "debut": "Debutó con el primer equipo en {year}.",
+      "numbers": "Jugó {seasons} temporadas en {clubs} clubes: {apps} partidos, {goals} goles y {assists} asistencias.",
+      "trophies": "Ganó {n} títulos, entre ellos: {names}.",
+      "noTrophies": "No llegó a levantar un título, pero se ganó el respeto de cada vestuario.",
+      "national": "Con {country} disputó {caps} partidos y marcó {goals} goles.",
+      "ballonDor": "Ganó {n} Balón(es) de Oro.",
+      "end": "Se retiró a los {age} años en {club}.",
+      "trophyOne": "Ganó un título: {names}."
+    }
+  },
+  "help": {
+    "title": "Cómo se juega",
+    "create": {
+      "title": "Crea tu jugador.",
+      "text": "Elige origen, aspecto, posición, estilo y dos rasgos. Haz una prueba en una cantera real: si no la superas, empiezas en un club cercano."
+    },
+    "season": {
+      "title": "Avanza la temporada.",
+      "text": "Cada temporada tiene cinco fases. Pulsa el botón grande para jugar cada vuelta; todas las ligas se simulan partido a partido."
+    },
+    "decide": {
+      "title": "Toma decisiones.",
+      "text": "Entre fases te llegan situaciones: entrenador, vestuario, prensa, familia… Cada elección cambia tus relaciones, tu personalidad y tu carrera. Las marcadas con 🎲 tienen riesgo."
+    },
+    "market": {
+      "title": "Gestiona tu carrera.",
+      "text": "En el mercado de invierno y al final de temporada pueden llegarte ofertas de traspaso, cesión o renovación."
+    },
+    "grow": {
+      "title": "Crece y compite.",
+      "text": "Juega, mejora tus atributos, gana títulos, llega a la selección y pelea por el Balón de Oro. Consulta tus estadísticas, logros y palmarés en el hub."
+    },
+    "legacy": {
+      "title": "Deja tu legado.",
+      "text": "Al retirarte verás el resumen de tu carrera (exportable como imagen o PDF) y entrarás en el Salón de la Fama."
+    }
+  }
+}

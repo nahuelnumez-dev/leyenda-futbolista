@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "leyenda-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "C:\Users\nahue\Desktop\Claude Juego\leyenda-futbolista", "--", "--port", "5180", "--strictPort"],
+      "port": 5180
+    }
+  ]
+}

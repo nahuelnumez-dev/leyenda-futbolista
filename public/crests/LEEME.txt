@@ -1,0 +1,1 @@
+Coloca aquí los escudos: public/crests/<pais>/<club>.png (ver README).
