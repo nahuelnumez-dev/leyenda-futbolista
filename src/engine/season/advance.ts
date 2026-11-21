@@ -11,13 +11,14 @@ import { Rng } from '../rng';
 import type { WorldData } from '../data/world';
 import type { ClubDynamic } from '../types/club';
 import type { ClubId, SeasonPhase } from '../types/common';
-import type { PlayStyleDef, TraitDef } from '../types/definitions';
+import type { PlayStyleDef, SpecialtyDef, TraitDef } from '../types/definitions';
 import type { CompetitionStats, SeasonRecord } from '../types/career';
 import type { GameState, MatchLog, SeasonSummary } from '../types/game';
 import type { Contract, SquadRole } from '../types/player';
 import { overallFor } from '../player/overall';
 import { playMatch } from '../player/matches';
 import { marketValue, narrowPotential, seasonGrowth } from '../player/growth';
+import { focusAttributes, matchModifiers, updateSpecialties } from '../player/specialties';
 import { academyOptions } from '../player/academy';
 import { generateOffers, returnFromLoan } from '../market/offers';
 import { queuePhaseEvents, hasPendingEvent, type EventsContent } from '../events/engine';
@@ -38,6 +39,7 @@ export interface EngineContent extends Omit<EventsContent, 'tendencies' | 'trait
   world: WorldData;
   styles: PlayStyleDef[];
   traits: TraitDef[];
+  specialties: SpecialtyDef[];
 }
 
 export const NEXT_PHASE: Record<SeasonPhase, SeasonPhase> = {
@@ -186,7 +188,7 @@ function playResolved(
     ? NO_MATCH
     : ctx.reserve && !callUp
       ? NO_MATCH
-      : playMatch(rng, game.player, ctx.role, { level: ctx.level, teamGoals: m.gf, conceded: m.ga, callUp: ctx.reserve });
+      : playMatch(rng, game.player, ctx.role, { level: ctx.level, teamGoals: m.gf, conceded: m.ga, callUp: ctx.reserve, mods: matchModifiers(game.player, content.specialties) });
   if (pm.minutes > 0) maybeInjure(game, rng, content);
   return {
     md,
@@ -308,6 +310,7 @@ function simulateHalf(game: GameState, content: EngineContent, half: 1 | 2, root
   const prng = root.fork(`player:${season}:${half}`);
   const ovr = overallFor(game.player.attributes, game.player.positions.main);
   const level = clubLevel(game, myClub);
+  const mods = matchModifiers(game.player, content.specialties);
   // Juega en el filial/juveniles si aún es canterano o si es una promesa muy lejos del nivel del primer equipo.
   const reserve = role === 'cantera' || (role === 'promesa' && ovr < level - 12);
   const canCallUp = reserve && ovr >= level - 14;
@@ -334,7 +337,7 @@ function simulateHalf(game: GameState, content: EngineContent, half: 1 | 2, root
           ? NO_MATCH
           : reserve && !callUp
             ? NO_MATCH
-            : playMatch(prng, game.player, role, { level, teamGoals: gf, conceded: ga, callUp: reserve });
+            : playMatch(prng, game.player, role, { level, teamGoals: gf, conceded: ga, callUp: reserve, mods });
         if (pm.minutes > 0) maybeInjure(game, prng, content);
         logs.push({ md: offset + i + 1, competition: parseTableKey(key).divisionId, opponentId: isHome ? away : home, home: isHome, gf, ga, ...pm });
       }
@@ -356,7 +359,7 @@ function simulateHalf(game: GameState, content: EngineContent, half: 1 | 2, root
       const [a, b] = simulateScore(prng, home ? yLevel : opp, home ? opp : yLevel);
       const gf = home ? a : b;
       const ga = home ? b : a;
-      const pm = game.player.status.injury ? NO_MATCH : playMatch(prng, game.player, 'titular', { level: yLevel, teamGoals: gf, conceded: ga });
+      const pm = game.player.status.injury ? NO_MATCH : playMatch(prng, game.player, 'titular', { level: yLevel, teamGoals: gf, conceded: ga, mods });
       if (pm.minutes > 0) maybeInjure(game, prng, content);
       logs.push({ md: (half - 1) * YOUTH_MATCHES_PER_HALF + i + 1, competition: 'youth', home, gf, ga, ...pm });
     }
@@ -364,6 +367,7 @@ function simulateHalf(game: GameState, content: EngineContent, half: 1 | 2, root
 
   game.current!.matches.push(...logs);
   milestones(game, logs);
+  signatureHighlight(game, content, logs, prng);
   nationalBreak(game, content, half, prng);
 
   // Forma y moral según cómo le ha ido en esta vuelta.
@@ -378,6 +382,32 @@ function simulateHalf(game: GameState, content: EngineContent, half: 1 | 2, root
     const expected = role === 'estrella' || role === 'titular' ? 0.75 : role === 'rotacion' ? 0.45 : 0.2;
     game.player.status.morale = Math.round(Math.min(100, Math.max(10, game.player.status.morale + (share - expected) * 25)));
   }
+}
+
+/* ── Especialidades ────────────────────────────────────── */
+
+function inboxNews(game: GameState, id: string, headline: string, tone: 'positive' | 'neutral' | 'negative'): void {
+  game.inbox.unshift({ id: `${id}-${game.calendar.season}-${game.inbox.length}`, season: game.calendar.season, phase: game.calendar.phase, source: 'system', headline, tone });
+}
+
+/** Avisos al ganar, mejorar o perder especialidades. */
+function specialtyNews(game: GameState, content: EngineContent, changes: { id: string; from: number; to: number }[]): void {
+  for (const c of changes) {
+    const name = content.specialties.find((d) => d.id === c.id)?.name.es ?? c.id;
+    if (c.to > c.from) inboxNews(game, 'spec', c.to === 2 ? `Especialidad élite: ${name}. Eres de los mejores del mundo en esto.` : `Nueva especialidad: ${name}.`, 'positive');
+    else inboxNews(game, 'spec', c.to === 0 ? `Has perdido la especialidad ${name}: tus atributos ya no llegan.` : `${name} deja de ser de nivel élite.`, 'negative');
+  }
+}
+
+/** De vez en cuando, uno de sus regates característicos se lleva los titulares de la jornada. */
+function signatureHighlight(game: GameState, content: EngineContent, logs: MatchLog[], rng: Rng): void {
+  const moves = (game.player.specialties ?? []).map((s) => content.specialties.find((d) => d.id === s.id)).filter((d) => d?.signature);
+  const best = logs.filter((l) => l.competition !== 'youth' && (l.dribbles ?? 0) >= 3).sort((a, b) => (b.dribbles ?? 0) - (a.dribbles ?? 0))[0];
+  if (!moves.length || !best || !rng.chance(0.6)) return;
+  const move = rng.pick(moves)!;
+  const rival = best.opponentId ? (content.world.clubById.get(best.opponentId)?.shortName ?? 'el rival') : (best.opponentName ?? 'el rival');
+  inboxNews(game, 'sig', `La ${move.name.es.toLowerCase()} de ${game.player.identity.nickname ?? game.player.identity.name} ante ${rival} es lo más visto de la jornada.`, 'positive');
+  game.social.followers = Math.round(game.social.followers * 1.02);
 }
 
 /* ── Cierre de temporada ───────────────────────────────── */
@@ -438,10 +468,11 @@ function closeSeason(game: GameState, content: EngineContent, root: Rng): void {
   // Evolución
   const traits = player.traits.map((t) => content.traits.find((d) => d.id === t.id)).filter((d): d is TraitDef => !!d);
   const style = content.styles.find((s) => s.id === player.style);
-  const { attributes, delta } = seasonGrowth(root.fork(`growth:${season}`), { player, age, playRatio, traits, ...(style ? { style } : {}) });
+  const { attributes, delta } = seasonGrowth(root.fork(`growth:${season}`), { player, age, playRatio, traits, focus: focusAttributes(player, content.specialties), ...(style ? { style } : {}) });
   player.attributes = attributes;
   player.potential.shownRange = narrowPotential(player.potential.hidden, player.potential.shownRange, age + 1);
   const ovrEnd = overallFor(attributes, player.positions.main);
+  specialtyNews(game, content, updateSpecialties(player, content.specialties, season));
 
   // Reputación, relaciones y seguidores
   updateReputation(game, content, leagueMatches);

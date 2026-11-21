@@ -5,6 +5,7 @@
 import type { Rng } from '../rng';
 import { POSITION_GROUP, type Attributes, type Position } from '../types/attributes';
 import type { Player, SquadRole } from '../types/player';
+import type { SpecialtyEffects } from '../types/definitions';
 import { overallFor } from './overall';
 
 /** Parte de los goles del equipo que marca un jugador de cada posición (jugando 90'). */
@@ -35,6 +36,8 @@ export interface MatchContext {
   conceded: number;
   /** Si es un partido del primer equipo para un juvenil (solo puede entrar como suplente). */
   callUp?: boolean;
+  /** Bonus de las especialidades del jugador. */
+  mods?: SpecialtyEffects;
 }
 
 export interface PlayerMatch {
@@ -90,8 +93,9 @@ export function playMatch(rng: Rng, player: Player, role: SquadRole, ctx: MatchC
   if (minutes === 0) return none;
 
   const share = minutes / 90;
-  const goalP = Math.min(0.8, GOAL_SHARE[pos] * share * Math.max(0.35, Math.min(2, 1 + (attackQuality(player.attributes) - ctx.level) / 35)));
-  const assistP = Math.min(0.7, ASSIST_SHARE[pos] * share * Math.max(0.35, Math.min(2, 1 + (creativeQuality(player.attributes) - ctx.level) / 35)));
+  const mod = (k: keyof SpecialtyEffects) => 1 + (ctx.mods?.[k] ?? 0);
+  const goalP = Math.min(0.8, mod('goals') * GOAL_SHARE[pos] * share * Math.max(0.35, Math.min(2, 1 + (attackQuality(player.attributes) - ctx.level) / 35)));
+  const assistP = Math.min(0.7, mod('assists') * ASSIST_SHARE[pos] * share * Math.max(0.35, Math.min(2, 1 + (creativeQuality(player.attributes) - ctx.level) / 35)));
   let goals = 0;
   let assists = 0;
   for (let g = 0; g < ctx.teamGoals; g++) {
@@ -102,11 +106,11 @@ export function playMatch(rng: Rng, player: Player, role: SquadRole, ctx: MatchC
   // Acciones del partido: tasa de la posición × calidad del jugador frente al nivel del partido.
   const a = player.attributes;
   const skill = (q: number, spread = 30) => Math.max(0.4, Math.min(2, 1 + (q - ctx.level) / spread));
-  const expDribbles = DRIBBLES_90[pos] * share * skill((a.dribbling * 2 + a.agility + a.ballControl) / 4);
-  const expKeyPasses = KEY_PASSES_90[pos] * share * skill((a.vision * 2 + a.shortPassing + a.crossing) / 4);
-  const expTackles = TACKLES_90[pos] * share * skill((a.positioning + a.aggression + a.strength + a.concentration) / 4);
+  const expDribbles = mod('dribbles') * DRIBBLES_90[pos] * share * skill((a.dribbling * 2 + a.agility + a.ballControl) / 4);
+  const expKeyPasses = mod('keyPasses') * KEY_PASSES_90[pos] * share * skill((a.vision * 2 + a.shortPassing + a.crossing) / 4);
+  const expTackles = mod('tackles') * TACKLES_90[pos] * share * skill((a.positioning + a.aggression + a.strength + a.concentration) / 4);
   const isKeeper = pos === 'POR';
-  const expSaves = isKeeper ? SAVES_90 * share * (1 + Math.min(2, ctx.conceded) * 0.25) * skill((a.diving + a.reflexes + a.gkPositioning) / 3, 40) : 0;
+  const expSaves = isKeeper ? mod('saves') * SAVES_90 * share * (1 + Math.min(2, ctx.conceded) * 0.25) * skill((a.diving + a.reflexes + a.gkPositioning) / 3, 40) : 0;
   const dribbles = rng.poisson(expDribbles);
   const keyPasses = assists + rng.poisson(expKeyPasses);
   const tackles = rng.poisson(expTackles);
@@ -118,7 +122,7 @@ export function playMatch(rng: Rng, player: Player, role: SquadRole, ctx: MatchC
   const defensive = POSITION_GROUP[pos] === 'goalkeeper' || POSITION_GROUP[pos] === 'defender';
   const cleanSheet = defensive && ctx.conceded === 0 && started ? 0.4 : 0;
   const leak = defensive ? -0.15 * ctx.conceded : 0;
-  const raw = 6.4 + Math.max(-0.9, Math.min(1.2, diff / 14)) + goals * 0.7 + assists * 0.45 + result + cleanSheet + leak + actions + rng.normal(0, 0.5);
+  const raw = 6.4 + Math.max(-0.9, Math.min(1.2, diff / 14)) + goals * 0.7 + assists * 0.45 + result + cleanSheet + leak + actions + (ctx.mods?.rating ?? 0) + rng.normal(0, 0.5);
   const rating = Math.round(Math.min(10, Math.max(3.5, minutes < 20 ? 6 + (raw - 6.3) / 2 : raw)) * 10) / 10;
   return { started, minutes, rating, goals, assists, dribbles, keyPasses, tackles, saves };
 }

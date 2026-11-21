@@ -13,6 +13,7 @@ import { respondToOffer } from '@/engine/market/offers';
 import { chooseNationalTeam } from '@/engine/competitions/nationalTeam';
 import { dismissCinematic, selectCelebration } from '@/engine/cinematics/cinematics';
 import { careerCard, retireNow } from '@/engine/legacy/legacy';
+import { withSpecialtyFocus } from '@/engine/player/specialties';
 import { addToHallOfFame } from '@/persistence/hallOfFame';
 import { ENGINE_CONTENT } from '@/data';
 import { getBrowserStorage } from '@/persistence/storage';
@@ -51,6 +52,7 @@ interface GameStore {
   nextCinematic: () => void;
   /** Elige la celebración de los goles. */
   chooseCelebration: (id: string) => void;
+  setSpecialtyFocus: (id: string | null) => void;
   /** Retirada por decisión propia (fin de temporada, 30 años o más). */
   retire: () => void;
   autosave: () => void;
@@ -119,6 +121,13 @@ export const useGame = create<GameStore>()(
       const { game } = get();
       if (!game) return;
       set({ game: dismissCinematic(game) });
+      get().autosave();
+    },
+
+    setSpecialtyFocus: (id) => {
+      const { game } = get();
+      if (!game) return;
+      set({ game: withSpecialtyFocus(game, id, ENGINE_CONTENT.specialties) });
       get().autosave();
     },
 

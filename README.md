@@ -3,10 +3,10 @@
 Juego web de decisiones en el que vives la carrera de un futbolista desde la cantera hasta la retirada.
 Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas ficticios.
 
-> **Versión 1.3.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
+> **Versión 1.4.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
 > Europa (España, Inglaterra, Italia, Alemania, Francia, Portugal, Países Bajos, Turquía, Bélgica y Escocia),
 > Sudamérica (Argentina, Brasil, Uruguay, Colombia, Chile, Ecuador, Paraguay y Perú), Norteamérica (México y
-> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 344 eventos, 44 logros, copas, competiciones continentales, selecciones, premios,
+> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 344 eventos, 36 especialidades de juego, 44 logros, copas, competiciones continentales, selecciones, premios,
 > cinemáticas, estadísticas, resumen final exportable y Salón de la Fama.
 > Las decisiones de diseño están en [DECISIONES.md](DECISIONES.md).
 
@@ -17,7 +17,7 @@ Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas
    fin de temporada). Todas las ligas se simulan partido a partido.
 3. **Decide**: entre fases te llegan situaciones. Lo que eliges cambia tus relaciones, tu personalidad y tu carrera.
 4. **Gestiona** las ofertas de traspaso, cesión y renovación en los mercados.
-5. **Consulta** las pestañas del hub: clasificación, estadísticas, carrera, palmarés, logros, atributos, personalidad
+5. **Consulta** las pestañas del hub: clasificación, estadísticas, carrera, palmarés, logros, atributos, especialidades (y cuál entrenas), personalidad
    y partida (guardar y exportar).
 6. **Retírate** (desde los 30 años, o como muy tarde tras la temporada de los 40): verás el resumen final, que se exporta
    como imagen o PDF, y entrarás en el Salón de la Fama.

@@ -122,4 +122,16 @@ export interface Player {
   agent: Agent | null;
   nationalTeam: { eligible: CountryId[]; chosen?: CountryId };
   celebrations: { unlocked: CelebrationId[]; selected?: CelebrationId };
+  /** Especialidades conseguidas (las partidas anteriores a la v1.4 no lo tienen). */
+  specialties?: PlayerSpecialty[];
+  /** Especialidad que entrena: sus atributos crecen más rápido. */
+  specialtyFocus?: string;
+}
+
+export interface PlayerSpecialty {
+  id: string;
+  /** 1 = conseguida; 2 = élite. */
+  level: 1 | 2;
+  /** Temporada en que la consiguió (o subió de nivel). */
+  season: number;
 }

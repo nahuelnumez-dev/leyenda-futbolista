@@ -50,6 +50,7 @@ export const WORLD = buildWorldData(RAW_DATA);
 
 import { PLAY_STYLES } from './playStyles';
 import { TRAITS } from './traits';
+import { SPECIALTIES } from './specialties';
 import { EVENTS } from './events';
 import { NAMES } from './names';
 import { TENDENCIES } from './tendencies';
@@ -59,4 +60,4 @@ import { ACHIEVEMENTS, TIER_POINTS } from './achievements';
 import type { EngineContent } from '@/engine/season/advance';
 
 /** Todo el contenido que necesita el motor de temporada. */
-export const ENGINE_CONTENT: EngineContent = { world: WORLD, styles: PLAY_STYLES, traits: TRAITS, events: EVENTS, names: NAMES, tendencies: TENDENCIES, reactions: REACTIONS, intl: INTERNATIONAL, achievements: ACHIEVEMENTS, tierPoints: TIER_POINTS };
+export const ENGINE_CONTENT: EngineContent = { world: WORLD, styles: PLAY_STYLES, traits: TRAITS, specialties: SPECIALTIES, events: EVENTS, names: NAMES, tendencies: TENDENCIES, reactions: REACTIONS, intl: INTERNATIONAL, achievements: ACHIEVEMENTS, tierPoints: TIER_POINTS };

@@ -451,6 +451,16 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
 147. **344 eventos**: 65 más en `choices.ts` (cantera, porteros, defensas, centrocampistas, delanteros, táctica,
      cesiones, derbis, contrato, selección) con cadenas de dos pasos (la promesa al abuelo, el mentor, la apuesta).
 
+148. **Especialidades** (v1.4): 36 rasgos de juego ligados a los atributos (`src/data/specialties.ts`), en 7 grupos:
+     tiro, pase, regate (con 6 regates característicos: ruleta, sombrerito, elástica, bicicleta, caño y rabona),
+     físico, defensa, mental y portería. Se consiguen solas al llegar a los umbrales de sus atributos; el nivel élite
+     pide 14 puntos más en cada uno. Se pierden si un atributo baja 3 puntos del umbral, para que el declive de la
+     edad se note sin que aparezcan y desaparezcan cada año. El estilo de juego afín rebaja los umbrales 4 puntos y
+     los rasgos afines 3. Cada especialidad da un bonus en los partidos (más goles, asistencias, regates, pases
+     clave, entradas o paradas, o nota). El jugador puede «entrenar» una: sus atributos crecen un 15 % más rápido.
+     Los regates característicos salen a veces en las noticias de la jornada. En pruebas, un jugador medio tiene
+     2-4 especialidades a los 21 años y 4-7 en su mejor momento; las élite llegan a partir de los 23-25 años.
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

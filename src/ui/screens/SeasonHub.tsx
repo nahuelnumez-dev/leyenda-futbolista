@@ -12,6 +12,7 @@ import { StatsPanel } from '../hub/StatsPanel';
 import { NationalChoiceModal, PalmaresPanel } from '../hub/PalmaresPanel';
 import { CinematicPlayer, visibleCinematic } from '../cinematics/CinematicPlayer';
 import { AchievementsPanel } from '../hub/AchievementsPanel';
+import { SpecialtiesPanel } from '../hub/SpecialtiesPanel';
 import { MIN_RETIRE_AGE } from '@/engine/legacy/legacy';
 import { overallFor } from '@/engine/player/overall';
 import { ageInSeason, formatSeason } from '@/engine/world/newGame';
@@ -23,7 +24,7 @@ import { downloadText } from '../download';
 import { errorMessage } from '../errors';
 
 const MANUAL_SLOTS: SlotId[] = ['1', '2', '3'];
-const TABS = ['season', 'table', 'stats', 'career', 'palmares', 'achievements', 'attributes', 'personality', 'game'] as const;
+const TABS = ['season', 'table', 'stats', 'career', 'palmares', 'achievements', 'attributes', 'specialties', 'personality', 'game'] as const;
 type Tab = (typeof TABS)[number];
 
 /** Pantalla central de la temporada (provisional hasta la Fase 4). */
@@ -42,6 +43,7 @@ export function SeasonHub() {
   const [busy, setBusy] = useState(false);
   const advance = useGame((s) => s.advance);
   const respondOffer = useGame((s) => s.respondOffer);
+  const setSpecialtyFocus = useGame((s) => s.setSpecialtyFocus);
   const chooseCountry = useGame((s) => s.chooseCountry);
   const cinematicsSetting = useUi((s) => s.settings.cinematics);
   const retire = useGame((s) => s.retire);
@@ -213,6 +215,7 @@ export function SeasonHub() {
         {activeTab === 'palmares' && <PalmaresPanel game={game} />}
         {activeTab === 'achievements' && <AchievementsPanel game={game} />}
         {activeTab === 'attributes' && <AttributesPanel game={game} />}
+        {activeTab === 'specialties' && <SpecialtiesPanel game={game} onFocus={setSpecialtyFocus} />}
         {activeTab === 'personality' && <PersonalityPanel game={game} />}
         {activeTab === 'game' && (
           <div className="card stack">

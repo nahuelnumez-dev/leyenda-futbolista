@@ -95,7 +95,8 @@
       "personality": "Personalidad",
       "stats": "Estadísticas",
       "palmares": "Palmarés",
-      "achievements": "Logros"
+      "achievements": "Logros",
+      "specialties": "Especialidades"
     },
     "stats": {
       "apps": "PJ",
@@ -792,6 +793,29 @@
     "legacy": {
       "title": "Deja tu legado.",
       "text": "Al retirarte verás el resumen de tu carrera (exportable como imagen o PDF) y entrarás en el Salón de la Fama."
+    }
+  },
+  "specialties": {
+    "mine": "Tus especialidades ({n})",
+    "none": "Todavía ninguna. Se consiguen solas cuando tus atributos llegan a los umbrales.",
+    "focusOn": "Entrenando: {name}. Sus atributos crecen un 15 % más rápido.",
+    "focusOff": "No estás entrenando ninguna especialidad. Elige una para que sus atributos crezcan más rápido.",
+    "help": "★ conseguida · ★★ élite (14 puntos más en cada atributo). Se pierden si los atributos bajan 3 puntos del umbral.",
+    "signature": "Regate característico",
+    "toUnlock": "Para conseguirla:",
+    "toElite": "Para nivel élite:",
+    "maxed": "Nivel élite conseguido.",
+    "discount": "Tu estilo o tus rasgos rebajan {n} puntos cada umbral.",
+    "train": "Entrenar",
+    "training": "Entrenando ✓",
+    "group": {
+      "shooting": "Tiro",
+      "passing": "Pase",
+      "dribbling": "Regate",
+      "physical": "Físico",
+      "defending": "Defensa",
+      "mental": "Mental",
+      "goalkeeping": "Portería"
     }
   }
 }

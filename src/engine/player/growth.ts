@@ -39,10 +39,12 @@ export interface GrowthInput {
   playRatio: number;
   traits: TraitDef[];
   style?: PlayStyleDef;
+  /** Atributos de la especialidad que entrena (+15 % de crecimiento). */
+  focus?: AttributeId[];
 }
 
 /** Devuelve los atributos nuevos y la variación de cada uno. */
-export function seasonGrowth(rng: Rng, { player, age, playRatio, traits, style }: GrowthInput): { attributes: Attributes; delta: Partial<Record<AttributeId, number>> } {
+export function seasonGrowth(rng: Rng, { player, age, playRatio, traits, style, focus = [] }: GrowthInput): { attributes: Attributes; delta: Partial<Record<AttributeId, number>> } {
   const pot = player.potential.hidden;
   const isKeeper = player.positions.main === 'POR';
   const gk = new Set<AttributeId>(GOALKEEPING_ATTRIBUTES);
@@ -63,7 +65,7 @@ export function seasonGrowth(rng: Rng, { player, age, playRatio, traits, style }
     } else {
       const rel = relevance(id, player.positions.main, player.positions.secondary);
       const target = Math.min(ATTRIBUTE_MAX, rel >= 0.8 ? pot + 5 : rel >= 0.4 ? pot - 3 : pot * 0.75);
-      const styleBoost = style?.bonuses[id] ? 1.15 : 1;
+      const styleBoost = (style?.bonuses[id] ? 1.15 : 1) * (focus.includes(id) ? 1.15 : 1);
       if (rate > 0 && target > v) change += (target - v) * rate * play * traitMult(id) * styleBoost + rng.normal(0, 0.7);
       else if (rate > 0) change += rng.normal(0, 0.4);
     }

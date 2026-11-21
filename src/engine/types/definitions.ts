@@ -83,3 +83,44 @@ export interface CompetitionDef {
   country?: CountryId;
   confederation?: CountryDef['confederation'];
 }
+
+/* ── Especialidades ────────────────────────────────────── */
+
+export type SpecialtyGroup = 'shooting' | 'passing' | 'dribbling' | 'physical' | 'defending' | 'mental' | 'goalkeeping';
+
+/** Efectos en el partido por cada nivel de la especialidad (0,1 = +10 %; `rating` suma a la nota). */
+export interface SpecialtyEffects {
+  goals?: number;
+  assists?: number;
+  dribbles?: number;
+  keyPasses?: number;
+  tackles?: number;
+  saves?: number;
+  rating?: number;
+}
+
+/**
+ * Especialidad: un rasgo de juego que se desbloquea solo cuando los atributos llegan al umbral.
+ * Nivel 1 con `requires`; nivel 2 (élite) con `requires` + `eliteBonus` (14) en cada atributo.
+ * El estilo de juego y los rasgos afines rebajan los umbrales.
+ */
+export interface SpecialtyDef {
+  id: string;
+  name: LocalizedText;
+  description: LocalizedText;
+  group: SpecialtyGroup;
+  /** Solo porteros (true) o solo jugadores de campo (false). */
+  keeper: boolean;
+  /** Si se indica, solo para estas posiciones (principal o secundarias). */
+  positions?: Position[];
+  requires: Partial<Record<AttributeId, number>>;
+  /** Puntos extra que pide el nivel élite (14 por defecto). */
+  eliteBonus?: number;
+  effects: SpecialtyEffects;
+  /** Estilos de juego que la facilitan (umbral −4). */
+  styles?: PlayStyleId[];
+  /** Rasgos que la facilitan (umbral −3). */
+  traits?: TraitId[];
+  /** Regate o gesto característico (sale en las noticias de los partidos). */
+  signature?: boolean;
+}
