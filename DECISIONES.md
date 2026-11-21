@@ -475,6 +475,11 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      de `dist`). Se usa la compilación normal, con los escudos en PNG sueltos (34 MB, muy por debajo del límite de
      Pages). Las rutas relativas (`base: './'`) hacen que funcione en la subcarpeta `/leyenda-futbolista/`.
 
+151. **Talento centrado en 85-89** (petición del usuario): el potencial oculto sigue una campana de Gauss de media 87
+     y desviación 4,5 (rango 72-98). La media inicial se calcula igual que antes, así que un jugador más talentoso
+     empieza algo mejor. En 96 carreras simuladas, la media máxima queda así: 4 % por debajo de 80, 25 % en 80-84,
+     40 % en 85-89, 25 % en 90-94 y 6 % en 95 o más. Gana algún Balón de Oro el 22 % de las carreras (antes, el 9 %).
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

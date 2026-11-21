@@ -37,7 +37,10 @@ export interface CreationContent {
 }
 
 export const MAX_SECONDARY_POSITIONS = 2;
-export const POTENTIAL_RANGE: [number, number] = [60, 97];
+/** Campana de Gauss del talento: centro en 87 (lo normal es una carrera de 85-89 de media máxima). */
+export const POTENTIAL_MEAN = 87;
+export const POTENTIAL_SD = 4.5;
+export const POTENTIAL_RANGE: [number, number] = [72, 98];
 
 /** Bonus iniciales por rasgo (pequeños: el efecto real es el crecimiento). */
 const TRAIT_START_BONUS: Record<string, Partial<Record<AttributeId, number>>> = {
@@ -71,7 +74,7 @@ const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(mi
 /** Talento (potencial oculto) de una semilla. Se calcula aparte porque las pruebas de cantera lo usan antes de crear la partida. */
 export function rollPotential(seed: string): number {
   const rng = Rng.fromSeed(seed).fork('potential');
-  return Math.round(clamp(rng.normal(79, 8), POTENTIAL_RANGE[0], POTENTIAL_RANGE[1]));
+  return Math.round(clamp(rng.normal(POTENTIAL_MEAN, POTENTIAL_SD), POTENTIAL_RANGE[0], POTENTIAL_RANGE[1]));
 }
 
 /** Rango de potencial que ven los ojeadores (amplio a los 15 años). */
@@ -96,8 +99,8 @@ export function generateStartingAttributes(input: CharacterInput, potential: num
   const rng = Rng.fromSeed(seed).fork('attributes');
   const attrs = createAttributes(0);
   const isKeeper = input.mainPosition === 'POR';
-  // Base 20-34 según el talento.
-  const base = 20 + (potential - POTENTIAL_RANGE[0]) * 0.38;
+  // Base 25-34 según el talento (potencial 72-98).
+  const base = 20 + (potential - 60) * 0.38;
   const gk = new Set<AttributeId>(GOALKEEPING_ATTRIBUTES);
 
   for (const id of ALL_ATTRIBUTES) {

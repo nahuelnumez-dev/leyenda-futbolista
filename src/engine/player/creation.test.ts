@@ -30,8 +30,8 @@ describe('creación del personaje', () => {
     expect(rollPotential('s1')).toBe(rollPotential('s1'));
     for (let i = 0; i < 200; i++) {
       const p = rollPotential(`seed-${i}`);
-      expect(p).toBeGreaterThanOrEqual(60);
-      expect(p).toBeLessThanOrEqual(97);
+      expect(p).toBeGreaterThanOrEqual(72);
+      expect(p).toBeLessThanOrEqual(98);
     }
   });
 

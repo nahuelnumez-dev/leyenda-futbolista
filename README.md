@@ -3,7 +3,7 @@
 Juego web de decisiones en el que vives la carrera de un futbolista desde la cantera hasta la retirada.
 Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas ficticios.
 
-> **Versión 1.5.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
+> **Versión 1.5.1: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
 > Europa (España, Inglaterra, Italia, Alemania, Francia, Portugal, Países Bajos, Turquía, Bélgica y Escocia),
 > Sudamérica (Argentina, Brasil, Uruguay, Colombia, Chile, Ecuador, Paraguay y Perú), Norteamérica (México y
 > Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 344 eventos, 36 especialidades de juego, 44 logros, copas, competiciones continentales, selecciones, premios,
