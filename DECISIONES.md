@@ -471,6 +471,10 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      (5) Icono, manifiesto y etiquetas de Apple para «Añadir a pantalla de inicio» (pantalla completa, como una app).
      En la Partida se avisa de que Safari puede borrar los datos de las webs que no se usan en unos días.
 
+150. **GitHub Pages**: el juego se publica con GitHub Actions en cada subida a `main` (tests, compilación y despliegue
+     de `dist`). Se usa la compilación normal, con los escudos en PNG sueltos (34 MB, muy por debajo del límite de
+     Pages). Las rutas relativas (`base: './'`) hacen que funcione en la subcarpeta `/leyenda-futbolista/`.
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

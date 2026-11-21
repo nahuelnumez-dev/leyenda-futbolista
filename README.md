@@ -24,6 +24,9 @@ Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas
 
 Una carrera completa (unas 20 temporadas) dura entre 30 y 60 minutos.
 
+**Jugar online:** https://nahuelnumez-dev.github.io/leyenda-futbolista/ (se actualiza solo con cada cambio en `main`,
+mediante `.github/workflows/deploy.yml`; requiere el repositorio público y Settings → Pages → Source: «GitHub Actions»).
+
 ## Jugar en iPhone o iPad
 
 - Abre el juego en Safari. Para jugar a pantalla completa, como una app: botón Compartir → «Añadir a pantalla de inicio».
