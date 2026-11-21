@@ -461,6 +461,16 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      Los regates característicos salen a veces en las noticias de la jornada. En pruebas, un jugador medio tiene
      2-4 especialidades a los 21 años y 4-7 en su mejor momento; las élite llegan a partir de los 23-25 años.
 
+149. **iPhone y iPad** (v1.5): (1) «Código de partida»: el guardado comprimido (lz-string) como texto para copiar y
+     pegar; funciona donde no se pueden descargar archivos (página publicada, iOS) y para pasar la partida entre
+     dispositivos. La importación acepta el código aunque se cuelen espacios o saltos de línea. (2) Exportar abre el
+     menú de compartir del sistema en pantallas táctiles («Guardar en Archivos»); si no se puede, descarga normal.
+     (3) La imagen del resumen final se comparte o, si no, se muestra para guardarla manteniéndola pulsada.
+     (4) `mobile.css`: zonas seguras (muesca, isla dinámica y barra de inicio), alturas `dvh` para la barra de
+     Safari, campos de 16 px para que Safari no haga zoom, sin retardo de doble toque, botones de 44 px.
+     (5) Icono, manifiesto y etiquetas de Apple para «Añadir a pantalla de inicio» (pantalla completa, como una app).
+     En la Partida se avisa de que Safari puede borrar los datos de las webs que no se usan en unos días.
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

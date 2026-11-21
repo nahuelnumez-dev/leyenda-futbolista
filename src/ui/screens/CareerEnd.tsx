@@ -4,6 +4,8 @@
  */
 import { useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
+import { isTouchDevice, shareFile } from '../download';
+import { Modal } from '../components/Modal';
 import { lt, t, tDynamic } from '@/i18n';
 import { ENGINE_CONTENT, WORLD } from '@/data';
 import { ACHIEVEMENTS } from '@/data/achievements';
@@ -63,6 +65,7 @@ export function CareerEnd() {
   const toast = useUi((s) => s.toast);
   const ref = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   if (!game) {
     return (
@@ -98,9 +101,17 @@ export function CareerEnd() {
     setBusy(true);
     try {
       const url = await toPng(ref.current, { backgroundColor: '#0b0f14', pixelRatio: 2, cacheBust: true });
+      const fileName = `leyenda-${p.identity.name.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+      const blob = await (await fetch(url)).blob();
+      if (await shareFile(new File([blob], fileName, { type: 'image/png' }))) return;
+      if (isTouchDevice()) {
+        // iPhone sin menú de compartir: se muestra la imagen para guardarla manteniéndola pulsada.
+        setImageUrl(url);
+        return;
+      }
       const a = document.createElement('a');
       a.href = url;
-      a.download = `leyenda-${p.identity.name.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+      a.download = fileName;
       a.click();
     } catch (err) {
       toast(errorMessage(err), 'error');
@@ -247,6 +258,10 @@ export function CareerEnd() {
           {t('careerEnd.footer')}
         </p>
       </div>
+      <Modal open={imageUrl !== null} title={t('careerEnd.exportImage')} onClose={() => setImageUrl(null)}>
+        <p className="muted small">{t('careerEnd.longPress')}</p>
+        {imageUrl && <img src={imageUrl} alt={p.identity.name} style={{ width: '100%', borderRadius: 8 }} />}
+      </Modal>
     </div>
   );
 }

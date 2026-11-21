@@ -6,6 +6,7 @@ import { createMemoryStorage } from '@/persistence/storage';
 import {
   deleteSlot,
   exportFileName,
+  exportCode,
   exportGame,
   importGame,
   latestSlot,
@@ -131,6 +132,16 @@ describe('ranuras', () => {
     const json = exportGame(game, '2026-11-19T10:00:00.000Z');
     expect(json).toContain('\n  '); // legible
     expect(importGame(json)).toEqual(game);
+  });
+
+  it('el código de partida se copia, se pega con espacios y se recupera', () => {
+    const game = newGame();
+    const code = exportCode(game, '2026-11-19T10:00:00.000Z');
+    expect(code.startsWith('LEYENDA1:')).toBe(true);
+    expect(code.length).toBeLessThan(exportGame(game, '2026-11-19T10:00:00.000Z').length);
+    const pasted = `Mi partida:\n${code.slice(0, 50)}\n ${code.slice(50)}  `;
+    expect(importGame(pasted)).toEqual(game);
+    expect(() => importGame('LEYENDA1:basura')).toThrow();
   });
 
   it('nombre de archivo de exportación sin acentos ni espacios', () => {

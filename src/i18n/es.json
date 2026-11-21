@@ -177,7 +177,8 @@
     "confirmRetire": "Pondrás fin a tu carrera al terminar esta temporada. No se puede deshacer. ¿Seguro?",
     "retired": "Carrera terminada",
     "retiredHint": "Tu nombre ya está en el Salón de la Fama.",
-    "viewSummary": "Ver resumen final"
+    "viewSummary": "Ver resumen final",
+    "iosTip": "En iPhone y iPad, Safari puede borrar los datos de las webs que no usas en unos días. Copia el código de partida de vez en cuando para no perderla."
   },
   "load": {
     "title": "Cargar partida",
@@ -766,7 +767,8 @@
       "ballonDor": "Ganó {n} Balón(es) de Oro.",
       "end": "Se retiró a los {age} años en {club}.",
       "trophyOne": "Ganó un título: {names}."
-    }
+    },
+    "longPress": "Mantén pulsada la imagen y elige «Guardar en Fotos» o «Compartir»."
   },
   "help": {
     "title": "Cómo se juega",
@@ -817,5 +819,17 @@
       "mental": "Mental",
       "goalkeeping": "Portería"
     }
+  },
+  "saveCode": {
+    "title": "Código de partida",
+    "hint": "Copia este código y guárdalo donde quieras (Notas, WhatsApp, correo…). Para recuperar la partida, en este o en otro dispositivo, ve a «Cargar partida» y pégalo.",
+    "copy": "Copiar código",
+    "copied": "Copiado ✓",
+    "size": "{kb} KB de texto.",
+    "button": "Copiar código de partida",
+    "pasteTitle": "Pegar un código de partida",
+    "pasteHint": "Pega aquí un código de partida (o el contenido de un archivo exportado).",
+    "pastePlaceholder": "LEYENDA1:…",
+    "pasteButton": "Importar código"
   }
 }

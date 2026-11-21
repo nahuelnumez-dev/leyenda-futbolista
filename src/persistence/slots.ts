@@ -106,9 +106,28 @@ export function exportGame(game: GameState, savedAt: string): string {
   return serializeGame(game, savedAt, true);
 }
 
-/** Valida un JSON importado y devuelve la partida. Lanza SaveError si no es válido. */
+const CODE_PREFIX = 'LEYENDA1:';
+
+/**
+ * Código de partida: el guardado comprimido en texto plano, para copiarlo y pegarlo
+ * (Notas, WhatsApp, correo...). Sirve en iPhone y donde no se pueden descargar archivos.
+ */
+export function exportCode(game: GameState, savedAt: string): string {
+  return CODE_PREFIX + LZString.compressToEncodedURIComponent(serializeGame(game, savedAt));
+}
+
+/** Acepta un JSON exportado o un código de partida (con espacios o saltos de línea añadidos al copiar). */
+export function normalizeImport(text: string): string {
+  const trimmed = text.trim();
+  const at = trimmed.indexOf(CODE_PREFIX);
+  if (at === -1) return trimmed;
+  const body = trimmed.slice(at + CODE_PREFIX.length).replace(/\s+/g, '');
+  return LZString.decompressFromEncodedURIComponent(body) ?? '';
+}
+
+/** Valida un JSON importado (o un código de partida) y devuelve la partida. Lanza SaveError si no es válido. */
 export function importGame(json: string): GameState {
-  return deserializeGame(json).game;
+  return deserializeGame(normalizeImport(json)).game;
 }
 
 export function exportFileName(game: GameState): string {

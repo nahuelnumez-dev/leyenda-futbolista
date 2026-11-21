@@ -3,6 +3,7 @@ import { t } from '@/i18n';
 import {
   SLOT_IDS,
   loadFromSlot,
+  exportCode,
   exportGame,
   exportFileName,
   importGame,
@@ -15,6 +16,7 @@ import { useUi } from '@/store/uiStore';
 import { ScreenHeader } from '../components/ScreenHeader';
 import { ConfirmDialog } from '../components/Modal';
 import { downloadText, readFileText } from '../download';
+import { SaveCodeDialog } from '../components/SaveCodeDialog';
 import { errorMessage } from '../errors';
 
 const dateFmt = new Intl.DateTimeFormat('es', { dateStyle: 'medium', timeStyle: 'short' });
@@ -40,6 +42,16 @@ export function LoadScreen() {
   const [importSlot, setImportSlot] = useState<SlotId>('1');
   const [pendingImport, setPendingImport] = useState<PendingImport | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
+  const [saveCode, setSaveCode] = useState<string | null>(null);
+  const [pasted, setPasted] = useState('');
+
+  const onCode = (id: SlotId) => {
+    try {
+      setSaveCode(exportCode(loadFromSlot(getBrowserStorage(), id), new Date().toISOString()));
+    } catch (err) {
+      toast(errorMessage(err), 'error');
+    }
+  };
 
   const onLoad = (id: SlotId) => {
     try {
@@ -54,7 +66,7 @@ export function LoadScreen() {
   const onExport = (id: SlotId) => {
     try {
       const game = loadFromSlot(getBrowserStorage(), id);
-      downloadText(exportFileName(game), exportGame(game, new Date().toISOString()));
+      void downloadText(exportFileName(game), exportGame(game, new Date().toISOString()));
     } catch (err) {
       toast(errorMessage(err), 'error');
     }
@@ -76,6 +88,10 @@ export function LoadScreen() {
     if (!file) return;
     const json = await readFileText(file);
     if (fileRef.current) fileRef.current.value = '';
+    onText(json);
+  };
+
+  const onText = (json: string) => {
     // Se valida antes de preguntar nada: un archivo inválido no debe ofrecer sobrescribir.
     try {
       importGame(json);
@@ -122,6 +138,9 @@ export function LoadScreen() {
                 <button className="btn btn-primary" onClick={() => onLoad(id)}>
                   {t('common.load')}
                 </button>
+                <button className="btn" onClick={() => onCode(id)}>
+                  {t('saveCode.copy')}
+                </button>
                 <button className="btn" onClick={() => onExport(id)}>
                   {t('common.export')}
                 </button>
@@ -160,7 +179,35 @@ export function LoadScreen() {
             onChange={(e) => void onFile(e.target.files?.[0])}
           />
         </div>
+        <label className="field">
+          <span>{t('saveCode.pasteTitle')}</span>
+          <textarea
+            id="paste-code"
+            className="input save-code"
+            rows={3}
+            value={pasted}
+            placeholder={t('saveCode.pastePlaceholder')}
+            onChange={(e) => setPasted(e.target.value)}
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
+          />
+          <span className="faint small">{t('saveCode.pasteHint')}</span>
+        </label>
+        <div className="row">
+          <button
+            className="btn btn-primary"
+            disabled={!pasted.trim()}
+            onClick={() => {
+              onText(pasted);
+              setPasted('');
+            }}
+          >
+            {t('saveCode.pasteButton')}
+          </button>
+        </div>
       </section>
+      <SaveCodeDialog code={saveCode} onClose={() => setSaveCode(null)} />
 
       <ConfirmDialog
         open={toDelete !== null}

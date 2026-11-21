@@ -20,7 +20,9 @@ import { useGame } from '@/store/gameStore';
 import { useUi } from '@/store/uiStore';
 import type { SlotId } from '@/persistence/slots';
 import { ConfirmDialog, Modal } from '../components/Modal';
-import { downloadText } from '../download';
+import { downloadText, isTouchDevice } from '../download';
+import { SaveCodeDialog } from '../components/SaveCodeDialog';
+import { exportCode } from '@/persistence/slots';
 import { errorMessage } from '../errors';
 
 const MANUAL_SLOTS: SlotId[] = ['1', '2', '3'];
@@ -101,8 +103,9 @@ export function SeasonHub() {
 
   const onExport = () => {
     const out = exportCurrent();
-    if (out) downloadText(out.fileName, out.json);
+    if (out) void downloadText(out.fileName, out.json);
   };
+  const [saveCode, setSaveCode] = useState<string | null>(null);
 
   return (
     <div className="screen stack" style={{ gap: 20 }}>
@@ -220,12 +223,16 @@ export function SeasonHub() {
         {activeTab === 'game' && (
           <div className="card stack">
             <p className="faint small">{t('hub.seed', { seed: game.seed })}</p>
+            {isTouchDevice() && <p className="small muted">{t('hub.iosTip')}</p>}
             <div className="row">
               {!game.options.ironMan && (
                 <button className="btn btn-primary" onClick={() => setSaving(true)}>
                   {t('hub.saveTo')}
                 </button>
               )}
+              <button className="btn" onClick={() => setSaveCode(exportCode(game, new Date().toISOString()))}>
+                {t('saveCode.button')}
+              </button>
               <button className="btn" onClick={onExport}>
                 {t('hub.exportJson')}
               </button>
@@ -247,6 +254,7 @@ export function SeasonHub() {
       {!showSummary && !playingCinematic && <EventModal game={game} />}
       {!showSummary && !playingCinematic && <NationalChoiceModal game={game} onChoose={chooseCountry} />}
       <CinematicPlayer game={game} />
+      <SaveCodeDialog code={saveCode} onClose={() => setSaveCode(null)} />
       <ConfirmDialog
         open={confirmRetire}
         title={t('hub.retire')}

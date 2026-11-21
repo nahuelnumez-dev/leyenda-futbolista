@@ -3,7 +3,7 @@
 Juego web de decisiones en el que vives la carrera de un futbolista desde la cantera hasta la retirada.
 Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas ficticios.
 
-> **Versión 1.4.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
+> **Versión 1.5.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
 > Europa (España, Inglaterra, Italia, Alemania, Francia, Portugal, Países Bajos, Turquía, Bélgica y Escocia),
 > Sudamérica (Argentina, Brasil, Uruguay, Colombia, Chile, Ecuador, Paraguay y Perú), Norteamérica (México y
 > Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 344 eventos, 36 especialidades de juego, 44 logros, copas, competiciones continentales, selecciones, premios,
@@ -23,6 +23,13 @@ Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas
    como imagen o PDF, y entrarás en el Salón de la Fama.
 
 Una carrera completa (unas 20 temporadas) dura entre 30 y 60 minutos.
+
+## Jugar en iPhone o iPad
+
+- Abre el juego en Safari. Para jugar a pantalla completa, como una app: botón Compartir → «Añadir a pantalla de inicio».
+- Guarda tu partida con **Partida → Copiar código de partida** y pégala en Notas (o donde quieras). Para recuperarla,
+  en cualquier dispositivo: **Cargar partida → Pegar un código de partida**. Safari puede borrar los datos de las webs
+  que no usas en unos días, así que conviene copiar el código de vez en cuando.
 
 ## Requisitos
 
