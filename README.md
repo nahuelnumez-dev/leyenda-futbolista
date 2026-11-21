@@ -3,10 +3,10 @@
 Juego web de decisiones en el que vives la carrera de un futbolista desde la cantera hasta la retirada.
 Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas ficticios.
 
-> **Versión 1.5.1: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
+> **Versión 1.6.0: las 11 fases están completadas y las ligas ampliadas.** 1011 clubes reales de 25 países:
 > Europa (España, Inglaterra, Italia, Alemania, Francia, Portugal, Países Bajos, Turquía, Bélgica y Escocia),
 > Sudamérica (Argentina, Brasil, Uruguay, Colombia, Chile, Ecuador, Paraguay y Perú), Norteamérica (México y
-> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 344 eventos, 36 especialidades de juego, 44 logros, copas, competiciones continentales, selecciones, premios,
+> Estados Unidos) y Asia (Japón, Corea del Sur, Arabia Saudí, Catar y Emiratos). Hasta tres divisiones por país. 690 eventos (253 con efecto real en las estadísticas), 36 especialidades de juego, 44 logros, copas, competiciones continentales, selecciones, premios,
 > cinemáticas, estadísticas, resumen final exportable y Salón de la Fama.
 > Las decisiones de diseño están en [DECISIONES.md](DECISIONES.md).
 
@@ -195,6 +195,16 @@ ev({
   lesiones, ofertas, petición de traspaso, noticias, programar otro evento, celebraciones, agente...
 - **Variables de texto**: {nombre}, {apodo}, {club}, {ciudad}, {estadio}, {division}, {rival}, {entrenador},
   {companero}, {capitan}, {agente}, {periodista}, {ciudadNatal}, {pais}, {temporada}.
+- **Estadísticas del partido**: si el evento cuenta algo que pasa en el campo, súmalo de verdad con `goal()`,
+  `goalsAtLeast(3)` (hat-trick), `assist()`, `dribble()`, `keyPass()`, `tackle()`, `save()`, `cleanSheet()` o
+  `matchRating(0.5)`. Esos eventos deben limitar las posiciones (`OUTFIELD`, `ATTACKERS`, `KEEPER`...) y salir solo en
+  `MATCH_PHASES`; el validador lo comprueba. Para escribir muchos, usa el atajo `mev(id, requisitos, título, texto, opciones)`.
+
+```ts
+mev('at-doblete', [FORWARDS], 'Ya llevas uno', 'Has marcado en la primera parte...', [
+  opt('ambicion', 'Ir a por el segundo', [], { roll: roll(0.45, out('Doblete.', goalsAtLeast(2)), out('Te quedas en uno.', goalsAtLeast(1)), 'finishing') }),
+]),
+```
 - Añade el evento a la lista de `src/data/events/index.ts` y ejecuta `npm test`.
 
 ### Nuevos logros

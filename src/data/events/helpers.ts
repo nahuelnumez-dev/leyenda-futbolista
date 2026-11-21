@@ -7,6 +7,7 @@
  */
 import type { AttributeId } from '@/engine/types/attributes';
 import type { CareerStage, SeasonPhase } from '@/engine/types/common';
+import type { EventCategory } from '@/engine/types/events';
 import type { Condition, Effect, EventOption, EventOutcomeRoll, GameEvent, MatchStatDelta, RelationId, ReputationScope } from '@/engine/types/events';
 
 export const es = (text: string) => ({ es: text });
@@ -96,3 +97,35 @@ export const ALL: CareerStage[] = ['academy', 'breakthrough', 'establishment', '
 export const HALVES: SeasonPhase[] = ['firstHalf', 'secondHalf'];
 /** Fases en las que ya se ha jugado algún partido de la temporada (válidas para efectos de estadísticas). */
 export const MATCH_PHASES: SeasonPhase[] = ['firstHalf', 'winterWindow', 'secondHalf'];
+
+/* ── Atajos para escribir muchos eventos de partido ─── */
+
+/** Resultado de una tirada: texto y efectos. */
+export const out = (text: string, ...effects: Effect[]) => ({ text, effects });
+
+export interface QuickEvent {
+  stages?: CareerStage[];
+  phases?: SeasonPhase[];
+  weight?: number;
+  cd?: number;
+  once?: boolean;
+  speaker?: GameEvent['speaker'];
+  category?: EventCategory;
+}
+
+/** Evento compacto: por defecto, de partido (keyMatch), para profesionales y tras haber jugado partidos. */
+export function mev(id: string, requires: Condition[], title: string, text: string, options: EventOption[], o: QuickEvent = {}): GameEvent {
+  return ev({
+    id,
+    category: o.category ?? 'keyMatch',
+    stages: o.stages ?? PRO,
+    phases: o.phases ?? MATCH_PHASES,
+    weight: o.weight ?? 10,
+    ...(o.once ? { once: true } : { cooldownSeasons: o.cd ?? 2 }),
+    requires,
+    speaker: o.speaker ?? 'narrator',
+    title,
+    text,
+    options,
+  });
+}

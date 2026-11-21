@@ -14,6 +14,13 @@ import { LIFE_EVENTS } from './life';
 import { PITCH_EVENTS } from './pitch';
 import { WORLD_EVENTS } from './world';
 import { CHOICE_EVENTS } from './choices';
+import { ATTACK_EVENTS } from './attack';
+import { DEFENSE_EVENTS } from './defense';
+import { KEEPER_EVENTS } from './keeper';
+import { GAME_EVENTS } from './games';
+import { LIFESTYLE_EVENTS } from './lifestyle';
+import { CLUB_EVENTS } from './club';
+import { MOMENT_EVENTS } from './moments';
 
 export const EVENTS: GameEvent[] = [...ACADEMY_EVENTS, ...CAREER_EVENTS, ...OFF_FIELD_EVENTS, ...PERSONALITY_EVENTS,
   ...INTERNATIONAL_EVENTS,
@@ -23,4 +30,11 @@ export const EVENTS: GameEvent[] = [...ACADEMY_EVENTS, ...CAREER_EVENTS, ...OFF_
   ...PITCH_EVENTS,
   ...WORLD_EVENTS,
   ...CHOICE_EVENTS,
+  ...ATTACK_EVENTS,
+  ...DEFENSE_EVENTS,
+  ...KEEPER_EVENTS,
+  ...GAME_EVENTS,
+  ...LIFESTYLE_EVENTS,
+  ...CLUB_EVENTS,
+  ...MOMENT_EVENTS,
 ];

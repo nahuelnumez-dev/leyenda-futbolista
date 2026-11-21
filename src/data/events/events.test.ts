@@ -36,8 +36,8 @@ function allConditions(e: GameEvent): Condition[] {
 }
 
 describe('eventos', () => {
-  it('hay al menos 300 eventos', () => {
-    expect(EVENTS.length).toBeGreaterThanOrEqual(300);
+  it('hay al menos 650 eventos', () => {
+    expect(EVENTS.length).toBeGreaterThanOrEqual(650);
   });
 
   it('los ids son únicos', () => {
@@ -99,7 +99,9 @@ describe('estadísticas de los eventos', () => {
     const allowed = allowedPositions(e);
     for (const st of e.options.flatMap((o) => allEffects(o))) {
       if (st.type !== 'matchStat') continue;
-      if ((st.goals && !KEEPER_GOAL_EVENTS.has(e.id)) || st.assists || st.dribbles || st.keyPasses || st.tackles) {
+      const keeperOnly = allowed.size === 1 && allowed.has('POR');
+      // Un portero puede dar pases clave (saque largo que inicia el gol), pero no regatear, asistir ni hacer entradas.
+      if ((st.goals && !KEEPER_GOAL_EVENTS.has(e.id)) || st.assists || st.dribbles || st.tackles || (st.keyPasses && !keeperOnly)) {
         expect(allowed.has('POR'), `${e.id}: estadística de jugador de campo sin excluir porteros`).toBe(false);
       }
       if (st.saves) expect([...allowed], `${e.id}: paradas para quien no es portero`).toEqual(['POR']);

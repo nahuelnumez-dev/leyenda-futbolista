@@ -480,6 +480,21 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      empieza algo mejor. En 96 carreras simuladas, la media máxima queda así: 4 % por debajo de 80, 25 % en 80-84,
      40 % en 85-89, 25 % en 90-94 y 6 % en 95 o más. Gana algún Balón de Oro el 22 % de las carreras (antes, el 9 %).
 
+152. **Las decisiones cuentan en las estadísticas** (v1.6): efecto nuevo `matchStat` que suma goles, asistencias,
+     regates, pases clave, entradas, paradas, nota o portería a cero al último partido jugado de la temporada (o al
+     siguiente, si aún no ha jugado). Con `atLeast`, los goles son un mínimo del partido (hat-trick = 3), para que un
+     «¡hat-trick!» deje de convivir con una temporada de 1 gol. El marcador del equipo se ajusta (al menos goles +
+     asistencias del jugador), el hat-trick lanza su cinemática y las estadísticas de la temporada salen de los partidos.
+153. **Coherencia con la posición**: el validador exige que los eventos con goles, asistencias, regates o entradas
+     excluyan a los porteros, que las paradas sean solo de porteros y las porterías a cero de defensas o porteros, y que
+     solo aparezcan en fases con partidos jugados (primera vuelta, mercado de invierno o segunda vuelta). Además revisa
+     los textos: un evento que habla de marcar o regatear no puede salirle a un portero. Se corrigieron 45 eventos
+     antiguos (requisitos de posición, estadísticas o textos neutros). Excepciones: el portero que sube a rematar un
+     córner y el que tira un penalti en una tanda.
+154. **690 decisiones** (el doble que en la v1.5): ataque (60), centrocampistas y defensas (43), porteros (25),
+     partidos generales (49), momentos de cantera, selección y posición (45), vida personal (60) y club (64). Se
+     escriben con el atajo `mev()` de `helpers.ts`. 253 cuentan en las estadísticas.
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido
