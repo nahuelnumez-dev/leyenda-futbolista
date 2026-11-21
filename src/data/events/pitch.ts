@@ -1,8 +1,7 @@
 /** Eventos de campo, entrenamiento, vestuario y cuerpo técnico (ampliación v1.3). */
 import type { GameEvent } from '@/engine/types/events';
 import {
-  ALL, HALVES, PRO, SENIOR, addTrait, attr, chance, ev, family, fitness, flag, followers, form, group, hasTrait, injury, maxAge, minAge,
-  minOverall, money, morale, news, noFlag, opt, playingTime, potential, rel, rep, roll, tendency,
+  ALL, HALVES, PRO, SENIOR, addTrait, attr, chance, ev, family, fitness, flag, followers, form, group, hasTrait, injury, maxAge, minAge, minOverall, money, morale, news, noFlag, opt, playingTime, potential, rel, rep, roll, tendency, goal, goalsAtLeast, assist, tackle, save, matchRating, OUTFIELD, dribble,
 } from './helpers';
 
 const FIELD = [{ type: 'positionGroup', in: ['forward', 'midfielder', 'defender'] }] as GameEvent['requires'];
@@ -14,7 +13,7 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: 'Penalti en el último minuto',
     text: 'Penalti a favor en el minuto 90. El lanzador habitual está en el banquillo y todos te miran a ti.',
     options: [
-      opt('tirar', 'Coger el balón', [], { roll: roll(0.7, { text: 'Engañas al portero. Tres puntos.', effects: [rel('fans', 8), morale(6), form(5)] }, { text: 'Lo para. El estadio se queda mudo.', effects: [morale(-8), rel('fans', -4)] }, 'penalties') }),
+      opt('tirar', 'Coger el balón', [], { roll: roll(0.7, { text: 'Engañas al portero. Tres puntos.', effects: [rel('fans', 8), morale(6), form(5), goal()] }, { text: 'Lo para. El estadio se queda mudo.', effects: [morale(-8), rel('fans', -4)] }, 'penalties') }),
       opt('ceder', 'Dárselo a {companero}', [rel('dressingRoom', 5), tendency('solidaridad', 4)], { roll: roll(0.65, { text: '{companero} lo mete y te abraza.', effects: [] }, { text: 'Lo falla. Nadie te culpa… en voz alta.', effects: [tendency('ego', -2)] }) }),
     ],
   }),
@@ -23,16 +22,16 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: '¿A lo Panenka?',
     text: 'Vas ganando 3-0 y te toca tirar un penalti. Te viene a la cabeza tirarlo a lo Panenka.',
     options: [
-      opt('panenka', 'Picarla', [tendency('ego', 4)], { roll: roll(0.6, { text: 'Suave, por el centro. El vídeo se vuelve viral.', effects: [followers(10), rep('national', 2)] }, { text: 'El portero no se mueve y la atrapa. Te llueven memes.', effects: [rel('coach', -5), followers(3), morale(-4)] }, 'composure') }),
-      opt('fuerte', 'Fuerte y a la escuadra', [tendency('profesionalidad', 2)], { result: 'Gol. Sin florituras.' }),
+      opt('panenka', 'Picarla', [tendency('ego', 4)], { roll: roll(0.6, { text: 'Suave, por el centro. El vídeo se vuelve viral.', effects: [followers(10), rep('national', 2), goal()] }, { text: 'El portero no se mueve y la atrapa. Te llueven memes.', effects: [rel('coach', -5), followers(3), morale(-4)] }, 'composure') }),
+      opt('fuerte', 'Fuerte y a la escuadra', [tendency('profesionalidad', 2), goal()], { result: 'Gol. Sin florituras.' }),
     ],
   }),
   ev({
-    id: 'cp-gol-olimpico', category: 'keyMatch', stages: PRO, phases: HALVES, weight: 8, cooldownSeasons: 3, requires: [{ type: 'attribute', id: 'crossing', min: 60 }], speaker: 'narrator',
+    id: 'cp-gol-olimpico', category: 'keyMatch', stages: PRO, phases: HALVES, weight: 8, cooldownSeasons: 3, requires: [OUTFIELD, { type: 'attribute', id: 'crossing', min: 60 }], speaker: 'narrator',
     title: 'Córner con efecto',
     text: 'Te toca sacar un córner. El portero está adelantado y el viento sopla a favor.',
     options: [
-      opt('directo', 'Buscar el gol olímpico', [], { roll: roll(0.15, { text: '¡Entra directo! Gol olímpico en {estadio}.', effects: [rep('national', 4), followers(12), news('Gol olímpico de {apodo}', 'positive')] }, { text: 'Se va fuera por poco. El entrenador suspira.', effects: [rel('coach', -2)] }, 'crossing') }),
+      opt('directo', 'Buscar el gol olímpico', [], { roll: roll(0.15, { text: '¡Entra directo! Gol olímpico en {estadio}.', effects: [rep('national', 4), followers(12), news('Gol olímpico de {apodo}', 'positive'), goal()] }, { text: 'Se va fuera por poco. El entrenador suspira.', effects: [rel('coach', -2)] }, 'crossing') }),
       opt('jugada', 'Sacar la jugada ensayada', [rel('coach', 4), attr('teamwork', 1)], { result: 'Remate de cabeza al larguero. Bien ejecutada.' }),
     ],
   }),
@@ -41,7 +40,7 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: 'Centro a tu espalda',
     text: 'Te llega un centro algo pasado, a la espalda, en el punto de penalti.',
     options: [
-      opt('chilena', 'Intentar la chilena', [], { roll: roll(0.3, { text: '¡Chilena a la red! El gol de la temporada.', effects: [rep('national', 4), followers(15), form(8), news('La chilena de {apodo}, gol del año', 'positive')] }, { text: 'Le das al aire y caes de espaldas.', effects: [fitness(-4)] }, 'agility') }),
+      opt('chilena', 'Intentar la chilena', [], { roll: roll(0.3, { text: '¡Chilena a la red! El gol de la temporada.', effects: [rep('national', 4), followers(15), form(8), news('La chilena de {apodo}, gol del año', 'positive'), goal()] }, { text: 'Le das al aire y caes de espaldas.', effects: [fitness(-4)] }, 'agility') }),
       opt('controlar', 'Controlar y buscar el pase', [attr('ballControl', 1), rel('coach', 2)], { result: 'Juegas sencillo y la jugada sigue viva.' }),
     ],
   }),
@@ -50,8 +49,8 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: 'A un gol del hat-trick',
     text: 'Llevas dos goles. Minuto 85, contraataque de dos contra el portero; tu compañero está mejor colocado.',
     options: [
-      opt('egoista', 'Ir a por el tercero', [tendency('ego', 5)], { roll: roll(0.45, { text: '¡Hat-trick! Te llevas el balón a casa.', effects: [morale(10), rep('local', 3), flag('firstHatTrick')] }, { text: 'El portero la saca. Tu compañero no te habla en el vestuario.', effects: [rel('dressingRoom', -6)] }, 'finishing') }),
-      opt('pase', 'Pasarla', [rel('dressingRoom', 7), tendency('solidaridad', 5)], { result: 'Gol a puerta vacía. Te lo agradece con una reverencia.' }),
+      opt('egoista', 'Ir a por el tercero', [tendency('ego', 5)], { roll: roll(0.45, { text: '¡Hat-trick! Te llevas el balón a casa.', effects: [morale(10), rep('local', 3), flag('firstHatTrick'), goalsAtLeast(3)] }, { text: 'El portero la saca. Tu compañero no te habla en el vestuario.', effects: [rel('dressingRoom', -6), goalsAtLeast(2)] }, 'finishing') }),
+      opt('pase', 'Pasarla', [rel('dressingRoom', 7), tendency('solidaridad', 5), goalsAtLeast(2), assist()], { result: 'Gol a puerta vacía. Te lo agradece con una reverencia.' }),
     ],
   }),
   ev({
@@ -105,8 +104,8 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: 'Penalti en contra',
     text: 'Penalti en contra en el descuento. El lanzador es zurdo y suele tirar a su derecha.',
     options: [
-      opt('estudiar', 'Tirarte a su lado preferido', [], { roll: roll(0.35, { text: '¡Lo paras! Te llevan a hombros.', effects: [rel('fans', 10), rep('local', 3), morale(8)] }, { text: 'Te engaña y tira al otro lado.', effects: [morale(-3)] }, 'diving') }),
-      opt('esperar', 'Aguantar hasta el final', [], { roll: roll(0.3, { text: 'Tira al centro y la atrapas sin moverte.', effects: [rel('fans', 8), attr('composure', 1)] }, { text: 'Entra pegado al palo. Imparable.', effects: [] }, 'reflexes') }),
+      opt('estudiar', 'Tirarte a su lado preferido', [], { roll: roll(0.35, { text: '¡Lo paras! Te llevan a hombros.', effects: [rel('fans', 10), rep('local', 3), morale(8), save(), matchRating(0.6)] }, { text: 'Te engaña y tira al otro lado.', effects: [morale(-3)] }, 'diving') }),
+      opt('esperar', 'Aguantar hasta el final', [], { roll: roll(0.3, { text: 'Tira al centro y la atrapas sin moverte.', effects: [rel('fans', 8), attr('composure', 1), save(), matchRating(0.5)] }, { text: 'Entra pegado al palo. Imparable.', effects: [] }, 'reflexes') }),
     ],
   }),
   ev({
@@ -114,7 +113,7 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: 'Balón dividido',
     text: 'Un pase largo cae entre tu central y el delantero rival. Puedes salir o quedarte en la línea.',
     options: [
-      opt('salir', 'Salir a por todas', [], { roll: roll(0.6, { text: 'Despejas con el pie justo a tiempo.', effects: [rel('coach', 4), attr('rushingOut', 1)] }, { text: 'Te regatea y marca a puerta vacía.', effects: [rel('fans', -5), form(-5)] }, 'rushingOut') }),
+      opt('salir', 'Salir a por todas', [], { roll: roll(0.6, { text: 'Despejas con el pie justo a tiempo.', effects: [rel('coach', 4), attr('rushingOut', 1), save()] }, { text: 'Te regatea y marca a puerta vacía.', effects: [rel('fans', -5), form(-5)] }, 'rushingOut') }),
       opt('quedarse', 'Quedarte bajo palos', [], { roll: roll(0.5, { text: 'Tu central llega y corta.', effects: [] }, { text: 'Remata solo. Gol.', effects: [form(-3)] }, 'gkPositioning') }),
     ],
   }),
@@ -132,8 +131,8 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: 'Marcar a la estrella',
     text: 'El rival tiene al máximo goleador de la liga. {entrenador} te pide marcarle al hombre todo el partido.',
     options: [
-      opt('pegajoso', 'Pegarte a él como una sombra', [], { roll: roll(0.55, { text: 'No le dejas ni rematar. Los periódicos te ponen un 9.', effects: [rep('national', 3), rel('coach', 6), attr('positioning', 1)] }, { text: 'Se te escapa una vez y marca.', effects: [form(-3)] }, 'concentration') }),
-      opt('duro', 'Ser duro desde el principio', [tendency('temperamento', 4)], { roll: roll(0.5, { text: 'Le intimidas y desaparece del partido.', effects: [rel('coach', 4)] }, { text: 'Amarilla en el minuto 10 y tienes que aflojar.', effects: [rel('coach', -3)] }, 'aggression') }),
+      opt('pegajoso', 'Pegarte a él como una sombra', [], { roll: roll(0.55, { text: 'No le dejas ni rematar. Los periódicos te ponen un 9.', effects: [rep('national', 3), rel('coach', 6), attr('positioning', 1), tackle(3)] }, { text: 'Se te escapa una vez y marca.', effects: [form(-3)] }, 'concentration') }),
+      opt('duro', 'Ser duro desde el principio', [tendency('temperamento', 4)], { roll: roll(0.5, { text: 'Le intimidas y desaparece del partido.', effects: [rel('coach', 4), tackle(2)] }, { text: 'Amarilla en el minuto 10 y tienes que aflojar.', effects: [rel('coach', -3)] }, 'aggression') }),
     ],
   }),
   ev({
@@ -141,8 +140,8 @@ export const PITCH_EVENTS: GameEvent[] = [
     title: 'Subes al remate',
     text: 'Último córner del partido y vais empatando. {entrenador} manda subir a todos.',
     options: [
-      opt('primer-palo', 'Atacar el primer palo', [], { roll: roll(0.3, { text: '¡Gol de cabeza! El central salvador.', effects: [rel('fans', 8), form(6), morale(6)] }, { text: 'La toca antes el portero.', effects: [] }, 'heading') }),
-      opt('cubrir', 'Quedarte atrás por si hay contra', [rel('coach', 3), attr('positioning', 1)], { result: 'Cortas el contraataque. Partido serio.' }),
+      opt('primer-palo', 'Atacar el primer palo', [], { roll: roll(0.3, { text: '¡Gol de cabeza! El central salvador.', effects: [rel('fans', 8), form(6), morale(6), goal()] }, { text: 'La toca antes el portero.', effects: [] }, 'heading') }),
+      opt('cubrir', 'Quedarte atrás por si hay contra', [rel('coach', 3), attr('positioning', 1), tackle()], { result: 'Cortas el contraataque. Partido serio.' }),
     ],
   }),
   ev({
@@ -155,11 +154,11 @@ export const PITCH_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'cp-suplente-minutos', category: 'coach', stages: ['breakthrough', 'establishment'], phases: HALVES, weight: 14, cooldownSeasons: 2, requires: [], speaker: 'coach',
+    id: 'cp-suplente-minutos', category: 'coach', stages: ['breakthrough', 'establishment'], phases: HALVES, weight: 14, cooldownSeasons: 2, requires: [OUTFIELD], speaker: 'coach',
     title: 'Cinco minutos',
     text: 'Sales en el minuto 85 con el partido decidido. {entrenador} te dice: «Disfruta».',
     options: [
-      opt('lucirse', 'Intentar algo espectacular', [], { roll: roll(0.4, { text: 'Un caño y un pase de gol. La grada corea tu nombre.', effects: [rel('fans', 6), playingTime(4)] }, { text: 'Pierdes el balón dos veces. Nadie se acuerda.', effects: [] }, 'dribbling') }),
+      opt('lucirse', 'Intentar algo espectacular', [], { roll: roll(0.4, { text: 'Un caño y un pase de gol. La grada corea tu nombre.', effects: [rel('fans', 6), playingTime(4), dribble(), assist()] }, { text: 'Pierdes el balón dos veces. Nadie se acuerda.', effects: [] }, 'dribbling') }),
       opt('orden', 'Hacer lo que pide el equipo', [rel('coach', 4), tendency('profesionalidad', 2)], { result: 'Cumples sin brillar.' }),
     ],
   }),
@@ -173,12 +172,12 @@ export const PITCH_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'cp-gol-ex', category: 'keyMatch', stages: SENIOR, phases: HALVES, weight: 10, cooldownSeasons: 3, requires: [{ type: 'careerStat', stat: 'clubs', min: 2 }], speaker: 'narrator',
+    id: 'cp-gol-ex', category: 'keyMatch', stages: SENIOR, phases: HALVES, weight: 10, cooldownSeasons: 3, requires: [OUTFIELD, { type: 'careerStat', stat: 'clubs', min: 2 }], speaker: 'narrator',
     title: 'Gol a tu exequipo',
     text: 'Marcas contra tu antiguo club, en su estadio. Su afición te recibió con aplausos.',
     options: [
-      opt('no-celebrar', 'No celebrarlo, por respeto', [tendency('lealtad', 4), rep('national', 2)], { result: 'Te aplauden hasta los rivales.' }),
-      opt('celebrar', 'Celebrarlo con todo', [tendency('ego', 4), rel('fans', 4)], { result: 'Tu afición te adora; la rival ya no.' }),
+      opt('no-celebrar', 'No celebrarlo, por respeto', [tendency('lealtad', 4), rep('national', 2), goal()], { result: 'Te aplauden hasta los rivales.' }),
+      opt('celebrar', 'Celebrarlo con todo', [tendency('ego', 4), rel('fans', 4), goal()], { result: 'Tu afición te adora; la rival ya no.' }),
     ],
   }),
   ev({
@@ -489,7 +488,7 @@ export const PITCH_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'vs-ritual', category: 'dressingRoom', stages: PRO, phases: HALVES, weight: 6, once: true, requires: [], speaker: 'narrator',
+    id: 'vs-ritual', category: 'dressingRoom', stages: PRO, phases: HALVES, weight: 6, once: true, requires: [OUTFIELD], speaker: 'narrator',
     title: 'Superstición',
     text: 'Llevas seis partidos marcando con las mismas espinilleras rotas. El utillero quiere tirarlas.',
     options: [
@@ -562,7 +561,7 @@ export const PITCH_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'cp-joven-prodigio-rival', category: 'keyMatch', stages: ['prime', 'veteran'], phases: HALVES, weight: 6, cooldownSeasons: 3, requires: [minAge(29)], speaker: 'press',
+    id: 'cp-joven-prodigio-rival', category: 'keyMatch', stages: ['prime', 'veteran'], phases: HALVES, weight: 6, cooldownSeasons: 3, requires: [OUTFIELD, minAge(29)], speaker: 'press',
     title: 'El niño que te admiraba',
     text: 'Un chaval rival de 18 años te pide la camiseta en el túnel antes del partido: «Eres mi ídolo».',
     options: [
@@ -603,7 +602,7 @@ export const PITCH_EVENTS: GameEvent[] = [
     text: 'La grada de animación despliega una pancarta gigante con tu cara antes del partido.',
     options: [
       opt('agradecer', 'Ir a aplaudirles antes del calentamiento', [rel('fans', 6), tendency('carisma', 3)], { result: 'La foto es portada al día siguiente.' }),
-      opt('concentrarse', 'Mantener la concentración', [form(3)], { result: 'Les das las gracias con un gol.' }),
+      opt('concentrarse', 'Mantener la concentración', [form(3), matchRating(0.5)], { result: 'Les das las gracias con un partidazo.' }),
     ],
   }),
   ev({
@@ -644,7 +643,7 @@ export const PITCH_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'cp-amistoso-pueblo', category: 'social', stages: PRO, phases: ['preseason'], weight: 6, cooldownSeasons: 4, requires: [], speaker: 'narrator',
+    id: 'cp-amistoso-pueblo', category: 'social', stages: PRO, phases: ['preseason'], weight: 6, cooldownSeasons: 4, requires: [OUTFIELD], speaker: 'narrator',
     title: 'Amistoso en tu pueblo',
     text: 'El equipo juega un amistoso de verano cerca de {ciudadNatal}. Medio pueblo va a verte.',
     options: [

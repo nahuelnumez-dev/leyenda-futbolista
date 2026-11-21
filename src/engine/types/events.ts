@@ -118,7 +118,26 @@ export type Effect =
   /** Contrata o despide agente: 'top' (agencia grande), 'local' (de confianza) o 'none'. */
   | { type: 'setAgent'; profile: 'top' | 'local' | 'none' }
   /** Acorta (negativo) o alarga la lesión actual. */
-  | { type: 'recovery'; weeks: number };
+  | { type: 'recovery'; weeks: number }
+  /**
+   * Estadísticas del último partido jugado (o del siguiente, si no jugó): lo que cuenta el evento se suma de verdad.
+   * Con `atLeast`, `goals` y `assists` son mínimos del partido (p. ej. hat-trick = goals 3).
+   */
+  | ({ type: 'matchStat' } & MatchStatDelta);
+
+export interface MatchStatDelta {
+  goals?: number;
+  assists?: number;
+  dribbles?: number;
+  keyPasses?: number;
+  tackles?: number;
+  saves?: number;
+  /** Portería a cero en ese partido (el equipo no encaja). */
+  cleanSheet?: boolean;
+  /** Suma a la nota del partido. */
+  rating?: number;
+  atLeast?: boolean;
+}
 
 export interface EventOutcomeRoll {
   /** Probabilidad base 0-1 de éxito. */

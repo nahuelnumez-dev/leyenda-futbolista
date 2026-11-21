@@ -1,8 +1,7 @@
 /** Eventos de prensa, redes, vida personal, mercado, selección y final de carrera (ampliación v1.3). */
 import type { GameEvent } from '@/engine/types/events';
 import {
-  ALL, HALVES, PRO, SENIOR, attr, ev, family, fitness, flag, followers, form, hasFlag, injury, minAge, minMoney, minOverall,
-  money, morale, news, noFlag, opt, rel, rep, roll, tendency,
+  ALL, HALVES, PRO, SENIOR, attr, ev, family, fitness, flag, followers, form, hasFlag, injury, minAge, minMoney, minOverall, money, morale, news, noFlag, opt, rel, rep, roll, tendency, goal, matchRating, OUTFIELD,
 } from './helpers';
 
 export const WORLD_EVENTS: GameEvent[] = [
@@ -220,7 +219,7 @@ export const WORLD_EVENTS: GameEvent[] = [
     text: 'Tu abuelo, que te llevaba a todos los partidos de pequeño, está hospitalizado.',
     options: [
       opt('viajar', 'Pedir permiso y viajar', [family(10), rel('coach', -2), morale(-4)], { result: 'Le coges la mano. Te dice que está orgulloso de ti.' }),
-      opt('dedicar', 'Jugar y dedicarle un gol', [], { roll: roll(0.4, { text: 'Marcas y miras al cielo. Él lo ve por la tele desde la cama.', effects: [family(8), rel('fans', 5), morale(5)] }, { text: 'No marcas. Le llamas al acabar.', effects: [family(3), morale(-4)] }, 'finishing') }),
+      opt('dedicar', 'Jugar y dedicarle el partido', [], { roll: roll(0.4, { text: 'Partidazo y miras al cielo. Él lo ve por la tele desde la cama.', effects: [family(8), rel('fans', 5), morale(5), matchRating(0.8)] }, { text: 'No te sale nada. Le llamas al acabar.', effects: [family(3), morale(-4)] }, 'finishing') }),
     ],
   }),
   ev({
@@ -366,12 +365,12 @@ export const WORLD_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'et-arbitro-error', category: 'ethics', stages: PRO, phases: HALVES, weight: 6, cooldownSeasons: 3, requires: [], speaker: 'narrator',
+    id: 'et-arbitro-error', category: 'ethics', stages: PRO, phases: HALVES, weight: 6, cooldownSeasons: 3, requires: [OUTFIELD], speaker: 'narrator',
     title: 'Fue con la mano',
     text: 'Marcas un gol decisivo… pero ha sido con la mano. El árbitro no lo ha visto y no hay VAR en esta competición.',
     options: [
       opt('confesar', 'Confesárselo al árbitro', [tendency('solidaridad', 6), rep('world', 2), rel('dressingRoom', -6), news('El gesto de {apodo}: confiesa su mano', 'positive')], { result: 'Anula el gol. El mundo entero te aplaude; tu vestuario, no tanto.', key: true }),
-      opt('callar', 'Celebrarlo', [rel('dressingRoom', 4), tendency('ego', 2)], { result: 'Las repeticiones no mienten. La polémica, servida.' }),
+      opt('callar', 'Celebrarlo', [rel('dressingRoom', 4), tendency('ego', 2), goal()], { result: 'Las repeticiones no mienten. La polémica, servida.' }),
     ],
   }),
   ev({
@@ -507,12 +506,12 @@ export const WORLD_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'vr-temporal-nieve', category: 'keyMatch', stages: PRO, phases: ['winterWindow', 'secondHalf'], weight: 6, cooldownSeasons: 3, requires: [{ type: 'clubCountry', in: ['ESP', 'ENG'] }], speaker: 'narrator',
+    id: 'vr-temporal-nieve', category: 'keyMatch', stages: PRO, phases: ['winterWindow', 'secondHalf'], weight: 6, cooldownSeasons: 3, requires: [OUTFIELD, { type: 'clubCountry', in: ['ESP', 'ENG'] }], speaker: 'narrator',
     title: 'Partido en la nieve',
     text: 'Nieva sobre {estadio}. El balón es naranja y apenas se ven las líneas.',
     options: [
       opt('directo', 'Juego directo y balones largos', [attr('longPassing', 1), rel('coach', 3)], { result: 'Partido de trinchera. Empate.' }),
-      opt('disfrutar', 'Disfrutar como un niño', [morale(6)], { roll: roll(0.4, { text: 'Un gol de vaselina sobre la nieve. Imagen icónica.', effects: [followers(8), rel('fans', 5)] }, { text: 'Te caes al intentar frenar.', effects: [fitness(-3)] }, 'agility') }),
+      opt('disfrutar', 'Disfrutar como un niño', [morale(6)], { roll: roll(0.4, { text: 'Un gol de vaselina sobre la nieve. Imagen icónica.', effects: [followers(8), rel('fans', 5), goal()] }, { text: 'Te caes al intentar frenar.', effects: [fitness(-3)] }, 'agility') }),
     ],
   }),
   ev({

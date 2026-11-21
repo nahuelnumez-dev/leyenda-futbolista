@@ -9,8 +9,8 @@ import {
   TECHNICAL_ATTRIBUTES,
   type AttributeId,
 } from '../types/attributes';
-import type { Effect } from '../types/events';
-import type { EventOutcome, GameState, ScheduledEvent } from '../types/game';
+import type { Effect, MatchStatDelta } from '../types/events';
+import type { EventOutcome, GameState, MatchLog, ScheduledEvent } from '../types/game';
 import { generateOffers } from '../market/offers';
 import type { EventContent } from './context';
 import { fill } from './context';
@@ -183,6 +183,18 @@ export function applyEffect(game: GameState, e: Effect, content: EventContent, r
       out.push({ key: 'effects.agentHired', value: p.agent.name });
       break;
     }
+    case 'matchStat': {
+      const { type: _t, ...delta } = e;
+      const log = lastPlayedMatch(game);
+      if (log) applyMatchStat(game, log, delta);
+      else if (game.current) (game.pendingMatchStats ??= []).push(delta);
+      for (const k of ['goals', 'assists', 'dribbles', 'keyPasses', 'tackles', 'saves'] as const) {
+        const v = delta[k];
+        if (v) out.push({ key: `effects.matchStat.${k}`, value: v });
+      }
+      if (delta.cleanSheet) out.push({ key: 'effects.matchStat.cleanSheet', value: 1 });
+      break;
+    }
     case 'recovery': {
       const inj = p.status.injury;
       if (!inj) break;
@@ -191,5 +203,40 @@ export function applyEffect(game: GameState, e: Effect, content: EventContent, r
       out.push({ key: 'effects.recovery', value: e.weeks });
       break;
     }
+  }
+}
+
+/** Último partido de la temporada en curso en el que jugó minutos. */
+function lastPlayedMatch(game: GameState): MatchLog | undefined {
+  return game.current?.matches.findLast((m) => m.minutes > 0);
+}
+
+/** Suma al partido lo que cuenta un evento, manteniendo el marcador coherente. */
+export function applyMatchStat(game: GameState, log: MatchLog, d: MatchStatDelta): void {
+  const goalsBefore = log.goals;
+  if (d.goals) log.goals = d.atLeast ? Math.max(log.goals, d.goals) : log.goals + d.goals;
+  if (d.assists) {
+    const before = log.assists;
+    log.assists = d.atLeast ? Math.max(log.assists, d.assists) : log.assists + d.assists;
+    log.keyPasses = (log.keyPasses ?? 0) + (log.assists - before);
+  }
+  if (d.dribbles) log.dribbles = (log.dribbles ?? 0) + d.dribbles;
+  if (d.keyPasses) log.keyPasses = (log.keyPasses ?? 0) + d.keyPasses;
+  if (d.tackles) log.tackles = (log.tackles ?? 0) + d.tackles;
+  if (d.saves) log.saves = (log.saves ?? 0) + d.saves;
+  if (d.cleanSheet) log.ga = 0;
+  // El equipo marca al menos los goles y asistencias del jugador.
+  log.gf = Math.max(log.gf, log.goals + log.assists);
+  const bonus = (d.rating ?? 0) + (log.goals - goalsBefore) * 0.5 + (d.saves ?? 0) * 0.1;
+  if (log.rating !== null && bonus) log.rating = Math.round(Math.min(10, Math.max(3.5, log.rating + bonus)) * 10) / 10;
+  if (goalsBefore < 3 && log.goals >= 3 && log.competition !== 'youth') {
+    queueCinematic(game, {
+      type: 'hatTrick',
+      importance: 'minor',
+      clubId: game.player.contract!.clubId,
+      value: log.goals,
+      ...(log.opponentId ? { opponentId: log.opponentId } : {}),
+      ...(game.player.celebrations.selected ? { celebration: game.player.celebrations.selected } : {}),
+    });
   }
 }

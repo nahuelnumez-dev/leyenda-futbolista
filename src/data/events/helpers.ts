@@ -7,7 +7,7 @@
  */
 import type { AttributeId } from '@/engine/types/attributes';
 import type { CareerStage, SeasonPhase } from '@/engine/types/common';
-import type { Condition, Effect, EventOption, EventOutcomeRoll, GameEvent, RelationId, ReputationScope } from '@/engine/types/events';
+import type { Condition, Effect, EventOption, EventOutcomeRoll, GameEvent, MatchStatDelta, RelationId, ReputationScope } from '@/engine/types/events';
 
 export const es = (text: string) => ({ es: text });
 
@@ -54,6 +54,19 @@ export const playingTime = (delta: number): Effect => ({ type: 'playingTime', de
 export const potential = (delta: number): Effect => ({ type: 'potential', delta });
 export const celebration = (id: string): Effect => ({ type: 'unlockCelebration', id });
 
+/* ── Estadísticas del partido (cuentan de verdad) ────── */
+export const stat = (d: MatchStatDelta): Effect => ({ type: 'matchStat', ...d });
+export const goal = (n = 1): Effect => stat({ goals: n });
+/** El partido termina con al menos `n` goles suyos (doblete = 2, hat-trick = 3). */
+export const goalsAtLeast = (n: number): Effect => stat({ goals: n, atLeast: true });
+export const assist = (n = 1): Effect => stat({ assists: n });
+export const dribble = (n = 1): Effect => stat({ dribbles: n });
+export const keyPass = (n = 1): Effect => stat({ keyPasses: n });
+export const tackle = (n = 1): Effect => stat({ tackles: n });
+export const save = (n = 1): Effect => stat({ saves: n });
+export const cleanSheet = (): Effect => stat({ cleanSheet: true });
+export const matchRating = (delta: number): Effect => stat({ rating: delta });
+
 /* ── Requisitos ──────────────────────────────────────── */
 export const chance = (p: number): Condition => ({ type: 'chance', p });
 export const minAge = (min: number): Condition => ({ type: 'age', min });
@@ -63,9 +76,23 @@ export const hasTrait = (id: string): Condition => ({ type: 'trait', id });
 export const noFlag = (id: string): Condition => ({ type: 'notFlag', id });
 export const hasFlag = (id: string): Condition => ({ type: 'flag', id });
 export const minMoney = (min: number): Condition => ({ type: 'money', min });
+/* Posiciones */
+export const KEEPER: Condition = { type: 'position', in: ['POR'] };
+export const OUTFIELD: Condition = { type: 'positionGroup', in: ['defender', 'midfielder', 'forward'] };
+export const ATTACKERS: Condition = { type: 'positionGroup', in: ['midfielder', 'forward'] };
+export const FORWARDS: Condition = { type: 'positionGroup', in: ['forward'] };
+export const MIDFIELDERS: Condition = { type: 'positionGroup', in: ['midfielder'] };
+export const DEFENDERS: Condition = { type: 'positionGroup', in: ['defender'] };
+export const WINGERS: Condition = { type: 'position', in: ['ED', 'EI', 'MD', 'MI'] };
+export const FULLBACKS: Condition = { type: 'position', in: ['LD', 'LI'] };
+export const CENTREBACKS: Condition = { type: 'position', in: ['DFC'] };
+export const STRIKERS: Condition = { type: 'position', in: ['DC'] };
+export const PLAYMAKERS: Condition = { type: 'position', in: ['MC', 'MCO', 'MCD'] };
 
 /* ── Etapas habituales ───────────────────────────────── */
 export const PRO: CareerStage[] = ['breakthrough', 'establishment', 'prime', 'veteran'];
 export const SENIOR: CareerStage[] = ['establishment', 'prime', 'veteran'];
 export const ALL: CareerStage[] = ['academy', 'breakthrough', 'establishment', 'prime', 'veteran'];
 export const HALVES: SeasonPhase[] = ['firstHalf', 'secondHalf'];
+/** Fases en las que ya se ha jugado algún partido de la temporada (válidas para efectos de estadísticas). */
+export const MATCH_PHASES: SeasonPhase[] = ['firstHalf', 'winterWindow', 'secondHalf'];

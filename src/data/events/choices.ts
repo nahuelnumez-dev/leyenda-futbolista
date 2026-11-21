@@ -1,8 +1,7 @@
 /** Tercer bloque de decisiones (v1.3): cantera, posiciones, táctica, cesiones, derbis, contrato, afición y cadenas. */
 import type { GameEvent } from '@/engine/types/events';
 import {
-  ALL, HALVES, PRO, SENIOR, attr, ev, family, fitness, flag, followers, form, group, hasFlag, injury, maxAge, minAge, minMoney, minOverall,
-  money, morale, news, noFlag, opt, playingTime, potential, rel, rep, roll, schedule, tendency,
+  ALL, HALVES, PRO, SENIOR, attr, ev, family, fitness, flag, followers, form, group, hasFlag, injury, maxAge, minAge, minMoney, minOverall, money, morale, news, noFlag, opt, playingTime, potential, rel, rep, roll, schedule, tendency, goal, goalsAtLeast, assist, dribble, keyPass, tackle, save, matchRating, OUTFIELD,
 } from './helpers';
 
 const ACADEMY = ['academy'] as GameEvent['stages'];
@@ -73,16 +72,16 @@ export const CHOICE_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'ca-torneo-internacional', category: 'keyMatch', stages: ACADEMY, phases: ['secondHalf'], weight: 10, cooldownSeasons: 2, requires: [], speaker: 'coach',
+    id: 'ca-torneo-internacional', category: 'keyMatch', stages: ACADEMY, phases: ['secondHalf'], weight: 10, cooldownSeasons: 2, requires: [OUTFIELD], speaker: 'coach',
     title: 'Torneo internacional juvenil',
     text: 'Viajáis a un torneo con las canteras de los mejores clubes del mundo. La final es contra un gigante europeo.',
     options: [
-      opt('lucirse', 'Jugar para los ojeadores', [tendency('ego', 3)], { roll: roll(0.45, { text: 'Marcas en la final. Tres clubes preguntan por ti.', effects: [rep('national', 3), flag('scoutedByBig'), morale(6)] }, { text: 'Te empeñas en el lucimiento y el entrenador te sustituye.', effects: [rel('coach', -4)] }, 'dribbling') }),
-      opt('equipo', 'Jugar para el equipo', [rel('coach', 5), attr('teamwork', 1)], { roll: roll(0.4, { text: '¡Campeones! Te eligen en el equipo ideal del torneo.', effects: [rep('local', 4), morale(8)] }, { text: 'Subcampeones. Orgullosos igualmente.', effects: [morale(2)] }) }),
+      opt('lucirse', 'Jugar para los ojeadores', [tendency('ego', 3)], { roll: roll(0.45, { text: 'Marcas en la final. Tres clubes preguntan por ti.', effects: [rep('national', 3), flag('scoutedByBig'), morale(6), goal()] }, { text: 'Te empeñas en el lucimiento y el entrenador te sustituye.', effects: [rel('coach', -4)] }, 'dribbling') }),
+      opt('equipo', 'Jugar para el equipo', [rel('coach', 5), attr('teamwork', 1)], { roll: roll(0.4, { text: '¡Campeones! Te eligen en el equipo ideal del torneo.', effects: [rep('local', 4), morale(8), matchRating(0.5)] }, { text: 'Subcampeones. Orgullosos igualmente.', effects: [morale(2)] }) }),
     ],
   }),
   ev({
-    id: 'ca-cambio-posicion-juvenil', category: 'coach', stages: ACADEMY, phases: ['preseason'], weight: 8, once: true, requires: [], speaker: 'coach',
+    id: 'ca-cambio-posicion-juvenil', category: 'coach', stages: ACADEMY, phases: ['preseason'], weight: 8, once: true, requires: [OUTFIELD], speaker: 'coach',
     title: 'Probar de delantero',
     text: 'Al entrenador juvenil le falta un delantero y te pregunta si quieres probar ahí unos partidos.',
     options: [
@@ -100,12 +99,12 @@ export const CHOICE_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'ca-video-viral', category: 'social', stages: ACADEMY, phases: HALVES, weight: 8, once: true, requires: [], speaker: 'social',
+    id: 'ca-video-viral', category: 'social', stages: ACADEMY, phases: HALVES, weight: 8, once: true, requires: [OUTFIELD], speaker: 'social',
     title: 'Un vídeo tuyo, viral',
     text: 'Alguien graba tu golazo en un partido juvenil y el vídeo tiene millones de visitas.',
     options: [
-      opt('disfrutar', 'Disfrutarlo y abrir redes', [followers(15), tendency('ego', 4), rel('coach', -2)], { result: 'Pasas de 300 a 40.000 seguidores en una semana.' }),
-      opt('ignorar', 'Seguir como si nada', [tendency('ego', -3), rel('coach', 3)], { result: 'Tu entrenador valora que no se te suba.' }),
+      opt('disfrutar', 'Disfrutarlo y abrir redes', [followers(15), tendency('ego', 4), rel('coach', -2), goal()], { result: 'Pasas de 300 a 40.000 seguidores en una semana.' }),
+      opt('ignorar', 'Seguir como si nada', [tendency('ego', -3), rel('coach', 3), goal()], { result: 'Tu entrenador valora que no se te suba.' }),
     ],
   }),
   ev({
@@ -133,7 +132,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     title: 'La cantada',
     text: 'Un tiro flojo se te escapa entre las piernas. Gol en contra en el minuto 5. El estadio murmura.',
     options: [
-      opt('reaccionar', 'Pedir el balón y jugar como si nada', [attr('composure', 1)], { roll: roll(0.55, { text: 'Paras tres mano a mano después. Te ovacionan al final.', effects: [rel('fans', 6), morale(6)] }, { text: 'Encajas otro y te sustituyen en el descanso.', effects: [morale(-8), rel('coach', -4)] }, 'composure') }),
+      opt('reaccionar', 'Pedir el balón y jugar como si nada', [attr('composure', 1)], { roll: roll(0.55, { text: 'Paras tres mano a mano después. Te ovacionan al final.', effects: [rel('fans', 6), morale(6), save(3)] }, { text: 'Encajas otro y te sustituyen en el descanso.', effects: [morale(-8), rel('coach', -4)] }, 'composure') }),
       opt('companeros', 'Pedir perdón a tus compañeros', [rel('dressingRoom', 4)], { result: 'Te abrazan. «Nos ha pasado a todos».' }),
     ],
   }),
@@ -171,7 +170,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     title: 'Sube el portero',
     text: 'Minuto 95, perdéis por uno y hay un córner a favor. El banquillo te hace gestos para que subas.',
     options: [
-      opt('subir', 'Subir al remate', [], { roll: roll(0.12, { text: '¡GOL DEL PORTERO! Momento histórico.', effects: [rel('fans', 15), followers(15), rep('national', 4), news('¡Gol del portero {apodo} en el último segundo!', 'positive')] }, { text: 'Despejan. Corres de vuelta con el corazón en la boca.', effects: [fitness(-2)] }, 'heading') }),
+      opt('subir', 'Subir al remate', [], { roll: roll(0.12, { text: '¡GOL DEL PORTERO! Momento histórico.', effects: [rel('fans', 15), followers(15), rep('national', 4), news('¡Gol del portero {apodo} en el último segundo!', 'positive'), goal()] }, { text: 'Despejan. Corres de vuelta con el corazón en la boca.', effects: [fitness(-2)] }, 'heading') }),
       opt('quedarse', 'Quedarte en tu área', [rel('coach', -2)], { result: 'El córner no da nada. Perdéis por la mínima.' }),
     ],
   }),
@@ -192,8 +191,8 @@ export const CHOICE_EVENTS: GameEvent[] = [
     text: 'El delantero rival se te escapa. Eres el último defensa y está entrando en el área.',
     options: [
       opt('falta', 'Hacerle falta', [tendency('temperamento', 2), rel('dressingRoom', 3), playingTime(-4)], { result: 'Roja directa, pero evitas el gol. El equipo aguanta con diez.' }),
-      opt('perseguir', 'Perseguirle y tirarte al suelo', [], { roll: roll(0.5, { text: 'Robo limpio en el último segundo. La grada se pone en pie.', effects: [rel('fans', 8), form(5), attr('positioning', 1)] }, { text: 'Llegas tarde. Gol.', effects: [form(-3)] }, 'pace') }),
-      opt('temporizar', 'Temporizar y esperar ayuda', [], { roll: roll(0.55, { text: 'Llega tu compañero y entre los dos se la quitáis.', effects: [rel('coach', 4)] }, { text: 'Le da tiempo a pensar y marca.', effects: [] }, 'concentration') }),
+      opt('perseguir', 'Perseguirle y tirarte al suelo', [], { roll: roll(0.5, { text: 'Robo limpio en el último segundo. La grada se pone en pie.', effects: [rel('fans', 8), form(5), attr('positioning', 1), tackle()] }, { text: 'Llegas tarde. Gol.', effects: [form(-3)] }, 'pace') }),
+      opt('temporizar', 'Temporizar y esperar ayuda', [], { roll: roll(0.55, { text: 'Llega tu compañero y entre los dos se la quitáis.', effects: [rel('coach', 4), tackle()] }, { text: 'Le da tiempo a pensar y marca.', effects: [] }, 'concentration') }),
     ],
   }),
   ev({
@@ -201,7 +200,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     title: 'Lateral ofensivo',
     text: '{entrenador} quiere que subas al ataque en cada jugada, aunque dejes espacios atrás.',
     options: [
-      opt('subir', 'Subir sin miedo', [attr('crossing', 2), attr('stamina', 1), fitness(-3)], { result: 'Das tres asistencias en un mes. Y sufres atrás.' }),
+      opt('subir', 'Subir sin miedo', [attr('crossing', 2), attr('stamina', 1), fitness(-3), assist(), keyPass(2)], { result: 'Das tres asistencias en un mes. Y sufres atrás.' }),
       opt('equilibrio', 'Subir solo cuando sea seguro', [attr('positioning', 1), rel('coach', -2)], { result: 'El entrenador te pide más valentía.' }),
     ],
   }),
@@ -239,7 +238,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     title: 'El pase imposible',
     text: 'Ves un hueco mínimo entre dos defensas. Si sale, tu delantero se queda solo; si no, contraataque.',
     options: [
-      opt('arriesgar', 'Intentarlo', [], { roll: roll(0.45, { text: 'Pase de tiralíneas. Gol y asistencia para el recuerdo.', effects: [attr('vision', 1), rel('fans', 5), form(5)] }, { text: 'Lo cortan y os marcan a la contra.', effects: [rel('coach', -5)] }, 'vision') }),
+      opt('arriesgar', 'Intentarlo', [], { roll: roll(0.45, { text: 'Pase de tiralíneas. Gol y asistencia para el recuerdo.', effects: [attr('vision', 1), rel('fans', 5), form(5), assist()] }, { text: 'Lo cortan y os marcan a la contra.', effects: [rel('coach', -5)] }, 'vision') }),
       opt('seguro', 'Pase seguro atrás', [rel('coach', 2)], { result: 'La grada silba. El entrenador asiente.' }),
     ],
   }),
@@ -268,9 +267,9 @@ export const CHOICE_EVENTS: GameEvent[] = [
     title: 'Sequía goleadora',
     text: 'Llevas meses sin marcar. La prensa cuenta los minutos y tú ya no duermes bien.',
     options: [
-      opt('extra', 'Quedarte a tirar 200 balones cada día', [attr('finishing', 2), fitness(-4), tendency('profesionalidad', 3)], { result: 'Al tercer día, marcas. Y no paras.' }),
-      opt('psicologo', 'Hablar con el psicólogo', [attr('composure', 2), morale(6)], { result: 'Aprendes a dejar de pensar en el gol. Y llega.' }),
-      opt('cambio', 'Cambiarte las botas y el peinado', [followers(3), morale(3)], { roll: roll(0.4, { text: 'Superstición o no, marcas un doblete.', effects: [form(8)] }, { text: 'Sigues sin marcar. Con otro peinado.', effects: [morale(-3)] }) }),
+      opt('extra', 'Quedarte a tirar 200 balones cada día', [attr('finishing', 2), fitness(-4), tendency('profesionalidad', 3), goal()], { result: 'Al tercer día, marcas. Y no paras.' }),
+      opt('psicologo', 'Hablar con el psicólogo', [attr('composure', 2), morale(6), goal()], { result: 'Aprendes a dejar de pensar en el gol. Y llega.' }),
+      opt('cambio', 'Cambiarte las botas y el peinado', [followers(3), morale(3)], { roll: roll(0.4, { text: 'Superstición o no, marcas un doblete.', effects: [form(8), goalsAtLeast(2)] }, { text: 'Sigues sin marcar. Con otro peinado.', effects: [morale(-3)] }) }),
     ],
   }),
   ev({
@@ -279,7 +278,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     text: 'El cuerpo técnico te dice que regateas demasiado. Los datos les dan la razón: pierdes muchos balones.',
     options: [
       opt('menos', 'Regatear solo cuando haga falta', [attr('shortPassing', 1), attr('vision', 1), rel('coach', 4)], { result: 'Pierdes menos balones; ganas en eficacia.' }),
-      opt('mas', 'Perfeccionar el regate, no abandonarlo', [attr('dribbling', 2), attr('agility', 1), rel('coach', -2)], { result: 'Cuando sale, nadie te para.' }),
+      opt('mas', 'Perfeccionar el regate, no abandonarlo', [attr('dribbling', 2), attr('agility', 1), rel('coach', -2), dribble(2)], { result: 'Cuando sale, nadie te para.' }),
     ],
   }),
   ev({
@@ -481,7 +480,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
 
   /* ── Cadenas de eventos ──────────────────────────── */
   ev({
-    id: 'ch-promesa-abuelo', category: 'personal', stages: YOUNG, phases: HALVES, weight: 6, once: true, requires: [], speaker: 'family',
+    id: 'ch-promesa-abuelo', category: 'personal', stages: YOUNG, phases: HALVES, weight: 6, once: true, requires: [OUTFIELD], speaker: 'family',
     title: 'Una promesa',
     text: 'Tu abuelo te pide una cosa: «Cuando debutes en primera, dedícame el primer gol».',
     options: [
@@ -490,11 +489,11 @@ export const CHOICE_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'ch-promesa-cumplida', category: 'personal', stages: ['breakthrough', 'establishment', 'prime'], phases: HALVES, weight: 0, once: true, requires: [hasFlag('grandpaPromise')], speaker: 'family',
+    id: 'ch-promesa-cumplida', category: 'personal', stages: ['breakthrough', 'establishment', 'prime'], phases: HALVES, weight: 0, once: true, requires: [OUTFIELD, hasFlag('grandpaPromise')], speaker: 'family',
     title: 'La promesa',
     text: 'Te acuerdas de la promesa que le hiciste a tu abuelo. Hoy juegas en casa y él está en la grada.',
     options: [
-      opt('dedicar', 'Buscar el gol para él', [], { roll: roll(0.4, { text: 'Marcas y corres hacia su asiento. Todo el estadio lo ve.', effects: [family(15), rel('fans', 8), morale(10), followers(6), news('La dedicatoria de {apodo} a su abuelo emociona al estadio', 'positive')] }, { text: 'Hoy no hay gol. Le das tu camiseta al acabar.', effects: [family(8)] }, 'finishing') }),
+      opt('dedicar', 'Buscar el gol para él', [], { roll: roll(0.4, { text: 'Marcas y corres hacia su asiento. Todo el estadio lo ve.', effects: [family(15), rel('fans', 8), morale(10), followers(6), news('La dedicatoria de {apodo} a su abuelo emociona al estadio', 'positive'), goal()] }, { text: 'Hoy no hay gol. Le das tu camiseta al acabar.', effects: [family(8)] }, 'finishing') }),
       opt('llamar', 'Llamarle a la grada antes del partido', [family(8), morale(4)], { result: 'Su sonrisa te acompaña los noventa minutos.' }),
     ],
   }),
@@ -517,7 +516,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'ch-apuesta-entrenador', category: 'coach', stages: PRO, phases: ['firstHalf'], weight: 6, cooldownSeasons: 4, requires: [], speaker: 'coach',
+    id: 'ch-apuesta-entrenador', category: 'coach', stages: PRO, phases: ['firstHalf'], weight: 6, cooldownSeasons: 4, requires: [OUTFIELD], speaker: 'coach',
     title: 'Una apuesta con el entrenador',
     text: '{entrenador} te reta: «Si haces diez goles o asistencias antes de Navidad, te dejo elegir el destino de la pretemporada».',
     options: [
@@ -526,7 +525,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'ch-apuesta-resultado', category: 'coach', stages: PRO, phases: ['winterWindow'], weight: 0, once: false, cooldownSeasons: 1, requires: [hasFlag('coachBet')], speaker: 'coach',
+    id: 'ch-apuesta-resultado', category: 'coach', stages: PRO, phases: ['winterWindow'], weight: 0, once: false, cooldownSeasons: 1, requires: [OUTFIELD, hasFlag('coachBet')], speaker: 'coach',
     title: 'La apuesta',
     text: 'Llega Navidad. Toca saber quién ha ganado la apuesta con {entrenador}.',
     options: [
@@ -623,7 +622,7 @@ export const CHOICE_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'ot-partido-leyendas', category: 'retirement', stages: ['veteran'], phases: ['seasonEnd'], weight: 5, once: true, requires: [minAge(33)], speaker: 'narrator',
+    id: 'ot-partido-leyendas', category: 'retirement', stages: ['veteran'], phases: ['seasonEnd'], weight: 5, once: true, requires: [OUTFIELD, minAge(33)], speaker: 'narrator',
     title: 'El último baile',
     text: 'Te invitan a jugar contra las leyendas de tu club en un partido de exhibición.',
     options: [

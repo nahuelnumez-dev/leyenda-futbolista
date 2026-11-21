@@ -2,7 +2,9 @@
  * Eventos de personalidad: aparecen según tendencias, rasgos y relaciones, y las refuerzan o corrigen.
  */
 import type { GameEvent } from '@/engine/types/events';
-import { HALVES, PRO, SENIOR, attr, chance, ev, family, followers, form, group, hasTrait, minAge, money, morale, news, opt, rel, rep, roll, tendency, celebration } from './helpers';
+import {
+  HALVES, PRO, SENIOR, attr, chance, ev, family, followers, form, group, hasTrait, minAge, money, morale, news, opt, rel, rep, roll, tendency, celebration, goal, OUTFIELD,
+} from './helpers';
 
 export const PERSONALITY_EVENTS: GameEvent[] = [
   ev({
@@ -160,7 +162,7 @@ export const PERSONALITY_EVENTS: GameEvent[] = [
     phases: HALVES,
     weight: 30,
     cooldownSeasons: 1,
-    requires: [{ type: 'any', of: [hasTrait('temperamental'), { type: 'tendency', id: 'temperamento', min: 30 }] }],
+    requires: [OUTFIELD, { type: 'any', of: [hasTrait('temperamental'), { type: 'tendency', id: 'temperamento', min: 30 }] }],
     speaker: 'narrator',
     title: 'Provocación',
     text: 'Un defensa rival lleva todo el partido provocándote. En una disputa, te suelta algo sobre tu familia.',
@@ -169,7 +171,7 @@ export const PERSONALITY_EVENTS: GameEvent[] = [
         roll: roll(0.4, { text: 'El árbitro os amonesta a los dos. Te salvas por poco.', effects: [rel('fans', 3)] }, { text: 'Roja directa. Tu equipo juega con diez el resto del partido.', effects: [rel('coach', -10), rel('fans', -6), money(-15000), news('{apodo}, expulsado por perder los nervios', 'negative')] }),
       }),
       opt('ignorar', 'Respirar y responder con un gol', [tendency('temperamento', -10), attr('composure', 2)], {
-        roll: roll(0.35, { text: '¡Gol! Lo celebras delante de él, sin decir una palabra.', effects: [rel('fans', 8), morale(8)] }, { text: 'No llega el gol, pero tampoco la tarjeta. Bien hecho.', effects: [] }, 'composure'),
+        roll: roll(0.35, { text: '¡Gol! Lo celebras delante de él, sin decir una palabra.', effects: [rel('fans', 8), morale(8), goal()] }, { text: 'No llega el gol, pero tampoco la tarjeta. Bien hecho.', effects: [] }, 'composure'),
       }),
     ],
   }),
@@ -180,7 +182,7 @@ export const PERSONALITY_EVENTS: GameEvent[] = [
     phases: HALVES,
     weight: 20,
     once: true,
-    requires: [hasTrait('sangre-fria'), minAge(24)],
+    requires: [OUTFIELD, hasTrait('sangre-fria'), minAge(24)],
     speaker: 'coach',
     title: 'El que tira los penaltis',
     text: '{entrenador} ha decidido que, a partir de ahora, tú serás el lanzador de los penaltis y de las faltas importantes.',

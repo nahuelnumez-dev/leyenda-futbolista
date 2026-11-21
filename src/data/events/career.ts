@@ -1,29 +1,7 @@
 /** Eventos de la carrera profesional: vestuario, entrenador, partidos clave, contratos y mercado. */
 import type { GameEvent } from '@/engine/types/events';
 import {
-  HALVES,
-  PRO,
-  SENIOR,
-  attr,
-  chance,
-  ev,
-  fitness,
-  flag,
-  followers,
-  form,
-  group,
-  injury,
-  minAge,
-  minOverall,
-  money,
-  morale,
-  news,
-  opt,
-  playingTime,
-  rel,
-  rep,
-  roll,
-  tendency,
+  HALVES, PRO, SENIOR, attr, chance, ev, fitness, flag, followers, form, group, injury, minAge, minOverall, money, morale, news, opt, playingTime, rel, rep, roll, tendency, goal, goalsAtLeast, assist, OUTFIELD,
 } from './helpers';
 
 export const CAREER_EVENTS: GameEvent[] = [
@@ -181,7 +159,7 @@ export const CAREER_EVENTS: GameEvent[] = [
     text: 'Empate a uno, minuto 93, penalti a favor. El lanzador habitual está en el banquillo. Todo {estadio} mira hacia ti.',
     options: [
       opt('tirar', 'Coger el balón', [], {
-        roll: roll(0.65, { text: 'Engañas al portero. Tres puntos y la grada rendida.', effects: [rel('fans', 10), rep('national', 3), form(8), morale(8)] }, { text: 'El portero adivina tu intención. Lo paras tú, lo sufren todos.', effects: [rel('fans', -6), morale(-10)] }, 'penalties'),
+        roll: roll(0.65, { text: 'Engañas al portero. Tres puntos y la grada rendida.', effects: [rel('fans', 10), rep('national', 3), form(8), morale(8), goal()] }, { text: 'El portero adivina tu intención. Lo paras tú, lo sufren todos.', effects: [rel('fans', -6), morale(-10)] }, 'penalties'),
         key: true,
       }),
       opt('ceder', 'Dárselo a un compañero con más experiencia', [rel('dressingRoom', 4)], {
@@ -410,9 +388,9 @@ export const CAREER_EVENTS: GameEvent[] = [
     text: 'Llevas dos goles y quedan diez minutos. El balón te cae en la frontal. El tercero sería tu primer triplete.',
     options: [
       opt('chutar', 'Chutar sin pensar', [], {
-        roll: roll(0.4, { text: '¡Escuadra! Te llevas el balón del partido firmado por todos.', effects: [rep('national', 4), rel('fans', 8), morale(10), followers(10), flag('firstHatTrick'), { type: 'unlockCelebration', id: 'voltereta' }] }, { text: 'Se va alto. El público aplaude igual.', effects: [morale(2)] }, 'finishing'),
+        roll: roll(0.4, { text: '¡Escuadra! Te llevas el balón del partido firmado por todos.', effects: [rep('national', 4), rel('fans', 8), morale(10), followers(10), flag('firstHatTrick'), { type: 'unlockCelebration', id: 'voltereta' }, goalsAtLeast(3)] }, { text: 'Se va alto. El público aplaude igual.', effects: [morale(2), goalsAtLeast(2)] }, 'finishing'),
       }),
-      opt('asistir', 'Ver a un compañero solo y dársela', [rel('dressingRoom', 8), attr('vision', 1)], { result: 'Gol de {companero}. El vestuario lo celebra contigo.' }),
+      opt('asistir', 'Ver a un compañero solo y dársela', [rel('dressingRoom', 8), attr('vision', 1), goalsAtLeast(2), assist()], { result: 'Gol de {companero}. El vestuario lo celebra contigo.' }),
     ],
   }),
   ev({
@@ -456,7 +434,7 @@ export const CAREER_EVENTS: GameEvent[] = [
     phases: HALVES,
     weight: 20,
     cooldownSeasons: 3,
-    requires: [{ type: 'any', of: [{ type: 'seasonsAtClub', max: 1 }] }, chance(0.5)],
+    requires: [OUTFIELD, { type: 'any', of: [{ type: 'seasonsAtClub', max: 1 }] }, chance(0.5)],
     speaker: 'press',
     title: 'Vuelta a casa',
     text: 'Te toca jugar contra tu antiguo equipo. Los aficionados que te vieron crecer estarán en la grada.',

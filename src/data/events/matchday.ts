@@ -1,15 +1,17 @@
 /** Eventos de día de partido, entrenamiento y vestuario (bloque de la Fase 11). */
 import type { GameEvent } from '@/engine/types/events';
-import { HALVES, PRO, SENIOR, attr, chance, ev, family, fitness, flag, followers, form, group, injury, minOverall, money, morale, news, opt, playingTime, rel, rep, roll, tendency } from './helpers';
+import {
+  HALVES, PRO, SENIOR, attr, chance, ev, family, fitness, flag, followers, form, group, injury, minOverall, money, morale, news, opt, playingTime, rel, rep, roll, tendency, goal, assist, dribble, keyPass, tackle, matchRating, OUTFIELD,
+} from './helpers';
 
 export const MATCHDAY_EVENTS: GameEvent[] = [
   ev({
-    id: 'md-diluvio', category: 'keyMatch', stages: PRO, phases: HALVES, weight: 18, cooldownSeasons: 3, requires: [], speaker: 'narrator',
+    id: 'md-diluvio', category: 'keyMatch', stages: PRO, phases: HALVES, weight: 18, cooldownSeasons: 3, requires: [OUTFIELD], speaker: 'narrator',
     title: 'Partido bajo el diluvio',
     text: 'Llueve como nunca en {estadio}. El balón se frena en los charcos y el rival defiende con diez detrás.',
     options: [
       opt('sencillo', 'Jugar sencillo: pase corto y balón al área', [rel('coach', 4), attr('teamwork', 1)], { result: 'Partido feo, pero sin errores tuyos.' }),
-      opt('regate', 'Intentar el regate en cada balón', [], { roll: roll(0.45, { text: 'Un eslalon entre charcos acaba en gol. El vídeo da la vuelta al país.', effects: [rep('national', 3), followers(6), form(6)] }, { text: 'Te resbalas tres veces. La grada se ríe; tú no.', effects: [form(-5)] }, 'dribbling') }),
+      opt('regate', 'Intentar el regate en cada balón', [], { roll: roll(0.45, { text: 'Un eslalon entre charcos acaba en gol. El vídeo da la vuelta al país.', effects: [rep('national', 3), followers(6), form(6), goal(), dribble(3)] }, { text: 'Te resbalas tres veces. La grada se ríe; tú no.', effects: [form(-5)] }, 'dribbling') }),
     ],
   }),
   ev({
@@ -26,7 +28,7 @@ export const MATCHDAY_EVENTS: GameEvent[] = [
     title: 'El VAR te anula un gol',
     text: 'Lo celebras con toda la grada… y el VAR lo anula por un fuera de juego de centímetros.',
     options: [
-      opt('aceptar', 'Encogerte de hombros y seguir', [tendency('temperamento', -4), form(2)], { result: 'Diez minutos después marcas otro. Este sí vale.' }),
+      opt('aceptar', 'Encogerte de hombros y seguir', [tendency('temperamento', -4), form(2), goal()], { result: 'Diez minutos después marcas otro. Este sí vale.' }),
       opt('quejarse', 'Quejarte en la entrevista posterior', [tendency('temperamento', 5), rel('press', 3), money(-5000)], { result: 'La federación te multa por tus declaraciones.' }),
     ],
   }),
@@ -49,12 +51,12 @@ export const MATCHDAY_EVENTS: GameEvent[] = [
     ],
   }),
   ev({
-    id: 'md-ultimo-balon', category: 'keyMatch', stages: PRO, phases: ['secondHalf'], weight: 22, cooldownSeasons: 1, requires: [], speaker: 'narrator',
+    id: 'md-ultimo-balon', category: 'keyMatch', stages: PRO, phases: ['secondHalf'], weight: 22, cooldownSeasons: 1, requires: [OUTFIELD], speaker: 'narrator',
     title: 'Último balón',
     text: 'Minuto 94, empate. El balón te cae en la frontal. Un compañero pide el pase por la derecha, solo.',
     options: [
-      opt('chutar', 'Chutar', [], { roll: roll(0.35, { text: '¡Escuadra! Tres puntos y un estadio en éxtasis.', effects: [rel('fans', 10), form(8), morale(8), news('{apodo} gana el partido en el último minuto', 'positive')] }, { text: 'A las nubes. El compañero te mira con los brazos abiertos.', effects: [rel('dressingRoom', -5)] }, 'shooting') }),
-      opt('pasar', 'Dar el pase', [], { roll: roll(0.45, { text: 'Gol de tu compañero. La asistencia es tuya.', effects: [rel('dressingRoom', 8), tendency('solidaridad', 4)] }, { text: 'Lo falla. Al menos elegiste bien.', effects: [rel('dressingRoom', 3)] }, 'vision') }),
+      opt('chutar', 'Chutar', [], { roll: roll(0.35, { text: '¡Escuadra! Tres puntos y un estadio en éxtasis.', effects: [rel('fans', 10), form(8), morale(8), news('{apodo} gana el partido en el último minuto', 'positive'), goal()] }, { text: 'A las nubes. El compañero te mira con los brazos abiertos.', effects: [rel('dressingRoom', -5)] }, 'shooting') }),
+      opt('pasar', 'Dar el pase', [], { roll: roll(0.45, { text: 'Gol de tu compañero. La asistencia es tuya.', effects: [rel('dressingRoom', 8), tendency('solidaridad', 4), assist()] }, { text: 'Lo falla. Al menos elegiste bien.', effects: [rel('dressingRoom', 3)] }, 'vision') }),
     ],
   }),
   ev({
@@ -125,8 +127,8 @@ export const MATCHDAY_EVENTS: GameEvent[] = [
     title: 'Marcar a la estrella',
     text: '{entrenador} te encarga marcar al hombre en el partido contra {rival} a su mejor delantero.',
     options: [
-      opt('pegajoso', 'Pegarte a él todo el partido', [], { roll: roll(0.5, { text: 'No toca un balón. Te ganas el elogio de la prensa.', effects: [rep('national', 4), rel('coach', 6), form(5)] }, { text: 'Se te escapa una vez. Suficiente para un gol.', effects: [form(-4)] }, 'positioning') }),
-      opt('anticipar', 'Anticiparte y salir con el balón', [], { roll: roll(0.45, { text: 'Robas y sales jugando una y otra vez.', effects: [attr('composure', 1), form(4)] }, { text: 'Te gana la espalda en la primera.', effects: [rel('coach', -4)] }, 'concentration') }),
+      opt('pegajoso', 'Pegarte a él todo el partido', [], { roll: roll(0.5, { text: 'No toca un balón. Te ganas el elogio de la prensa.', effects: [rep('national', 4), rel('coach', 6), form(5), tackle(3), matchRating(0.5)] }, { text: 'Se te escapa una vez. Suficiente para un gol.', effects: [form(-4)] }, 'positioning') }),
+      opt('anticipar', 'Anticiparte y salir con el balón', [], { roll: roll(0.45, { text: 'Robas y sales jugando una y otra vez.', effects: [attr('composure', 1), form(4), tackle(2), keyPass()] }, { text: 'Te gana la espalda en la primera.', effects: [rel('coach', -4)] }, 'concentration') }),
     ],
   }),
   ev({

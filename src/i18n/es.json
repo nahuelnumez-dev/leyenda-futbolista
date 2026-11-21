@@ -524,6 +524,15 @@
       "local": "Reputación local",
       "national": "Reputación nacional",
       "world": "Reputación mundial"
+    },
+    "matchStat": {
+      "goals": "Goles",
+      "assists": "Asistencias",
+      "dribbles": "Regates",
+      "keyPasses": "Pases clave",
+      "tackles": "Entradas",
+      "saves": "Paradas",
+      "cleanSheet": "Portería a cero"
     }
   },
   "offers": {

@@ -1,6 +1,8 @@
 /** Eventos de cantera (15-18 años). */
 import type { GameEvent } from '@/engine/types/events';
-import { attr, chance, ev, family, fitness, flag, form, group, injury, minOverall, money, morale, news, opt, rel, rep, roll, tendency } from './helpers';
+import {
+  attr, chance, ev, family, fitness, flag, form, group, injury, minOverall, money, morale, news, opt, rel, rep, roll, tendency, goal, dribble, matchRating, OUTFIELD,
+} from './helpers';
 
 export const ACADEMY_EVENTS: GameEvent[] = [
   ev({
@@ -63,13 +65,13 @@ export const ACADEMY_EVENTS: GameEvent[] = [
     phases: ['secondHalf'],
     weight: 35,
     cooldownSeasons: 1,
-    requires: [],
+    requires: [OUTFIELD],
     speaker: 'narrator',
     title: 'Torneo internacional juvenil',
     text: 'El juvenil de {club} juega un torneo internacional con canteras de media Europa y Sudamérica. Hay ojeadores en todas las gradas. La final es contra una de las grandes academias del continente.',
     options: [
       opt('protagonista', 'Pedir el balón y asumir la responsabilidad', [], {
-        roll: roll(0.45, { text: 'Marcas en la final y te eligen mejor jugador del torneo. Tu nombre aparece en una lista que circula entre ojeadores.', effects: [rep('national', 6), rep('world', 2), morale(10), flag('torneoMvp'), news('{nombreCompleto}, mejor jugador del torneo juvenil con {club}', 'positive')] }, { text: 'Fallas una ocasión clarísima en la final. Perdéis en los penaltis.', effects: [morale(-6), attr('composure', 1)] }, 'composure'),
+        roll: roll(0.45, { text: 'Marcas en la final y te eligen mejor jugador del torneo. Tu nombre aparece en una lista que circula entre ojeadores.', effects: [rep('national', 6), rep('world', 2), morale(10), flag('torneoMvp'), news('{nombreCompleto}, mejor jugador del torneo juvenil con {club}', 'positive'), goal()] }, { text: 'Fallas una ocasión clarísima en la final. Perdéis en los penaltis.', effects: [morale(-6), attr('composure', 1)] }, 'composure'),
         key: true,
       }),
       opt('equipo', 'Jugar para el equipo, sin arriesgar', [rel('coach', 5), attr('teamwork', 2)], { result: 'Hacéis un torneo sólido. El entrenador te pone de ejemplo en la charla.' }),
@@ -184,13 +186,13 @@ export const ACADEMY_EVENTS: GameEvent[] = [
     phases: ['firstHalf', 'secondHalf'],
     weight: 50,
     once: true,
-    requires: [minOverall(58)],
+    requires: [OUTFIELD, minOverall(58)],
     speaker: 'coach',
     title: 'Mañana debutas',
     text: '{entrenador} te llama a su despacho: "Mañana vas convocado y vas a jugar. Disfrútalo." No pegas ojo en toda la noche. Tu familia ya ha comprado entradas para {estadio}.',
     options: [
       opt('disfrutar', 'Salir a disfrutar, como en el patio del colegio', [], {
-        roll: roll(0.55, { text: 'Primer balón, primer regate, primera ovación. {estadio} corea tu nombre por primera vez.', effects: [rep('local', 10), rel('fans', 10), morale(10), form(8), news('Debut soñado de {nombreCompleto} con {club}', 'positive')] }, { text: 'Las piernas te pesan como nunca. Pierdes dos balones fáciles y te cambian en el 70.', effects: [morale(-5), attr('composure', 2)] }, 'composure'),
+        roll: roll(0.55, { text: 'Primer balón, primer regate, primera ovación. {estadio} corea tu nombre por primera vez.', effects: [rep('local', 10), rel('fans', 10), morale(10), form(8), news('Debut soñado de {nombreCompleto} con {club}', 'positive'), dribble(2), matchRating(0.5)] }, { text: 'Las piernas te pesan como nunca. Pierdes dos balones fáciles y te cambian en el 70.', effects: [morale(-5), attr('composure', 2)] }, 'composure'),
         key: true,
       }),
       opt('sencillo', 'Jugar sencillo: pase corto y sin errores', [rel('coach', 6), rep('local', 4)], { result: 'Un debut sin brillo pero sin manchas. {entrenador} te da una palmada al salir.' }),
@@ -289,13 +291,13 @@ export const ACADEMY_EVENTS: GameEvent[] = [
     phases: ['firstHalf', 'secondHalf'],
     weight: 20,
     cooldownSeasons: 3,
-    requires: [],
+    requires: [OUTFIELD],
     speaker: 'narrator',
     title: 'El gol del año (en juveniles)',
     text: 'Balón suelto en el medio del campo, el portero rival adelantado. Tienes medio segundo para decidir.',
     options: [
       opt('vaselina', 'Intentarlo desde el centro del campo', [], {
-        roll: roll(0.25, { text: '¡GOLAZO! El vídeo da la vuelta al país en una noche.', effects: [rep('national', 5), { type: 'followers', delta: 80, percent: true }, morale(10), news('El golazo desde el centro del campo de un juvenil de {club}', 'positive')] }, { text: 'El balón se va a la grada. Tu entrenador se lleva las manos a la cabeza.', effects: [rel('coach', -3)] }, 'shooting'),
+        roll: roll(0.25, { text: '¡GOLAZO! El vídeo da la vuelta al país en una noche.', effects: [rep('national', 5), { type: 'followers', delta: 80, percent: true }, morale(10), news('El golazo desde el centro del campo de un juvenil de {club}', 'positive'), goal()] }, { text: 'El balón se va a la grada. Tu entrenador se lleva las manos a la cabeza.', effects: [rel('coach', -3)] }, 'shooting'),
       }),
       opt('pase', 'Abrir a la banda y seguir la jugada', [attr('vision', 1), rel('coach', 2)], { result: 'La jugada acaba en córner. Nadie se acordará de ella.' }),
     ],

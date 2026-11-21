@@ -1,32 +1,8 @@
 /** Eventos fuera del campo: redes sociales, patrocinios, vida personal, ética y retirada. */
 import type { GameEvent } from '@/engine/types/events';
 import {
-  ALL,
-  HALVES,
-  PRO,
-  addTrait,
-  attr,
-  chance,
-  ev,
-  family,
-  fitness,
-  flag,
-  followers,
-  form,
-  group,
-  hasFlag,
-  minAge,
-  minMoney,
-  money,
-  morale,
-  news,
-  noFlag,
-  opt,
-  rel,
-  rep,
-  roll,
-  schedule,
-  tendency, celebration } from './helpers';
+  ALL, HALVES, PRO, addTrait, attr, chance, ev, family, fitness, flag, followers, form, group, hasFlag, minAge, minMoney, money, morale, news, noFlag, opt, rel, rep, roll, schedule, tendency, celebration, matchRating,
+} from './helpers';
 
 export const OFF_FIELD_EVENTS: GameEvent[] = [
   ev({
@@ -130,7 +106,7 @@ export const OFF_FIELD_EVENTS: GameEvent[] = [
     options: [
       opt('ir', 'Pedir permiso al club para ir a casa', [family(15), rel('coach', -2), form(-4)], { result: 'Pasas dos días en el hospital. Tu padre se recupera. Volverías a hacerlo.' }),
       opt('jugar', 'Jugar y dedicarle el partido', [morale(-6), family(-4)], {
-        roll: roll(0.4, { text: 'Marcas y le dedicas el gol. Él lo ve desde la cama del hospital.', effects: [family(14), rel('fans', 8), morale(10)] }, { text: 'No estás a lo que estás. Juegas el peor partido de la temporada.', effects: [form(-6)] }),
+        roll: roll(0.4, { text: 'Partidazo. Se lo dedicas mirando al cielo; él lo ve desde la cama del hospital.', effects: [family(14), rel('fans', 8), morale(10), matchRating(0.8)] }, { text: 'No estás a lo que estás. Juegas el peor partido de la temporada.', effects: [form(-6)] }),
       }),
     ],
   }),

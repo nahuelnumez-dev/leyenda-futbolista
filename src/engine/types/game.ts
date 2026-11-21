@@ -163,6 +163,8 @@ export interface SeasonSummary {
 }
 
 export interface GameState {
+  /** Estadísticas de un evento a la espera del siguiente partido que juegue. */
+  pendingMatchStats?: import('./events').MatchStatDelta[];
   version: number;
   id: string;
   createdAt: string;

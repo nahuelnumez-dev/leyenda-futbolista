@@ -18,6 +18,7 @@ import type { Contract, SquadRole } from '../types/player';
 import { overallFor } from '../player/overall';
 import { playMatch } from '../player/matches';
 import { marketValue, narrowPotential, seasonGrowth } from '../player/growth';
+import { applyMatchStat } from '../events/effects';
 import { focusAttributes, matchModifiers, updateSpecialties } from '../player/specialties';
 import { academyOptions } from '../player/academy';
 import { generateOffers, returnFromLoan } from '../market/offers';
@@ -365,6 +366,12 @@ function simulateHalf(game: GameState, content: EngineContent, half: 1 | 2, root
     }
   }
 
+  // Lo que contó un evento sin que jugara se suma al primer partido que juegue.
+  const firstPlayed = logs.find((l) => l.minutes > 0);
+  if (firstPlayed && game.pendingMatchStats?.length) {
+    for (const d of game.pendingMatchStats) applyMatchStat(game, firstPlayed, d);
+    delete game.pendingMatchStats;
+  }
   game.current!.matches.push(...logs);
   milestones(game, logs);
   signatureHighlight(game, content, logs, prng);
