@@ -495,6 +495,46 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      partidos generales (49), momentos de cantera, selección y posición (45), vida personal (60) y club (64). Se
      escriben con el atajo `mev()` de `helpers.ts`. 253 cuentan en las estadísticas.
 
+## Versión alternativa: minijuegos (rama `alternativa`)
+
+155. **Las decisiones se juegan** (petición del usuario): en la rama `alternativa`, cada situación muestra su texto y se
+     resuelve con un minijuego de fútbol en vez de elegir una opción. Ganar da recompensas y perder, penalizaciones.
+     El motor (`src/engine/minigames`) decide qué minijuego toca, su dificultad y los efectos; la interfaz
+     (`src/ui/minigames`) solo informa de cuántos intentos superó el jugador. Así el motor sigue siendo puro y
+     determinista (`resolveMinigame` con el mismo resultado da siempre la misma partida).
+156. **Siete minijuegos**: tiro a puerta (mira y portero en movimiento), parada (adivina la zona que marca el lanzador),
+     regate (esquiva defensas por carriles), corte (colócate en el carril del delantero, que amaga), pase al hueco
+     (detén la aguja en la zona verde), pizarra táctica (repite una secuencia, tipo memoria) y toques (toca el balón
+     cuando llega al pie). Cada uno tiene N intentos y un mínimo de aciertos para ganar.
+157. **Qué minijuego toca**: si el evento cuenta algo en las estadísticas (`matchStat`) manda eso (goles → tiro,
+     asistencias → pase, regates → regate, entradas o portería a cero → corte, paradas → parada). Si no, se sortea con
+     una semilla de la situación entre los de su tema y la posición (partido, entrenamiento, vestuario, prensa,
+     negocio, vida personal, lesión). Un portero nunca tira ni regatea: juega paradas. La semilla también genera la
+     secuencia del minijuego, así que recargar no cambia la jugada.
+158. **Dificultad**: 0,5 + presión (partidos clave y selección, +0,08) − (habilidad − referencia) / 80, entre 0,1 y
+     0,95. La habilidad es la media de los dos atributos del minijuego (el portero usa los suyos en toques, pases y
+     pizarra) y la referencia es la media entre su valoración y 60. Así un canterano no empieza en «muy difícil»,
+     pero mejorar los atributos del minijuego siempre lo hace más fácil. Los tiempos de reacción se ajustaron para
+     que ganar sea posible con buena puntería (un bot que pulsa a tiempo gana los toques y los pases 10/10 y 5/5).
+159. **Cuatro niveles de resultado**: perfecto (todos los intentos), ganado, perdido y desastre (la mitad del mínimo o
+     menos). Recompensas por tema: en un **partido**, lo que cuenta el evento (el gol, la asistencia, las paradas...)
+     solo se suma si ganas, además de forma, moral, reputación local y afición (y nota del partido); al perder, baja
+     la nota, la forma y el entrenador se enfada. En un **entrenamiento** se sube +1 al atributo principal del
+     minijuego (+1 al segundo si es perfecto); al perder, peor relación con el entrenador y, si es un desastre,
+     cansancio. **Vestuario/entrenador**: relación ±4 (±7). **Prensa y redes**: seguidores, prensa y reputación.
+     **Negocios**: primas del 3 % (6 %) del salario y confianza de la directiva; un desastre cuesta dinero. **Vida
+     personal**: familia y moral. **Lesiones**: acorta o alarga la recuperación una o dos semanas. Ganar o perder
+     también empuja la personalidad (solidaridad, carisma, profesionalidad; temperamento, ego, rebeldía).
+160. **Siguen siendo decisiones** las 44 situaciones con efectos estructurales (`retire`, `setAgent`,
+     `transferRequest`, `offer`): retirada, agentes, peticiones de traspaso y ofertas. No tiene sentido jugarse
+     un fichaje a los penaltis. El resto (646) son minijuegos.
+161. **Simular sin jugar**: para quien no pueda o no quiera jugar un minijuego (accesibilidad, prisa), el botón lo
+     resuelve solo con una habilidad baja (0,45), así que conviene jugar. El balance (`npm run balance`) simula a un
+     jugador de habilidad media (0,6) con `simulateMinigame` y da resultados parecidos a la versión de decisiones.
+162. **Efectos de las opciones que se pierden**: al jugar un minijuego no se aplican los efectos propios de las opciones
+     (banderas, eventos encadenados, rasgos concretos). Es el precio de cambiar la elección por la habilidad; los
+     eventos que dependen de una bandera simplemente salen menos.
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

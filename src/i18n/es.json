@@ -469,9 +469,9 @@
   "events": {
     "success": "¡Salió bien!",
     "failure": "No salió como esperabas.",
-    "next": "Siguiente decisión",
+    "next": "Siguiente situación",
     "continue": "Continuar",
-    "pending": "Quedan {n} decisiones más en esta fase.",
+    "pending": "Quedan {n} situaciones más en esta fase.",
     "riskHint": "El resultado depende del azar y de tus atributos",
     "category": {
       "training": "Entrenamiento",
@@ -490,7 +490,7 @@
       "agent": "Agente",
       "retirement": "Retirada"
     },
-    "pendingOne": "Queda 1 decisión más en esta fase."
+    "pendingOne": "Queda 1 situación más en esta fase."
   },
   "effects": {
     "potential": "Potencial",
@@ -790,8 +790,8 @@
       "text": "Cada temporada tiene cinco fases. Pulsa el botón grande para jugar cada vuelta; todas las ligas se simulan partido a partido."
     },
     "decide": {
-      "title": "Toma decisiones.",
-      "text": "Entre fases te llegan situaciones: entrenador, vestuario, prensa, familia… Cada elección cambia tus relaciones, tu personalidad y tu carrera. Las marcadas con 🎲 tienen riesgo."
+      "title": "Juega las situaciones.",
+      "text": "Entre fases te llegan situaciones: partidos, entrenamientos, prensa, familia… Cada una se resuelve con un minijuego de fútbol (tiro a puerta, paradas, regates, cortes, pases, pizarra táctica o toques). Si ganas, consigues recompensas para tu carrera; si pierdes, tiene consecuencias. Los traspasos, agentes y la retirada se siguen decidiendo eligiendo una opción."
     },
     "market": {
       "title": "Gestiona tu carrera.",
@@ -840,5 +840,91 @@
     "pasteHint": "Pega aquí un código de partida (o el contenido de un archivo exportado).",
     "pastePlaceholder": "LEYENDA1:…",
     "pasteButton": "Importar código"
+  },
+  "minigames": {
+    "start": "¡A jugar!",
+    "auto": "Simular sin jugar",
+    "autoHint": "Resuelve el minijuego de forma automática, con menos probabilidad de ganar.",
+    "attempt": "Intento {n} de {total}",
+    "goal": "Necesitas {needed} de {total} para ganar.",
+    "won": "¡Ganado!",
+    "lost": "Perdido",
+    "score": "{ok} de {total}",
+    "resolve": "Ver consecuencias",
+    "stakes": "Si ganas, la situación te favorece; si pierdes, te pasará factura.",
+    "difficulty": "Dificultad",
+    "level": {
+      "easy": "Fácil",
+      "normal": "Normal",
+      "hard": "Difícil",
+      "extreme": "Muy difícil"
+    },
+    "tier": {
+      "great": "¡Perfecto!",
+      "win": "Superado",
+      "loss": "No salió",
+      "disaster": "Desastre"
+    },
+    "summary": "{name}: {ok} de {total}",
+    "theme": {
+      "match": "En juego: tus estadísticas del partido, tu forma y tu cartel con la afición.",
+      "training": "En juego: mejorar tus atributos y ganarte al entrenador.",
+      "team": "En juego: tu relación con el vestuario y el cuerpo técnico.",
+      "public": "En juego: seguidores, prensa y reputación.",
+      "business": "En juego: primas, la confianza de la directiva y tu agente.",
+      "life": "En juego: tu moral, tu familia y tu forma.",
+      "injury": "En juego: acortar (o alargar) la recuperación y tu estado físico."
+    },
+    "penalty": {
+      "name": "Tiro a puerta",
+      "how": "La mira se mueve sola y el portero patrulla la línea. Toca la portería (o pulsa Espacio) para disparar cuando la mira esté lejos del portero... y dentro de los palos.",
+      "ok": "¡Gol!",
+      "saved": "¡La para el portero!",
+      "out": "¡Fuera!",
+      "hint": "Toca para disparar"
+    },
+    "save": {
+      "name": "Parada",
+      "how": "Fíjate en la zona que marca el lanzador y tócala antes de que llegue el balón (o usa las teclas 1-6).",
+      "ok": "¡Paradón!",
+      "ko": "Gol en contra",
+      "wait": "Atento al lanzador...",
+      "now": "¡Ahora!"
+    },
+    "dribble": {
+      "name": "Regate",
+      "how": "Los defensas bajan por los carriles. Muévete a izquierda o derecha (toca los lados o usa las flechas) para esquivarlos.",
+      "ok": "¡Regate!",
+      "ko": "Te la roban"
+    },
+    "tackle": {
+      "name": "Corte",
+      "how": "El delantero baja con el balón y amaga con cambiar de carril. Colócate en su carril (toca los lados o usa las flechas) para robarle la pelota.",
+      "ok": "¡Balón recuperado!",
+      "ko": "Se te escapa"
+    },
+    "pass": {
+      "name": "Pase al hueco",
+      "how": "La barra marca el momento del pase. Toca (o pulsa Espacio) cuando la aguja esté en el hueco verde.",
+      "ok": "¡Pase perfecto!",
+      "ko": "Pase interceptado",
+      "hint": "Toca para pasar"
+    },
+    "tactics": {
+      "name": "Pizarra táctica",
+      "how": "Memoriza la secuencia de zonas que se iluminan en la pizarra y repítela en el mismo orden.",
+      "ok": "¡Lo has clavado!",
+      "ko": "Te has perdido",
+      "watch": "Memoriza...",
+      "repeat": "¡Tu turno!"
+    },
+    "keepy": {
+      "name": "Toques",
+      "how": "Toca (o pulsa Espacio) justo cuando el balón entre en la zona del pie. Ni antes ni después.",
+      "ok": "¡Toque!",
+      "early": "Demasiado pronto",
+      "late": "Se te cae",
+      "hint": "Toca cuando baje al pie"
+    }
   }
 }

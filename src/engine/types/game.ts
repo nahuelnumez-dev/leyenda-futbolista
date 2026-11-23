@@ -214,4 +214,6 @@ export interface EventOutcome {
   success?: boolean;
   /** Cambios legibles: [clave i18n, valor]. */
   changes: { key: string; value: number | string }[];
+  /** Versión alternativa: la situación se resolvió con un minijuego. */
+  minigame?: { id: string; successes: number; rounds: number; tier: 'great' | 'win' | 'loss' | 'disaster' };
 }

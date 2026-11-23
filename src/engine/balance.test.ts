@@ -8,6 +8,7 @@ import { createNewGame } from './world/newGame';
 import { defaultAppearance } from './player/defaults';
 import { advancePhase } from './season/advance';
 import { chooseOption } from './events/engine';
+import { isMinigameEvent, minigameFor, resolveMinigame, simulateMinigame } from './minigames/minigames';
 import { checkAll } from './events/conditions';
 import { respondToOffer } from './market/offers';
 import { Rng } from './rng';
@@ -26,7 +27,7 @@ const PROFILES: { club: string; pos: Position; style: string; country: string; r
   { club: 'bra.bahia', pos: 'LD', style: 'lateral-ofensivo', country: 'BRA', region: 'Bahia', city: 'Salvador' },
 ];
 
-/** Jugador «razonable»: elige opciones al azar y acepta la mejor oferta si mejora de club. */
+/** Jugador «razonable»: juega los minijuegos con habilidad media, elige opciones al azar y acepta la mejor oferta si mejora de club. */
 function simulate(seed: string, profile: (typeof PROFILES)[number]) {
   let g: GameState = createNewGame({
     seed,
@@ -41,13 +42,19 @@ function simulate(seed: string, profile: (typeof PROFILES)[number]) {
   });
   const rng = Rng.fromSeed(seed + ':choices');
   let decisions = 0;
+  let minigames = 0;
   let phases = 0;
   while (!g.retired && phases < 200) {
     while (g.activeEvent) {
       const ev = C.events.find((e) => e.id === g.activeEvent!.eventId)!;
+      decisions++;
+      if (isMinigameEvent(ev)) {
+        g = resolveMinigame(g, simulateMinigame(minigameFor(g, ev), rng, 0.6), C);
+        minigames++;
+        continue;
+      }
       const options = ev.options.filter((o) => checkAll(o.requires, g, C) && !o.effects.some((e) => e.type === 'retire'));
       g = chooseOption(g, rng.pick(options.length ? options : ev.options).id, C);
-      decisions++;
     }
     if (g.pendingNationalChoice?.length) g = { ...g, player: { ...g.player, nationalTeam: { ...g.player.nationalTeam, chosen: g.pendingNationalChoice[0]! } }, pendingNationalChoice: [] };
     const current = g.world.clubs[g.player.contract?.clubId ?? '']?.prestige ?? 0;
@@ -59,7 +66,7 @@ function simulate(seed: string, profile: (typeof PROFILES)[number]) {
     phases++;
   }
   const card = careerCard(g, C);
-  return { g, card, decisions, phases, potential: g.player.potential.hidden };
+  return { g, card, decisions, minigames, phases, potential: g.player.potential.hidden };
 }
 
 const runs = PROFILES.flatMap((p, i) => [0, 1].map((k) => ({ profile: p, ...simulate(`balance-${i}-${k}`, p) })));
@@ -80,9 +87,9 @@ describe('balance de carreras completas', () => {
   });
 
   it('hay decisiones suficientes para que una carrera dure 30-60 minutos', () => {
-    // ~15 s por decisión y ~4 s por fase de lectura.
+    // ~15 s por decisión, ~25 s por minijuego y ~4 s por fase de lectura.
     for (const r of runs) {
-      const minutes = (r.decisions * 15 + r.phases * 4) / 60;
+      const minutes = ((r.decisions - r.minigames) * 15 + r.minigames * 25 + r.phases * 4) / 60;
       expect(minutes).toBeGreaterThan(20);
       expect(minutes).toBeLessThan(75);
     }
@@ -104,6 +111,7 @@ describe('balance de carreras completas', () => {
       bdo: r.card.ballonDors,
       legado: `${r.card.legacyScore} (${r.card.legacy})`,
       decisiones: r.decisions,
+      minijuegos: r.minigames,
     }));
     console.table(table);
   });

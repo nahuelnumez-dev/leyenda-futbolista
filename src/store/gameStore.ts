@@ -9,6 +9,7 @@ import type { GameState } from '@/engine/types/game';
 import { advancePhase } from '@/engine/season/advance';
 import { chooseOption, queuePhaseEvents } from '@/engine/events/engine';
 import { Rng } from '@/engine/rng';
+import { resolveMinigame } from '@/engine/minigames/minigames';
 import { respondToOffer } from '@/engine/market/offers';
 import { chooseNationalTeam } from '@/engine/competitions/nationalTeam';
 import { dismissCinematic, selectCelebration } from '@/engine/cinematics/cinematics';
@@ -44,6 +45,8 @@ interface GameStore {
   advance: () => GameState | null;
   /** Elige una opción del evento activo y autoguarda. */
   choose: (optionId: string) => void;
+  /** Resuelve la situación activa con el resultado de su minijuego y autoguarda. */
+  playMinigame: (successes: number) => void;
   /** Acepta o rechaza una oferta y autoguarda. */
   respondOffer: (offerId: string, accept: boolean) => void;
   /** Elige selección (decisión definitiva) y autoguarda. */
@@ -100,6 +103,13 @@ export const useGame = create<GameStore>()(
       const { game } = get();
       if (!game) return;
       set({ game: chooseOption(game, optionId, ENGINE_CONTENT) });
+      get().autosave();
+    },
+
+    playMinigame: (successes) => {
+      const { game } = get();
+      if (!game) return;
+      set({ game: resolveMinigame(game, { successes }, ENGINE_CONTENT) });
       get().autosave();
     },
 

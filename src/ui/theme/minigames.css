@@ -1,0 +1,102 @@
+/* Versión alternativa: minijuegos que sustituyen a las decisiones. */
+.minigame-card { width: min(100%, 620px); }
+.mg { display: flex; flex-direction: column; gap: 10px; padding: 12px; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--border); }
+.mg-head { display: flex; align-items: center; gap: 10px; }
+.mg-head > div { display: flex; flex-direction: column; }
+.mg-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); font-size: 1.3rem; }
+.mg-name { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: 0.02em; text-transform: uppercase; color: var(--accent); }
+.mg-how { line-height: 1.5; margin: 0; }
+.mg-status { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.mg-summary { margin: 0; padding: 8px 12px; border-radius: var(--radius-sm); background: var(--accent-soft); }
+
+.mg-pips { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; flex-wrap: wrap; }
+.mg-pips li { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 0.75rem; font-weight: 800; background: var(--surface-3); border: 2px solid var(--border-strong); }
+.mg-pips li.is-need { border-color: var(--accent); }
+.mg-pips li.is-ok { background: var(--pitch); border-color: var(--pitch); color: #04140a; }
+.mg-pips li.is-ko { background: var(--danger); border-color: var(--danger); color: #1c0505; }
+.mg-done { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.mg-verdict { margin: 0; }
+
+/* Escenario común */
+.mg-stage {
+  position: relative; width: 100%; aspect-ratio: 16 / 11; max-height: 52vh; border-radius: var(--radius-sm); overflow: hidden;
+  background: repeating-linear-gradient(0deg, #1c7a43 0 28px, #1a7040 28px 56px); user-select: none; -webkit-user-select: none;
+  touch-action: none; cursor: pointer; outline-offset: 2px;
+}
+.mg-svg { width: 100%; height: 100%; display: block; }
+.mg-tap-hint { position: absolute; left: 0; right: 0; bottom: 6px; margin: 0; text-align: center; font-size: 0.8rem; font-weight: 600; color: rgba(255, 255, 255, 0.85); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); pointer-events: none; }
+.mg-flash {
+  position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none;
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 7vw, 2.8rem); text-transform: uppercase; letter-spacing: 0.03em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7); animation: mg-pop 0.35s ease-out;
+}
+.mg-flash.is-ok { color: #b9ffd5; background: radial-gradient(circle, rgba(47, 210, 122, 0.35), transparent 70%); }
+.mg-flash.is-ko { color: #ffd0d0; background: radial-gradient(circle, rgba(255, 100, 100, 0.35), transparent 70%); }
+@keyframes mg-pop { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Tiro a puerta */
+.mg-grass { fill: #1c7a43; }
+.mg-line { stroke: rgba(255, 255, 255, 0.55); stroke-width: 2; }
+.mg-net path { stroke: rgba(255, 255, 255, 0.22); stroke-width: 1; }
+.mg-post { stroke: #fff; stroke-width: 5; stroke-linejoin: round; }
+.mg-keeper { fill: #f5c542; }
+.mg-keeper .mg-reach { fill: rgba(245, 197, 66, 0.25); }
+.mg-aim { stroke: #fff; stroke-width: 2.5; }
+.mg-aim.is-out { stroke: #ff8080; }
+.mg-ball { fill: #fff; stroke: #111; stroke-width: 1.5; }
+
+/* Parada */
+.mg-goal-grid {
+  position: absolute; left: 8%; right: 8%; top: 8%; height: 58%; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr);
+  border: 5px solid #fff; border-bottom: none; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 18px), repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 18px);
+}
+.mg-zone { border: 1px dashed rgba(255, 255, 255, 0.3); background: transparent; color: #fff; cursor: pointer; display: grid; place-items: start; padding: 4px; touch-action: none; }
+.mg-zone:hover { background: rgba(255, 255, 255, 0.08); }
+.mg-zone.is-hint { background: rgba(245, 197, 66, 0.55); box-shadow: inset 0 0 0 3px #f5c542; }
+.mg-zone.is-picked { background: rgba(90, 169, 255, 0.45); }
+.mg-zone.is-target { box-shadow: inset 0 0 0 3px #fff; }
+.mg-shooter { position: absolute; left: 50%; bottom: 12%; transform: translateX(-50%); font-size: 2rem; display: flex; align-items: flex-end; gap: 2px; pointer-events: none; }
+.mg-shooter-run.is-open { animation: mg-run 0.4s ease-in-out infinite alternate; }
+@keyframes mg-run { to { transform: translateY(-4px); } }
+.mg-ball-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2px solid #111; vertical-align: bottom; }
+.mg-timer { position: absolute; left: 8%; right: 8%; bottom: 30px; height: 6px; border-radius: 3px; background: rgba(0, 0, 0, 0.35); overflow: hidden; }
+.mg-timer span { display: block; height: 100%; background: var(--accent); }
+
+/* Carriles */
+.mg-lanes { aspect-ratio: 3 / 4; max-height: 50vh; margin-inline: auto; }
+.mg-lane-bg { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(3, 1fr); pointer-events: none; }
+.mg-lane-bg span { border-right: 2px dashed rgba(255, 255, 255, 0.25); }
+.mg-lane-bg span:last-child { border-right: none; }
+.mg-token { position: absolute; transform: translate(-50%, -50%); font-size: clamp(1.6rem, 7vw, 2.2rem); line-height: 1; pointer-events: none; display: flex; align-items: flex-end; }
+.mg-me { filter: drop-shadow(0 0 6px rgba(245, 197, 66, 0.9)); transition: left 0.09s linear; }
+.mg-side { position: absolute; top: 0; bottom: 0; width: 50%; background: transparent; border: none; color: rgba(255, 255, 255, 0.35); font-size: 1.2rem; touch-action: none; cursor: pointer; }
+.mg-side-left { left: 0; text-align: left; padding-left: 8px; }
+.mg-side-right { right: 0; text-align: right; padding-right: 8px; }
+.mg-side:active { background: rgba(255, 255, 255, 0.06); }
+
+/* Pase */
+.mg-pass { display: flex; flex-direction: column; justify-content: flex-end; }
+.mg-pass-pitch { position: absolute; inset: 0 0 46px 0; }
+.mg-rival { opacity: 0.85; }
+.mg-bar { position: relative; margin: 0 8% 30px; height: 22px; border-radius: 11px; background: rgba(0, 0, 0, 0.45); border: 2px solid rgba(255, 255, 255, 0.5); }
+.mg-bar-zone { position: absolute; top: 0; bottom: 0; background: var(--pitch); border-radius: 8px; box-shadow: 0 0 10px rgba(47, 210, 122, 0.8); }
+.mg-bar-needle { position: absolute; top: -6px; bottom: -6px; width: 4px; margin-left: -2px; background: #fff; border-radius: 2px; box-shadow: 0 0 6px #000; }
+
+/* Pizarra */
+.mg-tactics { aspect-ratio: 1 / 1.08; max-height: 50vh; margin-inline: auto; background: #22303f; cursor: default; display: grid; place-items: center; }
+.mg-board { height: calc(100% - 44px); max-width: 92%; aspect-ratio: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 8px; border: 2px solid rgba(255, 255, 255, 0.6); border-radius: 8px; background: #1c7a43; margin-bottom: 18px; }
+.mg-cell { border-radius: 6px; border: 2px solid rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.06); cursor: pointer; touch-action: none; transition: background 0.08s; }
+.mg-cell:disabled { cursor: default; opacity: 1; }
+.mg-cell.is-lit { background: var(--accent); border-color: #fff; box-shadow: 0 0 14px rgba(245, 197, 66, 0.9); }
+.mg-cell.is-tap { background: var(--info); border-color: #fff; }
+
+/* Toques */
+.mg-keepy { aspect-ratio: 3 / 4; max-height: 50vh; margin-inline: auto; background: linear-gradient(#2b6fb1, #6db0e8 60%, #1c7a43 60%); }
+.mg-keepy-zone { position: absolute; left: 0; right: 0; bottom: 8%; background: rgba(47, 210, 122, 0.35); border-top: 2px dashed #b9ffd5; pointer-events: none; }
+.mg-keepy-ball { position: absolute; transform: translate(-50%, 50%); font-size: clamp(1.8rem, 8vw, 2.4rem); line-height: 1; pointer-events: none; }
+.mg-keepy-foot { position: absolute; left: 50%; bottom: 2%; transform: translateX(-50%) rotate(-30deg); font-size: 1.6rem; pointer-events: none; }
+
+@media (max-width: 480px) {
+  .mg { padding: 8px; }
+  .mg-stage { max-height: 46vh; }
+}

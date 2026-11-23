@@ -15,7 +15,11 @@ Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas
 1. **Nueva carrera**: elige origen, aspecto, posición, estilo y dos rasgos, y haz una prueba en una cantera real.
 2. **Avanza** la temporada con el botón grande del hub (pretemporada, primera vuelta, mercado de invierno, segunda vuelta y
    fin de temporada). Todas las ligas se simulan partido a partido.
-3. **Decide**: entre fases te llegan situaciones. Lo que eliges cambia tus relaciones, tu personalidad y tu carrera.
+3. **Juega las situaciones** (versión alternativa): entre fases te llegan situaciones y cada una se resuelve con un
+   minijuego de fútbol: tiro a puerta, parada, regate, corte, pase al hueco, pizarra táctica o toques. Ganar da
+   recompensas (estadísticas del partido, atributos, relaciones, seguidores, primas) y perder, penalizaciones. La
+   dificultad depende de tus atributos. Las decisiones estructurales (traspasos, agentes, retirada) siguen siendo
+   opciones a elegir.
 4. **Gestiona** las ofertas de traspaso, cesión y renovación en los mercados.
 5. **Consulta** las pestañas del hub: clasificación, estadísticas, carrera, palmarés, logros, atributos, especialidades (y cuál entrenas), personalidad
    y partida (guardar y exportar).
@@ -64,6 +68,7 @@ src/
 │  ├─ data/         Cargador y validador de los datos de /src/data
 │  ├─ season/       Calendario, partidos, clasificaciones, ascensos y fases de la temporada
 │  ├─ events/       Motor de eventos: requisitos, efectos, sorteo y decisiones
+│  ├─ minigames/    Versión alternativa: qué minijuego toca, su dificultad y sus recompensas
 │  ├─ market/       Ofertas, traspasos, cesiones y renovaciones
 │  ├─ personality/  Tendencias, rasgos ganados, consecuencias y reacciones
 │  ├─ stats/        Totales, series por temporada, perfil de atributos

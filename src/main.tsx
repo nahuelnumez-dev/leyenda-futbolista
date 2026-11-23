@@ -11,6 +11,7 @@ import './ui/theme/hub.css';
 import './ui/theme/charts.css';
 import './ui/theme/cinematics.css';
 import './ui/theme/legacy.css';
+import './ui/theme/minigames.css';
 import './ui/theme/mobile.css';
 import { App } from './ui/App';
 import { loadCrestPack } from './ui/components/crestUrl';
