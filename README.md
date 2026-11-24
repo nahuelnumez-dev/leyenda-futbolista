@@ -1,5 +1,11 @@
 # Leyenda: Carrera de Futbolista
 
+> **Rama `rapida` — Leyenda Rápida.** Versión minimalista sin decisiones ni eventos: creas al jugador en un paso
+> (nombre, posición, país y cantera), pulsas «Siguiente temporada» (o «Hasta la retirada») y ves la carrera pasar.
+> Cada temporada queda en una lista; al tocarla se ve su ficha: club, rol, dorsal, entrenador, estadísticas por
+> competición, clasificación de la liga, títulos, premios, selección y fichajes. Los traspasos, renovaciones y la
+> selección se resuelven solos. El motor es el mismo; lo nuevo está en `src/engine/quick` y `src/ui/quick`.
+
 Juego web de decisiones en el que vives la carrera de un futbolista desde la cantera hasta la retirada.
 Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas ficticios.
 
@@ -64,6 +70,7 @@ src/
 │  ├─ data/         Cargador y validador de los datos de /src/data
 │  ├─ season/       Calendario, partidos, clasificaciones, ascensos y fases de la temporada
 │  ├─ events/       Motor de eventos: requisitos, efectos, sorteo y decisiones
+│  ├─ quick/        Leyenda Rápida: temporadas automáticas y ficha de cada temporada
 │  ├─ market/       Ofertas, traspasos, cesiones y renovaciones
 │  ├─ personality/  Tendencias, rasgos ganados, consecuencias y reacciones
 │  ├─ stats/        Totales, series por temporada, perfil de atributos

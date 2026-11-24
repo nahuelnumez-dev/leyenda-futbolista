@@ -4,21 +4,14 @@ import '@fontsource-variable/inter';
 import '@fontsource/barlow-condensed/600.css';
 import '@fontsource/barlow-condensed/700.css';
 import '@fontsource/barlow-condensed/800.css';
-import './ui/theme/global.css';
-import './ui/theme/menu.css';
-import './ui/theme/creation.css';
-import './ui/theme/hub.css';
-import './ui/theme/charts.css';
-import './ui/theme/cinematics.css';
-import './ui/theme/legacy.css';
-import './ui/theme/mobile.css';
-import { App } from './ui/App';
+import './ui/theme/quick.css';
+import { QuickApp } from './ui/quick/QuickApp';
 import { loadCrestPack } from './ui/components/crestUrl';
 
 void loadCrestPack().then(() =>
   createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <QuickApp />
   </StrictMode>,
   ),
 );

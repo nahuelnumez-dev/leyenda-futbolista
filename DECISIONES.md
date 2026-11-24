@@ -495,6 +495,30 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      partidos generales (49), momentos de cantera, selección y posición (45), vida personal (60) y club (64). Se
      escriben con el atajo `mev()` de `helpers.ts`. 253 cuentan en las estadísticas.
 
+## Leyenda Rápida (rama `rapida`)
+
+155. **Sin decisiones ni minijuegos** (petición del usuario): la rama `rapida` parte de la v1.6.0 de `main` (no de
+     `alternativa`, que tiene minijuegos). La carrera avanza temporada a temporada con un botón; los eventos que el
+     motor saca en cada fase se descartan sin aplicarse y no hay cinemáticas.
+156. **Piloto automático** (`src/engine/quick`): acepta un traspaso o cesión si el club tiene más de 3 puntos de
+     prestigio que el actual, o si pasa de suplente a titular en un club como mucho 15 puntos peor; si no, renueva
+     cuando se acaba el contrato. Elige la selección de su país de nacimiento. La retirada es la natural del motor
+     (desde los 36, antes si su nivel cae; como muy tarde, a los 40).
+157. **Creación en un paso**: nombre, posición, país y cantera (o al azar entre la mitad con más prestigio del país).
+     El estilo de juego, los dos rasgos, el pie y la fecha de nacimiento salen de la semilla; el aspecto es el de
+     por defecto (la interfaz rápida no muestra el avatar).
+158. **Ficha de temporada** (`quickLog` en la partida): se guarda al cerrar cada temporada con lo que la interfaz
+     necesita (estadísticas por competición, clasificación final completa de su liga, títulos, premios, selección,
+     rol, dorsal, entrenador y fichajes de esa temporada). Las partidas guardan el campo aunque el validador no lo
+     conozca (se devuelve el objeto original).
+159. **Interfaz minimalista**: una sola pantalla de carrera con la media actual, totales, la lista de temporadas
+     (la más reciente arriba) y la ficha de la temporada elegida; en el móvil, la ficha va primero. Tema claro por
+     defecto y oscuro si el sistema lo pide. «Hasta la retirada» juega una temporada cada 0,28 s para que se vea pasar
+     la carrera (unos 7 s en total) y se puede pausar. Espacio o → juegan la siguiente temporada.
+160. **Sin el desarrollo de los eventos** las carreras quedan algo por debajo de su potencial (pico de media 77-87 en
+     las pruebas, frente a 77-96 con decisiones), porque los eventos de entrenamiento daban atributos. Se deja así:
+     la carrera rápida es más «natural».
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

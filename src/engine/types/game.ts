@@ -204,6 +204,8 @@ export interface GameState {
   pendingNationalChoice?: string[];
   /** Resultado de la última decisión, para mostrarlo en pantalla. */
   lastOutcome?: EventOutcome;
+  /** Modo rápido: ficha de cada temporada jugada. */
+  quickLog?: import('../quick/quick').QuickSeason[];
 }
 
 /** Lo que pasó al elegir una opción de un evento. */
