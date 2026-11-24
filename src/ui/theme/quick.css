@@ -149,6 +149,8 @@ td.q-club span { display: inline-block; max-width: 120px; margin-left: 6px; }
 .q-league tr.q-gap td { border-top: 1px dashed var(--q-muted); }
 .q-notes { gap: 4px; font-size: 0.9rem; }
 .q-foot { display: flex; justify-content: center; }
+.q-confirm { font-size: 0.85rem; color: var(--q-muted); }
+.q-danger { color: var(--q-down); }
 
 @media (max-width: 860px) {
   .q-grid { grid-template-columns: 1fr; }

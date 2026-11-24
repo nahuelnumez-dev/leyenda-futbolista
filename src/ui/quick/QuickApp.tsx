@@ -283,6 +283,7 @@ function CareerScreen({ game }: { game: GameState }) {
   const { next, runToEnd, stop, running, abandon } = useQuick();
   const log = game.quickLog ?? [];
   const [selected, setSelected] = useState<number | null>(null);
+  const [confirming, setConfirming] = useState(false);
   const gk = game.player.positions.main === 'POR';
   const p = game.player;
   const ovr = overallFor(p.attributes, p.positions.main);
@@ -373,7 +374,15 @@ function CareerScreen({ game }: { game: GameState }) {
 
       {!game.retired && (
         <footer className="q-foot">
-          <button className="q-link" onClick={() => window.confirm('¿Abandonar esta carrera y empezar otra?') && abandon()}>Abandonar y empezar otra</button>
+          {confirming ? (
+            <span className="q-confirm">
+              ¿Seguro? Se pierde esta carrera.{' '}
+              <button className="q-link q-danger" onClick={abandon}>Sí, abandonar</button>{' '}
+              <button className="q-link" onClick={() => setConfirming(false)}>Cancelar</button>
+            </span>
+          ) : (
+            <button className="q-link" onClick={() => setConfirming(true)}>Abandonar y empezar otra</button>
+          )}
         </footer>
       )}
     </div>
