@@ -1,10 +1,13 @@
 # Leyenda: Carrera de Futbolista
 
-> **Rama `rapida` — Leyenda Rápida.** Versión minimalista sin decisiones ni eventos: creas al jugador en un paso
-> (nombre, posición, país y cantera), pulsas «Siguiente temporada» (o «Hasta la retirada») y ves la carrera pasar.
+> **Rama `rapida` — Leyenda Rápida.** Versión minimalista sin eventos: creas al jugador en un paso (nombre, posición,
+> país y cantera, eligiendo entre los clubes de cada división con su calidad de cantera y su prestigio), pulsas
+> «Siguiente temporada» (o «Hasta la retirada») y ves la carrera pasar. Cuando llegan ofertas, el mercado te las
+> enseña (club, liga, rol, sueldo, contrato, prestigio y traspaso) y eliges fichar o quedarte. Los trofeos, premios,
+> ascensos y logros se avisan al momento y quedan en la ficha de cada temporada.
 > Cada temporada queda en una lista; al tocarla se ve su ficha: club, rol, dorsal, entrenador, estadísticas por
 > competición, clasificación de la liga, títulos, premios, selección y fichajes. Los traspasos, renovaciones y la
-> selección se resuelven solos. El motor es el mismo; lo nuevo está en `src/engine/quick` y `src/ui/quick`.
+> selección se resuelven solos (en «Hasta la retirada», también los fichajes). El motor es el mismo; lo nuevo está en `src/engine/quick` y `src/ui/quick`.
 
 Juego web de decisiones en el que vives la carrera de un futbolista desde la cantera hasta la retirada.
 Clubes, ligas, ciudades y estadios reales; jugadores, entrenadores y periodistas ficticios.

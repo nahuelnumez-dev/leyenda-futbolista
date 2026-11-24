@@ -48,8 +48,10 @@ export interface QuickSeason {
   awards: { awardId: string; rank: number; scope?: string }[];
   national: { caps: number; goals: number; tournament?: { competitionId: string; result: string } };
   marketValue: number;
-  /** Fichajes y cesiones aceptados durante la temporada. */
+  /** Fichajes y cesiones aceptados durante la temporada (incluido el mercado de verano que la cierra). */
   moves: { kind: Offer['kind']; clubId: ClubId; fee: number }[];
+  /** Logros desbloqueados esa temporada. */
+  achievements: string[];
 }
 
 const ROLE_RANK: Record<SquadRole, number> = { cantera: 0, promesa: 1, rotacion: 2, titular: 3, estrella: 4 };
@@ -87,27 +89,104 @@ export function pickOffer(game: GameState): Offer | undefined {
   return expiring ? offers.find((o) => o.kind === 'renewal') : undefined;
 }
 
-/** Quita lo que en la versión normal pide intervención del jugador. */
-function autopilot(input: GameState, content: EngineContent, moves: QuickSeason['moves']): GameState {
-  let game = input;
-  if (game.activeEvent || game.eventQueue?.length || game.cinematics?.length || game.pendingNationalChoice?.length) {
-    game = structuredClone(game);
-    game.activeEvent = null;
-    game.eventQueue = [];
-    game.cinematics = [];
-    if (game.pendingNationalChoice?.length) {
-      const own = game.player.identity.nationalities[0];
-      const chosen = game.pendingNationalChoice.includes(own ?? '') ? own! : game.pendingNationalChoice[0]!;
-      game.player.nationalTeam.chosen = chosen;
-      game.pendingNationalChoice = [];
-    }
-  }
-  const offer = pickOffer(game);
-  if (offer) {
-    game = respondToOffer(game, offer.id, true, content.world);
-    if (offer.kind !== 'renewal') moves.push({ kind: offer.kind, clubId: offer.clubId, fee: offer.fee });
+/** Ofertas de traspaso o cesión pendientes (las renovaciones se resuelven solas). */
+export function moveOffers(game: GameState): Offer[] {
+  return (game.offers ?? []).filter((o) => o.kind !== 'renewal');
+}
+
+/** La oferta que elegiría el piloto automático (undefined = quedarse). */
+export function recommendedOffer(game: GameState): Offer | undefined {
+  const o = pickOffer(game);
+  return o && o.kind !== 'renewal' ? o : undefined;
+}
+
+/** Apunta un fichaje en la temporada en curso (o en la que acaba de cerrarse, si es el mercado de verano). */
+function recordMove(game: GameState, offer: Offer): void {
+  const move = { kind: offer.kind, clubId: offer.clubId, fee: offer.fee };
+  const last = game.quickLog?.at(-1);
+  if (last && last.season === game.calendar.season) last.moves = [...last.moves, move];
+  else game.quickMoves = [...(game.quickMoves ?? []), move];
+}
+
+/** Quita lo que en la versión normal pide intervención del jugador: eventos, cinemáticas y elegir selección. */
+function cleanup(input: GameState): GameState {
+  if (!(input.activeEvent || input.eventQueue?.length || input.cinematics?.length || input.pendingNationalChoice?.length)) return input;
+  const game = structuredClone(input);
+  game.activeEvent = null;
+  game.eventQueue = [];
+  game.cinematics = [];
+  if (game.pendingNationalChoice?.length) {
+    const own = game.player.identity.nationalities[0];
+    game.player.nationalTeam.chosen = game.pendingNationalChoice.includes(own ?? '') ? own! : game.pendingNationalChoice[0]!;
+    game.pendingNationalChoice = [];
   }
   return game;
+}
+
+function acceptMove(input: GameState, offer: Offer, content: EngineContent): GameState {
+  const game = respondToOffer(input, offer.id, true, content.world);
+  recordMove(game, offer);
+  return game;
+}
+
+/** Renueva solo si el contrato se acaba y sigue en el club. */
+function autoRenew(input: GameState, content: EngineContent): GameState {
+  const contract = input.player.contract;
+  if (!contract || contract.endSeason > input.calendar.season) return input;
+  const renewal = (input.offers ?? []).find((o) => o.kind === 'renewal');
+  return renewal ? respondToOffer(input, renewal.id, true, content.world) : input;
+}
+
+/**
+ * El jugador elige en el mercado: fichar por una oferta (id) o quedarse (null). Después se puede seguir con `advanceQuick`.
+ */
+export function decideQuickMarket(input: GameState, offerId: string | null, content: EngineContent): GameState {
+  let game = input;
+  const offer = offerId ? moveOffers(game).find((o) => o.id === offerId) : undefined;
+  if (offer) game = acceptMove(game, offer, content);
+  game = structuredClone(game);
+  game.offers = (game.offers ?? []).filter((o) => o.kind === 'renewal');
+  delete game.quickMarket;
+  return autoRenew(game, content);
+}
+
+export type QuickMode = 'auto' | 'manual';
+
+/**
+ * Avanza hasta terminar la temporada en curso (pretemporada de la siguiente) o hasta la retirada.
+ * En modo manual se detiene en cada mercado con ofertas de traspaso o cesión (`quickMarket = true`)
+ * para que el jugador elija con `decideQuickMarket`; en automático elige el piloto.
+ */
+export function advanceQuick(input: GameState, content: EngineContent & EventContent, mode: QuickMode = 'auto'): GameState {
+  if (input.retired) return input;
+  let game = input;
+  const season = game.calendar.season;
+  for (let guard = 0; guard < 10; guard++) {
+    game = cleanup(game);
+    if (game.calendar.phase === 'preseason' && game.calendar.season > season) break;
+    if (moveOffers(game).length) {
+      if (mode === 'manual') return { ...game, quickMarket: true };
+      const pick = recommendedOffer(game);
+      if (pick) game = acceptMove(game, pick, content);
+    }
+    game = autoRenew(game, content);
+    const before = game.calendar.phase;
+    game = advancePhase(game, content);
+    if (before === 'secondHalf') {
+      const snap = buildSnapshot(game, content, season, game.quickMoves ?? []);
+      game = { ...game, quickMoves: [], quickLog: [...(game.quickLog ?? []), ...(snap ? [snap] : [])] };
+    }
+    if (game.retired) break;
+  }
+  game = cleanup(game);
+  // Logros conseguidos al cerrar (o al retirarse) en la última temporada.
+  const last = game.quickLog?.at(-1);
+  if (last) {
+    const achievements = achievementsOf(game, last.season);
+    if (achievements.length !== last.achievements.length) game = { ...game, quickLog: [...game.quickLog!.slice(0, -1), { ...last, achievements }] };
+  }
+  const { quickMarket: _m, ...rest } = game;
+  return rest;
 }
 
 /** Prepara una partida recién creada para el modo rápido (sin eventos de inicio). */
@@ -117,32 +196,19 @@ export function startQuick(game: GameState): GameState {
   g.eventQueue = [];
   g.cinematics = [];
   g.quickLog = [];
+  g.quickMoves = [];
   return g;
 }
 
-/**
- * Juega una temporada completa (cinco fases) y añade su ficha a `quickLog`.
- * Devuelve la partida al inicio de la pretemporada siguiente, o retirada.
- */
+/** Juega una temporada completa con el piloto automático. */
 export function playQuickSeason(input: GameState, content: EngineContent & EventContent): GameState {
-  if (input.retired) return input;
-  const moves: QuickSeason['moves'] = [];
-  let game = input;
-  const season = game.calendar.season;
-  let snapshot: QuickSeason | undefined;
-  for (let guard = 0; guard < 8; guard++) {
-    game = autopilot(game, content, moves);
-    if (game.retired) break;
-    const before = game.calendar.phase;
-    game = advancePhase(game, content);
-    if (before === 'secondHalf') snapshot = buildSnapshot(game, content, season, moves);
-    if (game.retired || (game.calendar.season > season && game.calendar.phase === 'preseason')) break;
-  }
-  // Lo que se resolvería en la pretemporada siguiente se olvida (no hay decisiones).
-  game = { ...game, activeEvent: null, eventQueue: [], cinematics: [] };
-  // Los fichajes del final de temporada se apuntan en la temporada que acaba.
-  if (snapshot) game = { ...game, quickLog: [...(game.quickLog ?? []), { ...snapshot, moves: [...moves] }] };
-  return game;
+  return advanceQuick(input, content, 'auto');
+}
+
+function achievementsOf(game: GameState, season: SeasonYear): string[] {
+  return Object.entries(game.achievements)
+    .filter(([, a]) => a.unlocked && a.unlockedSeason === season)
+    .map(([id]) => id);
 }
 
 function buildSnapshot(game: GameState, content: EngineContent & EventContent, season: SeasonYear, moves: QuickSeason['moves']): QuickSeason | undefined {
@@ -182,6 +248,7 @@ function buildSnapshot(game: GameState, content: EngineContent & EventContent, s
     },
     marketValue: record.marketValueEnd,
     moves: [...moves],
+    achievements: achievementsOf(game, season),
   };
 }
 

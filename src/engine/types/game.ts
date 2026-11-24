@@ -206,6 +206,10 @@ export interface GameState {
   lastOutcome?: EventOutcome;
   /** Modo rápido: ficha de cada temporada jugada. */
   quickLog?: import('../quick/quick').QuickSeason[];
+  /** Modo rápido: fichajes de la temporada en curso, aún sin ficha. */
+  quickMoves?: import('../quick/quick').QuickSeason['moves'];
+  /** Modo rápido: el jugador tiene que elegir entre las ofertas del mercado. */
+  quickMarket?: boolean;
 }
 
 /** Lo que pasó al elegir una opción de un evento. */

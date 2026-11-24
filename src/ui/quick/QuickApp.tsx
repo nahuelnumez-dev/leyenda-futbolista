@@ -8,7 +8,9 @@ import { t, tDynamic } from '@/i18n';
 import { WORLD, ENGINE_CONTENT } from '@/data';
 import { POSITIONS, type Position } from '@/engine/types/attributes';
 import type { GameState } from '@/engine/types/game';
-import type { QuickSeason } from '@/engine/quick/quick';
+import { moveOffers, recommendedOffer, type QuickSeason } from '@/engine/quick/quick';
+import { ACHIEVEMENTS } from '@/data/achievements';
+import type { Club } from '@/engine/types/club';
 import { overallFor } from '@/engine/player/overall';
 import { ageInSeason, formatSeason } from '@/engine/world/newGame';
 import { careerCard, legacyScore } from '@/engine/legacy/legacy';
@@ -43,6 +45,73 @@ function clubsOf(country: string) {
   return [...WORLD.clubById.values()].filter((c) => c.country === country && !c.parentClubId).sort((a, b) => b.prestige - a.prestige);
 }
 
+const tierOf = (id: string) => WORLD.divisionById.get(WORLD.divisionOfClub.get(id) ?? '')?.tier ?? 3;
+
+/** Barra de 0 a 100 (cantera, prestigio). */
+function Meter({ label, value }: { label: string; value: number }) {
+  return (
+    <span className="q-meter" title={`${label}: ${value}/100`}>
+      <span className="q-meter-label">{label}</span>
+      <span className="q-meter-bar"><span style={{ width: `${value}%` }} /></span>
+      <span className="q-meter-num">{value}</span>
+    </span>
+  );
+}
+
+/** Elección de cantera: clubes del país por división, con la calidad de su cantera y su prestigio. */
+function AcademyPicker({ clubs, value, onChange }: { clubs: Club[]; value: string; onChange: (id: string) => void }) {
+  const tiers = [...new Set(clubs.map((c) => tierOf(c.id)))].sort();
+  const [tier, setTier] = useState<number>(tiers[0] ?? 1);
+  const [sort, setSort] = useState<'academy' | 'prestige'>('academy');
+  useEffect(() => setTier(tiers[0] ?? 1), [clubs]); // eslint-disable-line react-hooks/exhaustive-deps
+  const shown = clubs.filter((c) => tierOf(c.id) === tier).sort((a, b) => b[sort] - a[sort]);
+  const selected = value ? WORLD.clubById.get(value) : undefined;
+  const divisionName = (t: number) => {
+    const c = clubs.find((x) => tierOf(x.id) === t);
+    return c ? competitionName(WORLD.divisionOfClub.get(c.id) ?? '') : `División ${t}`;
+  };
+  return (
+    <div className="q-field">
+      <span>Cantera</span>
+      <div className="q-tabs" role="tablist" aria-label="División">
+        {tiers.map((t) => (
+          <button key={t} role="tab" aria-selected={t === tier} className={t === tier ? 'is-on' : ''} onClick={() => setTier(t)}>{divisionName(t)}</button>
+        ))}
+      </div>
+      <div className="q-sort">
+        Ordenar por{' '}
+        <button className={sort === 'academy' ? 'is-on' : ''} onClick={() => setSort('academy')}>cantera</button>
+        <button className={sort === 'prestige' ? 'is-on' : ''} onClick={() => setSort('prestige')}>prestigio</button>
+      </div>
+      <div className="q-academies" role="radiogroup" aria-label="Cantera">
+        <button role="radio" aria-checked={!value} className={`q-academy${!value ? ' is-on' : ''}`} onClick={() => onChange(RANDOM)}>
+          <span className="q-academy-dice" aria-hidden="true">🎲</span>
+          <span className="q-academy-name">Al azar<small>Una de las mejores del país</small></span>
+        </button>
+        {shown.map((c) => (
+          <button key={c.id} role="radio" aria-checked={value === c.id} className={`q-academy${value === c.id ? ' is-on' : ''}`} onClick={() => onChange(c.id)}>
+            <ClubCrest id={c.id} size={30} />
+            <span className="q-academy-name">
+              {c.shortName}
+              <small>{c.city}</small>
+            </span>
+            <span className="q-academy-meters">
+              <Meter label="Cantera" value={c.academy} />
+              <Meter label="Prestigio" value={c.prestige} />
+            </span>
+          </button>
+        ))}
+      </div>
+      {selected && (
+        <small>
+          {selected.name} · {selected.stadium.name} ({new Intl.NumberFormat('es').format(selected.stadium.capacity)}) · en un club grande cuesta más llegar al
+          primer equipo; en uno pequeño debutarás antes.
+        </small>
+      )}
+    </div>
+  );
+}
+
 function StartScreen() {
   const { start, resume, hasSave, hall } = useQuick();
   const [name, setName] = useState('');
@@ -62,7 +131,7 @@ function StartScreen() {
     <div className="q-wrap q-start">
       <header className="q-brand">
         <h1>Leyenda <span>Rápida</span></h1>
-        <p>Una carrera entera en un par de minutos. Sin decisiones: tú pulsas y ves cómo pasan las temporadas.</p>
+        <p>Una carrera entera en un par de minutos. Pulsas y ves pasar las temporadas; solo decides a qué club vas cuando llegan ofertas.</p>
       </header>
 
       {canResume && (
@@ -93,13 +162,7 @@ function StartScreen() {
             {COUNTRIES.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
           </select>
         </label>
-        <label className="q-field">
-          <span>Cantera</span>
-          <select value={clubId} onChange={(e) => setClubId(e.target.value)}>
-            <option value={RANDOM}>Al azar</option>
-            {clubs.map((c) => <option key={c.id} value={c.id}>{c.shortName}</option>)}
-          </select>
-        </label>
+        <AcademyPicker clubs={clubs} value={clubId} onChange={setClubId} />
         <button className="q-btn q-btn-primary q-full" onClick={begin}>Empezar carrera</button>
       </section>
 
@@ -149,7 +212,6 @@ function SeasonRow({ s, gk, selected, onSelect }: { s: QuickSeason; gk: boolean;
   const delta = s.overallEnd - s.overallStart;
   return (
     <motion.tr
-      layout="position"
       initial={{ opacity: 0, backgroundColor: 'rgba(245,197,66,0.25)' }}
       animate={{ opacity: 1, backgroundColor: 'rgba(0,0,0,0)' }}
       transition={{ duration: 0.6 }}
@@ -174,7 +236,10 @@ function SeasonRow({ s, gk, selected, onSelect }: { s: QuickSeason; gk: boolean;
       <td className="q-num q-hide-sm">{s.assists}</td>
       <td className="q-num q-hide-sm">{fmtRating(s.rating)}</td>
       <td className="q-num">{s.position ? `${s.position}º` : '–'}</td>
-      <td className="q-trophies">{s.trophies.map((id, i) => <span key={i} title={competitionName(id)}>{trophyIcon(id)}</span>)}</td>
+      <td className="q-trophies">
+        {s.trophies.map((id, i) => <span key={i} title={competitionName(id)}>{trophyIcon(id)}</span>)}
+        {(s.achievements?.length ?? 0) > 0 && <span className="q-ach-count" title={`${s.achievements.length} logros`}>🎖️{s.achievements.length > 1 ? s.achievements.length : ''}</span>}
+      </td>
     </motion.tr>
   );
 }
@@ -263,6 +328,23 @@ function SeasonDetail({ s, gk }: { s: QuickSeason; gk: boolean }) {
 
       <LeagueTable s={s} />
 
+      {(s.achievements?.length ?? 0) > 0 && (
+        <div className="q-block">
+          <h3 className="q-h3">Logros</h3>
+          <ul className="q-achievements">
+            {s.achievements.map((id) => {
+              const def = ACHIEVEMENTS.find((x) => x.id === id);
+              return def ? (
+                <li key={id} className={`q-tier-${def.tier}`}>
+                  <strong>{def.name.es}</strong>
+                  <small>{def.description.es}</small>
+                </li>
+              ) : null;
+            })}
+          </ul>
+        </div>
+      )}
+
       {(s.trophies.length > 0 || s.awards.length > 0 || s.national.caps > 0 || s.moves.length > 0) && (
         <div className="q-block q-notes">
           {s.trophies.map((id, i) => <p key={`t${i}`}>{trophyIcon(id)} {competitionName(id)}</p>)}
@@ -276,6 +358,98 @@ function SeasonDetail({ s, gk }: { s: QuickSeason; gk: boolean }) {
         </div>
       )}
     </motion.section>
+  );
+}
+
+const euros = (n: number) => `${money.format(n)} €`;
+const KIND_LABEL: Record<string, string> = { transfer: 'Traspaso', loan: 'Cesión', renewal: 'Renovación' };
+
+/** Mercado: ofertas recibidas para cambiar de equipo. El jugador elige o se queda. */
+function MarketCard({ game }: { game: GameState }) {
+  const decide = useQuick((s) => s.decide);
+  const contract = game.player.contract!;
+  const offers = moveOffers(game);
+  const recommended = recommendedOffer(game);
+  const winter = game.calendar.phase === 'winterWindow';
+  const ownId = contract.clubId;
+  const dyn = (id: string) => game.world.clubs[id];
+  const expiring = contract.endSeason <= game.calendar.season;
+  return (
+    <section className="q-card q-market" aria-labelledby="market-title">
+      <p className="q-kicker">{winter ? 'Mercado de invierno' : 'Mercado de verano'} · {seasonLabel(game.calendar.season, ownId)}</p>
+      <h2 id="market-title">{offers.length === 1 ? 'Tienes una oferta' : `Tienes ${offers.length} ofertas`}</h2>
+      <p className="q-muted">
+        Ahora: {clubName(ownId)}{contract.loanFrom ? ` (cedido por el ${clubName(contract.loanFrom)})` : ''} · {tDynamic(`hub.roles.${contract.role}`)} · {euros(contract.salary)}/año ·
+        contrato hasta {seasonLabel(contract.endSeason, ownId)}
+        {expiring ? ' (si te quedas, renuevas)' : ''}
+      </p>
+      <ul className="q-offers">
+        {offers.map((o) => {
+          const club = WORLD.clubById.get(o.clubId);
+          const division = dyn(o.clubId)?.divisionId;
+          const best = recommended?.id === o.id;
+          return (
+            <li key={o.id} className={best ? 'is-best' : ''}>
+              <div className="q-offer-club">
+                <ClubCrest id={o.clubId} size={36} />
+                <div>
+                  <strong>{club?.shortName ?? o.clubId}</strong>
+                  <small>{division ? competitionName(division) : ''} · {WORLD.countryById.get(club?.country ?? '')?.name.es ?? ''}</small>
+                </div>
+                {best && <span className="q-tag">Recomendada</span>}
+              </div>
+              <dl className="q-offer-facts">
+                <div><dt>Tipo</dt><dd>{KIND_LABEL[o.kind]}</dd></div>
+                <div><dt>Rol</dt><dd>{tDynamic(`hub.roles.${o.role}`)}</dd></div>
+                <div><dt>Sueldo</dt><dd>{euros(o.salary)}</dd></div>
+                <div><dt>{o.kind === 'loan' ? 'Duración' : 'Contrato'}</dt><dd>{o.years} {o.years === 1 ? 'temp.' : 'temps.'}</dd></div>
+                <div><dt>Prestigio</dt><dd>{Math.round(dyn(o.clubId)?.prestige ?? club?.prestige ?? 0)} <small>(ahora {Math.round(dyn(contract.loanFrom ?? ownId)?.prestige ?? 0)})</small></dd></div>
+                {o.fee > 0 && <div><dt>Traspaso</dt><dd>{euros(o.fee)}</dd></div>}
+              </dl>
+              <button className={`q-btn ${best ? 'q-btn-primary' : 'q-btn-ghost'}`} onClick={() => decide(o.id)}>
+                {o.kind === 'loan' ? `Irme cedido al ${club?.shortName}` : `Fichar por el ${club?.shortName}`}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <button className={`q-btn q-full ${recommended ? 'q-btn-ghost' : 'q-btn-primary'}`} onClick={() => decide(null)}>
+        Quedarme en el {clubName(ownId)}{!recommended ? ' (recomendado)' : ''}
+      </button>
+    </section>
+  );
+}
+
+/** Avisos de trofeos, premios y logros (se cierran solos). */
+function Notices() {
+  const notices = useQuick((s) => s.notices);
+  const dismiss = useQuick((s) => s.dismiss);
+  return (
+    <div className="q-notices" role="status" aria-live="polite">
+      <AnimatePresence>
+        {notices.map((n) => (
+          <motion.button
+            key={n.id}
+            layout
+            className={`q-notice q-notice-${n.kind}`}
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 40 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => dismiss(n.id)}
+            aria-label={`${n.title}. Cerrar aviso`}
+          >
+            <span className="q-notice-icon" aria-hidden="true">{n.icon}</span>
+            <span>
+              <strong>{n.title}</strong>
+              <small>
+                {n.ref?.competitionId ? competitionName(n.ref.competitionId) : n.ref?.awardId ? awardName(n.ref.awardId, n.ref.scope) : n.detail}
+              </small>
+            </span>
+          </motion.button>
+        ))}
+      </AnimatePresence>
+    </div>
   );
 }
 
@@ -311,6 +485,7 @@ function CareerScreen({ game }: { game: GameState }) {
 
   return (
     <div className="q-wrap">
+      <Notices />
       <header className="q-top">
         <div className="q-player">
           {clubId && <ClubCrest id={clubId} size={44} />}
@@ -332,6 +507,8 @@ function CareerScreen({ game }: { game: GameState }) {
           <p className="q-muted">{t('careerEnd.legacy')}: {legacy.score} puntos · pico de media {card?.peakOverall} · {card?.clubs.length} clubes{card?.ballonDors ? ` · ${card.ballonDors} Balón de Oro` : ''}</p>
           <button className="q-btn q-btn-primary" onClick={abandon}>Nueva carrera</button>
         </section>
+      ) : game.quickMarket && !running ? (
+        <MarketCard game={game} />
       ) : (
         <div className="q-actions">
           <button className="q-btn q-btn-primary q-next" onClick={next} disabled={running}>
@@ -360,11 +537,9 @@ function CareerScreen({ game }: { game: GameState }) {
                 </tr>
               </thead>
               <tbody>
-                <AnimatePresence initial={false}>
-                  {[...log].reverse().map((s) => (
+                {[...log].reverse().map((s) => (
                     <SeasonRow key={s.season} s={s} gk={gk} selected={current?.season === s.season} onSelect={() => setSelected(s.season)} />
                   ))}
-                </AnimatePresence>
               </tbody>
             </table>
           </section>

@@ -519,6 +519,20 @@ Las marcadas con **[REVISAR]** necesitan tu validación.
      las pruebas, frente a 77-96 con decisiones), porque los eventos de entrenamiento daban atributos. Se deja así:
      la carrera rápida es más «natural».
 
+161. **Elegir cantera** (petición del usuario): en lugar de un desplegable, la cantera se elige entre los clubes del
+     país agrupados por división, con dos barras: calidad de cantera y prestigio (ordenables por cualquiera de las
+     dos). No hay prueba de acceso: se entra en la elegida. Se avisa de que en un club grande cuesta más llegar al
+     primer equipo (el rol depende del nivel del club).
+162. **Ver los cambios de equipo**: al pulsar «Siguiente temporada», la temporada se detiene en cada mercado (invierno
+     y verano) con ofertas de traspaso o cesión, y muestra cada una con su club, liga, país, tipo, rol, sueldo,
+     duración, prestigio (comparado con el actual) y precio del traspaso. La que elegiría el piloto automático va
+     marcada como «Recomendada» (o «Quedarme», si ninguna convence). Al elegir, la temporada sigue sola. Las
+     renovaciones siguen siendo automáticas (si te quedas y el contrato se acaba, renuevas). «Hasta la retirada» no
+     se detiene: elige la recomendada. Los fichajes del mercado de verano se apuntan en la temporada que acaba.
+163. **Avisos de trofeos y logros**: al terminar cada temporada salen avisos (arriba a la derecha, se cierran solos o
+     al tocarlos) por cada título, ascenso, premio individual ganado y logro desbloqueado. La ficha de la temporada
+     lista los logros con su descripción y la lista de temporadas marca con 🎖️ las que tienen logros.
+
 ## Pendiente de revisión
 
 Marcado con `needsReview: true` en los JSON. El juego funciona igual; son datos que no he podido

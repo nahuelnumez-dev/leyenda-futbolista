@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { ENGINE_CONTENT as C } from '@/data';
 import { careerCard } from '../legacy/legacy';
-import { createQuickGame, playQuickSeason } from './quick';
+import { advanceQuick, createQuickGame, decideQuickMarket, moveOffers, playQuickSeason, recommendedOffer } from './quick';
 import type { GameState } from '../types/game';
 import type { Position } from '../types/attributes';
 
@@ -61,6 +61,40 @@ describe('modo rápido', () => {
     console.table(table);
     const peaks = table.map((t) => t.pico).sort((a, b) => a - b);
     expect(peaks[Math.floor(peaks.length / 2)]).toBeGreaterThan(72);
+  });
+
+  it('en modo manual se detiene en el mercado y deja elegir', () => {
+    let g = createQuickGame({ seed: 'quick-manual', createdAt: '2026-11-24T10:00:00.000Z', name: 'Manual', position: 'DC', clubId: 'esp.real-madrid' }, C);
+    let stops = 0;
+    let moved = 0;
+    for (let i = 0; i < 200 && !g.retired; i++) {
+      g = advanceQuick(g, C, 'manual');
+      if (g.quickMarket) {
+        stops++;
+        const offers = moveOffers(g);
+        expect(offers.length).toBeGreaterThan(0);
+        // Alterna: unas veces se queda, otras ficha por la última oferta (no la recomendada).
+        const pick = stops % 2 ? offers.at(-1)! : undefined;
+        const before = g.player.contract!.clubId;
+        g = decideQuickMarket(g, pick?.id ?? null, C);
+        expect(g.quickMarket).toBeUndefined();
+        expect(moveOffers(g)).toHaveLength(0);
+        if (pick) {
+          moved++;
+          expect(g.player.contract!.clubId).not.toBe(before);
+        } else expect(g.player.contract!.clubId).toBe(before);
+      }
+    }
+    expect(g.retired).toBe(true);
+    expect(stops).toBeGreaterThan(2);
+    const logged = (g.quickLog ?? []).flatMap((s) => s.moves);
+    expect(logged.length).toBe(moved);
+    expect(recommendedOffer(g)).toBeUndefined();
+  });
+
+  it('apunta los logros de cada temporada', () => {
+    const all = runs.flatMap((r) => (r.g.quickLog ?? []).flatMap((s) => s.achievements));
+    expect(all.length).toBeGreaterThan(runs.length * 3);
   });
 
   it('es determinista', () => {
